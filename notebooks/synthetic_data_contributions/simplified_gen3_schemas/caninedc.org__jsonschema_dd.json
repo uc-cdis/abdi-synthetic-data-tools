@@ -1,0 +1,4118 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made avilable.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "acknowledgement",
+      "description": "Acknowledgement of an individual involved in a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "acknowledgement.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgee",
+          "description": "The indvidiual or group being acknowledged by the project.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'acknowledgement' table.",
+          "type": "string"
+        },
+        {
+          "name": "acknowledgement.id",
+          "description": "A unique identifier for records in this 'acknowledgement' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "keyword",
+      "description": "A keyword for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "keyword.id"
+      ],
+      "properties": [
+        {
+          "name": "keyword_name",
+          "description": "The name of the keyword.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'keyword' table.",
+          "type": "string"
+        },
+        {
+          "name": "keyword.id",
+          "description": "A unique identifier for records in this 'keyword' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "publication",
+      "description": "Publication for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "publication.id"
+      ],
+      "properties": [
+        {
+          "name": "doi",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "pmid",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'publication' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "A unique identifier for records in this 'publication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "reference_file",
+      "description": "Data file containing any type of reference required for a data analysis.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "project.id",
+        "reference_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "source_file",
+          "description": "The originating compressed file's name.",
+          "type": "string"
+        },
+        {
+          "name": "study_version",
+          "description": "The version of the study that was released by data source (e.g., dbGaP)",
+          "type": "number"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'reference_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "reference_file.id",
+          "description": "A unique identifier for records in this 'reference_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "study",
+      "description": "A coordinated set of actions and observations designed to generate data, with the ultimate goal of discovery or hypothesis testing.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "study_description",
+        "project.id",
+        "study.id"
+      ],
+      "properties": [
+        {
+          "name": "analytical_fraction",
+          "description": "Type of peptide or protein enrichment",
+          "type": "string"
+        },
+        {
+          "name": "data_description",
+          "description": "Brief description of the data being provided for this study. Free text",
+          "type": "string"
+        },
+        {
+          "name": "experiment_type",
+          "description": "General strategy used for differential analysis",
+          "type": "string"
+        },
+        {
+          "name": "is_clinical_trial",
+          "description": "Flag that indicates whether this is a clinical trial study",
+          "type": "boolean"
+        },
+        {
+          "name": "study_completeness",
+          "description": "Description of data status. 0=Descriptive data and results as originally received from the data provider. 1=Includes updates to the original data submission short of completeness. 2=Complete set of descriptive data and results, as ascertained by curator.",
+          "type": "enum"
+        },
+        {
+          "name": "study_description",
+          "description": "A brief description of the study being performed. Free text",
+          "type": "string"
+        },
+        {
+          "name": "study_design",
+          "description": "Summary of the goals the study is designed to discover. General description of the study's place in relation to a clinical application.",
+          "type": "string"
+        },
+        {
+          "name": "study_doi",
+          "description": "Digital object identifier (DOI) is a type of persistent identifier used to uniquely identify objects",
+          "type": "string"
+        },
+        {
+          "name": "study_objective",
+          "description": "The general objective of the study. What the study hopes to discover or determine through testing.",
+          "type": "string"
+        },
+        {
+          "name": "study_organization",
+          "description": "Name of the primary organization that oversees implementation of the study",
+          "type": "string"
+        },
+        {
+          "name": "study_release_date",
+          "description": "Latest date when the study was shared",
+          "type": "string"
+        },
+        {
+          "name": "study_release_version",
+          "description": "Latest version of study shared",
+          "type": "string"
+        },
+        {
+          "name": "study_setup",
+          "description": "Category",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'study' table.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "A unique identifier for records in this 'study' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "protocol",
+      "description": "The formal plan of an experiment or research activity, including the objective, rationale, design, materials and methods for the conduct of the study; intervention description, and method of data analysis. (NCIt - C70817)",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "study.id",
+        "protocol.id"
+      ],
+      "properties": [
+        {
+          "name": "acquisition_type",
+          "description": "Mass Spectrometry: Mass spectrometry acquisition method.",
+          "type": "string"
+        },
+        {
+          "name": "alkylation_reagent",
+          "description": "Sample Preparation: Reagent used for alkylation.",
+          "type": "string"
+        },
+        {
+          "name": "amount_on_column",
+          "description": "Liquid Chromatography: approximate mass with units.",
+          "type": "string"
+        },
+        {
+          "name": "chromatographic_dimension",
+          "description": "Liquid Chromatography: dimension ordinal.",
+          "type": "integer"
+        },
+        {
+          "name": "chromatography_dimensions_count",
+          "description": "Sample Preparation: Number of discrete chromatographic dimensions used.",
+          "type": "integer"
+        },
+        {
+          "name": "chromatography_type",
+          "description": "Liquid Chromatography: General type of chromatography.",
+          "type": "string"
+        },
+        {
+          "name": "collision_energy",
+          "description": "Mass Spectrometry: normalized collisions energy (%).",
+          "type": "string"
+        },
+        {
+          "name": "column_inner_diameter",
+          "description": "Liquid Chromatography: with units.",
+          "type": "string"
+        },
+        {
+          "name": "column_length",
+          "description": "Liquid Chromatography: with units.",
+          "type": "string"
+        },
+        {
+          "name": "column_type",
+          "description": "Liquid Chromatography: Type of column used.",
+          "type": "string"
+        },
+        {
+          "name": "dda_topn",
+          "description": "Mass Spectrometry: number of precursors sampled per cycle.",
+          "type": "string"
+        },
+        {
+          "name": "dia_ims",
+          "description": "Mass Spectrometry: Uses ion mobility separation.",
+          "type": "boolean"
+        },
+        {
+          "name": "dia_multiplexing",
+          "description": "Mass Spectrometry: Uses MSX.",
+          "type": "boolean"
+        },
+        {
+          "name": "digestion_reagent",
+          "description": "Sample Preparation: Enzyme or reagent used for digestion. If multiple used list 2 separated by (;).",
+          "type": "string"
+        },
+        {
+          "name": "dissociation_type",
+          "description": "Mass Spectrometry: gas phase dissociation type.",
+          "type": "string"
+        },
+        {
+          "name": "document_name",
+          "description": "Sample Preparation: External Analytical sample protocol document name.",
+          "type": "string"
+        },
+        {
+          "name": "enrichment_strategy",
+          "description": "Sample Preparation: Type of peptide or protein enrichment.",
+          "type": "string"
+        },
+        {
+          "name": "fractions_produced_count",
+          "description": "Sample Preparation: Final number of fractions produced following any pooling, for example.",
+          "type": "string"
+        },
+        {
+          "name": "gradient_length",
+          "description": "Liquid Chromatography: time with units.",
+          "type": "string"
+        },
+        {
+          "name": "instrument_make",
+          "description": "Mass Spectrometry: Manufacturer of instrument.",
+          "type": "string"
+        },
+        {
+          "name": "instrument_model",
+          "description": "Mass Spectrometry: Model of instrument.",
+          "type": "string"
+        },
+        {
+          "name": "instrument_serial_number",
+          "description": "Mass Spectrometry: serial number from instrument used in study.",
+          "type": "string"
+        },
+        {
+          "name": "isobaric_labeling_reagent",
+          "description": "Sample Preparation: Reagent used for isobaric labeling.",
+          "type": "string"
+        },
+        {
+          "name": "label_free_quantitation",
+          "description": "Sample Preparation: type of label free data analysis strategy proposed for this data.",
+          "type": "string"
+        },
+        {
+          "name": "labeled_quantitation",
+          "description": "Sample Preparation: type of labeling used.",
+          "type": "string"
+        },
+        {
+          "name": "labeling_strategy",
+          "description": "Sample Preparation: general strategy used for differential analysis.",
+          "type": "string"
+        },
+        {
+          "name": "ms1_resolution",
+          "description": "Mass Spectrometry: MS1 resolution, typically at 400 m/z.",
+          "type": "integer"
+        },
+        {
+          "name": "ms2_resolution",
+          "description": "Mass Spectrometry: MS2 resolution, typically at 400 m/z.",
+          "type": "integer"
+        },
+        {
+          "name": "particle_size",
+          "description": "Liquid Chromatography: with units.",
+          "type": "string"
+        },
+        {
+          "name": "particle_type",
+          "description": "Liquid Chromatography: manufacturer or brand name of particle if applicable.",
+          "type": "string"
+        },
+        {
+          "name": "protocol_date",
+          "description": "Sample Preparation: External analytical sample protocol create or update date.",
+          "type": "string"
+        },
+        {
+          "name": "protocol_document_name",
+          "description": "Liquid Chromatography: External chromatography protocol document name.",
+          "type": "string"
+        },
+        {
+          "name": "protocol_name",
+          "description": "Sample Preparation: External Analytical sample protocol name.",
+          "type": "string"
+        },
+        {
+          "name": "protocol_type",
+          "description": "Mass Spectrometry: Controlled Vocabulary can suggest new terms if needed.",
+          "type": "string"
+        },
+        {
+          "name": "starting_amount",
+          "description": "Sample Preparation: Mass with units.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'protocol' table.",
+          "type": "string"
+        },
+        {
+          "name": "protocol.id",
+          "description": "A unique identifier for records in this 'protocol' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "reference_file_index",
+      "description": "Data file containing the index for a set of germline variants.",
+      "links": [
+        "reference_file"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "reference_file.id",
+        "reference_file_index.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "source_file",
+          "description": "The originating compressed file's name.",
+          "type": "string"
+        },
+        {
+          "name": "study_version",
+          "description": "The version of the study that was released by data source (e.g., dbGaP)",
+          "type": "number"
+        },
+        {
+          "name": "reference_file.id",
+          "description": "Unique identifiers for records in the 'reference_file' table that relate via this foreign key to records in this 'reference_file_index' table.",
+          "type": "string"
+        },
+        {
+          "name": "reference_file_index.id",
+          "description": "A unique identifier for records in this 'reference_file_index' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "description": "The collection of all data related to a specific subject in the context of a specific study.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "study.id",
+        "subject.id"
+      ],
+      "properties": [
+        {
+          "name": "breed",
+          "description": "American Kennel Club dog breeds information",
+          "type": "string"
+        },
+        {
+          "name": "days_to_lost_to_followup",
+          "description": "The number of days between the date used for index and to the data the patient was lost to follow-up.",
+          "type": "integer"
+        },
+        {
+          "name": "disease_type",
+          "description": "Name of the disease for the subject.",
+          "type": "string"
+        },
+        {
+          "name": "index_date",
+          "description": "The reference or anchor date used during date obfuscation, where a single date is obscurred by creating one or more date ranges in relation to this date.",
+          "type": "enum"
+        },
+        {
+          "name": "lost_to_followup",
+          "description": "A yes/no indicator related to whether a patient was unable to be contacted for follow-up.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "Primary site for the subject.",
+          "type": "string"
+        },
+        {
+          "name": "species",
+          "description": "Taxonomic species of the subject.",
+          "type": "enum"
+        },
+        {
+          "name": "tissue_source_site_code",
+          "description": "A clinical site that collects and provides patient samples and clinical metadata for research use.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'subject' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "A unique identifier for records in this 'subject' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "demographic",
+      "description": "Data for the characterization of the patient by means of segementing the population (e.g.,characterization by age, sex, or breed).",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "demographic.id"
+      ],
+      "properties": [
+        {
+          "name": "age_range",
+          "description": "Range of ages for the subject. The age range should not include ages over 89 years.",
+          "type": "string"
+        },
+        {
+          "name": "breed",
+          "description": "A stock of animals or plants within a species having a distinctive appearance and typically having been developed by deliberate selection.",
+          "type": "enum"
+        },
+        {
+          "name": "cause_of_death",
+          "description": "Text term to identify the cause of death for a patient.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_birth",
+          "description": "Time interval from a person\u2019s date of birth to the date of initial pathologic diagnosis, represented as a calculated negative number of days.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_death",
+          "description": "Time interval from a person\u2019s date of death to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "integer"
+        },
+        {
+          "name": "gender",
+          "description": "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]",
+          "type": "enum"
+        },
+        {
+          "name": "vital_status",
+          "description": "The survival state of the person registered on the protocol.",
+          "type": "string"
+        },
+        {
+          "name": "year_of_birth",
+          "description": "Numeric value to represent the calendar year in which an individual was born.",
+          "type": "number"
+        },
+        {
+          "name": "year_of_death",
+          "description": "Numeric value to represent the year of the death of an individual.",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'demographic' table.",
+          "type": "string"
+        },
+        {
+          "name": "demographic.id",
+          "description": "A unique identifier for records in this 'demographic' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "diagnosis",
+      "description": "Data from the investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "last_known_disease_status",
+        "morphology",
+        "primary_diagnosis",
+        "progression_or_recurrence",
+        "site_of_resection_or_biopsy",
+        "tissue_or_organ_of_origin",
+        "tumor_grade",
+        "tumor_stage",
+        "vital_status",
+        "subject.id",
+        "diagnosis.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_diagnosis",
+          "description": "Age at the time of diagnosis expressed in number of days since birth. If the age is greater than 32872 days (89 years), see 'age_at_diagnosis_gt89'.",
+          "type": "integer"
+        },
+        {
+          "name": "age_at_diagnosis_gt89",
+          "description": "Indicate whether the 'Age at the time of diagnosis expressed in number of days since birth' is greater than 32872 days (89 years).",
+          "type": "enum"
+        },
+        {
+          "name": "ajcc_clinical_m",
+          "description": "Extent of the distant metastasis for the cancer based on evidence obtained from the clinical assessment parameters determined prior to treatment.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_clinical_n",
+          "description": "Extent of the regional lymph node involvement for the cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_clinical_stage",
+          "description": "Stage group determined from clinical information on the tumor (T), regional node (N) and metastases (M) and by grouping cases with similar prognosis for cancer.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_clinical_t",
+          "description": "Extent of the primary cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_pathologic_m",
+          "description": "Code to represent the defined absence or presence of distant spread or metastases (M) to locations via vascular channels or lymphatics beyond the regional lymph nodes, using criteria established by the American Joint Committee on Cancer (AJCC).",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_pathologic_n",
+          "description": "The codes that represent the stage of cancer based on the nodes present (N stage) according to criteria based on multiple editions of the AJCC\u2019s Cancer Staging Manual.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_pathologic_stage",
+          "description": "The extent of a cancer, especially whether the disease has spread from the original site to other parts of the body based on AJCC staging criteria.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_pathologic_t",
+          "description": "Code of pathological T (primary tumor) to define the size or contiguous extension of the primary tumor (T), using staging criteria from the American Joint Committee on Cancer.",
+          "type": "string"
+        },
+        {
+          "name": "ann_arbor_b_symptoms",
+          "description": "Text term to signify whether lymphoma B-symptoms are present as noted in the patient\u2019s medical record.",
+          "type": "string"
+        },
+        {
+          "name": "ann_arbor_clinical_stage",
+          "description": "The classification of the clinically confirmed anatomic disease extent of lymphoma (Hodgkin\u2019s and Non-Hodgkin\u2019s) based on the Ann Arbor Staging System.",
+          "type": "string"
+        },
+        {
+          "name": "ann_arbor_extranodal_involvement",
+          "description": "Indicator that identifies whether a patient with malignant lymphoma has lymphomatous involvement of an extranodal site.",
+          "type": "string"
+        },
+        {
+          "name": "ann_arbor_pathologic_stage",
+          "description": "The classification of the pathologically confirmed anatomic disease extent of lymphoma (Hodgkin\u2019s and Non-Hodgkin\u2019s) based on the Ann Arbor Staging System.",
+          "type": "string"
+        },
+        {
+          "name": "best_overall_response",
+          "description": "The best improvement achieved throughout the entire course of protocol treatment.",
+          "type": "string"
+        },
+        {
+          "name": "burkitt_lymphoma_clinical_variant",
+          "description": "Burkitt\u2019s lymphoma categorization based on clinical features that differ from other forms of the same disease.",
+          "type": "string"
+        },
+        {
+          "name": "cause_of_death",
+          "description": "Text term to identify the cause of death for a patient.",
+          "type": "string"
+        },
+        {
+          "name": "circumferential_resection_margin",
+          "description": "A value in millimeters indicating the measured length between a malignant lesion of the colon or rectum and the nearest radial (or circumferential) border of tissue removed during cancer surgery.",
+          "type": "string"
+        },
+        {
+          "name": "classification_of_tumor",
+          "description": "Text that describes the kind of disease present in the tumor specimen as related to a specific timepoint.",
+          "type": "string"
+        },
+        {
+          "name": "colon_polyps_history",
+          "description": "Yes/No indicator to describe if the subject had a previous history of colon polyps as noted in the history/physical or previous endoscopic report(s).",
+          "type": "string"
+        },
+        {
+          "name": "days_to_best_overall_response",
+          "description": "Number of days between the date used for index and the date of the patient\u2019s best overall response.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_birth",
+          "description": "Time interval from a person\u2019s date of birth to the date of initial pathologic diagnosis, represented as a calculated negative number of days.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_death",
+          "description": "Time interval from a person\u2019s date of death to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_diagnosis",
+          "description": "Number of days between the date used for index and the date of diagnosis.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_hiv_diagnosis",
+          "description": "Time interval from the date of the initial pathologic diagnosis to the date of human immunodeficiency diagnosis, represented as a calculated number of days.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_last_follow_up",
+          "description": "Time interval from the date of late follow up to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_last_known_disease_status",
+          "description": "Time interval from the date of last follow up to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_new_event",
+          "description": "Time interval from the date of new tumor event including progression, recurrence and new primary malignancies to the date of initial pathologic diagnosis, represented as a calculated number number of days.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_recurrence",
+          "description": "Number of days between the date used for index and the date the patient was diagnosed with a recurrent malignancy.",
+          "type": "string"
+        },
+        {
+          "name": "figo_stage",
+          "description": "The extent of a cervical or endometrial cancer within the body, especially whether the disease has spread from the original site to other parts of the body, as described by the International Federation of Gynecology and Obstetrics (FIGO) stages.",
+          "type": "string"
+        },
+        {
+          "name": "hist_subtype1",
+          "description": "Subtype of the microscopic structure of tissues",
+          "type": "string"
+        },
+        {
+          "name": "histology",
+          "description": "Result of the microscopic structure of tissues",
+          "type": "string"
+        },
+        {
+          "name": "hiv_positive",
+          "description": "Text term to signify whether a physician has diagnosed HIV infection in a patient.",
+          "type": "string"
+        },
+        {
+          "name": "hpv_positive_type",
+          "description": "Text classification to represent the strain or type of human papillomavirus identified in an individual.",
+          "type": "string"
+        },
+        {
+          "name": "hpv_status",
+          "description": "The findings of the oncogenic HPV.",
+          "type": "string"
+        },
+        {
+          "name": "iss_stage",
+          "description": "The multiple myeloma disease stage at diagnosis.",
+          "type": "string"
+        },
+        {
+          "name": "last_known_disease_status",
+          "description": "Text term that describes the last known state or condition of an individual\u2019s neoplasm.",
+          "type": "string"
+        },
+        {
+          "name": "laterality",
+          "description": "For tumors in paired organs, designates the side on which the cancer originates.",
+          "type": "string"
+        },
+        {
+          "name": "ldh_level_at_diagnosis",
+          "description": "The 2 decimal place numeric laboratory value measured, assigned or computed related to the assessment of lactate dehydrogenase in a specimen.",
+          "type": "string"
+        },
+        {
+          "name": "ldh_normal_range_upper",
+          "description": "The top value of the range of statistical characteristics that are supposed to represent accepted standard, non-pathological pattern for lactate dehydrogenase (units not specified).",
+          "type": "string"
+        },
+        {
+          "name": "lymph_nodes_positive",
+          "description": "The number of lymph nodes involved with disease as determined by pathologic examination.",
+          "type": "string"
+        },
+        {
+          "name": "lymphatic_invasion_present",
+          "description": "A yes/no indicator to ask if small or thin-walled vessel invasion is present, indicating lymphatic involvement.",
+          "type": "string"
+        },
+        {
+          "name": "method_of_diagnosis",
+          "description": "The method used to initially determine the patient\u2019s diagnosis.",
+          "type": "string"
+        },
+        {
+          "name": "morphology",
+          "description": "The third edition of the International Classification of Diseases for Oncology, published in 2000 used principally in tumor and cancer registries for coding the site (topography) and the histology (morphology) or neoplasms. The study of the structure of the cells and their arrangement to constitute tissues and, finally, the association among these to form organs. In pathology, the microscopic process or identifying normal and abnormal morphologic characteristics in tissues, by employing various cytochemical and immunocytochemical stains. A system of numbered categories for representation of data.",
+          "type": "string"
+        },
+        {
+          "name": "new_event_anatomic_site",
+          "description": "Text term to specify the anatomic location of the return of tumor after treatment.",
+          "type": "string"
+        },
+        {
+          "name": "new_event_type",
+          "description": "Text term to identify a new tumor event.",
+          "type": "string"
+        },
+        {
+          "name": "overall_survival",
+          "description": "Number of days between the date used for index and the patient\u2019s date of death or the date the patient was last known to be alive.",
+          "type": "string"
+        },
+        {
+          "name": "perineural_invasion_present",
+          "description": "A yes/no indicator to ask if perineural invasion or inflitration of tumor or cancer is present.",
+          "type": "string"
+        },
+        {
+          "name": "primary_diagnosis",
+          "description": "Text term for the structural pattern of cancer cells used to define a microscopic diagnosis.",
+          "type": "string"
+        },
+        {
+          "name": "prior_malignancy",
+          "description": "Text term to describe the patient\u2019s history of prior cancer diagnosis and the spatial location of any previous cancer occurrence.",
+          "type": "string"
+        },
+        {
+          "name": "prior_treatment",
+          "description": "A yes/no/unknown/not applicable indicator related to the administration of therapeutic agents received before the body specimen was collected.",
+          "type": "string"
+        },
+        {
+          "name": "progression_free_survival",
+          "description": "Number of days between the date used for index and the first date the patient is known to be free of disease progression.",
+          "type": "string"
+        },
+        {
+          "name": "progression_free_survival_event",
+          "description": "The event used to define the patient\u2019s disease progression.",
+          "type": "string"
+        },
+        {
+          "name": "progression_or_recurrence",
+          "description": "Yes/No/Unknown indicator to identify whether a patient has had a new tumor event after initial treatment.",
+          "type": "string"
+        },
+        {
+          "name": "residual_disease",
+          "description": "Text terms to describe the status of a tissue margin following surgical resection.",
+          "type": "string"
+        },
+        {
+          "name": "site_of_resection_or_biopsy",
+          "description": "The third edition of the International Classification of Diseases for Oncology, published in 2000, used principally in tumor and cancer registries for coding the site (topography) and the histology (morphology) of neoplasms. The description of an anatomical region or of a body part. Named locations of, or within, the body. A system of numbered categories for representation of data.",
+          "type": "string"
+        },
+        {
+          "name": "tissue_or_organ_of_origin",
+          "description": "Text term that describes the anatomic site of the tumor or disease.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_grade",
+          "description": "Numeric value to express the degree of abnormality of cancer cells, a measure of differentiation and aggressiveness.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_stage",
+          "description": "The extent of a cancer in the body. Staging is usually based on the size of the tumor, whether lymph nodes contain cancer, and whether the cancer has spread from the original site to other parts of the body. The accepted values for tumor_stage depend of the tumor site, type, and accepted staging system. These items should accompany the tumor_stage value as associated metadata.",
+          "type": "string"
+        },
+        {
+          "name": "vascular_invasion_present",
+          "description": "The yes/no indicator to ask if large vessel or venous invasion was detected by surgery or presence in a tumor specimen.",
+          "type": "string"
+        },
+        {
+          "name": "vital_status",
+          "description": "The survival state of the person registered on the protocol.",
+          "type": "string"
+        },
+        {
+          "name": "year_of_diagnosis",
+          "description": "Numeric value to represent the year of an individual\u2019s initial pathologic diagnosis of cancer.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'diagnosis' table.",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "A unique identifier for records in this 'diagnosis' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "follow_up",
+      "description": "A visit by a patient or study participant to a medical professional. A clinical encounter that encompasses planned and unplanned trial interventions, procedures and assessments that may be performed on a subject. A visit has a start and an end, each described with a rule. The process by which information about the health status of an individual is obtained before and after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done.",
+      "links": [
+        "subject",
+        "study"
+      ],
+      "required": [
+        "subject.id",
+        "follow_up.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_visit",
+          "description": "Age at visit in years - round to nearest integer. If the age in years at the visit is greater than 89, see 'age_at_visit_gt89'.",
+          "type": "integer"
+        },
+        {
+          "name": "age_at_visit_gt89",
+          "description": "Indicate if the age at visit years is greater than 89.",
+          "type": "enum"
+        },
+        {
+          "name": "bmi",
+          "description": "The body mass divided by the square of the body height expressed in units of kg/m^2.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_follow_up",
+          "description": "Number of days between the date used for index and the date the patient was seen or contacted at follow-up.",
+          "type": "integer"
+        },
+        {
+          "name": "drug_used",
+          "description": "Ever used any medical or recreational drugs since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "ever_transferred",
+          "description": "Participant ever transferred sites (changed ids)",
+          "type": "enum"
+        },
+        {
+          "name": "health_insurance",
+          "description": "Currently have any health insurance",
+          "type": "boolean"
+        },
+        {
+          "name": "height",
+          "description": "The height of the patient in centimeters.",
+          "type": "number"
+        },
+        {
+          "name": "pregnancy_status",
+          "description": "Is the participant pregnant (women) or has been pregnant since the last visit",
+          "type": "boolean"
+        },
+        {
+          "name": "tint",
+          "description": "6-month time interval for visit",
+          "type": "integer"
+        },
+        {
+          "name": "version_data",
+          "description": "Version number of data",
+          "type": "string"
+        },
+        {
+          "name": "visit_date",
+          "description": "Year of the visit.",
+          "type": "integer"
+        },
+        {
+          "name": "visit_id",
+          "description": "ID at time of interview (prior to transfer)",
+          "type": "integer"
+        },
+        {
+          "name": "visit_name",
+          "description": "Visit ID (string)",
+          "type": "string"
+        },
+        {
+          "name": "visit_number",
+          "description": "Visit number",
+          "type": "integer"
+        },
+        {
+          "name": "visit_type",
+          "description": "Define if the visit is a follow-up or the baseline visit.",
+          "type": "enum"
+        },
+        {
+          "name": "weight",
+          "description": "The weight of the subject measured in grams.",
+          "type": "number"
+        },
+        {
+          "name": "weight_percentage",
+          "description": "The percentage of the weight considering the weight measured at the index date as the reference.",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'follow_up' table.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'follow_up' table.",
+          "type": "string"
+        },
+        {
+          "name": "follow_up.id",
+          "description": "A unique identifier for records in this 'follow_up' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospecimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "sample_type",
+        "subject.id",
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "biospecimen_anatomic_site",
+          "description": "Text term that represents the name of the primary disease site of the submitted tumor sample.",
+          "type": "enum"
+        },
+        {
+          "name": "cell_line_aliases",
+          "description": "Cell line alias name commonly used.",
+          "type": "string"
+        },
+        {
+          "name": "cell_primary_name",
+          "description": "Cell line primary name kept in repository resource.",
+          "type": "string"
+        },
+        {
+          "name": "composition",
+          "description": "Text term that represents the cellular composition of the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "current_weight",
+          "description": "Numeric value that represents the current weight of the sample, measured in milligrams.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_collection",
+          "description": "Time interval from the date of biospecimen collection to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_sample_procurement",
+          "description": "The number of days from the date the patient was diagnosed to the date of the procedure that produced the sample.",
+          "type": "integer"
+        },
+        {
+          "name": "diagnosis_pathologically_confirmed",
+          "description": "The histologic description of tissue or cells confirmed by a pathology review of frozen or formalin fixed slide(s) completed after the diagnostic pathology review of the tumor sample used to extract analyte(s).",
+          "type": "string"
+        },
+        {
+          "name": "freezing_method",
+          "description": "Text term that represents the method used for freezing the sample.",
+          "type": "string"
+        },
+        {
+          "name": "gdc_project_id",
+          "description": "Project identifier associated with the sample at the genomic data commons.",
+          "type": "string"
+        },
+        {
+          "name": "gdc_sample_id",
+          "description": "Sample identifier associated with the sample at the genomic data commons.",
+          "type": "string"
+        },
+        {
+          "name": "initial_weight",
+          "description": "Numeric value that represents the initial weight of the sample, measured in milligrams.",
+          "type": "number"
+        },
+        {
+          "name": "intermediate_dimension",
+          "description": "Intermediate dimension of the sample, in millimeters.",
+          "type": "string"
+        },
+        {
+          "name": "is_ffpe",
+          "description": "Indicator to signify whether or not the tissue sample was fixed in formalin and embedded in paraffin (FFPE).",
+          "type": "integer"
+        },
+        {
+          "name": "longest_dimension",
+          "description": "Numeric value that represents the longest dimension of the sample, measured in millimeters.",
+          "type": "string"
+        },
+        {
+          "name": "method_of_sample_procurement",
+          "description": "The method used to procure the sample used to extract analyte(s).",
+          "type": "string"
+        },
+        {
+          "name": "notes",
+          "description": "Records of relationship to other cell line.",
+          "type": "string"
+        },
+        {
+          "name": "oct_embedded",
+          "description": "Indicator of whether or not the sample was embedded in Optimal Cutting Temperature (OCT) compound.",
+          "type": "string"
+        },
+        {
+          "name": "pathology_report_uuid",
+          "description": "UUID of the related pathology report.",
+          "type": "string"
+        },
+        {
+          "name": "preservation_method",
+          "description": "Text term that represents the method used to preserve the sample.",
+          "type": "string"
+        },
+        {
+          "name": "sample_type",
+          "description": "Characterization of the sample as either clinical or contrived.",
+          "type": "enum"
+        },
+        {
+          "name": "sample_type_id",
+          "description": "Code associated with the sample type.",
+          "type": "string"
+        },
+        {
+          "name": "shortest_dimension",
+          "description": "Numeric value that represents the shortest dimension of the sample, measured in millimeters.",
+          "type": "string"
+        },
+        {
+          "name": "source",
+          "description": "The name of primary source that the cell line is taken from.",
+          "type": "string"
+        },
+        {
+          "name": "time_between_clamping_and_freezing",
+          "description": "Numeric representation of the elapsed time between the surgical clamping of blood supply and freezing of the sample, measured in minutes.",
+          "type": "string"
+        },
+        {
+          "name": "time_between_excision_and_freezing",
+          "description": "Numeric representation of the elapsed time between the excision and freezing of the sample, measured in minutes.",
+          "type": "string"
+        },
+        {
+          "name": "tissue_type",
+          "description": "Text term that represents a description of the kind of tissue collected with respect to disease status or proximity to tumor tissue.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_code",
+          "description": "Diagnostic tumor code of the tissue sample source.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_code_id",
+          "description": "BCR-defined id code for the tumor sample.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_descriptor",
+          "description": "Text that describes the kind of disease present in the tumor specimen as related to a specific timepoint.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "study_run_metadata",
+      "description": "General experimental metadata describing study design.",
+      "links": [
+        "protocol",
+        "study"
+      ],
+      "required": [
+        "protocol.id",
+        "study.id",
+        "study_run_metadata.id"
+      ],
+      "properties": [
+        {
+          "name": "analyte",
+          "description": "Type of peptide or protein enrichment.",
+          "type": "string"
+        },
+        {
+          "name": "condition",
+          "description": "Biological condition (ex: disease state) of the cases (patients) from which the aliquots derived.",
+          "type": "string"
+        },
+        {
+          "name": "date",
+          "description": "Date of the data acquired from the mass spectrometry.",
+          "type": "string"
+        },
+        {
+          "name": "experiment_number",
+          "description": "Number associated with a specific run of the experiment.",
+          "type": "integer"
+        },
+        {
+          "name": "experiment_type",
+          "description": "General strategy use for differential analysis.",
+          "type": "string"
+        },
+        {
+          "name": "fraction",
+          "description": "Number of fractions in the experimental run.",
+          "type": "string"
+        },
+        {
+          "name": "instrument",
+          "description": "Make and model of the mass spectrometry instrument.",
+          "type": "string"
+        },
+        {
+          "name": "operator",
+          "description": "Mass spectrometry instrument operator.",
+          "type": "string"
+        },
+        {
+          "name": "replicate_number",
+          "description": "Replicate number, if applicable.",
+          "type": "string"
+        },
+        {
+          "name": "protocol.id",
+          "description": "Unique identifiers for records in the 'protocol' table that relate via this foreign key to records in this 'study_run_metadata' table.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'study_run_metadata' table.",
+          "type": "string"
+        },
+        {
+          "name": "study_run_metadata.id",
+          "description": "A unique identifier for records in this 'study_run_metadata' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aliquot",
+      "description": "Pertaining to a portion of the whole; any one of two or more samples of something, of the same volume or weight.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "aliquot.id"
+      ],
+      "properties": [
+        {
+          "name": "a260_a280_ratio",
+          "description": "Numeric value that represents the sample ratio of nucleic acid absorbance at 260 nm and 280 nm, used to determine a measure of DNA purity.",
+          "type": "number"
+        },
+        {
+          "name": "aliquot_quantity",
+          "description": "The quantity in micrograms (ug) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "aliquot_volume",
+          "description": "The volume in microliters (ml) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "amount",
+          "description": "Weight in grams or volume in mL.",
+          "type": "number"
+        },
+        {
+          "name": "analyte_type",
+          "description": "Text term that represents the kind of molecular specimen analyte.",
+          "type": "string"
+        },
+        {
+          "name": "analyte_type_id",
+          "description": "A single letter code used to identify a type of molecular analyte.",
+          "type": "enum"
+        },
+        {
+          "name": "concentration",
+          "description": "Numeric value that represents the concentration of an analyte or aliquot extracted from the sample or sample portion, measured in milligrams per milliliter.",
+          "type": "number"
+        },
+        {
+          "name": "source_center",
+          "description": "Name of the center that provided the item.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'aliquot' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "A unique identifier for records in this 'aliquot' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "raw_protein_mass_spectrometry",
+      "description": "Data file containing raw protein mass spectrometry data",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "file_name",
+        "data_type",
+        "md5sum",
+        "file_size",
+        "data_format",
+        "data_category",
+        "experimental_strategy",
+        "sample.id",
+        "raw_protein_mass_spectrometry.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "original_file_name",
+          "description": "Original file name in https://cptc-xfer.uis.georgetown.edu/publicData/Phase_II_Data/CPTAC_Breast_Cancer_S039",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'raw_protein_mass_spectrometry' table.",
+          "type": "string"
+        },
+        {
+          "name": "raw_protein_mass_spectrometry.id",
+          "description": "A unique identifier for records in this 'raw_protein_mass_spectrometry' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "summary_drug_response",
+      "description": "Summary of drug response for each sample",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "summary_drug_response.id"
+      ],
+      "properties": [
+        {
+          "name": "EC50",
+          "description": "Half maximal effective concentration (EC50) refers to the concentration of a drug, antibody or toxicant which induces a response halfway between the baseline and maximum after a specifiedd exposure time meausred in uM.",
+          "type": "number"
+        },
+        {
+          "name": "IC50",
+          "description": "The half maximal inhibitory concentration (IC50) is a measure of the potency of a substance in inhibiting a specific biological or biochemical function in uM.",
+          "type": "number"
+        },
+        {
+          "name": "actarea",
+          "description": "the area between the drug-response curve and a fixed reference",
+          "type": "number"
+        },
+        {
+          "name": "compound",
+          "description": "The composition of the drug",
+          "type": "string"
+        },
+        {
+          "name": "fit_type",
+          "description": "Type of fitting dose response curves",
+          "type": "string"
+        },
+        {
+          "name": "maximum_activity",
+          "description": "the maximal activity value as a drug response measurement",
+          "type": "number"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'summary_drug_response' table.",
+          "type": "string"
+        },
+        {
+          "name": "summary_drug_response.id",
+          "description": "A unique identifier for records in this 'summary_drug_response' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "treatment",
+      "description": "Record of the administration and intention of therapeutic agents provided to a patient to alter the course of a pathologic process.",
+      "links": [
+        "diagnosis",
+        "follow_up"
+      ],
+      "required": [
+        "diagnosis.id",
+        "treatment.id"
+      ],
+      "properties": [
+        {
+          "name": "first_macs_visit_haart",
+          "description": "First visit reported HAART",
+          "type": "number"
+        },
+        {
+          "name": "last_macs_visit_haart_free",
+          "description": "Last visit reported HAART-free",
+          "type": "integer"
+        },
+        {
+          "name": "regimen_count",
+          "description": "Count of regimens",
+          "type": "integer"
+        },
+        {
+          "name": "regimen_or_line_of_therapy",
+          "description": "General name for a the group of treatments of which this treatment was a part. This reference name can be used to identify treatments involved in a certain outcome later one.",
+          "type": "string"
+        },
+        {
+          "name": "therapeutic_agents",
+          "description": "Text identification of the individual agent(s) used as part of a prior treatment regimen.",
+          "type": "string"
+        },
+        {
+          "name": "treatment_intent_type",
+          "description": "Text term to identify the reason for the administration of a treatment regimen. [Manually-curated]",
+          "type": "string"
+        },
+        {
+          "name": "treatment_outcome",
+          "description": "Text term that describes the patient\u00bfs final outcome after the treatment was administered.",
+          "type": "enum"
+        },
+        {
+          "name": "treatment_span",
+          "description": "Span of treatment",
+          "type": "integer"
+        },
+        {
+          "name": "treatment_status",
+          "description": "Status of treatment.",
+          "type": "string"
+        },
+        {
+          "name": "treatment_type",
+          "description": "Text term that describes the kind of treatment administered.",
+          "type": "string"
+        },
+        {
+          "name": "year_of_last_haart_free",
+          "description": "Last reported HAART-free year",
+          "type": "number"
+        },
+        {
+          "name": "year_of_treatment",
+          "description": "First reported treatment year",
+          "type": "number"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "Unique identifiers for records in the 'diagnosis' table that relate via this foreign key to records in this 'treatment' table.",
+          "type": "string"
+        },
+        {
+          "name": "follow_up.id",
+          "description": "Unique identifiers for records in the 'follow_up' table that relate via this foreign key to records in this 'treatment' table.",
+          "type": "string"
+        },
+        {
+          "name": "treatment.id",
+          "description": "A unique identifier for records in this 'treatment' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "drug_attribute",
+      "description": "Information of the drugs used for drug response investigation",
+      "links": [
+        "summary_drug_response"
+      ],
+      "required": [
+        "summary_drug_response.id",
+        "drug_attribute.id"
+      ],
+      "properties": [
+        {
+          "name": "brand_name",
+          "description": "brand name under which the drug is sold",
+          "type": "string"
+        },
+        {
+          "name": "drug_class",
+          "description": "Drug classification",
+          "type": "string"
+        },
+        {
+          "name": "drug_mechanism",
+          "description": "The mechanism of how the drug take effect",
+          "type": "string"
+        },
+        {
+          "name": "highest_phase",
+          "description": "The highest phase of clinical research for the drug",
+          "type": "string"
+        },
+        {
+          "name": "organization",
+          "description": "The organization produces the drug",
+          "type": "string"
+        },
+        {
+          "name": "target_molecule",
+          "description": "the native protein in the body whose activity is modified by a drug resulting in a specific effect, which may be a desirable therapeutic effect or an unwanted adverse effect.",
+          "type": "string"
+        },
+        {
+          "name": "summary_drug_response.id",
+          "description": "Unique identifiers for records in the 'summary_drug_response' table that relate via this foreign key to records in this 'drug_attribute' table.",
+          "type": "string"
+        },
+        {
+          "name": "drug_attribute.id",
+          "description": "A unique identifier for records in this 'drug_attribute' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "drug_response",
+      "description": "Data from the investigation, analysis and recognition of the relationship between drug dosage and drug activity; the concise results of such an investigation.",
+      "links": [
+        "summary_drug_response"
+      ],
+      "required": [
+        "summary_drug_response.id",
+        "drug_response.id"
+      ],
+      "properties": [
+        {
+          "name": "activity_sd",
+          "description": "Standard diviation of drug activity",
+          "type": "number"
+        },
+        {
+          "name": "compound",
+          "description": "Ingredients of a medication",
+          "type": "string"
+        },
+        {
+          "name": "dose",
+          "description": "Drug dosage administrated in uM",
+          "type": "number"
+        },
+        {
+          "name": "median_activity",
+          "description": "Median value of drug activity",
+          "type": "number"
+        },
+        {
+          "name": "summary_drug_response.id",
+          "description": "Unique identifiers for records in the 'summary_drug_response' table that relate via this foreign key to records in this 'drug_response' table.",
+          "type": "string"
+        },
+        {
+          "name": "drug_response.id",
+          "description": "A unique identifier for records in this 'drug_response' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "genotyping_array",
+      "description": "DNA array data files contain information on genome-wide SNP and genetic variant for genetic studies.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "md5sum",
+        "platform",
+        "aliquot.id",
+        "genotyping_array.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "plat",
+          "description": "Plat number for which plate the genotyping is performed",
+          "type": "integer"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'genotyping_array' table.",
+          "type": "string"
+        },
+        {
+          "name": "genotyping_array.id",
+          "description": "A unique identifier for records in this 'genotyping_array' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mirna_microarray",
+      "description": "Data file containing raw miRNA microarray intensity.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "aliquot.id",
+        "mirna_microarray.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'mirna_microarray' table.",
+          "type": "string"
+        },
+        {
+          "name": "mirna_microarray.id",
+          "description": "A unique identifier for records in this 'mirna_microarray' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mrna_microarray",
+      "description": "Data file containing raw mRNA microarray intensity.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "aliquot.id",
+        "mrna_microarray.id"
+      ],
+      "properties": [
+        {
+          "name": "array_platform",
+          "description": "Type of the CHIP used for microarray",
+          "type": "string"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'mrna_microarray' table.",
+          "type": "string"
+        },
+        {
+          "name": "mrna_microarray.id",
+          "description": "A unique identifier for records in this 'mrna_microarray' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "oncomap_assay",
+      "description": "Genotyping results applying the high throughput genotyping platform OncoMap",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "oncomap_assay.id"
+      ],
+      "properties": [
+        {
+          "name": "chromosome",
+          "description": "A DNA molecule with part or all of the genetic material of an organism",
+          "type": "string"
+        },
+        {
+          "name": "cohort_center",
+          "description": "Center where the cohort of the assay performed",
+          "type": "string"
+        },
+        {
+          "name": "end_position",
+          "description": "The end position on a chromosome",
+          "type": "number"
+        },
+        {
+          "name": "hugo_symbol",
+          "description": "Gene symbols defined by hugo gene nomenclature committee",
+          "type": "string"
+        },
+        {
+          "name": "ncbi_build_version",
+          "description": "NCBI release of assemblies made from contiguous sequences assembled in what is thought to be chromosomal order",
+          "type": "string"
+        },
+        {
+          "name": "reference_allele",
+          "description": "A given SNP refers to the nucleotide base on the NCBI\u00a0reference\u00a0assembly at the SNP's position",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_phase",
+          "description": "The phase of the batch of sequencing for the project",
+          "type": "string"
+        },
+        {
+          "name": "start_position",
+          "description": "The strat position on a chromosom",
+          "type": "number"
+        },
+        {
+          "name": "strand",
+          "description": "The two strands of DNA -- the strand that is copied into mRNA and subsequently translated has the complementary sequence to the mRNA, while the base sequence of the opposite strand directly corresponds to the codons in the mRNA",
+          "type": "enum"
+        },
+        {
+          "name": "tumor_seq_allele1",
+          "description": "The first allele sequenced in tumor cell line",
+          "type": "string"
+        },
+        {
+          "name": "tumor_seq_allele2",
+          "description": "The second allele sequenced in tumor cell line",
+          "type": "string"
+        },
+        {
+          "name": "variant_classfication",
+          "description": "Type of consequence introduced by variant allele",
+          "type": "enum"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'oncomap_assay' table.",
+          "type": "string"
+        },
+        {
+          "name": "oncomap_assay.id",
+          "description": "A unique identifier for records in this 'oncomap_assay' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "proteomic_workflow",
+      "description": "Metadata for the protein mass spectrometry workflow used to quantify protein expression",
+      "links": [
+        "raw_protein_mass_spectrometry"
+      ],
+      "required": [
+        "raw_protein_mass_spectrometry.id",
+        "proteomic_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "cdap_reports",
+          "description": "Name and version of the tool used to generate protein summary reports.",
+          "type": "string"
+        },
+        {
+          "name": "cptac_dcc_mzidentml",
+          "description": "Name and version of the tool used to generate mzIdentML from the peptide spectral match report.",
+          "type": "string"
+        },
+        {
+          "name": "cptac_dcc_tools",
+          "description": "Name and version of the custom scripts used in the data analysis pipeline.",
+          "type": "string"
+        },
+        {
+          "name": "cptac_galaxy_tools",
+          "description": "Name and version of the custom scripts used in the data analysis pipeline.",
+          "type": "string"
+        },
+        {
+          "name": "cptac_galaxy_workflows",
+          "description": "Name and version of the workflow of data analysis pipeline.",
+          "type": "string"
+        },
+        {
+          "name": "gene_to_prot",
+          "description": "Name and version of the tool used to map gene to protein in the data analysis pipeline.",
+          "type": "string"
+        },
+        {
+          "name": "hgnc_version",
+          "description": "Name and version of HGNC database of human gene names used in the data analysis pipeline.",
+          "type": "string"
+        },
+        {
+          "name": "ms1_data_analysis",
+          "description": "Name and version of the tool used for MS1 data analysis.",
+          "type": "string"
+        },
+        {
+          "name": "mzidentml_refseq",
+          "description": "Name and version of the NCBI Refseq database used in mzIdentML.",
+          "type": "string"
+        },
+        {
+          "name": "mzidentml_uniprot",
+          "description": "Name and version of the Uniprot Refseq database used in mzIdentiML.",
+          "type": "string"
+        },
+        {
+          "name": "phosphosite_localization",
+          "description": "Name and version of the tool used for phosphosite localization.",
+          "type": "string"
+        },
+        {
+          "name": "psm_report_generation",
+          "description": "Name and version of the tool used to peptide spectral match report generation.",
+          "type": "string"
+        },
+        {
+          "name": "raw_data_conversion",
+          "description": "Name and version of the tool used to convert the proprietary data into open format.",
+          "type": "string"
+        },
+        {
+          "name": "raw_data_processing",
+          "description": "Name and version of the tool used to process the proprietary raw data.",
+          "type": "string"
+        },
+        {
+          "name": "refseq_database_version",
+          "description": "Name and version of the NCBI Refseq database used in the data analysis pipeline.",
+          "type": "string"
+        },
+        {
+          "name": "search_database_parameters",
+          "description": "Parameters used in the peptide identification database search.",
+          "type": "string"
+        },
+        {
+          "name": "sequence_database_search",
+          "description": "Name and version of the tool used in peptide identification by scoring MS/MS spectra against peptides derived from a protein sequence database.",
+          "type": "string"
+        },
+        {
+          "name": "uniport_database_version",
+          "description": "Name and version of the Uniprot Refseq database used in the data analysis pipeline.",
+          "type": "string"
+        },
+        {
+          "name": "raw_protein_mass_spectrometry.id",
+          "description": "Unique identifiers for records in the 'raw_protein_mass_spectrometry' table that relate via this foreign key to records in this 'proteomic_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "proteomic_workflow.id",
+          "description": "A unique identifier for records in this 'proteomic_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group",
+      "description": "Sequencing reads from one lane of an NGS experiment.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "read_group.id"
+      ],
+      "properties": [
+        {
+          "name": "RIN",
+          "description": "A numerical assessment of the integrity of RNA based on the entire electrophoretic trace of the RNA sample including the presence or absence of degradation products.",
+          "type": "number"
+        },
+        {
+          "name": "adapter_name",
+          "description": "Name of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "adapter_sequence",
+          "description": "Base sequence of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "barcoding_applied",
+          "description": "True/False: was barcoding applied?",
+          "type": "boolean"
+        },
+        {
+          "name": "base_caller_name",
+          "description": "Name of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "base_caller_version",
+          "description": "Version of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "experiment_name",
+          "description": "Submitter-defined name for the experiment.",
+          "type": "string"
+        },
+        {
+          "name": "flow_cell_barcode",
+          "description": "Flow Cell Barcode.",
+          "type": "string"
+        },
+        {
+          "name": "includes_spike_ins",
+          "description": "Spike-in included?",
+          "type": "boolean"
+        },
+        {
+          "name": "instrument_model",
+          "description": "Numeric value that represents the sample dimension that is greater than the shortest dimension and less than the longest dimension, measured in millimeters.",
+          "type": "enum"
+        },
+        {
+          "name": "is_paired_end",
+          "description": "Are the reads paired end?",
+          "type": "boolean"
+        },
+        {
+          "name": "library_name",
+          "description": "Name of the library.",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_catalog_number",
+          "description": "Catalog of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_name",
+          "description": "Name of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_vendor",
+          "description": "Vendor of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_version",
+          "description": "Version of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_selection",
+          "description": "Library Selection Method",
+          "type": "enum"
+        },
+        {
+          "name": "library_strand",
+          "description": "Library stranded-ness.",
+          "type": "enum"
+        },
+        {
+          "name": "library_strategy",
+          "description": "Library strategy.",
+          "type": "enum"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group_name",
+          "description": "Read Group Name",
+          "type": "string"
+        },
+        {
+          "name": "read_length",
+          "description": "The length of the reads.",
+          "type": "integer"
+        },
+        {
+          "name": "sequencing_center",
+          "description": "Name of the center that provided the sequence files.",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "size_selection_range",
+          "description": "Range of size selection.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_concentration",
+          "description": "Spike in concentration.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_fasta",
+          "description": "Name of the FASTA file that contains the spike-in sequences.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_catalog_number",
+          "description": "Catalog of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_name",
+          "description": "Name of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_target_region",
+          "description": "Target Capture Kit BED file.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_vendor",
+          "description": "Vendor of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_version",
+          "description": "Version of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "to_trim_adapter_sequence",
+          "description": "Does the user suggest adapter trimming?",
+          "type": "boolean"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'read_group' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "A unique identifier for records in this 'read_group' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_methylation",
+      "description": "DNA methylation data files contain information on raw and normalized signal intensities, detection confidence and calculated beta values for methylated and unmethylated probes. DNA methylation is an epigenetic mark which can be associated with transcriptional inactivity when located in promoter regions.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "aliquot.id",
+        "submitted_methylation.id"
+      ],
+      "properties": [
+        {
+          "name": "assay_instrument",
+          "description": "The specific instrument type used to perform the assay.",
+          "type": "enum"
+        },
+        {
+          "name": "assay_instrument_model",
+          "description": "The specific model of instrument used to perform the assay.",
+          "type": "enum"
+        },
+        {
+          "name": "assay_method",
+          "description": "General methodology used to perform the assay.",
+          "type": "enum"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'submitted_methylation' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_methylation.id",
+          "description": "A unique identifier for records in this 'submitted_methylation' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aggregated_genotyping_array",
+      "description": "DNA array data files aggregating genome-wide SNP information from several subjects (cohort).",
+      "links": [
+        "genotyping_array",
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "aggregated_genotyping_array.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "genotyping_array.id",
+          "description": "Unique identifiers for records in the 'genotyping_array' table that relate via this foreign key to records in this 'aggregated_genotyping_array' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'aggregated_genotyping_array' table.",
+          "type": "string"
+        },
+        {
+          "name": "aggregated_genotyping_array.id",
+          "description": "A unique identifier for records in this 'aggregated_genotyping_array' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mzml_protein_mass_spectrometry",
+      "description": "Data file containing mzml protein mass spectrometry data.",
+      "links": [
+        "raw_protein_mass_spectrometry",
+        "proteomic_workflow"
+      ],
+      "required": [
+        "file_name",
+        "data_type",
+        "md5sum",
+        "file_size",
+        "data_format",
+        "data_category",
+        "experimental_strategy",
+        "mzml_protein_mass_spectrometry.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "original_file_name",
+          "description": "Original file name in https://cptc-xfer.uis.georgetown.edu/publicData/Phase_II_Data/CPTAC_Breast_Cancer_S039",
+          "type": "string"
+        },
+        {
+          "name": "raw_protein_mass_spectrometry.id",
+          "description": "Unique identifiers for records in the 'raw_protein_mass_spectrometry' table that relate via this foreign key to records in this 'mzml_protein_mass_spectrometry' table.",
+          "type": "string"
+        },
+        {
+          "name": "proteomic_workflow.id",
+          "description": "Unique identifiers for records in the 'proteomic_workflow' table that relate via this foreign key to records in this 'mzml_protein_mass_spectrometry' table.",
+          "type": "string"
+        },
+        {
+          "name": "mzml_protein_mass_spectrometry.id",
+          "description": "A unique identifier for records in this 'mzml_protein_mass_spectrometry' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "oncomap_panel",
+      "description": "Probes information for oncomap platform",
+      "links": [
+        "oncomap_assay"
+      ],
+      "required": [
+        "oncomap_assay.id",
+        "oncomap_panel.id"
+      ],
+      "properties": [
+        {
+          "name": "alternative_allele",
+          "description": "Refers to any base, other than the reference, that is found at that locus",
+          "type": "string"
+        },
+        {
+          "name": "annotation_transcript",
+          "description": "Transcript UCSC ID",
+          "type": "string"
+        },
+        {
+          "name": "assay_direction",
+          "description": "Extention direction of the assay",
+          "type": "string"
+        },
+        {
+          "name": "cDNA_change",
+          "description": "Reference allele to alternative allele change in cDNA",
+          "type": "string"
+        },
+        {
+          "name": "codon_change",
+          "description": "Reference allele to alternative allele change in coden",
+          "type": "string"
+        },
+        {
+          "name": "dbSNP_rs",
+          "description": "RS number in dbSNP database",
+          "type": "string"
+        },
+        {
+          "name": "dbSNP_validation",
+          "description": "Validation resource for the dbSNP database",
+          "type": "string"
+        },
+        {
+          "name": "entrez_id",
+          "description": "Gene ID defined in NCBI's database",
+          "type": "string"
+        },
+        {
+          "name": "gene_description",
+          "description": "Description of the gene where the alternative allele locate",
+          "type": "string"
+        },
+        {
+          "name": "genomie_change",
+          "description": "The reference and alternative allele in genome build",
+          "type": "string"
+        },
+        {
+          "name": "other_transcripts",
+          "description": "Other transcrips changes introduced by the alternative allele",
+          "type": "string"
+        },
+        {
+          "name": "protein_change",
+          "description": "Reference allele to alternative allele change in protein",
+          "type": "string"
+        },
+        {
+          "name": "reference_allele",
+          "description": "A given SNP refers to the nucleotide base on the NCBI\u00a0reference\u00a0assembly at the SNP's position",
+          "type": "string"
+        },
+        {
+          "name": "refseq_mRNA_id",
+          "description": "mRNA ID refered in Refseq database",
+          "type": "string"
+        },
+        {
+          "name": "refseq_protein_id",
+          "description": "Protein ID refered in Refseq database",
+          "type": "string"
+        },
+        {
+          "name": "swissprot_accession_id",
+          "description": "Accession ID in SwissProt database",
+          "type": "string"
+        },
+        {
+          "name": "swissprot_entry_id",
+          "description": "Enrty ID in SwissProt database",
+          "type": "string"
+        },
+        {
+          "name": "transcript_strand",
+          "description": "Strand where the transcript locate",
+          "type": "enum"
+        },
+        {
+          "name": "uniProt_region",
+          "description": "The region in Uniprot database",
+          "type": "string"
+        },
+        {
+          "name": "unitport_amino_acid_position",
+          "description": "The amino acid position in UniProt database",
+          "type": "string"
+        },
+        {
+          "name": "variant_type",
+          "description": "The type of allele",
+          "type": "enum"
+        },
+        {
+          "name": "variation_allele",
+          "description": "Variation extension allele",
+          "type": "string"
+        },
+        {
+          "name": "wildtype_allele",
+          "description": "Wild type extension allele",
+          "type": "string"
+        },
+        {
+          "name": "oncomap_assay.id",
+          "description": "Unique identifiers for records in the 'oncomap_assay' table that relate via this foreign key to records in this 'oncomap_panel' table.",
+          "type": "string"
+        },
+        {
+          "name": "oncomap_panel.id",
+          "description": "A unique identifier for records in this 'oncomap_panel' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "protein_expression",
+      "description": "Data file containing normalized protein expression data",
+      "links": [
+        "raw_protein_mass_spectrometry",
+        "proteomic_workflow"
+      ],
+      "required": [
+        "file_name",
+        "data_type",
+        "md5sum",
+        "file_size",
+        "data_format",
+        "data_category",
+        "experimental_strategy",
+        "protein_expression.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "original_file_name",
+          "description": "Original file name in https://cptc-xfer.uis.georgetown.edu/publicData/Phase_II_Data/CPTAC_Breast_Cancer_S039",
+          "type": "string"
+        },
+        {
+          "name": "raw_protein_mass_spectrometry.id",
+          "description": "Unique identifiers for records in the 'raw_protein_mass_spectrometry' table that relate via this foreign key to records in this 'protein_expression' table.",
+          "type": "string"
+        },
+        {
+          "name": "proteomic_workflow.id",
+          "description": "Unique identifiers for records in the 'proteomic_workflow' table that relate via this foreign key to records in this 'protein_expression' table.",
+          "type": "string"
+        },
+        {
+          "name": "protein_expression.id",
+          "description": "A unique identifier for records in this 'protein_expression' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "psm_protein_mass_spectrometry",
+      "description": "Data file containing psm protein mass spectrometry data",
+      "links": [
+        "raw_protein_mass_spectrometry",
+        "proteomic_workflow"
+      ],
+      "required": [
+        "file_name",
+        "data_type",
+        "md5sum",
+        "file_size",
+        "data_format",
+        "data_category",
+        "experimental_strategy",
+        "psm_protein_mass_spectrometry.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "original_file_name",
+          "description": "Original file name in https://cptc-xfer.uis.georgetown.edu/publicData/Phase_II_Data/CPTAC_Breast_Cancer_S039",
+          "type": "string"
+        },
+        {
+          "name": "raw_protein_mass_spectrometry.id",
+          "description": "Unique identifiers for records in the 'raw_protein_mass_spectrometry' table that relate via this foreign key to records in this 'psm_protein_mass_spectrometry' table.",
+          "type": "string"
+        },
+        {
+          "name": "proteomic_workflow.id",
+          "description": "Unique identifiers for records in the 'proteomic_workflow' table that relate via this foreign key to records in this 'psm_protein_mass_spectrometry' table.",
+          "type": "string"
+        },
+        {
+          "name": "psm_protein_mass_spectrometry.id",
+          "description": "A unique identifier for records in this 'psm_protein_mass_spectrometry' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_aligned_reads",
+      "description": "Data file containing aligned reads that are used as input to GDC workflows.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_aligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_genomic_profile",
+      "description": "Data file containing genomic profile information.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_genomic_profile.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_genomic_profile' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_genomic_profile.id",
+          "description": "A unique identifier for records in this 'submitted_genomic_profile' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_unaligned_reads",
+      "description": "Data file containing unaligned reads that have not been GDC Harmonized.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_unaligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads_index",
+      "description": "Data file containing the index for a set of aligned reads.",
+      "links": [
+        "submitted_aligned_reads"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "submitted_aligned_reads.id",
+        "aligned_reads_index.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'aligned_reads_index' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_index.id",
+          "description": "A unique identifier for records in this 'aligned_reads_index' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "alignment_cocleaning_workflow",
+      "description": "Metadata for the alignment and cocleaning pipeline used to align reads in the GDC harmonization pipelines.",
+      "links": [
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads"
+      ],
+      "required": [
+        "workflow_link",
+        "workflow_type",
+        "alignment_cocleaning_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'alignment_cocleaning_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'alignment_cocleaning_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "alignment_cocleaning_workflow.id",
+          "description": "A unique identifier for records in this 'alignment_cocleaning_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "alignment_workflow",
+      "description": "Metadata for the alignment pipeline used to align reads in the GDC harmonization pipelines.",
+      "links": [
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads"
+      ],
+      "required": [
+        "workflow_type",
+        "alignment_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'alignment_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'alignment_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "alignment_workflow.id",
+          "description": "A unique identifier for records in this 'alignment_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "genotyping_array_workflow",
+      "description": "Metadata for the Genotyping array workflow used to generate aggregated genotyping callset or tangent copy number variation.",
+      "links": [
+        "genotyping_array",
+        "aggregated_genotyping_array"
+      ],
+      "required": [
+        "workflow_type",
+        "genotyping_array_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "genotyping_array.id",
+          "description": "Unique identifiers for records in the 'genotyping_array' table that relate via this foreign key to records in this 'genotyping_array_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "aggregated_genotyping_array.id",
+          "description": "Unique identifiers for records in the 'aggregated_genotyping_array' table that relate via this foreign key to records in this 'genotyping_array_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "genotyping_array_workflow.id",
+          "description": "A unique identifier for records in this 'genotyping_array_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group_qc",
+      "description": "GDC QC run metadata.",
+      "links": [
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads",
+        "read_group"
+      ],
+      "required": [
+        "workflow_link",
+        "percent_gc_content",
+        "encoding",
+        "total_sequences",
+        "basic_statistics",
+        "per_base_sequence_quality",
+        "per_tile_sequence_quality",
+        "per_sequence_quality_score",
+        "per_base_sequence_content",
+        "per_sequence_gc_content",
+        "per_base_n_content",
+        "sequence_length_distribution",
+        "sequence_duplication_levels",
+        "overrepresented_sequences",
+        "adapter_content",
+        "kmer_content",
+        "read_group.id",
+        "read_group_qc.id"
+      ],
+      "properties": [
+        {
+          "name": "adapter_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "basic_statistics",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "encoding",
+          "description": "Version of ASCII encoding of quality values found in the file.",
+          "type": "string"
+        },
+        {
+          "name": "fastq_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "kmer_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "overrepresented_sequences",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_base_n_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_base_sequence_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_base_sequence_quality",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_sequence_gc_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_sequence_quality_score",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_tile_sequence_quality",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "percent_aligned",
+          "description": "The percent of reads with at least one reported alignment.",
+          "type": "integer"
+        },
+        {
+          "name": "percent_gc_content",
+          "description": "The overall %GC of all bases in all sequences.",
+          "type": "integer"
+        },
+        {
+          "name": "sequence_duplication_levels",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "sequence_length_distribution",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "total_aligned_reads",
+          "description": "The total number of reads with at least one reported alignment.",
+          "type": "integer"
+        },
+        {
+          "name": "total_sequences",
+          "description": "A count of the total number of sequences processed.",
+          "type": "integer"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group_qc.id",
+          "description": "A unique identifier for records in this 'read_group_qc' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads",
+      "description": "Data file containing aligned reads that are generated internally.",
+      "links": [
+        "alignment_cocleaning_workflow",
+        "alignment_workflow",
+        "submitted_unaligned_reads",
+        "submitted_aligned_reads"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "platform",
+        "aligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "alignment_cocleaning_workflow.id",
+          "description": "Unique identifiers for records in the 'alignment_cocleaning_workflow' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "alignment_workflow.id",
+          "description": "Unique identifiers for records in the 'alignment_workflow' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "A unique identifier for records in this 'aligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "tangent_copy_number",
+      "description": "Data file containing tangent normalized copy number information from an aliquot.",
+      "links": [
+        "genotyping_array",
+        "genotyping_array_workflow",
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "md5sum",
+        "platform",
+        "tangent_copy_number.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "genotyping_array.id",
+          "description": "Unique identifiers for records in the 'genotyping_array' table that relate via this foreign key to records in this 'tangent_copy_number' table.",
+          "type": "string"
+        },
+        {
+          "name": "genotyping_array_workflow.id",
+          "description": "Unique identifiers for records in the 'genotyping_array_workflow' table that relate via this foreign key to records in this 'tangent_copy_number' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'tangent_copy_number' table.",
+          "type": "string"
+        },
+        {
+          "name": "tangent_copy_number.id",
+          "description": "A unique identifier for records in this 'tangent_copy_number' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "copy_number_segment",
+      "description": "Data file containing the copy number data. Contains all copy numbers detected.",
+      "links": [
+        "tangent_copy_number"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "platform",
+        "tangent_copy_number.id",
+        "copy_number_segment.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "tangent_copy_number.id",
+          "description": "Unique identifiers for records in the 'tangent_copy_number' table that relate via this foreign key to records in this 'copy_number_segment' table.",
+          "type": "string"
+        },
+        {
+          "name": "copy_number_segment.id",
+          "description": "A unique identifier for records in this 'copy_number_segment' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "rna_expression_workflow",
+      "description": "Metadata for the RNA expression pipeline used to quantify RNA gene and exon expression from unharmonized or GDC harmonized data.",
+      "links": [
+        "aligned_reads",
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads",
+        "mrna_microarray"
+      ],
+      "required": [
+        "workflow_link",
+        "workflow_type",
+        "rna_expression_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "Unique identifiers for records in the 'aligned_reads' table that relate via this foreign key to records in this 'rna_expression_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'rna_expression_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'rna_expression_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "mrna_microarray.id",
+          "description": "Unique identifiers for records in the 'mrna_microarray' table that relate via this foreign key to records in this 'rna_expression_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "rna_expression_workflow.id",
+          "description": "A unique identifier for records in this 'rna_expression_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "copy_number_variation_workflow",
+      "description": "Metadata for the Copy Number Variation pipeline used to estimate copy number changes from different molecular data sources.",
+      "links": [
+        "copy_number_segment"
+      ],
+      "required": [
+        "workflow_link",
+        "workflow_type",
+        "copy_number_segment.id",
+        "copy_number_variation_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "copy_number_segment.id",
+          "description": "Unique identifiers for records in the 'copy_number_segment' table that relate via this foreign key to records in this 'copy_number_variation_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "copy_number_variation_workflow.id",
+          "description": "A unique identifier for records in this 'copy_number_variation_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "gene_expression",
+      "description": "Data file containing gene expression information generated internally by the GTEx.",
+      "links": [
+        "submitted_aligned_reads",
+        "mrna_microarray",
+        "rna_expression_workflow"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "gene_expression.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'gene_expression' table.",
+          "type": "string"
+        },
+        {
+          "name": "mrna_microarray.id",
+          "description": "Unique identifiers for records in the 'mrna_microarray' table that relate via this foreign key to records in this 'gene_expression' table.",
+          "type": "string"
+        },
+        {
+          "name": "rna_expression_workflow.id",
+          "description": "Unique identifiers for records in the 'rna_expression_workflow' table that relate via this foreign key to records in this 'gene_expression' table.",
+          "type": "string"
+        },
+        {
+          "name": "gene_expression.id",
+          "description": "A unique identifier for records in this 'gene_expression' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "copy_number_estimate",
+      "description": "Data file containing copy number variation information.",
+      "links": [
+        "copy_number_variation_workflow",
+        "tangent_copy_number",
+        "copy_number_segment"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "platform",
+        "copy_number_estimate.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "copy_number_variation_workflow.id",
+          "description": "Unique identifiers for records in the 'copy_number_variation_workflow' table that relate via this foreign key to records in this 'copy_number_estimate' table.",
+          "type": "string"
+        },
+        {
+          "name": "tangent_copy_number.id",
+          "description": "Unique identifiers for records in the 'tangent_copy_number' table that relate via this foreign key to records in this 'copy_number_estimate' table.",
+          "type": "string"
+        },
+        {
+          "name": "copy_number_segment.id",
+          "description": "Unique identifiers for records in the 'copy_number_segment' table that relate via this foreign key to records in this 'copy_number_estimate' table.",
+          "type": "string"
+        },
+        {
+          "name": "copy_number_estimate.id",
+          "description": "A unique identifier for records in this 'copy_number_estimate' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2639 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "description of project.",
+      "links": [],
+      "required": [
+        "code",
+        "availability_type",
+        "dbgap_accession_number",
+        "description",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "address",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project",
+          "type": "string"
+        },
+        {
+          "name": "contact_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "email_address",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "institution",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "telephone_number",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "study",
+      "description": "description of study.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "study.id"
+      ],
+      "properties": [
+        {
+          "name": "experimental_setting",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "organism",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "study_description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "study_design",
+          "description": "A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of an investigation and is realized during a study design execution.",
+          "type": "enum"
+        },
+        {
+          "name": "study_title",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "study_type",
+          "description": "A categorical value specification that specifies the type of study from a list of study types",
+          "type": "enum"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'study' table.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "A unique identifier for records in this 'study' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "description": "description of contact.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "contact_institution",
+        "contact_email",
+        "contact_telephone",
+        "study.id",
+        "contact.id"
+      ],
+      "properties": [
+        {
+          "name": "contact_department",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "contact_email",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "contact_institution",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "contact_orcid",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "contact_telephone",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "first_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "last_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "location",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "middle_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'contact' table.",
+          "type": "string"
+        },
+        {
+          "name": "contact.id",
+          "description": "A unique identifier for records in this 'contact' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "funding",
+      "description": "description of funding.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "study.id",
+        "funding.id"
+      ],
+      "properties": [
+        {
+          "name": "provenance",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "support_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'funding' table.",
+          "type": "string"
+        },
+        {
+          "name": "funding.id",
+          "description": "A unique identifier for records in this 'funding' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "publication",
+      "description": "description of publication.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "study.id",
+        "publication.id"
+      ],
+      "properties": [
+        {
+          "name": "DOI",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "PMC_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "PMID",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'publication' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "A unique identifier for records in this 'publication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "description": "description of subject.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "study.id",
+        "subject.id"
+      ],
+      "properties": [
+        {
+          "name": "euthanasia_date",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "euthanasia_method",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "euthanasia_zt",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "experiment_start_date",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "experiment_start_zt",
+          "description": "",
+          "type": "number"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "sex",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "start_date",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "start_date_age",
+          "description": "",
+          "type": "number"
+        },
+        {
+          "name": "strain",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "strain_source",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'subject' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "A unique identifier for records in this 'subject' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "cell_subject",
+      "description": "description of subject.",
+      "links": [
+        "study",
+        "subject"
+      ],
+      "required": [
+        "cell_subject.id"
+      ],
+      "properties": [
+        {
+          "name": "age",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "cell_line_protocol",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "cell_type",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "health_status",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "isolation_protocol",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "karyotype",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "lineQC",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "lineage",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "lot_no",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "modifications",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "organism",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "passage_number",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "race",
+          "description": "An arbitrary classification of a taxonomic group that is a division of a species. It usually arises as a consequence of geographical isolation within a species and is characterized by shared heredity, physical attributes and behavior, and in the case of humans, by common history, nationality, or geographic distribution. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "string"
+        },
+        {
+          "name": "sex",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "source_organ",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "stem_cell_protocol",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "strain",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "validation",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'cell_subject' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'cell_subject' table.",
+          "type": "string"
+        },
+        {
+          "name": "cell_subject.id",
+          "description": "A unique identifier for records in this 'cell_subject' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "housing",
+      "description": "description of housing.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "housing.id"
+      ],
+      "properties": [
+        {
+          "name": "bedding_type",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "cageID",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "cage_type",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "housing_change_date",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "vivarium_humidity_percentage",
+          "description": "",
+          "type": "number"
+        },
+        {
+          "name": "vivarium_light_cycle",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "vivarium_temperature_C",
+          "description": "",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'housing' table.",
+          "type": "string"
+        },
+        {
+          "name": "housing.id",
+          "description": "A unique identifier for records in this 'housing' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "culture_conditions",
+      "description": "description.",
+      "links": [
+        "cell_subject"
+      ],
+      "required": [
+        "cell_subject.id",
+        "culture_conditions.id"
+      ],
+      "properties": [
+        {
+          "name": "cellDensity",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "co2_percent",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "coating_substrate",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "culture_vessel",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "culture_vessel_location",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "date",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "dimension",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "humidity",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "incubator_model",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "incubator_vendor",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "o2_percent",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "seeding_cell_date",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "seeding_cell_density",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "size",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "surfaceArea",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "temperature",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "vendor",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "cell_subject.id",
+          "description": "Unique identifiers for records in the 'cell_subject' table that relate via this foreign key to records in this 'culture_conditions' table.",
+          "type": "string"
+        },
+        {
+          "name": "culture_conditions.id",
+          "description": "A unique identifier for records in this 'culture_conditions' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "diet",
+      "description": "description of diet.",
+      "links": [
+        "housing"
+      ],
+      "required": [
+        "housing.id",
+        "diet.id"
+      ],
+      "properties": [
+        {
+          "name": "date",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "feed_catalog_number",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "feed_description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "feed_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "feed_paradigm",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "feed_vendor",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "water_type",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "housing.id",
+          "description": "Unique identifiers for records in the 'housing' table that relate via this foreign key to records in this 'diet' table.",
+          "type": "string"
+        },
+        {
+          "name": "diet.id",
+          "description": "A unique identifier for records in this 'diet' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "description of sample.",
+      "links": [
+        "subject",
+        "cell_subject"
+      ],
+      "required": [
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "biospecimen_anatomic_site",
+          "description": "Text term that represents the name of the primary disease site of the submitted tumor sample.",
+          "type": "enum"
+        },
+        {
+          "name": "collection_protocol",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "date",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "method_of_sample_procurement",
+          "description": "The method used to procure the sample used to extract analyte(s).",
+          "type": "enum"
+        },
+        {
+          "name": "preservation_method",
+          "description": "Text term that represents the method used to preserve the sample.",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "storage_vessel",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "volume",
+          "description": "",
+          "type": "number"
+        },
+        {
+          "name": "weight",
+          "description": "The weight of the patient measured in kilograms.",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "cell_subject.id",
+          "description": "Unique identifiers for records in the 'cell_subject' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "treatment",
+      "description": "description of treatment.",
+      "links": [
+        "subject",
+        "cell_subject"
+      ],
+      "required": [
+        "treatment_protocol",
+        "treatment.id"
+      ],
+      "properties": [
+        {
+          "name": "addition_volume",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "administration_volume_ml",
+          "description": "",
+          "type": "number"
+        },
+        {
+          "name": "concentration_unit",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "date",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "dose_amount",
+          "description": "",
+          "type": "number"
+        },
+        {
+          "name": "dose_amount_unit",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "final_concentration",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "route",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "stock_concentration",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "test_article_administration_duration",
+          "description": "",
+          "type": "number"
+        },
+        {
+          "name": "test_article_administration_zt",
+          "description": "",
+          "type": "number"
+        },
+        {
+          "name": "test_article_dtxsid",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "test_article_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "treatment_protocol",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "vehicle_dtxsid",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "vehicle_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'treatment' table.",
+          "type": "string"
+        },
+        {
+          "name": "cell_subject.id",
+          "description": "Unique identifiers for records in the 'cell_subject' table that relate via this foreign key to records in this 'treatment' table.",
+          "type": "string"
+        },
+        {
+          "name": "treatment.id",
+          "description": "A unique identifier for records in this 'treatment' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aliquot",
+      "description": "Pertaining to a portion of the whole; any one of two or more samples of something, of the same volume or weight.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "aliquot.id"
+      ],
+      "properties": [
+        {
+          "name": "RIN",
+          "description": "A numerical assessment of the integrity of RNA based on the entire electrophoretic trace of the RNA sample including the presence or absence of degradation products.",
+          "type": "number"
+        },
+        {
+          "name": "a260_a280_ratio",
+          "description": "Numeric value that represents the sample ratio of nucleic acid absorbance at 260 nm and 280 nm, used to determine a measure of DNA purity.",
+          "type": "number"
+        },
+        {
+          "name": "analyte_protocol",
+          "description": "A protocols.io DOI",
+          "type": "string"
+        },
+        {
+          "name": "analyte_type",
+          "description": "Text term that represents the kind of molecular specimen analyte.",
+          "type": "enum"
+        },
+        {
+          "name": "derivitization",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "extract_preservation_method",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'aliquot' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "A unique identifier for records in this 'aliquot' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "culture_media",
+      "description": "description of diet.",
+      "links": [
+        "culture_conditions"
+      ],
+      "required": [
+        "culture_conditions.id",
+        "culture_media.id"
+      ],
+      "properties": [
+        {
+          "name": "anitibiotic_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "antibiotic_concentration",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "basal_medium",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "basal_medium_lot_no",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "basal_medium_vendor",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "culture_additives",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "culture_additives_concentration",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "date",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "protocol",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "culture_conditions.id",
+          "description": "Unique identifiers for records in the 'culture_conditions' table that relate via this foreign key to records in this 'culture_media' table.",
+          "type": "string"
+        },
+        {
+          "name": "culture_media.id",
+          "description": "A unique identifier for records in this 'culture_media' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "weight_measurement",
+      "description": "Weight measurements.",
+      "links": [
+        "subject",
+        "diet",
+        "sample"
+      ],
+      "required": [
+        "weight_measurement.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_source_repository",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "repository_accession_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "repository_download_ftp",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'weight_measurement' table.",
+          "type": "string"
+        },
+        {
+          "name": "diet.id",
+          "description": "Unique identifiers for records in the 'diet' table that relate via this foreign key to records in this 'weight_measurement' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'weight_measurement' table.",
+          "type": "string"
+        },
+        {
+          "name": "weight_measurement.id",
+          "description": "A unique identifier for records in this 'weight_measurement' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "flow_cytometry_assay",
+      "description": "description of a flow cytometry assay.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "flow_cytometry_assay.id"
+      ],
+      "properties": [
+        {
+          "name": "analyte",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "analyte_detector",
+          "description": "What plays the role of the analyte? Which substance or chemical constituent is the subject of interest of the analytical procedure, what target is specifically bound by the analyte detector (e.g., CD25)?",
+          "type": "string"
+        },
+        {
+          "name": "analyte_reporter",
+          "description": "(Fluorochrome) What plays the role of analyte reporter? Which component of the fluorescence reagent reports the presents of the analyte to the flow cytometer? What substance (label) is used to generate the measured signal (e.g., FITC)?",
+          "type": "string"
+        },
+        {
+          "name": "characteristics_being_measured",
+          "description": "The relative amount of molecules, properties, or processes being evaluated (e.g., CD25, apoptosis, membrane permeability, cell viability, oxidative burst). The characteristic(s) being measured shall be provided whenever there is ambiguity about the analyte being measured, such as when sample processing affects detection of the analyte (e.g., propidium iodide example in Table 1). The optical detector (e.g., FL1) or parameter (e.g., FL1-H) used primarily for this measurement shall be indicated.",
+          "type": "string"
+        },
+        {
+          "name": "clone",
+          "description": "If the probe is a monoclonal antibody, the clone name or number shall be provided.",
+          "type": "string"
+        },
+        {
+          "name": "instruments_submitter_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "other_reagent",
+          "description": "When secondary antibodies are used, the primary analyte (the analyte bound by the primary antibody) and the reporter component of the secondary antibody (the reporter that generates the measured signal) shall be clearly specified as described in 2.4.2, 2.4.3, and 2.4.4. If relevant, the primary and secondary antibodies shall be described individually (e.g., in the case that the use of a secondary antibody significantly impacts the interpretation of results because of nonspecific fluorescence, etc.). The description should also contain other relevant details which may include lot number, concentration, label incorporation method, separation technique, antibody staining procedures, and wash steps.",
+          "type": "string"
+        },
+        {
+          "name": "protocol",
+          "description": "A brief description of the flow cytometry protocol",
+          "type": "string"
+        },
+        {
+          "name": "protocol_doi",
+          "description": "A brief description of the flow cytometry protocol",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "quality_control_measures",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "reagent_catalogue",
+          "description": "The reagent catalogue number shall be specified.",
+          "type": "string"
+        },
+        {
+          "name": "reagent_manufacturer",
+          "description": "The reagent manufacturer shall be specified (e.g., MIFlowCyt Reagent Inc.).",
+          "type": "string"
+        },
+        {
+          "name": "staining_protocol",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "staining_protocol_doi",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "staining_status",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'flow_cytometry_assay' table.",
+          "type": "string"
+        },
+        {
+          "name": "flow_cytometry_assay.id",
+          "description": "A unique identifier for records in this 'flow_cytometry_assay' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mass_spec_assay",
+      "description": "description of a flow cytometry assay.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "mass_spec_assay.id"
+      ],
+      "properties": [
+        {
+          "name": "calibration_standard",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "carrier_gas",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "chromatography_column",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "chromatography_instrument",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "chromatography_method_filename",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "chromatography_protocol",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "chromatography_type",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "elution_program",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "flow_rate",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "ion_mode",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "ms_method_filename",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "ms_protocol",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "ms_type",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "oven_temperature_program",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "sample_dilution",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "solventA",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "solventB",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "solventC",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'mass_spec_assay' table.",
+          "type": "string"
+        },
+        {
+          "name": "mass_spec_assay.id",
+          "description": "A unique identifier for records in this 'mass_spec_assay' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group",
+      "description": "description.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "read_group.id"
+      ],
+      "properties": [
+        {
+          "name": "adapter_sequence",
+          "description": "Base sequence of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "barcoding_applied",
+          "description": "",
+          "type": "boolean"
+        },
+        {
+          "name": "base_caller_name",
+          "description": "Name of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "base_caller_version",
+          "description": "Version of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "flow_cell_barcode",
+          "description": "Flow Cell Barcode.",
+          "type": "string"
+        },
+        {
+          "name": "instrument_model",
+          "description": "Numeric value that represents the sample dimension that is greater than the shortest dimension and less than the longest dimension, measured in millimeters.",
+          "type": "enum"
+        },
+        {
+          "name": "is_paired_end",
+          "description": "Are the reads paired end?",
+          "type": "boolean"
+        },
+        {
+          "name": "library_preparation_kit_catalog_number",
+          "description": "Catalog of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_name",
+          "description": "Name of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_vendor",
+          "description": "Vendor of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_version",
+          "description": "Version of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_selection",
+          "description": "Library Selection Method",
+          "type": "enum"
+        },
+        {
+          "name": "library_strand",
+          "description": "Library stranded-ness.",
+          "type": "enum"
+        },
+        {
+          "name": "library_strategy",
+          "description": "Library strategy.",
+          "type": "enum"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "read_length",
+          "description": "The length of the reads.",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_center",
+          "description": "Name of the center that provided the sequence files.",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_date",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "size_selection_range",
+          "description": "Range of size selection.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "spike_ins_concentration",
+          "description": "Spike in concentration.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_fasta",
+          "description": "Name of the FASTA file that contains the spike-in sequences.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_catalog_number",
+          "description": "Catalog of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_name",
+          "description": "Name of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_target_region",
+          "description": "Target Capture Kit BED file.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_vendor",
+          "description": "Vendor of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_version",
+          "description": "Version of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_depletion_kit_catalog_number",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "target_depletion_kit_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "target_depletion_kit_target_region",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "target_depletion_kit_vendor",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "target_depletion_kit_version",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "to_trim_adapter_sequence",
+          "description": "Does the user suggest adapter trimming?",
+          "type": "boolean"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'read_group' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "A unique identifier for records in this 'read_group' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "slide",
+      "description": "description of extraction.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "slide.id"
+      ],
+      "properties": [
+        {
+          "name": "assay",
+          "description": "General methodology used",
+          "type": "string"
+        },
+        {
+          "name": "detection_method",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "probe_catalog_number",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "probe_concentration",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "probe_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "probe_provider",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "probe_type",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'slide' table.",
+          "type": "string"
+        },
+        {
+          "name": "slide.id",
+          "description": "A unique identifier for records in this 'slide' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_read",
+      "description": "description.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "read_group.id",
+        "aligned_read.id"
+      ],
+      "properties": [
+        {
+          "name": "SRA_accession_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "reference_build",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "reference_source",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'aligned_read' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_read.id",
+          "description": "A unique identifier for records in this 'aligned_read' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "flow_data",
+      "description": "Data file containing image of a slide.",
+      "links": [
+        "flow_cytometry_assay"
+      ],
+      "required": [
+        "flow_cytometry_assay.id",
+        "flow_data.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_source_repository",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "repository_accession_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "repository_download_ftp",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "flow_cytometry_assay.id",
+          "description": "Unique identifiers for records in the 'flow_cytometry_assay' table that relate via this foreign key to records in this 'flow_data' table.",
+          "type": "string"
+        },
+        {
+          "name": "flow_data.id",
+          "description": "A unique identifier for records in this 'flow_data' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ms_raw_data",
+      "description": "Data file containing image of a slide.",
+      "links": [
+        "mass_spec_assay"
+      ],
+      "required": [
+        "mass_spec_assay.id",
+        "ms_raw_data.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_source_repository",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "repository_accession_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "repository_download_ftp",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "mass_spec_assay.id",
+          "description": "Unique identifiers for records in the 'mass_spec_assay' table that relate via this foreign key to records in this 'ms_raw_data' table.",
+          "type": "string"
+        },
+        {
+          "name": "ms_raw_data.id",
+          "description": "A unique identifier for records in this 'ms_raw_data' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "slide_image",
+      "description": "Data file containing image of a slide.",
+      "links": [
+        "slide"
+      ],
+      "required": [
+        "slide.id",
+        "slide_image.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_source_repository",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "repository_accession_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "repository_download_ftp",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "slide.id",
+          "description": "Unique identifiers for records in the 'slide' table that relate via this foreign key to records in this 'slide_image' table.",
+          "type": "string"
+        },
+        {
+          "name": "slide_image.id",
+          "description": "A unique identifier for records in this 'slide_image' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "unaligned_read",
+      "description": "description.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "read_group.id",
+        "unaligned_read.id"
+      ],
+      "properties": [
+        {
+          "name": "SRA_accession_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'unaligned_read' table.",
+          "type": "string"
+        },
+        {
+          "name": "unaligned_read.id",
+          "description": "A unique identifier for records in this 'unaligned_read' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "alignment_workflow",
+      "description": "description.",
+      "links": [
+        "aligned_read"
+      ],
+      "required": [
+        "aligned_read.id",
+        "alignment_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "aligned_read.id",
+          "description": "Unique identifiers for records in the 'aligned_read' table that relate via this foreign key to records in this 'alignment_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "alignment_workflow.id",
+          "description": "A unique identifier for records in this 'alignment_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "flow_analysis",
+      "description": "description of data anadata_analysis_mass_spec_metabolomicslysis.",
+      "links": [
+        "flow_data"
+      ],
+      "required": [
+        "flow_data.id",
+        "flow_analysis.id"
+      ],
+      "properties": [
+        {
+          "name": "compensation_description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "gate_boundaries",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "gate_description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "gate_statistics",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "protocol",
+          "description": "A brief description of the flow cytometry protocol",
+          "type": "string"
+        },
+        {
+          "name": "protocol_doi",
+          "description": "A DOI to a version controlled protocol, preferably available on a repository such as protocols.io",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "transformation_description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "transformation_purpose",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "flow_data.id",
+          "description": "Unique identifiers for records in the 'flow_data' table that relate via this foreign key to records in this 'flow_analysis' table.",
+          "type": "string"
+        },
+        {
+          "name": "flow_analysis.id",
+          "description": "A unique identifier for records in this 'flow_analysis' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ms_analysis",
+      "description": "description of data anadata_analysis_mass_spec_metabolomics analysis.",
+      "links": [
+        "ms_raw_data"
+      ],
+      "required": [
+        "ms_raw_data.id",
+        "ms_analysis.id"
+      ],
+      "properties": [
+        {
+          "name": "analysis_protocols",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "normalization",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "transformation",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "transformation_description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "transformation_purpose",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "unit",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "ms_raw_data.id",
+          "description": "Unique identifiers for records in the 'ms_raw_data' table that relate via this foreign key to records in this 'ms_analysis' table.",
+          "type": "string"
+        },
+        {
+          "name": "ms_analysis.id",
+          "description": "A unique identifier for records in this 'ms_analysis' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "slide_pathology",
+      "description": "Information pertaining to processed results obtained from slides; often in the form of counts.",
+      "links": [
+        "slide",
+        "slide_image"
+      ],
+      "required": [
+        "slide_pathology.id"
+      ],
+      "properties": [
+        {
+          "name": "finding_type",
+          "description": "Pathological findings.",
+          "type": "enum"
+        },
+        {
+          "name": "grade",
+          "description": "Magnitude of pathological changes.",
+          "type": "number"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "scoring_system",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "spontaneous_flag",
+          "description": "The flag shows whether the lesion occurred spontaneously. The flag value is TRUE if the lesion occurred spontaneously.",
+          "type": "boolean"
+        },
+        {
+          "name": "topography_type",
+          "description": "Region of the organ where the pathological changes were found.",
+          "type": "enum"
+        },
+        {
+          "name": "slide.id",
+          "description": "Unique identifiers for records in the 'slide' table that relate via this foreign key to records in this 'slide_pathology' table.",
+          "type": "string"
+        },
+        {
+          "name": "slide_image.id",
+          "description": "Unique identifiers for records in the 'slide_image' table that relate via this foreign key to records in this 'slide_pathology' table.",
+          "type": "string"
+        },
+        {
+          "name": "slide_pathology.id",
+          "description": "A unique identifier for records in this 'slide_pathology' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "unaligned_reads_qc",
+      "description": "description.",
+      "links": [
+        "unaligned_read",
+        "read_group"
+      ],
+      "required": [
+        "unaligned_reads_qc.id"
+      ],
+      "properties": [
+        {
+          "name": "SRA_accession_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "unaligned_read.id",
+          "description": "Unique identifiers for records in the 'unaligned_read' table that relate via this foreign key to records in this 'unaligned_reads_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'unaligned_reads_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "unaligned_reads_qc.id",
+          "description": "A unique identifier for records in this 'unaligned_reads_qc' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads_analyzed_data",
+      "description": "description.",
+      "links": [
+        "alignment_workflow"
+      ],
+      "required": [
+        "alignment_workflow.id",
+        "aligned_reads_analyzed_data.id"
+      ],
+      "properties": [
+        {
+          "name": "SRA_accession_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "alignment_workflow.id",
+          "description": "Unique identifiers for records in the 'alignment_workflow' table that relate via this foreign key to records in this 'aligned_reads_analyzed_data' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_analyzed_data.id",
+          "description": "A unique identifier for records in this 'aligned_reads_analyzed_data' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "flow_analysis_data",
+      "description": "Data file containing image of a slide.",
+      "links": [
+        "flow_analysis"
+      ],
+      "required": [
+        "flow_analysis.id",
+        "flow_analysis_data.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_source_repository",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "repository_accession_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "repository_download_ftp",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "flow_analysis.id",
+          "description": "Unique identifiers for records in the 'flow_analysis' table that relate via this foreign key to records in this 'flow_analysis_data' table.",
+          "type": "string"
+        },
+        {
+          "name": "flow_analysis_data.id",
+          "description": "A unique identifier for records in this 'flow_analysis_data' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ms_analysed_data",
+      "description": "Data file containing image of a slide.",
+      "links": [
+        "ms_analysis"
+      ],
+      "required": [
+        "ms_analysis.id",
+        "ms_analysed_data.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_source_repository",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "repository_accession_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "repository_download_ftp",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "ms_analysis.id",
+          "description": "Unique identifiers for records in the 'ms_analysis' table that relate via this foreign key to records in this 'ms_analysed_data' table.",
+          "type": "string"
+        },
+        {
+          "name": "ms_analysed_data.id",
+          "description": "A unique identifier for records in this 'ms_analysed_data' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "metabolite_id",
+      "description": "description of data metaboliteID.",
+      "links": [
+        "ms_analysed_data"
+      ],
+      "required": [
+        "ms_analysed_data.id",
+        "metabolite_id.id"
+      ],
+      "properties": [
+        {
+          "name": "dtxsid",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "elution_time",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "inchikey",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "mass",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "metabolite_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "provenance",
+          "description": "template version",
+          "type": "string"
+        },
+        {
+          "name": "refmet_name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "ms_analysed_data.id",
+          "description": "Unique identifiers for records in the 'ms_analysed_data' table that relate via this foreign key to records in this 'metabolite_id' table.",
+          "type": "string"
+        },
+        {
+          "name": "metabolite_id.id",
+          "description": "A unique identifier for records in this 'metabolite_id' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

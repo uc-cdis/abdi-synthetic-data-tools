@@ -1,0 +1,3320 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgement",
+          "description": "Publication acknowledgement(s) for the published dataset.",
+          "type": "string"
+        },
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made avilable.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "complete",
+          "description": "Description of whether the project submission is complete or still in progress.",
+          "type": "enum"
+        },
+        {
+          "name": "data_citation",
+          "description": "The citation for the published dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_contributor",
+          "description": "The name of the organization or individual that the contributed dataset belongs to.",
+          "type": "string"
+        },
+        {
+          "name": "data_description",
+          "description": "A brief, free-text description of the data files and associated metadata provided for this dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_url_doi",
+          "description": "A URL or DOI for the source of the dataset or the contributing organization's website.",
+          "type": "string"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "disease_type",
+          "description": "The primary type of disease studied in this dataset, if applicable.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "license",
+          "description": "The license under which the daaset has been published.",
+          "type": "string"
+        },
+        {
+          "name": "longitudinal",
+          "description": "Indicates whether the dataset has longitudinal or time-series data.",
+          "type": "boolean"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "The primary body site studied in this dataset.",
+          "type": "string"
+        },
+        {
+          "name": "publication_citation",
+          "description": "The major or main publication(s) associated with the data itself or with the publication that published the dataset.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "research_description",
+          "description": "If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results.",
+          "type": "string"
+        },
+        {
+          "name": "research_design",
+          "description": "A summary of the goals of the research or a general description of the research's relationship to a clinical application.",
+          "type": "string"
+        },
+        {
+          "name": "research_objective",
+          "description": "The general objective of the research; what the researchers hope to discover or determine.",
+          "type": "string"
+        },
+        {
+          "name": "research_setup",
+          "description": "A high level description of the setup used to achieve the research objectives.",
+          "type": "string"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "dataset",
+      "description": "A collection or set of metadata and associated data file objects originating from a single research study, clinical trial or patient cohort.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "collection_id",
+        "project.id",
+        "dataset.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgement",
+          "description": "Publication acknowledgement(s) for the published dataset.",
+          "type": "string"
+        },
+        {
+          "name": "collection_id",
+          "description": "A unique identifier for the dataset.",
+          "type": "string"
+        },
+        {
+          "name": "commons_long_name",
+          "description": "The expanded name of the data commons or resource from which the metadata originate.",
+          "type": "string"
+        },
+        {
+          "name": "commons_name",
+          "description": "A short ID for the data commons or resource from which the metadata originate.",
+          "type": "string"
+        },
+        {
+          "name": "data_citation",
+          "description": "The citation for the published dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_contributor",
+          "description": "The name of the organization or individual that the contributed dataset belongs to.",
+          "type": "string"
+        },
+        {
+          "name": "data_description",
+          "description": "A brief, free-text description of the data files and associated metadata provided for this dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_host",
+          "description": "The name of the platform, organization, or individual that hosts the imaging data files for the contributed dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_url_doi",
+          "description": "A URL or DOI for the source of the dataset or the contributing organization's website.",
+          "type": "string"
+        },
+        {
+          "name": "disease_type",
+          "description": "The primary type of disease studied in this dataset, if applicable.",
+          "type": "string"
+        },
+        {
+          "name": "full_name",
+          "description": "The full name or title of the dataset or publication.",
+          "type": "string"
+        },
+        {
+          "name": "license",
+          "description": "The license under which the daaset has been published.",
+          "type": "string"
+        },
+        {
+          "name": "longitudinal",
+          "description": "Indicates whether the dataset has longitudinal or time-series data.",
+          "type": "boolean"
+        },
+        {
+          "name": "metadata_source_api",
+          "description": "A description of or URL endpoint for the source metadata used to create this data hub record.",
+          "type": "string"
+        },
+        {
+          "name": "metadata_source_date",
+          "description": "The date the metadata was last updated.",
+          "type": "string"
+        },
+        {
+          "name": "metadata_source_version",
+          "description": "The version number or specific database name of the source metadata used to create this data hub record.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "The primary body site studied in this dataset.",
+          "type": "string"
+        },
+        {
+          "name": "publication_citation",
+          "description": "The major or main publication(s) associated with the data itself or with the publication that published the dataset.",
+          "type": "string"
+        },
+        {
+          "name": "research_description",
+          "description": "If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results.",
+          "type": "string"
+        },
+        {
+          "name": "research_design",
+          "description": "A summary of the goals of the research or a general description of the research's relationship to a clinical application.",
+          "type": "string"
+        },
+        {
+          "name": "research_objective",
+          "description": "The general objective of the research; what the researchers hope to discover or determine.",
+          "type": "string"
+        },
+        {
+          "name": "research_setup",
+          "description": "A high level description of the setup used to achieve the research objectives.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'dataset' table.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "A unique identifier for records in this 'dataset' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "description": "The collection of all data related to a specific patient, case, or subject in the context of a specific dataset or experiment.",
+      "links": [
+        "dataset"
+      ],
+      "required": [
+        "dataset.id",
+        "subject.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_index",
+          "description": "The study participant's age, in years, at the index event. The index event is determined by the data submitter and used as an anchor date for all temporal variables. Note that an age of 0 indicates a participant who is younger than 1 year old. For participants with ages greater than 89 years, please use the property 'age_at_index_gt89'.",
+          "type": "number"
+        },
+        {
+          "name": "age_at_index_gt89",
+          "description": "Indicates whether the subject's age at the time of the study was greater than 89 years.",
+          "type": "enum"
+        },
+        {
+          "name": "cause_of_death",
+          "description": "Text term to identify the cause of patient death with respect to cancer.",
+          "type": "string"
+        },
+        {
+          "name": "country_of_residence",
+          "description": "The country where the subject resides.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_birth",
+          "description": "The number of days between the index date and the date of patient birth. If the number of days is greater than 32872 (89 years), then please use 'days_to_birth_gt89'.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_birth_gt89",
+          "description": "Indicate if the number of days between the index date and the date of patient birth is greater than 32872 (89 years).",
+          "type": "enum"
+        },
+        {
+          "name": "days_to_death",
+          "description": "The difference in days between the subject's index_date and the date the subject was deceased.",
+          "type": "integer"
+        },
+        {
+          "name": "ethnicity",
+          "description": "An individual's self-described social and cultural grouping, specifically whether an individual describes themselves as Hispanic or Latino. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "string"
+        },
+        {
+          "name": "gender",
+          "description": "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]",
+          "type": "string"
+        },
+        {
+          "name": "index_event",
+          "description": "The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient.",
+          "type": "string"
+        },
+        {
+          "name": "race",
+          "description": "An arbitrary classification of a taxonomic group that is a division of a species. It usually arises as a consequence of geographical isolation within a species and is characterized by shared heredity, physical attributes and behavior, and in the case of humans, by common history, nationality, or geographic distribution. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "string"
+        },
+        {
+          "name": "site_id",
+          "description": "A de-identified code used to classify a case as part of a specific data submission.",
+          "type": "string"
+        },
+        {
+          "name": "vital_status",
+          "description": "The survival state of the person registered on the protocol.",
+          "type": "string"
+        },
+        {
+          "name": "zip",
+          "description": "The three-digit United States zip code of residence for any population greater than 20,000. For zip codes where the three digit number represents a population less than 20,000 \"000\" will be provided.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'subject' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "A unique identifier for records in this 'subject' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "clinical_file",
+      "description": "Clinical supplementary files associated with a study containing raw clinical data.",
+      "links": [
+        "dataset",
+        "subject"
+      ],
+      "required": [
+        "data_category",
+        "data_type",
+        "data_format",
+        "clinical_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "The text term describing the broad category that the supplementary file falls into.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "The text term describing the file format of the supplementary file, for example, PDF, XLSX, JPEG, PNG, TSV, etc.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "The type of supplementary file, for example, figures, tables, clinical data, notes, publications, summary statistics, etc.",
+          "type": "string"
+        },
+        {
+          "name": "file_description",
+          "description": "Free text to expand upon details for this file",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_url",
+          "description": "The URL of the file if it does not have a data GUID or object_id.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "object_ids",
+          "description": "The list of file identifiers (URLs, DRS URIs, or data GUIDs, etc.) for the file(s), if applicable.",
+          "type": "array"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'clinical_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'clinical_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "clinical_file.id",
+          "description": "A unique identifier for records in this 'clinical_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "condition",
+      "description": "Information pertaining to relevant medical condition(s) of a case's subject (e.g., medical diagnoses, diseases, disorders, symptoms, injuries, illnesses, comorbidities) recorded in the process of clinical care (e.g., data extracted from the electronic medical record).",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "condition.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_cac_score",
+          "description": "age at measurement of cac_score (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_cac_volume",
+          "description": "age at measurement of cac_volume (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_carotid_plaque",
+          "description": "age at measurement of carotid_plaque (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_carotid_stenosis",
+          "description": "age at measurement of carotid_stenosis (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_cimt_1",
+          "description": "age at measurement of cimt_1 (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_cimt_2",
+          "description": "age at measurement of cimt_2 (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_diagnosis",
+          "description": "Age at the time of diagnosis expressed in number of days since birth.",
+          "type": "integer"
+        },
+        {
+          "name": "age_at_diagnosis_gt89",
+          "description": "Age at the time of diagnosis expressed in number of days since birth.",
+          "type": "enum"
+        },
+        {
+          "name": "age_at_vte_case_status",
+          "description": "age at measurement of vte_case_status (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_vte_prior_history",
+          "description": "age at measurement of vte_prior_history (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "ajcc_clinical_m",
+          "description": "Extent of the distant metastasis for the cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_clinical_n",
+          "description": "Extent of the regional lymph node involvement for the cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_clinical_stage",
+          "description": "Stage group determined from clinical information on the tumor (T), regional node (N) and metastases (M) and by grouping cases with similar prognosis for cancer.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_clinical_t",
+          "description": "Extent of the primary cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_pathologic_m",
+          "description": "Code to represent the defined absence or presence of distant spread or metastases (M) to locations via vascular channels or lymphatics beyond the regional lymph nodes, using criteria established by the American Joint Committee on Cancer (AJCC).",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_pathologic_n",
+          "description": "The codes that represent the stage of cancer based on the nodes present (N stage) according to criteria based on multiple editions of the AJCC's Cancer Staging Manual.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_pathologic_stage",
+          "description": "The extent of a cancer, especially whether the disease has spread from the original site to other parts of the body based on AJCC staging criteria.",
+          "type": "string"
+        },
+        {
+          "name": "ajcc_pathologic_t",
+          "description": "Code of pathological T (primary tumor) to define the size or contiguous extension of the primary tumor (T), using staging criteria from the American Joint Committee on Cancer (AJCC).",
+          "type": "string"
+        },
+        {
+          "name": "asthma",
+          "description": "Reported Asthma condition in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "atrial_fibrillation",
+          "description": "Reported atrial fibrillation condition in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "best_overall_response",
+          "description": "The best improvement achieved throughout the entire course of protocol treatment.",
+          "type": "string"
+        },
+        {
+          "name": "cabg_presence",
+          "description": "Reported presence of coronary artery bypass graft (CABG) in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "cac_score",
+          "description": "Coronary artery calcification (CAC) score using Agatston scoring of CT scan(s) of coronary arteries decimal (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "cac_volume",
+          "description": "Coronary artery calcium volume using CT scan(s) of coronary arteries (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "carotid_plaque",
+          "description": "Presence or absence of carotid plaque. (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "carotid_stenosis",
+          "description": "Extent of narrowing of the carotid artery. (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "cerebrovascular_disease",
+          "description": "Reported Cerebrovascular disease in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "chronic_bronchitis",
+          "description": "Reported chronic bronchitis condition in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "chronic_respiratory_disease",
+          "description": "Reported Chronic Respiratory disease in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "cimt_1",
+          "description": "Common carotid intima-media thickness, calculated as the mean of two values: mean of multiple thickness estimates from the left far wall and from the right far wall. (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "cimt_2",
+          "description": "Common carotid intima-media thickness, calculated as the mean of four values: maximum of multiple thickness estimates from the left far wall, left near wall, right far wall, and right near wall. (mm) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "classification_of_tumor",
+          "description": "Text that describes the kind of disease present in the tumor specimen as related to a specific timepoint.",
+          "type": "string"
+        },
+        {
+          "name": "comorbidity",
+          "description": "Text term to identify a coexistent disease or condition in a person.",
+          "type": "string"
+        },
+        {
+          "name": "condition_code",
+          "description": "The code for a specific codition, assigned by the code system.",
+          "type": "string"
+        },
+        {
+          "name": "condition_code_system",
+          "description": "The system that assigned the code for a specific condition.",
+          "type": "string"
+        },
+        {
+          "name": "condition_concept_id",
+          "description": "The CONDITION_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a condition The CONCEPT_ID that the CONDITION_SOURCE_VALUE maps to. Only records whose source values map to concepts with a domain of \u201cCondition\u201d should go in this table. Accepted Concepts.",
+          "type": "string"
+        },
+        {
+          "name": "condition_name",
+          "description": "The name of the condition the patient has experienced.",
+          "type": "string"
+        },
+        {
+          "name": "condition_source_concept_id",
+          "description": "This is the concept representing the condition source value and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Condition necessary for a given analytic use case. Consider using CONDITION_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network. If the CONDITION_SOURCE_VALUE is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here.",
+          "type": "string"
+        },
+        {
+          "name": "condition_source_value",
+          "description": "This field houses the verbatim value from the source data representing the condition that occurred. For example, this could be an ICD10 or Read code. This code is mapped to a Standard Condition Concept in the Standardized Vocabularies and the original code is stored here for reference.",
+          "type": "string"
+        },
+        {
+          "name": "condition_status_concept_id",
+          "description": "This concept represents the point during the visit the diagnosis was given (admitting diagnosis, final diagnosis), whether the diagnosis was determined due to laboratory findings, if the diagnosis was exclusionary, or if it was a preliminary diagnosis, among others. Choose the Concept in the Condition Status domain that best represents the point during the visit when the diagnosis was given. These can include admitting diagnosis, principal diagnosis, and secondary diagnosis. Accepted Concepts.",
+          "type": "string"
+        },
+        {
+          "name": "condition_status_source_value",
+          "description": "This field houses the verbatim value from the source data representing the condition status. This information may be called something different in the source data but the field is meant to contain a value indicating when and how a diagnosis was given to a patient. This source value is mapped to a standard concept which is stored in the CONDITION_STATUS_CONCEPT_ID field.",
+          "type": "string"
+        },
+        {
+          "name": "condition_type_concept_id",
+          "description": "This field can be used to determine the provenance of the Condition record, as in whether the condition was from an EHR system, insurance claim, registry, or other sources. Choose the CONDITION_TYPE_CONCEPT_ID that best represents the provenance of the record. Accepted Concepts. A more detailed explanation of each Type Concept can be found on the vocabulary wiki.",
+          "type": "string"
+        },
+        {
+          "name": "copd",
+          "description": "Reported Chronic Obstructive Pulmonary Disease (COPD) in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "coronary_artery_disease",
+          "description": "Reported Coronary Artery disease in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "covid19_positive",
+          "description": "An indicator of whether the patient has ever had a positive COVID-19 test or been diagnosed with one of the following ICD-10 COVID-19 conditions: COVID-19 (U07. 1), Influenza due to unidentified influenza virus with other manifestations (J11.8), Post COVID-19 condition (U09.9), Myalgic encephalomyelitis/chronic fatigue syndrome (G93.32), or Sequelae of other specified infectious and parasitic diseases (B94.8). For more information about a patient's specific COVID-19 diagnosis, details can be found under Condition.",
+          "type": "enum"
+        },
+        {
+          "name": "covid_hospital_admission",
+          "description": "Did COVID-19 contribute to need for hospital admission?",
+          "type": "enum"
+        },
+        {
+          "name": "covid_hospital_admission_age",
+          "description": "Age on hospital admit (years, age \u22651 year)",
+          "type": "integer"
+        },
+        {
+          "name": "covid_icu",
+          "description": "Was patient admitted to ICU during hospitalization?",
+          "type": "enum"
+        },
+        {
+          "name": "covid_icu_stay_length",
+          "description": "Total ICU length of stay (from hospital admit)",
+          "type": "integer"
+        },
+        {
+          "name": "covid_pos_ever_yn",
+          "description": "Any positive COVID-19 test?",
+          "type": "enum"
+        },
+        {
+          "name": "days_to_condition_end",
+          "description": "The number of days from the index date to the date the subject no longer experienced the condition.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_condition_start",
+          "description": "The number of days from the index date to the date the subject was diagnosed with or began experiencing the condition.",
+          "type": "integer"
+        },
+        {
+          "name": "diabetes",
+          "description": "Reported Diabetes in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "emphysema",
+          "description": "Reported Emphysema in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "heart_failure",
+          "description": "Reported Heart failure in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "hyperlipidemia",
+          "description": "Reported Hyperlipidemia condition in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "hypertension",
+          "description": "Reported Hypertension condition in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "icu_indicator",
+          "description": "Indicates whether the subject has been admitted to the ICU.",
+          "type": "boolean"
+        },
+        {
+          "name": "long_covid_diagnosis",
+          "description": "An indicator of whether the patient has ever been diagnosed with one of the following ICD-10 long COVID-19 conditions: U09.9 (Post COVID-19 condition, unspecified), G93.32 (Myalgic encephalomyelitis/chronic fatigue syndrome), and B94.8 (Sequelae of other specified infectious and parasitic diseases).  'Positive' means the patient was diagnosed with a long COVID condition, while 'Not Reported' means the patient has never been diagnosed with a long COVID condition.",
+          "type": "enum"
+        },
+        {
+          "name": "method_of_diagnosis",
+          "description": "The method used to initially the patient's diagnosis.",
+          "type": "string"
+        },
+        {
+          "name": "morphology",
+          "description": "The third edition of the International Classification of Diseases for Oncology, published in 2000 used principally in tumor and cancer registries for coding the site (topography) and the histology (morphology) of neoplasms. The study of the structure of the cells and their arrangement to constitute tissues and, finally, the association among these to form organs. In pathology, the microscopic process of identifying normal and abnormal morphologic characteristics in tissues, by employing various cytochemical and immunocytochemical stains. A system of numbered categories for representation of data.",
+          "type": "string"
+        },
+        {
+          "name": "myocardial_infarction",
+          "description": "Reported Myocardial Infarction in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "overall_survival",
+          "description": "Number of days between the date used for index and the patient's date of death or the date the patient was last known to be alive.",
+          "type": "integer"
+        },
+        {
+          "name": "primary_diagnosis",
+          "description": "The primary disease, disorder, or condition the patient was diagnosed with.",
+          "type": "string"
+        },
+        {
+          "name": "prior_malignancy",
+          "description": "Text term to describe the patient's history of prior cancer diagnosis and the spatial location of any previous cancer occurrence.",
+          "type": "string"
+        },
+        {
+          "name": "prior_treatment",
+          "description": "A yes/no/unknown/not applicable indicator related to the administration of therapeutic agents received before the body specimen was collected.",
+          "type": "string"
+        },
+        {
+          "name": "progression_free_survival",
+          "description": "Number of days between the date used for index and the first date the patient is known to be free of disease progression.",
+          "type": "integer"
+        },
+        {
+          "name": "progression_free_survival_event",
+          "description": "The event used to define the patient's disease progression.",
+          "type": "string"
+        },
+        {
+          "name": "provider_id",
+          "description": "The provider associated with condition record, e.g. the provider who made the diagnosis or the provider who recorded the symptom. The ETL may need to make a choice as to which PROVIDER_ID to put here. Based on what is available this may or may not be different than the provider associated with the overall VISIT_OCCURRENCE record, for example the admitting vs attending physician on an EHR record.",
+          "type": "string"
+        },
+        {
+          "name": "residual_disease",
+          "description": "Text terms to describe the status of a tissue margin following surgical resection.",
+          "type": "string"
+        },
+        {
+          "name": "site_id",
+          "description": "The site ID.",
+          "type": "string"
+        },
+        {
+          "name": "stop_reason",
+          "description": "The Stop Reason indicates why a Condition is no longer valid with respect to the purpose within the source data. Note that a Stop Reason does not necessarily imply that the condition is no longer occurring. This information is often not populated in source data and it is a valid etl choice to leave it blank if the information does not exist.",
+          "type": "string"
+        },
+        {
+          "name": "stroke",
+          "description": "Reported Stroke in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "tissue_or_organ_of_origin",
+          "description": "Text term that describes the anatomic site of the tumor or disease.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_grade",
+          "description": "Numeric value to express the degree of abnormality of cancer cells, a measure of differentiation and aggressiveness.",
+          "type": "string"
+        },
+        {
+          "name": "type1_diabetes",
+          "description": "Reported Type-1 Diabetes in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "type2_diabetes",
+          "description": "Reported Type-2 Diabetes in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "unit_cac_score",
+          "description": "harmonization unit for cac_score (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_cac_volume",
+          "description": "harmonization unit for cac_volume (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_carotid_plaque",
+          "description": "harmonization unit for carotid_plaque (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_carotid_stenosis",
+          "description": "harmonization unit for carotid_stenosis (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_cimt_1",
+          "description": "harmonization unit for cimt_1 (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_cimt_2",
+          "description": "harmonization unit for cimt_2 (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_vte_case_status",
+          "description": "harmonization unit for vte_case_status (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_vte_followup_start_age",
+          "description": "harmonization unit for vte_followup_start_age (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_vte_prior_history",
+          "description": "harmonization unit for vte_prior_history (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "ventilator_indicator",
+          "description": "Indicates whether the subject has been on a ventilator.",
+          "type": "boolean"
+        },
+        {
+          "name": "visit_id",
+          "description": "The visit ID.",
+          "type": "string"
+        },
+        {
+          "name": "vte_case_status",
+          "description": "An indicator of whether a subject experienced a venous thromboembolismevent (VTE) that was verified by adjudication or by medical professionals. (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "vte_followup_start_age",
+          "description": "Age of subject at the start of the follow up period during which venousthromboembolism (VTE) events were reviewed and adjudicated. (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "vte_prior_history",
+          "description": "An indicator of whether a subject had a venous thromboembolism (VTE)event prior to the start of the medical review process (includingself-reported events). (HARMONIZED)",
+          "type": "boolean"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'condition' table.",
+          "type": "string"
+        },
+        {
+          "name": "condition.id",
+          "description": "A unique identifier for records in this 'condition' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "device_exposure",
+      "description": "The device exposure domain captures information about a person's exposure to a foreign physical object or instrument that which is used for diagnostic or therapeutic purposes through a mechanism beyond chemical action. Devices include implantable objects (e.g. pacemakers, stents, artificial joints), medical equipment and supplies (e.g. bandages, crutches, syringes), other instruments used in medical procedures (e.g. sutures, defibrillators) and material used in clinical care (e.g. adhesives, body material, dental material, surgical material).",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "device_exposure.id"
+      ],
+      "properties": [
+        {
+          "name": "days_to_device_exposure_end",
+          "description": "The difference in days between the subject's index_date and the end of device exposure.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_device_exposure_start",
+          "description": "The difference in days between the subject's index_date and the start of device exposure.",
+          "type": "string"
+        },
+        {
+          "name": "device_concept_id",
+          "description": "A foreign key that refers to a Standard Concept identifier in the Standardized Vocabularies for the Device concept.",
+          "type": "string"
+        },
+        {
+          "name": "device_source_concept_id",
+          "description": "A foreign key to a Device Concept that refers to the code used in the source.",
+          "type": "string"
+        },
+        {
+          "name": "device_source_value",
+          "description": "The source code for the Device as it appears in the source data. This code is mapped to a standard Device Concept in the Standardized Vocabularies and the original code is stored here for reference.",
+          "type": "string"
+        },
+        {
+          "name": "device_type_concept_id",
+          "description": "A foreign key to the predefined Concept identifier in the Standardized Vocabularies reflecting the type of Device Exposure recorded. It indicates how the Device Exposure was represented in the source data.",
+          "type": "string"
+        },
+        {
+          "name": "provider_id",
+          "description": "A foreign key to the provider in the PROVIDER table who initiated of administered the Device.",
+          "type": "string"
+        },
+        {
+          "name": "quantity",
+          "description": "The number of individual Devices used for the exposure.",
+          "type": "string"
+        },
+        {
+          "name": "site_id",
+          "description": "The site ID.",
+          "type": "string"
+        },
+        {
+          "name": "unique_device_id",
+          "description": "A UDI or equivalent identifying the instance of the Device used in the Person.",
+          "type": "string"
+        },
+        {
+          "name": "visit_id",
+          "description": "A foreign key to the visit in the VISIT table during which the device was used.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'device_exposure' table.",
+          "type": "string"
+        },
+        {
+          "name": "device_exposure.id",
+          "description": "A unique identifier for records in this 'device_exposure' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "drug_exposure",
+      "description": "The drug exposure domain captures records about the utilization of a Drug when ingested or otherwise introduced into the body. A Drug is a biochemical substance formulated in such a way that when administered to a Person it will exert a certain physiological effect. Drugs include prescription and over-the-counter medicines, vaccines, and large-molecule biologic therapies. Radiological devices ingested or applied locally do not count as Drugs. Drug Exposure is inferred from clinical events associated with orders, prescriptions written, pharmacy dispensings, procedural administrations, and other patient-reported information. Prescriptions filled at dispensing providers such as pharmacies, and then captured in reimbursement claim systems, Drugs administered as part of a Procedure, such as chemotherapy or vaccines.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "drug_exposure.id"
+      ],
+      "properties": [
+        {
+          "name": "days_supply",
+          "description": "The number of days of supply of the medication as recorded in the original prescription or dispensing record.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_drug_exposure_end",
+          "description": "The difference in days between the subject's index_date and the end of their exposure to the Drug.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_drug_exposure_start",
+          "description": "The difference in days between the subject's index_date and the start of their exposure to the Drug.",
+          "type": "integer"
+        },
+        {
+          "name": "dose_sequence_number",
+          "description": "The sequence number of a specific dose of a medication given in a series of doses.",
+          "type": "integer"
+        },
+        {
+          "name": "dose_unit_concept_id",
+          "description": "A foreign key to a predefined concept in the Standardized Vocabularies reflecting the unit the effective_drug_dose value is expressed.",
+          "type": "string"
+        },
+        {
+          "name": "dose_unit_source_value",
+          "description": "The information about the dose unit as detailed in the source.",
+          "type": "string"
+        },
+        {
+          "name": "drug_code_system",
+          "description": "The system that assigned the code for a specific drug or medication.",
+          "type": "string"
+        },
+        {
+          "name": "drug_concept_id",
+          "description": "A foreign key that refers to a Standard Concept identifier in the Standardized Vocabularies for the Drug concept.",
+          "type": "string"
+        },
+        {
+          "name": "drug_manufacturer",
+          "description": "The name of the company that manufactured the drug or medication.",
+          "type": "string"
+        },
+        {
+          "name": "drug_name",
+          "description": "The name of the specific drug or medication the subject was prescribed or administered.",
+          "type": "string"
+        },
+        {
+          "name": "drug_source_concept_id",
+          "description": "A foreign key to a Drug Concept that refers to the code used in the source.",
+          "type": "string"
+        },
+        {
+          "name": "drug_source_value",
+          "description": "The source code for the Drug as it appears in the source data. This code is mapped to a Standard Drug concept in the Standardized Vocabularies and the original code is, stored here for reference.",
+          "type": "string"
+        },
+        {
+          "name": "drug_type",
+          "description": "A textual categorization of the type of medication the patient was perscribed or administered.",
+          "type": "string"
+        },
+        {
+          "name": "drug_type_concept_id",
+          "description": "A foreign key to the predefined Concept identifier in the Standardized Vocabularies reflecting the type of Drug Exposure recorded. It indicates how the Drug Exposure was represented in the source data.",
+          "type": "string"
+        },
+        {
+          "name": "effective_drug_dose",
+          "description": "Numerical value of Drug dose for this Drug Exposure record.",
+          "type": "number"
+        },
+        {
+          "name": "lot_number",
+          "description": "An identifier assigned to a particular quantity or lot of Drug product from the manufacturer.",
+          "type": "string"
+        },
+        {
+          "name": "provider_id",
+          "description": "A foreign key to the provider in the provider table who initiated (prescribed or administered) the Drug Exposure.",
+          "type": "string"
+        },
+        {
+          "name": "quantity",
+          "description": "The quantity of drug as recorded in the original prescription or dispensing record.",
+          "type": "number"
+        },
+        {
+          "name": "refills",
+          "description": "The number of refills after the initial prescription. The initial prescription is not counted, values start with 0.",
+          "type": "integer"
+        },
+        {
+          "name": "route_concept_id",
+          "description": "A foreign key to a predefined concept in the Standardized Vocabularies reflecting the route of administration.",
+          "type": "string"
+        },
+        {
+          "name": "route_source_value",
+          "description": "The information about the route of administration as detailed in the source.",
+          "type": "string"
+        },
+        {
+          "name": "sig",
+          "description": "The directions or signetur on the Drug prescription as recorded in the original prescription and printed on the container or dispensing record.",
+          "type": "string"
+        },
+        {
+          "name": "site_id",
+          "description": "The care site ID.",
+          "type": "string"
+        },
+        {
+          "name": "stop_reason",
+          "description": "The reason the Drug was stopped. Reasons include regimen completed, changed, removed, etc.",
+          "type": "string"
+        },
+        {
+          "name": "visit_id",
+          "description": "A foreign key to the visit in the VISIT table during which the device was used.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'drug_exposure' table.",
+          "type": "string"
+        },
+        {
+          "name": "drug_exposure.id",
+          "description": "A unique identifier for records in this 'drug_exposure' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "imaging_study",
+      "description": "Information related to an imaging study or exam done for diagnostic or research purposes, including patient clinical or contextual data recorded at the time of the imaging study.",
+      "links": [
+        "subject",
+        "dataset"
+      ],
+      "required": [
+        "subject.id",
+        "dataset.id",
+        "imaging_study.id"
+      ],
+      "properties": [
+        {
+          "name": "BodyPartExamined",
+          "description": "(0018, 0015) Body Part Examined.",
+          "type": "array"
+        },
+        {
+          "name": "EthnicGroup",
+          "description": "(0010,2160) The ethnic group to which the patient belongs.",
+          "type": "string"
+        },
+        {
+          "name": "PatientAge",
+          "description": "(0010,1010) The patient's age at the time of the imaging study.",
+          "type": "number"
+        },
+        {
+          "name": "PatientID",
+          "description": "(0010,0020) A unique identifier for the patient.",
+          "type": "string"
+        },
+        {
+          "name": "PatientSex",
+          "description": "(0010,0040) the patient's sex; the biologic character or quality that distinguishes male and female from one another as expressed by analysis of the person's gonadal, morphologic  (internal and external), chromosomal, and hormonal characteristics",
+          "type": "string"
+        },
+        {
+          "name": "StudyDescription",
+          "description": "(0008, 1030) Study Description.",
+          "type": "string"
+        },
+        {
+          "name": "StudyInstanceUID",
+          "description": "(0020, 000d) Study Instance UID",
+          "type": "string"
+        },
+        {
+          "name": "disease_type",
+          "description": "The primary type of disease studied in this imaging study, if applicable.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "The primary body site studied in this imaging study.",
+          "type": "string"
+        },
+        {
+          "name": "study_modality",
+          "description": "The list of modalities in the imaging study; derived from (0008, 0060) Modality.",
+          "type": "array"
+        },
+        {
+          "name": "study_viewer_url",
+          "description": "A URL where the imaging study can be viewed.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'imaging_study' table.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'imaging_study' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "A unique identifier for records in this 'imaging_study' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "measurement",
+      "description": "Records of Measurements, i.e. structured values (numerical or categorical) obtained through systematic and standardized examination or testing of a subject's sample. The measurement table contains both orders and results of measurements as laboratory tests, vital signs, quantitative findings from pathology reports, etc. Measurements differ from Observations in that they require a standardized test or some other activity to generate a quantitative or qualitative result.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "measurement.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_basophil_ncnc_bld",
+          "description": "age at measurement of basophil_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_bp_diastolic",
+          "description": "age at measurement of bp_diastolic (years)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_bp_systolic",
+          "description": "age at measurement of bp_systolic (years)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_eosinophil_ncnc_bld",
+          "description": "age at measurement of eosinophil_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_hdl",
+          "description": "age at measurement of hdl (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_hematocrit_vfr_bld",
+          "description": "Measurement of hematocrit, the fraction of volume (vfr) of blood (bld) that is composed of red blood cells. (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_hemoglobin_mcnc_bld",
+          "description": "age at measurement of hemoglobin_mcnc_bld. (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_ldl",
+          "description": "age at measurement of ldl (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_lymphocyte_ncnc_bld",
+          "description": "age at measurement of lymphocyte_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_mch_entmass_rbc",
+          "description": "age at measurement of mch_entmass_rbc (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_mchc_mcnc_rbc",
+          "description": "age at measurement of mchc_mcnc_rbc (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_mcv_entvol_rbc",
+          "description": "age at measurement of mcv_entvol_rbc (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_monocyte_ncnc_bld",
+          "description": "age at measurement of monocyte_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_neutrophil_ncnc_bld",
+          "description": "age at measurement of neutrophil_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_platelet_ncnc_bld",
+          "description": "age at measurement of platelet_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_pmv_entvol_bld",
+          "description": "age at measurement of pmv_entvol_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_rbc_ncnc_bld",
+          "description": "age at measurement of rbc_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_rdw_ratio_rbc",
+          "description": "age at measurement of rdw_ratio_rbc (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_total_cholesterol",
+          "description": "age at measurement of total_cholesterol (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_triglycerides",
+          "description": "age at measurement of triglycerides (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_wbc_ncnc_bld",
+          "description": "age at measurement of wbc_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "analyte_name",
+          "description": "The name of analyte or biomarker tested in the case that the test is a quantitative assay.",
+          "type": "string"
+        },
+        {
+          "name": "assay_kit_name",
+          "description": "The name of the kit used for the test or assay; please also indicate the kit vendor and version in 'assay_kit_vendor' and 'assay_kit_version'.",
+          "type": "string"
+        },
+        {
+          "name": "assay_kit_vendor",
+          "description": "The name of the vendor or manufacturer of the kit used for the test; please also indicate the kit name and version in 'assay_kit_name' and 'assay_kit_version'.",
+          "type": "string"
+        },
+        {
+          "name": "assay_kit_version",
+          "description": "The version of the kit used for the test; please also indicate the kit name and vendor in 'assay_kit_name' and 'assay_kit_vendor'.",
+          "type": "string"
+        },
+        {
+          "name": "basophil_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of basophils in the blood (bld). (thousands / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "bp_diastolic",
+          "description": "Resting diastolic blood pressure from the upper arm in a clinical setting. (mmHg)",
+          "type": "number"
+        },
+        {
+          "name": "bp_systolic",
+          "description": "Resting systolic blood pressure from the upper arm in a clinical setting. (mmHg)",
+          "type": "number"
+        },
+        {
+          "name": "cardiac_output",
+          "description": "RV Cardiac output (l/min)",
+          "type": "number"
+        },
+        {
+          "name": "days_to_measurement",
+          "description": "The difference in days between the subject's index_date and the date of the measurement. Used to de-identify the measurement date.",
+          "type": "integer"
+        },
+        {
+          "name": "eosinophil_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of eosinophils in the blood (bld). (thousands / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "equipment_manufacturer",
+          "description": "The name of the manufacturer of the equipment used for the test; please also indicate the model number in 'equipment_model'.",
+          "type": "string"
+        },
+        {
+          "name": "equipment_model",
+          "description": "The equipment name and model number used for the test; please also indicate the manufacturer name in 'equipment_manufacturer'.",
+          "type": "string"
+        },
+        {
+          "name": "gtc_duration",
+          "description": "QTC interval (msec) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "hdl",
+          "description": "Hdl cholesterol (mg/dl) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "hematocrit_vfr_bld",
+          "description": "Measurement of hematocrit, the fraction of volume (vfr) of blood (bld) that is composed of red blood cells. (percentage) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "hemoglobin_mcnc_bld",
+          "description": "Measurement of mass per volume, or mass concentration (mcnc), of hemoglobin in the blood (bld). (g / dL = grams per deciliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "ldl",
+          "description": "Ldl cholesterol (mg/dl) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "lymphocyte_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of lymphocytes in the blood (bld). (thousands / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "mch_entmass_rbc",
+          "description": "Measurement of the average mass (entmass) of hemoglobin per red blood cell(rbc), known as mean corpuscular hemoglobin (MCH). (pg = picogram) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "mchc_mcnc_rbc",
+          "description": "Measurement of the mass concentration (mcnc) of hemoglobin in a given volume of packed red blood cells (rbc), known as mean corpuscular hemoglobin concentration (MCHC). (g /dL = grams per deciliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "mcv_entvol_rbc",
+          "description": "Measurement of the mass concentration (mcnc) of hemoglobin in a given volume of packed red blood cells (rbc), known as mean corpuscular hemoglobin concentration (MCHC). (g /dL = grams per deciliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "measurement_concept_id",
+          "description": "A foreign key to the standard measurement concept identifier in the Standardized Vocabularies.",
+          "type": "string"
+        },
+        {
+          "name": "measurement_source_concept_id",
+          "description": "A foreign key to a Concept in the Standard Vocabularies that refers to the code used in the source.",
+          "type": "string"
+        },
+        {
+          "name": "measurement_source_value",
+          "description": "The Measurement name as it appears in the source data. This code is mapped to a Standard Concept in the Standardized Vocabularies and the original code is stored here for reference.",
+          "type": "string"
+        },
+        {
+          "name": "measurement_type_concept_id",
+          "description": "A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the provenance from where the Measurement record was recorded.",
+          "type": "string"
+        },
+        {
+          "name": "monocyte_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of monocytes in the blood (bld). (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "neutrophil_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of neutrophils in the blood (bld). (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "operator_concept_id",
+          "description": "A foreign key identifier to the predefined Concept in the Standardized Vocabularies reflecting the mathematical operator that is applied to the value_as_number. Operators are <, \u2264, =, \u2265, >.",
+          "type": "string"
+        },
+        {
+          "name": "platelet_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of platelets in the blood (bld). (thousands / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "pmv_entvol_bld",
+          "description": "Measurement of the mean volume (entvol) of platelets in the blood (bld), known as mean platelet volume (MPV or PMV). (fL = femtoliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "pr_duration",
+          "description": "PR interval (msec) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "provider_id",
+          "description": "A foreign key to the provider in the PROVIDER table who was responsible for initiating or obtaining the measurement.",
+          "type": "string"
+        },
+        {
+          "name": "qrs_duration",
+          "description": "QRS interval (msec) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "qt_duration",
+          "description": "QT interval (msec) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "range_high",
+          "description": "The upper limit of the normal range of the Measurement. The upper range is assumed to be of the same unit of measure as the Measurement value.",
+          "type": "string"
+        },
+        {
+          "name": "range_low",
+          "description": "The lower limit of the normal range of the Measurement result. The lower range is assumed to be of the same unit of measure as the Measurement value.",
+          "type": "string"
+        },
+        {
+          "name": "rbc_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of red blood cells in the blood (bld). (millions / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "rdw_ratio_rbc",
+          "description": "Measurement of the ratio of variation in width to the mean width of the red blood cell (rbc) volume distribution curve taken at +/- 1 CV, known as red cell distribution width (RDW). (percentage) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "site_id",
+          "description": "The care site ID.",
+          "type": "string"
+        },
+        {
+          "name": "test_anatomic_site",
+          "description": "Indicate the anatomic site of the biopsy, image or other diagnostic test",
+          "type": "string"
+        },
+        {
+          "name": "test_method",
+          "description": "The test method used to confirm a condition or produce a measurement.",
+          "type": "string"
+        },
+        {
+          "name": "test_name",
+          "description": "The name of the test for which this measurement was the result.",
+          "type": "string"
+        },
+        {
+          "name": "test_result_number",
+          "description": "The numerical value representing the laboratory or diagnostic test measurement of the 'analyte_name'; also indicate the 'test_units'.",
+          "type": "number"
+        },
+        {
+          "name": "test_result_text",
+          "description": "The measured result of the test described using a list of enumerations.",
+          "type": "string"
+        },
+        {
+          "name": "test_sample_composition",
+          "description": "Indicate the composition or type of biological sample used for the test (e.g., blood, urine, solid tissue, saliva, etc.)",
+          "type": "string"
+        },
+        {
+          "name": "test_type",
+          "description": "The general type or category of the laboratory or diagnostic test.",
+          "type": "string"
+        },
+        {
+          "name": "test_units",
+          "description": "The units corresponding to a test_value for a test_analyte_type",
+          "type": "string"
+        },
+        {
+          "name": "total_cholesterol",
+          "description": "Total cholesterol (mg/dl) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "triglycerides",
+          "description": "Triglycerides (mg/dl) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "unit_basophil_ncnc_bld",
+          "description": "harmonization unit for basophil_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_bp_diastolic",
+          "description": "harmonization unit for bp_diastolic (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.)",
+          "type": "string"
+        },
+        {
+          "name": "unit_bp_systolic",
+          "description": "harmonization unit for bp_systolic (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.)",
+          "type": "string"
+        },
+        {
+          "name": "unit_concept_id",
+          "description": "A foreign key to a Standard Concept ID of Measurement Units in the Standardized Vocabularies.",
+          "type": "string"
+        },
+        {
+          "name": "unit_eosinophil_ncnc_bld",
+          "description": "harmonization unit for eosinophil_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_hdl",
+          "description": "harmonization unit for hdl (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_hematocrit_vfr_bld",
+          "description": "harmonization unit for hematocrit_vfr_bld. (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_hemoglobin_mcnc_bld",
+          "description": "Measurement of hematocrit, the fraction of volume (vfr) of blood (bld) that is composed of red blood cells. (percentage) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_ldl",
+          "description": "harmonization unit for ldl (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_lymphocyte_ncnc_bld",
+          "description": "harmonization unit for lymphocyte_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_mch_entmass_rbc",
+          "description": "harmonization unit for mch_entmass_rbc (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_mchc_mcnc_rbc",
+          "description": "harmonization unit for mchc_mcnc_rbc (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_mcv_entvol_rbc",
+          "description": "harmonization unit for mcv_entvol_rbc (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_monocyte_ncnc_bld",
+          "description": "harmonization unit for monocyte_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_neutrophil_ncnc_bld",
+          "description": "harmonization unit for neutrophil_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_platelet_ncnc_bld",
+          "description": "harmonization unit for platelet_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_pmv_entvol_bld",
+          "description": "harmonization unit for pmv_entvol_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_rbc_ncnc_bld",
+          "description": "harmonization unit for rbc_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_rdw_ratio_rbc",
+          "description": "harmonization unit for rdw_ratio_rbc (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_source_value",
+          "description": "The source code for the unit as it appears in the source data. This code is mapped to a standard unit concept in the Standardized Vocabularies and the original code is stored here for reference.",
+          "type": "string"
+        },
+        {
+          "name": "unit_total_cholesterol",
+          "description": "harmonization unit for total_cholesterol (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_triglycerides",
+          "description": "harmonization unit for triglycerides (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_wbc_ncnc_bld",
+          "description": "harmonization unit for wbc_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "value_as_concept_id",
+          "description": "A foreign key to a Measurement result represented as a Concept from the Standardized Vocabularies (e.g., positive/negative, present/absent, low/high, etc.).",
+          "type": "string"
+        },
+        {
+          "name": "value_as_number",
+          "description": "A Measurement result where the result is expressed as a numeric value.",
+          "type": "number"
+        },
+        {
+          "name": "value_source_value",
+          "description": "The source value associated with the content of the value_as_number or value_as_concept_id as stored in the source data.",
+          "type": "string"
+        },
+        {
+          "name": "visit_id",
+          "description": "A foreign key to the visit in the VISIT table during which the device was used.",
+          "type": "string"
+        },
+        {
+          "name": "wbc_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of white blood cells in the blood (bld). (thousands / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'measurement' table.",
+          "type": "string"
+        },
+        {
+          "name": "measurement.id",
+          "description": "A unique identifier for records in this 'measurement' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "observation",
+      "description": "Clinical facts about a subject obtained in the context of examination, questioning or a procedure. Any data that cannot be represented by any other domains, such as social and lifestyle facts, medical history, family history, etc. are recorded here. Observations differ from Measurements in that they do not require a standardized test or some other activity to generate clinical fact. Typical observations are medical history, family history, the stated need for certain treatment, social circumstances, lifestyle choices, healthcare utilization patterns, etc. If the generation clinical facts requires a standardized testing such as lab testing or imaging and leads to a standardized result, the data item is recorded in the MEASUREMENT table. If the clinical fact observed determines a sign, symptom, diagnosis of a disease or other medical condition, it is recorded in the CONDITION_OCCURRENCE table.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "observation.id"
+      ],
+      "properties": [
+        {
+          "name": "adverse_event",
+          "description": "Text that represents the Common Terminology Criteria for Adverse Events low level term name for an adverse event.",
+          "type": "string"
+        },
+        {
+          "name": "age_at_current_smoker_baseline",
+          "description": "Age in years at measurement of current_smoker_baseline.",
+          "type": "number"
+        },
+        {
+          "name": "age_at_ever_smoker_baseline",
+          "description": "Age in years at measurement of ever_smoker_baseline.",
+          "type": "number"
+        },
+        {
+          "name": "alcohol_history",
+          "description": "A response to a question that asks whether the participant has consumed at least 12 drinks of any kind of alcoholic beverage in their lifetime.",
+          "type": "string"
+        },
+        {
+          "name": "alcohol_intensity",
+          "description": "Category to describe the patient's current level of alcohol use as self-reported by the patient.",
+          "type": "string"
+        },
+        {
+          "name": "bmi",
+          "description": "The body mass divided by the square of the body height expressed in units of kg/m^2.",
+          "type": "number"
+        },
+        {
+          "name": "cause_of_response",
+          "description": "A specific regimen or line of therapy responsible for the patient's observed improvement achived at a certain point in time during a patient's treatment protocol.",
+          "type": "string"
+        },
+        {
+          "name": "cigarettes_per_day",
+          "description": "The average number of cigarettes smoked per day.",
+          "type": "number"
+        },
+        {
+          "name": "current_smoker_baseline",
+          "description": "Indicates whether subject currently smokes cigarettes.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_observation",
+          "description": "The number of days from the index_date to the date of the observation.",
+          "type": "integer"
+        },
+        {
+          "name": "disease_response",
+          "description": "The observed improvement achieved at a certain point in time during a patient's treatment protocol.",
+          "type": "string"
+        },
+        {
+          "name": "ecog_performance_status",
+          "description": "The ECOG functional performance status of the patient/participant.",
+          "type": "enum"
+        },
+        {
+          "name": "ever_smoker_baseline",
+          "description": "Indicates whether subject ever regularly smoked cigarettes.",
+          "type": "string"
+        },
+        {
+          "name": "height",
+          "description": "The height of the patient in centimeters.",
+          "type": "number"
+        },
+        {
+          "name": "observation_answer",
+          "description": "The answer or value provided for a specific observation about a subject obtained in the context of examination, questioning or a during procedure.",
+          "type": "string"
+        },
+        {
+          "name": "observation_concept_id",
+          "description": "The OBSERVATION_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. The CONCEPT_ID that the OBSERVATION_SOURCE_CONCEPT_ID maps to. There is no specified domain that the Concepts in this table must adhere to. The only rule is that records with Concepts in the Condition, Procedure, Drug, Measurement, or Device domains MUST go to the corresponding table.",
+          "type": "string"
+        },
+        {
+          "name": "observation_name",
+          "description": "The short name of the observation about the subject obtained in the context of examination, questioning or a during procedure.",
+          "type": "string"
+        },
+        {
+          "name": "observation_source_concept_id",
+          "description": "This is the concept representing the OBSERVATION_SOURCE_VALUE and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Observation necessary for a given analytic use case. Consider using OBSERVATION_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network. If the OBSERVATION_SOURCE_VALUE is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here.",
+          "type": "string"
+        },
+        {
+          "name": "observation_source_value",
+          "description": "This field houses the verbatim value from the source data representing the Observation that occurred. For example, this could be an ICD10 or Read code. This code is mapped to a Standard Concept in the Standardized Vocabularies and the original code is stored here for reference.",
+          "type": "string"
+        },
+        {
+          "name": "observation_type_concept_id",
+          "description": "This field can be used to determine the provenance of the Observation record, as in whether the measurement was from an EHR system, insurance claim, registry, or other sources. Choose the OBSERVATION_TYPE_CONCEPT_ID that best represents the provenance of the record, for example whether it came from an EHR record or billing claim. Accepted Concepts. A more detailed explanation of each Type Concept can be found on the OMOP vocabulary wiki.",
+          "type": "string"
+        },
+        {
+          "name": "progression_or_recurrence",
+          "description": "Indicator to identify whether a patient has had a recurrent or relapsed malignancy or a progression of disease.",
+          "type": "enum"
+        },
+        {
+          "name": "provider_id",
+          "description": "The provider associated with the observation record, e.g. the provider who ordered the test or the provider who recorded the result. The ETL may need to make a choice as to which PROVIDER_ID to put here. Based on what is available this may or may not be different than the provider associated with the overall VISIT_OCCURRENCE record. For example the admitting vs attending physician on an EHR record.",
+          "type": "string"
+        },
+        {
+          "name": "qualifier_concept_id",
+          "description": "This field contains all attributes specifying the clinical fact further, such as as degrees, severities, drug-drug interaction alerts etc. Use your best judgement as to what Concepts to use here and if they are necessary to accurately represent the clinical record. There is no restriction on the domain of these Concepts, they just need to be Standard.",
+          "type": "string"
+        },
+        {
+          "name": "qualifier_source_value",
+          "description": "This field houses the verbatim value from the source data representing the qualifier of the Observation that occurred. This code is mapped to a Standard Condition Concept in the Standardized Vocabularies and the original code is stored here for reference.",
+          "type": "string"
+        },
+        {
+          "name": "relationship_age_at_diagnosis",
+          "description": "The age (in years) when the patient's relative was first diagnosed.",
+          "type": "integer"
+        },
+        {
+          "name": "relationship_age_at_diagnosis_gt89",
+          "description": "The age (in years) when the patient's relative was first diagnosed.",
+          "type": "enum"
+        },
+        {
+          "name": "relationship_gender",
+          "description": "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]",
+          "type": "enum"
+        },
+        {
+          "name": "relationship_primary_diagnosis",
+          "description": "The primary disease, disorder, or condition the patient was diagnosed with.",
+          "type": "string"
+        },
+        {
+          "name": "relationship_type",
+          "description": "The subgroup that describes the state of connectedness between members of the unit of society organized around kinship ties.",
+          "type": "string"
+        },
+        {
+          "name": "relative_with_cancer_history",
+          "description": "Indicator to signify whether or not an individual's biological relative has been diagnosed with another type of cancer.",
+          "type": "enum"
+        },
+        {
+          "name": "site_id",
+          "description": "The care site ID.",
+          "type": "string"
+        },
+        {
+          "name": "time_from_alcohol",
+          "description": "Hours since the patient last consumed alcohol.",
+          "type": "number"
+        },
+        {
+          "name": "time_from_biopsy",
+          "description": "Hours since the patient last underwent a biopsy; please record the biopsy information in the 'diagnostic_test' node and link that record to this followup record.",
+          "type": "number"
+        },
+        {
+          "name": "time_from_exercise",
+          "description": "Hours since the patient last exercised.",
+          "type": "number"
+        },
+        {
+          "name": "time_from_food",
+          "description": "Hours since the patient last consumed food.",
+          "type": "number"
+        },
+        {
+          "name": "time_from_physical_trauma",
+          "description": "Hours since the patient last experienced physical trauma.",
+          "type": "number"
+        },
+        {
+          "name": "time_from_recreational_drugs",
+          "description": "Hours since the patient last used recreational drugs.",
+          "type": "number"
+        },
+        {
+          "name": "time_from_tobacco",
+          "description": "Hours since the patient last used tobacco.",
+          "type": "number"
+        },
+        {
+          "name": "time_from_treatment",
+          "description": "Hours since the patient received a treatment, including surgical procedures or medications; please record the treatment information in the 'treatment' node and link that record to this followup record.",
+          "type": "number"
+        },
+        {
+          "name": "tobacco_smoking_status",
+          "description": "Subject's tobacco smoking status.",
+          "type": "string"
+        },
+        {
+          "name": "unit_concept_id",
+          "description": "There is currently no recommended unit for individual observation concepts. UNIT_SOURCE_VALUES should be mapped to a Standard Concept in the Unit domain that best represents the unit as given in the source data. There is no standardization requirement for units associated with OBSERVATION_CONCEPT_IDs, however, it is the responsibility of the ETL to choose the most plausible unit. If the source unit is NULL (applicable to cases when there's no numerical value or when it doesn't require a unit), keep unit_concept_id NULL as well. If there's no mapping of a source unit, populate unit_concept_id with 0.",
+          "type": "string"
+        },
+        {
+          "name": "unit_current_smoker_baseline",
+          "description": "Harmonization unit for current_smoker_baseline. A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.",
+          "type": "string"
+        },
+        {
+          "name": "unit_ever_smoker_baseline",
+          "description": "Harmonization unit for ever_smoker_baseline. A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.",
+          "type": "string"
+        },
+        {
+          "name": "unit_source_value",
+          "description": "This field houses the verbatim value from the source data representing the unit of the Observation that occurred. This code is mapped to a Standard Condition Concept in the Standardized Vocabularies and the original code is stored here for reference.",
+          "type": "string"
+        },
+        {
+          "name": "value_as_concept_id",
+          "description": "It is possible that some records destined for the Observation table have two clinical ideas represented in one source code. This is common with ICD10 codes that describe a family history of some Condition, for example. In OMOP the Vocabulary breaks these two clinical ideas into two codes; one becomes the OBSERVATION_CONCEPT_ID and the other becomes the VALUE_AS_CONCEPT_ID. It is important when using the Observation table to keep this possibility in mind and to examine the VALUE_AS_CONCEPT_ID field for relevant information. Note that the value of VALUE_AS_CONCEPT_ID may be provided through mapping from a source Concept which contains the content of the Observation. In those situations, the CONCEPT_RELATIONSHIP table in addition to the 'Maps to' record contains a second record with the relationship_id set to 'Maps to value'. For example, ICD10 Z82.4 'Family history of ischaemic heart disease and other diseases of the circulatory system' has a 'Maps to' relationship to 4167217 'Family history of clinical finding' as well as a 'Maps to value' record to 134057 'Disorder of cardiovascular system'. If there's no categorial result in a source_data, set value_as_concept_id to NULL, if there is a categorial result in a source_data but without mapping, set value_as_concept_id to 0.",
+          "type": "string"
+        },
+        {
+          "name": "value_as_number",
+          "description": "This is the numerical value of the Result of the Observation, if applicable and available. It is not expected that all Observations will have numeric results, rather, this field is here to house values should they exist.",
+          "type": "number"
+        },
+        {
+          "name": "value_as_string",
+          "description": "This is the textual, categorical value of the Result of the Observation, if applicable and available.",
+          "type": "string"
+        },
+        {
+          "name": "value_source_value",
+          "description": "This field houses the verbatim result value of the Observation from the source data. Do not get confused with the Observation_source_value which captures source value of the observation mapped to observation_concept_id. This field is the observation result value from the source. If the observation_source_value was a question, for example, or an observation that requires a result then this field is the answer/ result from the source data. Store the verbatim value that represents the result of the observation_source_value.",
+          "type": "string"
+        },
+        {
+          "name": "weight",
+          "description": "The weight of the patient measured in kilograms.",
+          "type": "number"
+        },
+        {
+          "name": "years_smoked",
+          "description": "Numeric value (or unknown) to represent the number of years a person has been smoking.",
+          "type": "number"
+        },
+        {
+          "name": "years_smoked_gt89",
+          "description": "Indicator of whether the number of years smoked is greater than 89 years.",
+          "type": "enum"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'observation' table.",
+          "type": "string"
+        },
+        {
+          "name": "observation.id",
+          "description": "A unique identifier for records in this 'observation' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "payer_plan_period",
+      "description": "Captures details of the period of time that a subject or person is continuously enrolled under a specific health Plan benefit structure from a given Payer. Each Person receiving healthcare is typically covered by a health benefit plan, which pays for or provides the care. These benefit plans are provided by payers, such as health insurances or state or government agencies. In each plan the details of the health benefits are defined for the Person or her family, and the health benefit Plan might change over time typically with increasing utilization (reaching certain cost thresholds such as deductibles), plan availability and purchasing choices of the Person. The unique combinations of Payer organizations, health benefit Plans and time periods in which they are valid for a Person are recorded in this table.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "payer_plan_period.id"
+      ],
+      "properties": [
+        {
+          "name": "days_to_payer_plan_period_end",
+          "description": "The difference in days between the subject's index_date and the end of the payer_plan_period.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_payer_plan_period_start",
+          "description": "The difference in days between the subject's index_date and the start of the payer_plan_period.",
+          "type": "integer"
+        },
+        {
+          "name": "family_source_value",
+          "description": "The common identifier for all people (often a family) that covered by the same policy. Often these are the common digits of the enrollment id of the policy members.",
+          "type": "string"
+        },
+        {
+          "name": "payer_concept_id",
+          "description": "This field represents the organization who reimburses the provider which administers care to the Person. Map the payer directly to a standard CONCEPT_ID with the domain_id of 'Payer' (Accepted Concepts). This vocabulary is not exhaustive so if there is a value missing, please see the custom concepts page.",
+          "type": "string"
+        },
+        {
+          "name": "payer_plan_period_id",
+          "description": "A unique identifier for each unique combination of a Person, Payer, Plan, and Period of time.",
+          "type": "string"
+        },
+        {
+          "name": "payer_source_concept_id",
+          "description": "If the source data codes the Payer in an OMOP supported vocabulary store the concept_id here.",
+          "type": "string"
+        },
+        {
+          "name": "payer_source_value",
+          "description": "This is the Payer as it appears in the source data.",
+          "type": "string"
+        },
+        {
+          "name": "plan_concept_id",
+          "description": "This field represents the specific health benefit Plan the Person is enrolled in. Map the Plan directly to a standard CONCEPT_ID in the 'Plan' vocabulary (Accepted Concepts). This vocabulary is not exhaustive so if there is a value missing, please see the custom concepts page.",
+          "type": "string"
+        },
+        {
+          "name": "plan_source_concept_id",
+          "description": "If the source data codes the Plan in an OMOP supported vocabulary store the concept_id here.",
+          "type": "string"
+        },
+        {
+          "name": "plan_source_value",
+          "description": "This is the health benefit Plan of the Person as it appears in the source data.",
+          "type": "string"
+        },
+        {
+          "name": "site_id",
+          "description": "The care site ID.",
+          "type": "string"
+        },
+        {
+          "name": "sponsor_concept_id",
+          "description": "This field represents the sponsor of the Plan who finances the Plan. This includes self-insured, small group health plan and large group health plan. Map the sponsor directly to a standard CONCEPT_ID with the domain_id of 'Sponsor' (Accepted Concepts). This vocabulary is not exhaustive so if there is a value missing, please see the custom concepts page.",
+          "type": "string"
+        },
+        {
+          "name": "sponsor_source_concept_id",
+          "description": "If the source data codes the sponsor in an OMOP supported vocabulary store the concept_id here.",
+          "type": "string"
+        },
+        {
+          "name": "sponsor_source_value",
+          "description": "The Plan sponsor as it appears in the source data.",
+          "type": "string"
+        },
+        {
+          "name": "stop_reason_concept_id",
+          "description": "This field represents the reason the Person left the Plan, if known. Map the stop reason directly to a standard CONCEPT_ID with a domain of 'Plan Stop Reason' (Accepted Concepts). If one does not exist visit the Custom Concepts pate for more information.",
+          "type": "string"
+        },
+        {
+          "name": "stop_reason_source_concept_id",
+          "description": "If the source data codes the stop reason in an OMOP supported vocabulary store the concept_id here.",
+          "type": "string"
+        },
+        {
+          "name": "stop_reason_source_value",
+          "description": "The Plan stop reason as it appears in the source data.",
+          "type": "string"
+        },
+        {
+          "name": "visit_id",
+          "description": "A foreign key to the visit in the VISIT table during which the device was used.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'payer_plan_period' table.",
+          "type": "string"
+        },
+        {
+          "name": "payer_plan_period.id",
+          "description": "A unique identifier for records in this 'payer_plan_period' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "Any biological or material sample used for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions.",
+      "links": [
+        "subject",
+        "dataset"
+      ],
+      "required": [
+        "subject.id",
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "biospecimen_anatomic_site",
+          "description": "Text term that represents the name of the primary disease site of the submitted tumor sample.",
+          "type": "string"
+        },
+        {
+          "name": "collection_site",
+          "description": "Code for BSS collection site. Indicates the site that enrolled the donor,  brain subregions may have more than one site.",
+          "type": "string"
+        },
+        {
+          "name": "composition",
+          "description": "Text term that represents the cellular composition of the sample.",
+          "type": "string"
+        },
+        {
+          "name": "current_weight",
+          "description": "Numeric value that represents the current weight of the sample, measured  in milligrams.",
+          "type": "number"
+        },
+        {
+          "name": "freezing_method",
+          "description": "Text term that represents the method used for freezing the sample.",
+          "type": "string"
+        },
+        {
+          "name": "hours_to_collection",
+          "description": "Total Ischemic time for a sample",
+          "type": "integer"
+        },
+        {
+          "name": "hours_to_sample_procurement",
+          "description": "Time a sample spent in the PAXgene fixative",
+          "type": "integer"
+        },
+        {
+          "name": "method_of_sample_procurement",
+          "description": "The method used to procure the sample used to extract analyte(s).",
+          "type": "string"
+        },
+        {
+          "name": "preservation_method",
+          "description": "Text term that represents the method used to preserve the sample.",
+          "type": "string"
+        },
+        {
+          "name": "sample_type",
+          "description": "Original material type of the collected sample",
+          "type": "string"
+        },
+        {
+          "name": "specimen_id",
+          "description": "Unique identifier that can be used to retrieve more information for a specimen.",
+          "type": "string"
+        },
+        {
+          "name": "tissue_type",
+          "description": "Text term that represents a description of the kind of tissue collected with respect to disease status or proximity to tumor tissue.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "visit",
+      "description": "This table contains events where subjects engage with the healthcare system for a duration of time. They are often also called \u201cencounters\u201d. Visits are defined by a configuration of circumstances under which they occur, such as (i) whether the patient comes to a healthcare institution, the other way around, or the interaction is remote, (ii) whether and what kind of trained medical staff is delivering the service during the Visit, and (iii) whether the Visit is transient or for a longer period involving a stay in bed.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "visit.id"
+      ],
+      "properties": [
+        {
+          "name": "admitted_from_concept_id",
+          "description": "Use this field to determine where the patient was admitted from. This concept is part of the visit domain and can indicate if a patient was admitted to the hospital from a long-term care facility, for example. If available, map the admitted_from_source_value to a standard concept in the visit domain. If a person was admitted from home or was self-referred, set this to 0.",
+          "type": "string"
+        },
+        {
+          "name": "admitted_from_source_value",
+          "description": "This information may be called something different in the source data but the field is meant to contain a value indicating where a person was admitted from. Typically this applies only to visits that have a length of stay, like inpatient visits or long-term care visits.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_hospital_admission",
+          "description": "The number of days between the subject's index date and the date of the patient's hospital admission.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_hospital_discharge",
+          "description": "The number of days between the subject's index date and the date of the patient's hospital discharge.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_icu_admission",
+          "description": "The number of days between the subject's index date and the date of the patient's ICU admission.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_icu_discharge",
+          "description": "The number of days between the subject's index date and the date of the patient's ICU discharge..",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_visit_end",
+          "description": "The difference in days between the subject's index_date and the end of the visit.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_visit_start",
+          "description": "The difference in days between the subject's index_date and the start of the visit.",
+          "type": "string"
+        },
+        {
+          "name": "discharge_type",
+          "description": "The status or destination of the patient at the time of discharge.",
+          "type": "string"
+        },
+        {
+          "name": "discharged_to_concept_id",
+          "description": "Use this field to determine where the patient was discharged to after a visit. This concept is part of the visit domain and can indicate if a patient was transferred to another hospital or sent to a long-term care facility, for example. It is assumed that a person is discharged to home therefore there is not a standard concept id for \u201chome\u201d. Use concept id = 0 when a person is discharged to home. If available, map the discharged_to_source_value to a standard concept in the visit domain.",
+          "type": "string"
+        },
+        {
+          "name": "discharged_to_source_value",
+          "description": "This information may be called something different in the source data but the field is meant to contain a value indicating where a person was discharged to after a visit, as in they went home or were moved to long-term care. Typically this applies only to visits that have a length of stay of a day or more.",
+          "type": "string"
+        },
+        {
+          "name": "preceding_visit_occurrence_id",
+          "description": "Use this field to find the visit that occurred for the person prior to the given visit. There could be a few days or a few years in between. This field can be used to link a visit immediately preceding the current visit. Note this is not symmetrical, and there is no such thing as a \u201cfollowing_visit_id\u201d.",
+          "type": "string"
+        },
+        {
+          "name": "provider_id",
+          "description": "There will only be one provider per visit record and the ETL document should clearly state how they were chosen (attending, admitting, etc.). If there are multiple providers associated with a visit in the source, this can be reflected in the event tables (CONDITION_OCCURRENCE, PROCEDURE_OCCURRENCE, etc.) or in the VISIT_DETAIL table. If there are multiple providers associated with a visit, you will need to choose which one to put here. The additional providers can be stored in the VISIT_DETAIL table.",
+          "type": "string"
+        },
+        {
+          "name": "site_id",
+          "description": "The care site ID.",
+          "type": "string"
+        },
+        {
+          "name": "visit_concept_id",
+          "description": "This field contains a concept id representing the kind of visit, like inpatient or outpatient. All concepts in this field should be standard and belong to the Visit domain. Populate this field based on the kind of visit that took place for the person. For example this could be \u201cInpatient Visit\u201d, \u201cOutpatient Visit\u201d, \u201cAmbulatory Visit\u201d, etc. This table will contain standard concepts in the Visit domain. These concepts are arranged in a hierarchical structure to facilitate cohort definitions by rolling up to generally familiar Visits adopted in most healthcare systems worldwide.",
+          "type": "string"
+        },
+        {
+          "name": "visit_source_concept_id",
+          "description": "If the visit source value is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here.",
+          "type": "string"
+        },
+        {
+          "name": "visit_source_value",
+          "description": "This field houses the verbatim value from the source data representing the kind of visit that took place (inpatient, outpatient, emergency, etc.) If there is information about the kind of visit in the source data that value should be stored here. If a visit is an amalgamation of visits from the source then use a hierarchy to choose the visit source value, such as IP -> ER-> OP. This should line up with the logic chosen to determine how visits are created.",
+          "type": "string"
+        },
+        {
+          "name": "visit_type_concept_id",
+          "description": "Use this field to understand the provenance of the visit record, or where the record comes from. Populate this field based on the provenance of the visit record, as in whether it came from an EHR record or billing claim.  A more detailed explanation of each Type Concept can be found on the vocabulary wiki.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'visit' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "A unique identifier for records in this 'visit' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aliquot",
+      "description": "Pertaining to a portion of the whole; any one of two or more samples of something, of the same volume or weight.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "aliquot.id"
+      ],
+      "properties": [
+        {
+          "name": "analyte_type",
+          "description": "Text term that represents the kind of molecular specimen analyte.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file referred to by the ga4gh_drs_uri.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'aliquot' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "A unique identifier for records in this 'aliquot' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "imaging_series",
+      "description": "Metadata related to an imaging series to which one or more image instances belong.",
+      "links": [
+        "dataset",
+        "subject",
+        "imaging_study"
+      ],
+      "required": [
+        "imaging_series.id"
+      ],
+      "properties": [
+        {
+          "name": "AcquisitionType",
+          "description": "(0018, 9302) Acquisition Type",
+          "type": "string"
+        },
+        {
+          "name": "BodyPartExamined",
+          "description": "(0018, 0015) Body Part Examined.",
+          "type": "string"
+        },
+        {
+          "name": "Contrast",
+          "description": "Imaging done with contrast, 'Yes' or 'No'?",
+          "type": "string"
+        },
+        {
+          "name": "ContrastBolusAgent",
+          "description": "(0018, 0010) Contrast/Bolus Agent",
+          "type": "string"
+        },
+        {
+          "name": "MagneticFieldStrength",
+          "description": "(0018, 0087) Magnetic Field Strength",
+          "type": "string"
+        },
+        {
+          "name": "Manufacturer",
+          "description": "(0008, 0070) Manufacturer",
+          "type": "string"
+        },
+        {
+          "name": "ManufacturerModelName",
+          "description": "(0008, 1090) Manufacturer's Model Name",
+          "type": "string"
+        },
+        {
+          "name": "Modality",
+          "description": "(0008, 0060) Modality",
+          "type": "string"
+        },
+        {
+          "name": "Radiopharmaceutical",
+          "description": "(0018, 0031) Radiopharmaceutical",
+          "type": "string"
+        },
+        {
+          "name": "ReceiveCoilName",
+          "description": "(0018, 1250) Receive Coil Name",
+          "type": "string"
+        },
+        {
+          "name": "ScanOptions",
+          "description": "(0018, 0022) ScanOptions",
+          "type": "string"
+        },
+        {
+          "name": "ScanningSequence",
+          "description": "(0018, 0020) Scanning Sequence",
+          "type": "string"
+        },
+        {
+          "name": "SequenceVariant",
+          "description": "(0018, 0021) Sequence Variant",
+          "type": "string"
+        },
+        {
+          "name": "SeriesDescription",
+          "description": "(0008, 103e) Series Description",
+          "type": "string"
+        },
+        {
+          "name": "SeriesInstanceUID",
+          "description": "(0020, 000e) Series Instance UID",
+          "type": "string"
+        },
+        {
+          "name": "SliceThickness",
+          "description": "(0018, 0050) Slice Thickness",
+          "type": "string"
+        },
+        {
+          "name": "SoftwareVersions",
+          "description": "(0018, 1020) Software Versions",
+          "type": "string"
+        },
+        {
+          "name": "TransmitCoilName",
+          "description": "(0018, 1251) Transmit Coil Name",
+          "type": "string"
+        },
+        {
+          "name": "ViewPosition",
+          "description": "(0018, 5101) Radiographic view associated with (0018, 5100) Patient Position.",
+          "type": "string"
+        },
+        {
+          "name": "dicom_viewer_url",
+          "description": "A URL where the dicom images can be viewed.",
+          "type": "string"
+        },
+        {
+          "name": "file_names",
+          "description": "The file names of any data files associated with this imaging series.",
+          "type": "array"
+        },
+        {
+          "name": "file_urls",
+          "description": "The URLs of any data files associated with this imaging series.",
+          "type": "array"
+        },
+        {
+          "name": "object_ids",
+          "description": "The list of file identifiers (data GUIDs, DRS URIs, or URLs, etc.) for the imaging series, if applicable.",
+          "type": "array"
+        },
+        {
+          "name": "series_viewer_url",
+          "description": "A URL where the imaging series can be viewed.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'imaging_series' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'imaging_series' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'imaging_series' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_series.id",
+          "description": "A unique identifier for records in this 'imaging_series' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "procedure",
+      "description": "Records of activities or processes ordered by, or carried out by, a healthcare provider on the patient with a diagnostic or therapeutic purpose.",
+      "links": [
+        "condition",
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "procedure.id"
+      ],
+      "properties": [
+        {
+          "name": "breathing_support_type",
+          "description": "The type of breathing support the patient received.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_procedure_end",
+          "description": "The number of days between the subject's index date and the end date of the procedure.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_procedure_start",
+          "description": "The number of days between the subject's index date and the start date of the procedure.",
+          "type": "integer"
+        },
+        {
+          "name": "modifier_concept_id",
+          "description": "The modifiers are intended to give additional information about the procedure but as of now the vocabulary is under review. It is up to the ETL to choose how to map modifiers if they exist in source data. These concepts are typically distinguished by 'Modifier' concept classes (e.g., 'CPT4 Modifier' as part of the 'CPT4' vocabulary). If there is more than one modifier on a record, one should be chosen that pertains to the procedure rather than provider. Accepted Concepts.",
+          "type": "string"
+        },
+        {
+          "name": "modifier_source_value",
+          "description": "This field houses the verbatim value from the source data representing the modifier code for the procedure that occurred. The value stored here is mapped to a MODIFIER_CONCEPT_ID.",
+          "type": "string"
+        },
+        {
+          "name": "procedure_concept_id",
+          "description": "The PROCEDURE_CONCEPT_ID field is recommended for primary use in analyses, and must be used for network studies. This is the standard concept mapped from the source value which represents a procedure The CONCEPT_ID that the PROCEDURE_SOURCE_VALUE maps to. Only records whose source values map to standard concepts with a domain of \u201cProcedure\u201d should go in this table. Accepted Concepts.",
+          "type": "string"
+        },
+        {
+          "name": "procedure_name",
+          "description": "The textual categorization of the procedure performed.",
+          "type": "string"
+        },
+        {
+          "name": "procedure_occurrence_id",
+          "description": "The unique key given to a procedure record for a person. Refer to the ETL for how duplicate procedures during the same visit were handled. Each instance of a procedure occurrence in the source data should be assigned this unique key. In some subjects, a person can have multiple records of the same procedure within the same visit. It is valid to keep these duplicates and assign them individual, unique, PROCEDURE_OCCURRENCE_IDs, though it is up to the ETL how they should be handled.",
+          "type": "string"
+        },
+        {
+          "name": "procedure_source_concept_id",
+          "description": "This is the concept representing the procedure source value and may not necessarily be standard. This field is discouraged from use in analysis because it is not required to contain Standard Concepts that are used across the OHDSI community, and should only be used when Standard Concepts do not adequately represent the source detail for the Procedure necessary for a given analytic use subject. Consider using PROCEDURE_CONCEPT_ID instead to enable standardized analytics that can be consistent across the network. If the PROCEDURE_SOURCE_VALUE is coded in the source data using an OMOP supported vocabulary put the concept id representing the source value here.",
+          "type": "string"
+        },
+        {
+          "name": "procedure_source_value",
+          "description": "This field houses the verbatim value from the source data representing the procedure that occurred. For example, this could be an CPT4 or OPCS4 code. Use this value to look up the source concept id and then map the source concept id to a standard concept id.",
+          "type": "string"
+        },
+        {
+          "name": "procedure_type_concept_id",
+          "description": "This field can be used to determine the provenance of the Procedure record, as in whether the procedure was from an EHR system, insurance claim, registry, or other sources. Choose the PROCEDURE_TYPE_CONCEPT_ID that best represents the provenance of the record, for example whether it came from an EHR record or billing claim. If a procedure is recorded as an EHR encounter, the PROCEDURE_TYPE_CONCEPT would be 'EHR encounter record'. Accepted Concepts. A more detailed explanation of each Type Concept can be found on the vocabulary wiki.",
+          "type": "string"
+        },
+        {
+          "name": "provider_id",
+          "description": "The provider associated with the procedure record, e.g. the provider who performed the Procedure. The ETL may need to make a choice as to which PROVIDER_ID to put here. Based on what is available this may or may not be different than the provider associated with the overall VISIT_OCCURRENCE record, for example the admitting vs attending physician on an EHR record.",
+          "type": "string"
+        },
+        {
+          "name": "quantity",
+          "description": "If the quantity value is omitted, a single procedure is assumed. If a Procedure has a quantity of '0' in the source, this should default to '1' in the ETL. If there is a record in the source it can be assumed the exposure occurred at least once.",
+          "type": "string"
+        },
+        {
+          "name": "site_id",
+          "description": "The care site ID.",
+          "type": "string"
+        },
+        {
+          "name": "visit_id",
+          "description": "A foreign key to the visit in the VISIT table during which the device was used.",
+          "type": "string"
+        },
+        {
+          "name": "condition.id",
+          "description": "Unique identifiers for records in the 'condition' table that relate via this foreign key to records in this 'procedure' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'procedure' table.",
+          "type": "string"
+        },
+        {
+          "name": "procedure.id",
+          "description": "A unique identifier for records in this 'procedure' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "image_file",
+      "description": "Data file containing imaging data. Could be an image instance from an imaging series, a zip file of image instances, or other types of imaging files, e.g., DICOM, JPEG, PNG, TIFF, etc.",
+      "links": [
+        "dataset",
+        "subject",
+        "imaging_series",
+        "imaging_study"
+      ],
+      "required": [
+        "data_category",
+        "data_type",
+        "data_format",
+        "image_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_phase",
+          "description": "The image file's data release Phase for a particular study.",
+          "type": "integer"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_url",
+          "description": "The URL of the file if it does not have a data GUID or object_id.",
+          "type": "string"
+        },
+        {
+          "name": "image_quality",
+          "description": "Good, poor, or average image quality",
+          "type": "enum"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "object_ids",
+          "description": "The list of file identifiers (data GUIDs, DRS URIs, or URLs, etc.) for the imaging series, if applicable.",
+          "type": "array"
+        },
+        {
+          "name": "series_instance_number",
+          "description": "order number for this image or other content.",
+          "type": "integer"
+        },
+        {
+          "name": "series_instance_uid",
+          "description": "Formal identifier for this image or other content.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'image_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'image_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_series.id",
+          "description": "Unique identifiers for records in the 'imaging_series' table that relate via this foreign key to records in this 'image_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'image_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "image_file.id",
+          "description": "A unique identifier for records in this 'image_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group",
+      "description": "Sequencing reads from one lane of an NGS experiment.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "read_group.id"
+      ],
+      "properties": [
+        {
+          "name": "base_caller_name",
+          "description": "Name of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "base_caller_version",
+          "description": "Version of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "includes_spike_ins",
+          "description": "Spike-in included?",
+          "type": "boolean"
+        },
+        {
+          "name": "instrument_model",
+          "description": "Numeric value that represents the sample dimension that is greater than the shortest dimension and less than the longest dimension, measured in millimeters.",
+          "type": "enum"
+        },
+        {
+          "name": "is_paired_end",
+          "description": "Are the reads paired end?",
+          "type": "boolean"
+        },
+        {
+          "name": "library_name",
+          "description": "Name of the library.",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_catalog_number",
+          "description": "Catalog of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_name",
+          "description": "Name of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_vendor",
+          "description": "Vendor of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_strand",
+          "description": "Library stranded-ness.",
+          "type": "enum"
+        },
+        {
+          "name": "library_strategy",
+          "description": "Library strategy.",
+          "type": "enum"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group_name",
+          "description": "Read Group Name",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_center",
+          "description": "Name of the center that provided the sequence files.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'read_group' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "A unique identifier for records in this 'read_group' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "image_annotation",
+      "description": "Files containing information describing characteristics of imaging studies, series and instances (e.g., segmentations, bounding boxes, feature labels) and inferences based on those characteristics (e.g., predicted diagnoses). Annotations may be recorded in the course of clinical care or retrospectively for purposes of research (e.g., imaging annotations from PACS or retrospective labeling tools). Please refer to https://midrc.org/annotations to learn more about a particular batch of annotations.",
+      "links": [
+        "dataset",
+        "subject",
+        "imaging_study",
+        "imaging_series",
+        "image_file"
+      ],
+      "required": [
+        "data_category",
+        "data_type",
+        "data_format",
+        "image_annotation.id"
+      ],
+      "properties": [
+        {
+          "name": "airspace_disease_grading",
+          "description": "Values are extracted from the annotation file midrc_mdai_chestxr. Accepted values are \"mild\" opacities (1-2 lung zones), \"moderate\" opacities (3-4 lung zones), and \"severe\" opacities (>4 lung zones).",
+          "type": "enum"
+        },
+        {
+          "name": "annotation_long_name",
+          "description": "The long name of the annotation provides more information about the specific annotation.",
+          "type": "string"
+        },
+        {
+          "name": "annotation_method",
+          "description": "Defines the method by which the annotation was created. Clinically_derived - Based on information produced in the process of the subject's medical care; Retrospective_expert - Based on information produced retrospective to the subject's care by annotators with relevant special clinical expertise; Retrospective_general - Based on information produced retrospective to the subject's care by annotators without relevant special clinical expertise; Retrospective_auto - Based on information produced retrospective to the subject's care using automated means.",
+          "type": "enum"
+        },
+        {
+          "name": "annotation_name",
+          "description": "The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected. All MIDRC created annotations start with \"midrc_\".",
+          "type": "enum"
+        },
+        {
+          "name": "annotator_id",
+          "description": "Coded value to represent a particular annotator in a group. These need only be unique per annotation.",
+          "type": "string"
+        },
+        {
+          "name": "class_covid19_pneumonia",
+          "description": "Values are extracted from the annotation file midrc_mdai_chestxr; Accepted values include \"typical\" appearance, which is multifocal bilateral, peripheral opacities, or opacities with rounded morphology, lower lung-predominant distribution;  \"indeterminate\" appearance, which is absence of typical findings and unilateral, central or upper lung predominant distribution of airspace disease; \"atypical\" appearance, which is pneumothorax or pleural effusion, pulmonary edema, lobar consolidation, solitary lung nodule, or mass diffuse tiny nodules cavity; \"negative\" for pneumonia, which is no lung opacities.",
+          "type": "enum"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "instance_uids",
+          "description": "Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.",
+          "type": "array"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "midrc_mRALE_score",
+          "description": "Values are extracted from the annotation file mRALE_Mastermind_Challenge. The Radiographic Assessment of Lung Edema (RALE) score is provided as a reference standard assessment of disease severity on chest radiograph.  A normal chest radiograph receives a score of 0, while a chest radiograph with complete consolidation of both lungs receives the maximum score of 24.",
+          "type": "integer"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "object_ids",
+          "description": "The list of file identifiers (URLs, DRS URIs, or data GUIDs, etc.) for the file(s), if applicable.",
+          "type": "array"
+        },
+        {
+          "name": "sift_image_quality_index",
+          "description": "A score of image quality based on the SIFT annotation software.",
+          "type": "enum"
+        },
+        {
+          "name": "software_version",
+          "description": "The version of the software being used to generate the annotations. For more information see https://midrc.org/annotations",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'image_annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'image_annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'image_annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_series.id",
+          "description": "Unique identifiers for records in the 'imaging_series' table that relate via this foreign key to records in this 'image_annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "image_file.id",
+          "description": "Unique identifiers for records in the 'image_file' table that relate via this foreign key to records in this 'image_annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "image_annotation.id",
+          "description": "A unique identifier for records in this 'image_annotation' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "unaligned_reads_file",
+      "description": "Data file containing unaligned reads, e.g., a FASTQ file.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "data_category",
+        "data_type",
+        "data_format",
+        "read_group.id",
+        "unaligned_reads_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_url",
+          "description": "The URL of the file if it does not have a data GUID or object_id.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "object_ids",
+          "description": "The list of file identifiers (URLs, DRS URIs, or data GUIDs, etc.) for the file(s), if applicable.",
+          "type": "array"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'unaligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "unaligned_reads_file.id",
+          "description": "A unique identifier for records in this 'unaligned_reads_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads_file",
+      "description": "Data file containing aligned reads, e.g., a BAM file.",
+      "links": [
+        "read_group",
+        "unaligned_reads_file"
+      ],
+      "required": [
+        "data_category",
+        "data_type",
+        "data_format",
+        "aligned_reads_file.id"
+      ],
+      "properties": [
+        {
+          "name": "alignment_workflow_type",
+          "description": "The workflow used to align the sequencing reads, e.g., STAR, BWA-aln, BWA-mem, spinakker, etc.",
+          "type": "string"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_url",
+          "description": "The URL of the file if it does not have a data GUID or object_id.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "object_ids",
+          "description": "The list of file identifiers (URLs, DRS URIs, or data GUIDs, etc.) for the file(s), if applicable.",
+          "type": "array"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'aligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "unaligned_reads_file.id",
+          "description": "Unique identifiers for records in the 'unaligned_reads_file' table that relate via this foreign key to records in this 'aligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_file.id",
+          "description": "A unique identifier for records in this 'aligned_reads_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads_index_file",
+      "description": "Data file containing the index for a set of aligned reads, e.g., a BAI file.",
+      "links": [
+        "aligned_reads_file"
+      ],
+      "required": [
+        "data_category",
+        "data_type",
+        "data_format",
+        "aligned_reads_file.id",
+        "aligned_reads_index_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_url",
+          "description": "The URL of the file if it does not have a data GUID or object_id.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "object_ids",
+          "description": "The list of file identifiers (URLs, DRS URIs, or data GUIDs, etc.) for the file(s), if applicable.",
+          "type": "array"
+        },
+        {
+          "name": "aligned_reads_file.id",
+          "description": "Unique identifiers for records in the 'aligned_reads_file' table that relate via this foreign key to records in this 'aligned_reads_index_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_index_file.id",
+          "description": "A unique identifier for records in this 'aligned_reads_index_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "variant_call_file",
+      "description": "Data file containing simple germline variations called from aligned reads, e.g., a VCF file.",
+      "links": [
+        "read_group",
+        "aligned_reads_file"
+      ],
+      "required": [
+        "data_category",
+        "data_type",
+        "data_format",
+        "variant_call_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_url",
+          "description": "The URL of the file if it does not have a data GUID or object_id.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "object_ids",
+          "description": "The list of file identifiers (URLs, DRS URIs, or data GUIDs, etc.) for the file(s), if applicable.",
+          "type": "array"
+        },
+        {
+          "name": "variant_calling_workflow_type",
+          "description": "The workflow used to call germline mutations from sequencing reads, e.g., HaplotypeCaller.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'variant_call_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_file.id",
+          "description": "Unique identifiers for records in the 'aligned_reads_file' table that relate via this foreign key to records in this 'variant_call_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "variant_call_file.id",
+          "description": "A unique identifier for records in this 'variant_call_file' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

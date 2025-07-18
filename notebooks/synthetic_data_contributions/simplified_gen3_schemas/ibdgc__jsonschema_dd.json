@@ -1,0 +1,2919 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "title",
+          "description": "The title of the clinical study, corresponding to the title of the protocol.",
+          "type": "string"
+        },
+        {
+          "name": "brief_summary",
+          "description": "A short description of the clinical study, including a brief statement of the clinical study's hypothesis, written in language intended for the lay public.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "The general classification of the approach used for the study, i.e. GSA, GDA, RNA-seq.",
+          "type": "array"
+        },
+        {
+          "name": "estimated_study_completion",
+          "description": "The estimated date that the study will be completed/published.",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "description": "Extended description of the protocol, including more technical information, if desired. Do not include the entire protocol; do not duplicate information recorded in other data elements, such as Eligibility Criteria or outcome measures.",
+          "type": "string"
+        },
+        {
+          "name": "category",
+          "description": "The nature of the investigation or investigational use for which clinical study information is being submitted.",
+          "type": "enum"
+        },
+        {
+          "name": "study_phase",
+          "description": "For a clinical trial of a drug product (including a biological product), the numerical phase of such clinical trial, consistent with terminology in 21 CFR 312.21 and in 21 CFR 312.85 for phase 4 studies.",
+          "type": "enum"
+        },
+        {
+          "name": "study_design_allocation",
+          "description": "The method by which participants are assigned to arms in a clinical trial.",
+          "type": "enum"
+        },
+        {
+          "name": "study_design_intervention_model",
+          "description": "The strategy for assigning interventions to participants.",
+          "type": "enum"
+        },
+        {
+          "name": "study_design_masking",
+          "description": "The party or parties involved in the clinical trial who are prevented from having knowledge of the interventions assigned to individual participants.",
+          "type": "enum"
+        },
+        {
+          "name": "study_design_primary_purpose",
+          "description": "The main objective of the intervention(s) being evaluated by the clinical trial.",
+          "type": "enum"
+        },
+        {
+          "name": "intervention_type",
+          "description": "For each intervention studied in the clinical study, the general type of intervention.",
+          "type": "enum"
+        },
+        {
+          "name": "creator",
+          "description": "An organization that initiates the investigation and is legally responsible for the study.",
+          "type": "string"
+        },
+        {
+          "name": "collaborators",
+          "description": "Other organizations (if any) providing support. Support may include funding, design, implementation, data analysis or reporting. The responsible party is responsible for confirming all collaborators before listing them.",
+          "type": "string"
+        },
+        {
+          "name": "principle_investigator",
+          "description": "A researcher in a study who oversees multiple aspects of the study, such as concept development, protocol writing, protocol submission for IRB approval, participant recruitment, informed consent, data collection, analysis, interpretation and presentation.",
+          "type": "string"
+        },
+        {
+          "name": "prs_account",
+          "description": "The account in the Protocol Registration and Results System that was used to register the clinical study and to submit results information for the registered study.",
+          "type": "string"
+        },
+        {
+          "name": "verification_date",
+          "description": "The date on which the responsible party last verified the clinical study information in the entire ClinicalTrials.gov record for the clinical study, even if no additional or updated information is being submitted.",
+          "type": "string"
+        },
+        {
+          "name": "clinical_trial_website",
+          "description": "Any originating or affiliated website for the respective clinical trial.",
+          "type": "string"
+        },
+        {
+          "name": "contributor",
+          "description": "An entity responsible for making contributions to the resource. Examples of a Contributor include a person, an organization, or a service. Typically, the name of a Contributor should be used to indicate the entity.",
+          "type": "string"
+        },
+        {
+          "name": "coverage",
+          "description": "The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant. Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended best practice is to use a controlled vocabulary such as the Thesaurus of Geographic Names [TGN] (http://www.getty.edu/research/tools/vocabulary/tgn/index.html). Where appropriate, named places or time periods can be used in preference to numeric identifiers such as sets of coordinates or date ranges.",
+          "type": "string"
+        },
+        {
+          "name": "language",
+          "description": "A language of the resource. Recommended best practice is to use a controlled vocabulary such as RFC 4646 (http://www.ietf.org/rfc/rfc4646.txt).",
+          "type": "string"
+        },
+        {
+          "name": "publisher",
+          "description": "An entity responsible for making the resource available. Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity.",
+          "type": "string"
+        },
+        {
+          "name": "rights",
+          "description": "Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.",
+          "type": "string"
+        },
+        {
+          "name": "source",
+          "description": "A related resource from which the described resource is derived. The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "project_metadata",
+      "description": "Data file containing the metadata for the project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "project.id",
+        "project_metadata.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'project_metadata' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "project_metadata.id",
+          "description": "A unique identifier for records in this 'project_metadata' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "acknowledgement",
+      "description": "Acknowledgement of an individual involved in a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "acknowledgement.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgee",
+          "description": "The indvidiual or group being acknowledged by the project.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'acknowledgement' table.",
+          "type": "string"
+        },
+        {
+          "name": "acknowledgement.id",
+          "description": "A unique identifier for records in this 'acknowledgement' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "keyword",
+      "description": "A keyword for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "keyword.id"
+      ],
+      "properties": [
+        {
+          "name": "keyword_name",
+          "description": "The name of the keyword.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'keyword' table.",
+          "type": "string"
+        },
+        {
+          "name": "keyword.id",
+          "description": "A unique identifier for records in this 'keyword' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "center",
+      "description": "Genetic Research Center (GRC) or other clinical center at which research participants are recruited.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "name",
+        "investigator_name",
+        "project.id",
+        "center.id"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of center at which participants were recruited and/or at which data were collected.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator responsible for recruiting participants and/or submitting data.",
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "description": "Name of the country at which participants were recruited and/or at which data were collected.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'center' table.",
+          "type": "string"
+        },
+        {
+          "name": "center.id",
+          "description": "A unique identifier for records in this 'center' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "reference_file",
+      "description": "Data file containing any type of reference required for a data analysis.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "project.id",
+        "reference_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "study_version",
+          "description": "The version of the study that was released by data source (e.g., dbGaP)",
+          "type": "number"
+        },
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'reference_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "reference_file.id",
+          "description": "A unique identifier for records in this 'reference_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "publication",
+      "description": "Publication for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "publication.id"
+      ],
+      "properties": [
+        {
+          "name": "pmid",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "doi",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "first_author",
+          "description": "First author of paper (last name, initials)",
+          "type": "string"
+        },
+        {
+          "name": "last_author",
+          "description": "Last author of paper (last name, initials)",
+          "type": "string"
+        },
+        {
+          "name": "journal",
+          "description": "Name of the journal",
+          "type": "string"
+        },
+        {
+          "name": "year",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'publication' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "A unique identifier for records in this 'publication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "summary_file",
+      "description": "Summary files from centers",
+      "links": [
+        "center"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "center.id",
+        "summary_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "center.id",
+          "description": "Unique identifiers for records in the 'center' table that relate via this foreign key to records in this 'summary_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "summary_file.id",
+          "description": "A unique identifier for records in this 'summary_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "participant",
+      "description": "The collection of all data related to a specific participant in the context of a specific project.",
+      "links": [
+        "center"
+      ],
+      "required": [
+        "center.id",
+        "participant.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "consented_for_data_sharing",
+          "description": "TBD",
+          "type": "boolean"
+        },
+        {
+          "name": "consortium_id",
+          "description": "TBD",
+          "type": "integer"
+        },
+        {
+          "name": "consortium_id_of_child",
+          "description": "TBD",
+          "type": "integer"
+        },
+        {
+          "name": "consortium_id_of_affected_spouse",
+          "description": "TBD",
+          "type": "integer"
+        },
+        {
+          "name": "fathers_consortium_id",
+          "description": "TBD",
+          "type": "integer"
+        },
+        {
+          "name": "local_pedigree_id",
+          "description": "TBD",
+          "type": "integer"
+        },
+        {
+          "name": "mothers_consortium_id",
+          "description": "TBD",
+          "type": "integer"
+        },
+        {
+          "name": "relationship_to_proband",
+          "description": "TBD",
+          "type": "enum"
+        },
+        {
+          "name": "initials",
+          "description": "TBD",
+          "type": "string"
+        },
+        {
+          "name": "center.id",
+          "description": "Unique identifiers for records in the 'center' table that relate via this foreign key to records in this 'participant' table.",
+          "type": "string"
+        },
+        {
+          "name": "participant.id",
+          "description": "A unique identifier for records in this 'participant' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "supplementary_file",
+      "description": "Data file containing any type of supplementary information from a publication.",
+      "links": [
+        "project",
+        "publication"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "supplementary_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'supplementary_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "Unique identifiers for records in the 'publication' table that relate via this foreign key to records in this 'supplementary_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "supplementary_file.id",
+          "description": "A unique identifier for records in this 'supplementary_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "demographic",
+      "description": "Data for the characterization of the participant by means of segmenting the population (e.g., characterization by age, sex, or race).",
+      "links": [
+        "participant"
+      ],
+      "required": [
+        "gender",
+        "participant.id",
+        "demographic.id"
+      ],
+      "properties": [
+        {
+          "name": "gender",
+          "description": "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]",
+          "type": "enum"
+        },
+        {
+          "name": "sex",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "race",
+          "description": "An individual's self-reported racial classification. The provided values are based on categories used by the U.S. Census Bureau, but have been augmented to distinguish further between Asian and Middle-Eastern groups.",
+          "type": "enum"
+        },
+        {
+          "name": "race_other",
+          "description": "Racial designation not matching one of the enumerated racial categories.",
+          "type": "string"
+        },
+        {
+          "name": "hispanic",
+          "description": "Whether a participant describes him or herself as Hispanic or Latino.",
+          "type": "enum"
+        },
+        {
+          "name": "jewish",
+          "description": "Whether a participant describes him or herself as Jewish.",
+          "type": "enum"
+        },
+        {
+          "name": "year_of_birth",
+          "description": "Numeric value to represent the calendar year in which an individual was born.",
+          "type": "number"
+        },
+        {
+          "name": "birth_order",
+          "description": "Birth order",
+          "type": "enum"
+        },
+        {
+          "name": "paternal_grandfather_jewish",
+          "description": "Is paternal grandfather Jewish?",
+          "type": "enum"
+        },
+        {
+          "name": "paternal_grandmother_jewish",
+          "description": "Is paternal grandmother Jewish?",
+          "type": "enum"
+        },
+        {
+          "name": "maternal_grandfather_jewish",
+          "description": "Is maternal grandfather Jewish?",
+          "type": "enum"
+        },
+        {
+          "name": "maternal_grandmother_jewish",
+          "description": "Is maternal grandmother Jewish?",
+          "type": "enum"
+        },
+        {
+          "name": "paternal_grandfather_ashkenazi",
+          "description": "Is paternal grandfather Ashkenazi (Jewish)?",
+          "type": "enum"
+        },
+        {
+          "name": "paternal_grandmother_ashkenazi",
+          "description": "Is paternal grandmother Ashkenazi (Jewish)?",
+          "type": "enum"
+        },
+        {
+          "name": "maternal_grandfather_ashkenazi",
+          "description": "Is maternal grandfather Ashkenazi (Jewish)?",
+          "type": "enum"
+        },
+        {
+          "name": "maternal_grandmother_ashkenazi",
+          "description": "Is maternal grandmother Ashkenazi (Jewish)?",
+          "type": "enum"
+        },
+        {
+          "name": "breast_fed",
+          "description": "Breast fed?",
+          "type": "enum"
+        },
+        {
+          "name": "duration_of_exclusive_breastfeeding",
+          "description": "If breast fed, duration of exclusive breastfeeding (months)?",
+          "type": "enum"
+        },
+        {
+          "name": "age_at_weaning",
+          "description": "Age at weaning (months)",
+          "type": "enum"
+        },
+        {
+          "name": "participant.id",
+          "description": "Unique identifiers for records in the 'participant' table that relate via this foreign key to records in this 'demographic' table.",
+          "type": "string"
+        },
+        {
+          "name": "demographic.id",
+          "description": "A unique identifier for records in this 'demographic' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "alias",
+      "description": "Additional identifier by which the participant is known.",
+      "links": [
+        "participant"
+      ],
+      "required": [
+        "id_type",
+        "value",
+        "participant.id",
+        "alias.id"
+      ],
+      "properties": [
+        {
+          "name": "id_type",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "value",
+          "description": "Identifier referring to an individual participant. This may consist of a single alphanumeric value, or a pair of values representing the family/pedigree and individual, separated by a comma.",
+          "type": "string"
+        },
+        {
+          "name": "participant.id",
+          "description": "Unique identifiers for records in the 'participant' table that relate via this foreign key to records in this 'alias' table.",
+          "type": "string"
+        },
+        {
+          "name": "alias.id",
+          "description": "A unique identifier for records in this 'alias' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "visit",
+      "description": "A visit by a patient or study participant to a medical professional. A clinical encounter that encompasses planned and unplanned trial interventions, procedures and assessments that may be performed on a participant. A visit has a start and an end, each described with a rule. The process by which information about the health status of an individual is obtained before and after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done.",
+      "links": [
+        "participant"
+      ],
+      "required": [
+        "participant.id",
+        "visit.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_visit",
+          "description": "Age at visit in years - round to nearest integer. If the age in years at the visit is greater than 89, see 'age_at_visit_gt89'.",
+          "type": "integer"
+        },
+        {
+          "name": "bmi",
+          "description": "The body mass divided by the square of the body height expressed in units of kg/m^2.",
+          "type": "number"
+        },
+        {
+          "name": "ever_transferred",
+          "description": "Participant ever transferred sites (changed ids)",
+          "type": "enum"
+        },
+        {
+          "name": "health_insurance",
+          "description": "Currently have any health insurance",
+          "type": "boolean"
+        },
+        {
+          "name": "height",
+          "description": "The height of the patient in meters.",
+          "type": "number"
+        },
+        {
+          "name": "pregnancy_status",
+          "description": "Is the participant pregnant (women) or has been pregnant since the last visit",
+          "type": "boolean"
+        },
+        {
+          "name": "review_yr",
+          "description": "Year in which the subject's phenotype data were last updated. Must be greater than or equal to both yob and diag_yr.",
+          "type": "integer"
+        },
+        {
+          "name": "version_data",
+          "description": "Version number of data",
+          "type": "string"
+        },
+        {
+          "name": "visit_number",
+          "description": "Visit number",
+          "type": "integer"
+        },
+        {
+          "name": "harmonized_visit_number",
+          "description": "The derived harmonized visit number for the studies MACS and WIHS.",
+          "type": "integer"
+        },
+        {
+          "name": "visit_type",
+          "description": "Define if the visit is a follow-up or the baseline visit.",
+          "type": "enum"
+        },
+        {
+          "name": "weight",
+          "description": "The weight of the participant measured in grams.",
+          "type": "number"
+        },
+        {
+          "name": "weight_percentage",
+          "description": "The percentage of the weight considering the weight measured at the index date as the reference.",
+          "type": "number"
+        },
+        {
+          "name": "visit_date",
+          "description": "Year of the visit.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_follow_up",
+          "description": "Number of days between the date used for index and the date the patient was seen or contacted at follow-up.",
+          "type": "integer"
+        },
+        {
+          "name": "visit_id",
+          "description": "ID at time of interview (prior to transfer)",
+          "type": "integer"
+        },
+        {
+          "name": "participant.id",
+          "description": "Unique identifiers for records in the 'participant' table that relate via this foreign key to records in this 'visit' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "A unique identifier for records in this 'visit' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "surgery",
+      "description": "TBD",
+      "links": [
+        "visit",
+        "participant"
+      ],
+      "required": [
+        "visit.id",
+        "surgery.id"
+      ],
+      "properties": [
+        {
+          "name": "surgery",
+          "description": "Abdominal surgery for complication or treatment of CD.",
+          "type": "enum"
+        },
+        {
+          "name": "surgery_yr",
+          "description": "Date of surgery (colorectal). Year of first operation.",
+          "type": "integer"
+        },
+        {
+          "name": "colectomy",
+          "description": "Colectomy for complication or treatment of UC/IC.",
+          "type": "enum"
+        },
+        {
+          "name": "colectomy_yr",
+          "description": "Year of surgery (colectomy).",
+          "type": "integer"
+        },
+        {
+          "name": "surgery_dysplasia",
+          "description": "Indication for colectomy: Dysplasia/cancer.",
+          "type": "enum"
+        },
+        {
+          "name": "surgery_chronic",
+          "description": "Indication for colectomy: Chronic continuous disease.",
+          "type": "enum"
+        },
+        {
+          "name": "surgery_acute",
+          "description": "Indication for colectomy: Acute fulminant disease.",
+          "type": "enum"
+        },
+        {
+          "name": "surgery_dysplasia_cancer",
+          "description": "Surgery for dysplasia/cancer.",
+          "type": "enum"
+        },
+        {
+          "name": "surgery_since_last_assessment",
+          "description": "Surgery for complication or treatment of UC/IC since last assessment.",
+          "type": "enum"
+        },
+        {
+          "name": "appendectomy",
+          "description": "Appendectomy for complication or treatment of UC/IC.",
+          "type": "enum"
+        },
+        {
+          "name": "appendectomy_yr",
+          "description": "Year of surgery (appendectomy).",
+          "type": "integer"
+        },
+        {
+          "name": "small_bowel_resection",
+          "description": "Small bowel resection.",
+          "type": "enum"
+        },
+        {
+          "name": "large_bowel_resection",
+          "description": "Large bowel resection.",
+          "type": "enum"
+        },
+        {
+          "name": "strictureplasty",
+          "description": "Strictureplasty.",
+          "type": "enum"
+        },
+        {
+          "name": "diversion",
+          "description": "Diversion.",
+          "type": "enum"
+        },
+        {
+          "name": "permanent_stoma",
+          "description": "Permanent stoma.",
+          "type": "enum"
+        },
+        {
+          "name": "gastroenterostomy",
+          "description": "Gastroenterostomy.",
+          "type": "enum"
+        },
+        {
+          "name": "abdominal_fistula_abscess",
+          "description": "Abdominal fistula/abscess.",
+          "type": "enum"
+        },
+        {
+          "name": "perineal_fistula_abscess",
+          "description": "Perineal fistula/abscess.",
+          "type": "enum"
+        },
+        {
+          "name": "diagnosis_dysplasia_cancer_colorectal",
+          "description": "Diagnosis of dysplasia/cancer (colorectal).",
+          "type": "enum"
+        },
+        {
+          "name": "diagnosis_dysplasia_cancer_colorectal_yr",
+          "description": "Year of Diagnosis of dysplasia/cancer (colorectal).",
+          "type": "integer"
+        },
+        {
+          "name": "pouchitis",
+          "description": "Pouchitis.",
+          "type": "enum"
+        },
+        {
+          "name": "operation_ad",
+          "description": "Number of operations for abdominal disease.",
+          "type": "integer"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'surgery' table.",
+          "type": "string"
+        },
+        {
+          "name": "participant.id",
+          "description": "Unique identifiers for records in the 'participant' table that relate via this foreign key to records in this 'surgery' table.",
+          "type": "string"
+        },
+        {
+          "name": "surgery.id",
+          "description": "A unique identifier for records in this 'surgery' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "macroscopic_disease_location",
+      "description": "TBD",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "macroscopic_disease_location.id"
+      ],
+      "properties": [
+        {
+          "name": "dis_loc_gi_esophagus",
+          "description": "Disease location: Upper GI - Esophagus",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_gi_stomach",
+          "description": "Disease location: Upper GI - Stomach",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_gi_duodenum",
+          "description": "Disease location: Upper GI - Duodenum",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_jejunal",
+          "description": "Disease location: Jejunum",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_proximal_ileal",
+          "description": "Disease location: Proximal ileum",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_gi",
+          "description": "Disease location: Upper GI",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_ileal",
+          "description": "Disease location: Distal ileum",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_terminal_ileal",
+          "description": "Disease location: Terminal ileum",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_cecum_colorectal",
+          "description": "Disease location: Colorectal - Cecum",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_colorectal",
+          "description": "Disease location: Colorectal - Colon",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_rectum_colorectal",
+          "description": "Disease location: Colorectal - Rectum",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_perianal",
+          "description": "Disease location: Perianal/Perineal",
+          "type": "enum"
+        },
+        {
+          "name": "dis_behavior",
+          "description": "CD disease behavior",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_proctitis",
+          "description": "Disease location: Proctitis",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_left",
+          "description": "Disease location: Left-sided (to splenic flexure)",
+          "type": "enum"
+        },
+        {
+          "name": "dis_loc_extensive",
+          "description": "Disease location: Extensive (beyond splenic flexure)",
+          "type": "enum"
+        },
+        {
+          "name": "pancolitis",
+          "description": "Disease location: Pancolitis",
+          "type": "enum"
+        },
+        {
+          "name": "periappendiceal_inflammation",
+          "description": "Disease location: Periappendiceal inflammation",
+          "type": "enum"
+        },
+        {
+          "name": "terminal_ileum_visualized",
+          "description": "Terminal ileum visualized",
+          "type": "enum"
+        },
+        {
+          "name": "terminal_ileum_visualized_biopsied_yes",
+          "description": "Yes, Terminal ileum visualized",
+          "type": "enum"
+        },
+        {
+          "name": "terminal_ileum_visualized_if_biopsied",
+          "description": "If Terminal ileum visualized is biopsied",
+          "type": "enum"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'macroscopic_disease_location' table.",
+          "type": "string"
+        },
+        {
+          "name": "macroscopic_disease_location.id",
+          "description": "A unique identifier for records in this 'macroscopic_disease_location' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "diagnosis",
+      "description": "Data from the investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation.",
+      "links": [
+        "visit",
+        "participant"
+      ],
+      "required": [
+        "ibd_affection_status",
+        "diagnosis.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_diagnosis",
+          "description": "Age at the time of diagnosis expressed in number of days since birth.",
+          "type": "integer"
+        },
+        {
+          "name": "age_at_diagnosis_gt89",
+          "description": "Indicates whether age_at_diagnosis is greater than 89 years.",
+          "type": "enum"
+        },
+        {
+          "name": "ibd_affection_status",
+          "description": "Indicates whether participant has been diagnosed with IBD.",
+          "type": "enum"
+        },
+        {
+          "name": "diagnosis",
+          "description": "Specific disease type for participant diagnosed with IBD.",
+          "type": "enum"
+        },
+        {
+          "name": "diag_yr",
+          "description": "Year of diagnosis. Must be greater than or equal to yob and less than or equal to review_yr",
+          "type": "integer"
+        },
+        {
+          "name": "other_diagnosis",
+          "description": "Specific diagnosis other than IBD.",
+          "type": "string"
+        },
+        {
+          "name": "control",
+          "description": "Indicator for unrelated, healthy controls (1 for controls, 0 otherwise). Those designated as controls should have no family history of IBD.",
+          "type": "enum"
+        },
+        {
+          "name": "inception_case",
+          "description": "TBD",
+          "type": "enum"
+        },
+        {
+          "name": "control_checklist",
+          "description": "TBD",
+          "type": "enum"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'diagnosis' table.",
+          "type": "string"
+        },
+        {
+          "name": "participant.id",
+          "description": "Unique identifiers for records in the 'participant' table that relate via this foreign key to records in this 'diagnosis' table.",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "A unique identifier for records in this 'diagnosis' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "extra_intestinal_manifestations",
+      "description": "TBD",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "extra_intestinal_manifestations.id"
+      ],
+      "properties": [
+        {
+          "name": "liver_psc",
+          "description": "Liver: Primary sclerosing cholangitis",
+          "type": "enum"
+        },
+        {
+          "name": "joint_as",
+          "description": "Joints: Ankylosing spondylitis",
+          "type": "enum"
+        },
+        {
+          "name": "large_joint_related_to_disease_activity",
+          "description": "Joints: Large joint related to disease activity",
+          "type": "enum"
+        },
+        {
+          "name": "small_joint_unrelated_to_disease_activity",
+          "description": "Joints: Small joint unrelated to disease activity",
+          "type": "enum"
+        },
+        {
+          "name": "sacro_iliitis",
+          "description": "Joints: Sacro-iliitis",
+          "type": "enum"
+        },
+        {
+          "name": "non_specific_joint_inflammation",
+          "description": "Joints: Non-specific joint inflammation",
+          "type": "enum"
+        },
+        {
+          "name": "erythema_nodosum",
+          "description": "Skin: Erythema nodosum",
+          "type": "enum"
+        },
+        {
+          "name": "pyoderma",
+          "description": "Skin: Pyoderma",
+          "type": "enum"
+        },
+        {
+          "name": "uveitis",
+          "description": "Eyes: Uveitis",
+          "type": "enum"
+        },
+        {
+          "name": "episcleritis",
+          "description": "Eyes: Episcleritis",
+          "type": "enum"
+        },
+        {
+          "name": "undiagnosed_ocular_inflammation",
+          "description": "Eyes: Undiagnosed ocular inflammation:",
+          "type": "enum"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'extra_intestinal_manifestations' table.",
+          "type": "string"
+        },
+        {
+          "name": "extra_intestinal_manifestations.id",
+          "description": "A unique identifier for records in this 'extra_intestinal_manifestations' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospecimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.",
+      "links": [
+        "participant",
+        "visit"
+      ],
+      "required": [
+        "participant.id",
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "biospecimen_anatomic_site",
+          "description": "Text term that represents the name of the primary disease site of the submitted tumor sample.",
+          "type": "enum"
+        },
+        {
+          "name": "composition",
+          "description": "Text term that represents the cellular composition of the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "days_to_collection",
+          "description": "Time interval from the date of biospecimen collection to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "integer"
+        },
+        {
+          "name": "method_of_sample_procurement",
+          "description": "The method used to procure the sample used to extract analyte(s).",
+          "type": "enum"
+        },
+        {
+          "name": "preservation_method",
+          "description": "Text term that represents the method used to preserve the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "sample_type",
+          "description": "Characterization of the sample as either clinical or contrived.",
+          "type": "enum"
+        },
+        {
+          "name": "tissue_type",
+          "description": "Text term that represents a description of the kind of tissue collected with respect to disease status or proximity to tumor tissue.",
+          "type": "enum"
+        },
+        {
+          "name": "participant.id",
+          "description": "Unique identifiers for records in the 'participant' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "exposure",
+      "description": "TBD",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "exposure.id"
+      ],
+      "properties": [
+        {
+          "name": "smoking",
+          "description": "Smoking status at diagnosis/ascertainment (i.e., within the three months immediately prior)",
+          "type": "enum"
+        },
+        {
+          "name": "smoking_start",
+          "description": "Year started smoking",
+          "type": "integer"
+        },
+        {
+          "name": "smoking_stop",
+          "description": "Year stopped smoking",
+          "type": "integer"
+        },
+        {
+          "name": "nocigar_day",
+          "description": "Average number of cigarettes smoked per day",
+          "type": "integer"
+        },
+        {
+          "name": "nocigar_day_unknown",
+          "description": "Average number of cigarettes smoked per day (Unknown)",
+          "type": "boolean"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'exposure' table.",
+          "type": "string"
+        },
+        {
+          "name": "exposure.id",
+          "description": "A unique identifier for records in this 'exposure' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "pubertal_stage",
+      "description": "TBD",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "pubertal_stage.id"
+      ],
+      "properties": [
+        {
+          "name": "pediatric_onset",
+          "description": "Pediatric Onset",
+          "type": "enum"
+        },
+        {
+          "name": "pubic_hair_development",
+          "description": "Pubic hair development",
+          "type": "enum"
+        },
+        {
+          "name": "genitalia",
+          "description": "Pubic hair development (male only)",
+          "type": "enum"
+        },
+        {
+          "name": "breast_development",
+          "description": "Breast development (females only)",
+          "type": "enum"
+        },
+        {
+          "name": "height_at_diagnosis",
+          "description": "Height at diagnosis",
+          "type": "number"
+        },
+        {
+          "name": "height_at_diagnosis_unit",
+          "description": "Height at diagnosis unit",
+          "type": "enum"
+        },
+        {
+          "name": "weight_at_diagnosis",
+          "description": "Weight at diagnosis",
+          "type": "number"
+        },
+        {
+          "name": "weight_at_diagnosis_unit",
+          "description": "Height at diagnosis unit",
+          "type": "enum"
+        },
+        {
+          "name": "height",
+          "description": "Height at diagnosis",
+          "type": "number"
+        },
+        {
+          "name": "height_unit",
+          "description": "Height at diagnosis unit",
+          "type": "enum"
+        },
+        {
+          "name": "weight",
+          "description": "Weight at diagnosis",
+          "type": "number"
+        },
+        {
+          "name": "weight_unit",
+          "description": "Height at diagnosis unit",
+          "type": "enum"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'pubertal_stage' table.",
+          "type": "string"
+        },
+        {
+          "name": "pubertal_stage.id",
+          "description": "A unique identifier for records in this 'pubertal_stage' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "disease_activity_and_treatment",
+      "description": "TBD",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "disease_activity_and_treatment.id"
+      ],
+      "properties": [
+        {
+          "name": "current_disease_activity",
+          "description": "Current disease activity",
+          "type": "enum"
+        },
+        {
+          "name": "physician_global_assessment",
+          "description": "Physician global assessment of disease activity since diagnosis",
+          "type": "enum"
+        },
+        {
+          "name": "hospitalizations_since_diagnosis",
+          "description": "Hospitalizations since diagnosis",
+          "type": "enum"
+        },
+        {
+          "name": "oralster_diag",
+          "description": "Ever received oral steroids (for treatment of IBD)?",
+          "type": "enum"
+        },
+        {
+          "name": "oralster_diag_since_diagnosis",
+          "description": "Used oral corticosteroids since diagnosis?",
+          "type": "enum"
+        },
+        {
+          "name": "oralster_diag_used_within_first_month",
+          "description": "Used oral corticosteroids within first month?",
+          "type": "enum"
+        },
+        {
+          "name": "oralster_diag_used_currently",
+          "description": "Used oral corticosteroids currently",
+          "type": "enum"
+        },
+        {
+          "name": "ivster_diag",
+          "description": "Ever received IV steroids (for treatment of IBD)?",
+          "type": "enum"
+        },
+        {
+          "name": "ivster_since_diagnosis",
+          "description": "IV corticosteroids used since diagnosis?",
+          "type": "enum"
+        },
+        {
+          "name": "ivster_diag_within_first_month",
+          "description": "IV corticosteroids within first month?",
+          "type": "enum"
+        },
+        {
+          "name": "ivster_diag_used_currently",
+          "description": "Used IV corticosteroids currently?",
+          "type": "enum"
+        },
+        {
+          "name": "atnfcyclo_diag",
+          "description": "Ever received anti-TNF or cyclosporine (for treatment of IBD)?",
+          "type": "enum"
+        },
+        {
+          "name": "atnfcyclo_diag_since_diagnosis",
+          "description": "anti-TNF or cyclosporine used since diagnosis?",
+          "type": "enum"
+        },
+        {
+          "name": "atnfcyclo_diag_within_first_month",
+          "description": "anti-TNF or cyclosporine used within first month?",
+          "type": "enum"
+        },
+        {
+          "name": "atnfcyclo_diag_used_currently",
+          "description": "anti-TNF or cyclosporine used currently?",
+          "type": "enum"
+        },
+        {
+          "name": "immuno_diag",
+          "description": "Ever received other immunomodulatory drugs (for treatment of IBD)?",
+          "type": "enum"
+        },
+        {
+          "name": "immuno_diag_since_diagnosis",
+          "description": "immunomodulatory drugs used since diagnosis?",
+          "type": "enum"
+        },
+        {
+          "name": "immuno_diag_within_first_month",
+          "description": "immunomodulatory drugs used within first month?",
+          "type": "enum"
+        },
+        {
+          "name": "immuno_diag_used_currently",
+          "description": "immunomodulatory drugs used currently?",
+          "type": "enum"
+        },
+        {
+          "name": "atnfcyclo_ind",
+          "description": "If received anti-TNF or cyclosporine, was this for treatment of an acute flare, chronic refractory IBD, or both? (Required when atnfcyclo_diag is equal to \"Yes\"; oth- erwise must be left blank)",
+          "type": "enum"
+        },
+        {
+          "name": "aminosalicylates_since_diagnosis",
+          "description": "aminosalicylates used since diagnosis?",
+          "type": "enum"
+        },
+        {
+          "name": "aminosalicylates_within_first_month",
+          "description": "aminosalicylates used within first month?",
+          "type": "enum"
+        },
+        {
+          "name": "aminosalicylates_used_currently",
+          "description": "aminosalicylates used currently?",
+          "type": "enum"
+        },
+        {
+          "name": "antibiotics_since_diagnosis",
+          "description": "antibiotics used since diagnosis?",
+          "type": "enum"
+        },
+        {
+          "name": "antibiotics_within_first_month",
+          "description": "antibiotics used within first month?",
+          "type": "enum"
+        },
+        {
+          "name": "antibiotics_used_currently",
+          "description": "antibiotics used currently?",
+          "type": "enum"
+        },
+        {
+          "name": "mtx_since_diagnosis",
+          "description": "mtx used since diagnosis?",
+          "type": "enum"
+        },
+        {
+          "name": "mtx_within_first_month",
+          "description": "mtx used within first month?",
+          "type": "enum"
+        },
+        {
+          "name": "mtx_used_currently",
+          "description": "mtx used currently?",
+          "type": "enum"
+        },
+        {
+          "name": "other_biological_therapies_since_diagnosis",
+          "description": "Other biological therapies used since diagnosis?",
+          "type": "array"
+        },
+        {
+          "name": "other_biological_therapies_within_first_month",
+          "description": "Other biological therapies used within first month?",
+          "type": "array"
+        },
+        {
+          "name": "other_biological_therapies_used_currently",
+          "description": "Other biological therapies used currently?",
+          "type": "array"
+        },
+        {
+          "name": "eternal_nutrition_since_diagnosis",
+          "description": "Enteral nutrition used since diagnosis?",
+          "type": "enum"
+        },
+        {
+          "name": "eternal_nutrition_within_first_month",
+          "description": "Enteral nutrition used within first month?",
+          "type": "enum"
+        },
+        {
+          "name": "eternal_nutrition_used_currently",
+          "description": "Enteral nutrition used currently?",
+          "type": "enum"
+        },
+        {
+          "name": "subjects_general_well_being",
+          "description": "Subject's general well-being",
+          "type": "enum"
+        },
+        {
+          "name": "abdominal_pain",
+          "description": "Abdominal pain",
+          "type": "enum"
+        },
+        {
+          "name": "No_of_liquid_stools_per_day",
+          "description": "No. of liquid stools per day",
+          "type": "string"
+        },
+        {
+          "name": "No_of_liquid_stools_per_day_unknown",
+          "description": "No. of liquid stools per day (Unknown)",
+          "type": "boolean"
+        },
+        {
+          "name": "stool_frequency",
+          "description": "Stool frequency",
+          "type": "enum"
+        },
+        {
+          "name": "rectal_bleeding",
+          "description": "Stool frequency",
+          "type": "enum"
+        },
+        {
+          "name": "abdominal_mass",
+          "description": "Abdominal mass",
+          "type": "enum"
+        },
+        {
+          "name": "aphthous_ulcers",
+          "description": "Aphthous ulcers complication",
+          "type": "enum"
+        },
+        {
+          "name": "anal_fissure",
+          "description": "Anal fissure complication",
+          "type": "enum"
+        },
+        {
+          "name": "new_fistula",
+          "description": "New fistula complication",
+          "type": "enum"
+        },
+        {
+          "name": "abscess",
+          "description": "Abscess complication",
+          "type": "enum"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'disease_activity_and_treatment' table.",
+          "type": "string"
+        },
+        {
+          "name": "disease_activity_and_treatment.id",
+          "description": "A unique identifier for records in this 'disease_activity_and_treatment' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "family_history",
+      "description": "TBD",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "family_history.id"
+      ],
+      "properties": [
+        {
+          "name": "family_history",
+          "description": "Family history of IBD in first or second degree relatives",
+          "type": "enum"
+        },
+        {
+          "name": "family_type",
+          "description": "TBD",
+          "type": "enum"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'family_history' table.",
+          "type": "string"
+        },
+        {
+          "name": "family_history.id",
+          "description": "A unique identifier for records in this 'family_history' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aliquot",
+      "description": "Pertaining to a portion of the whole; any one of two or more samples of something, of the same volume or weight.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "aliquot.id"
+      ],
+      "properties": [
+        {
+          "name": "aliquot_quantity",
+          "description": "The quantity in micrograms (ug) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "aliquot_volume",
+          "description": "The volume in microliters (ml) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "amount",
+          "description": "Weight in grams or volume in mL.",
+          "type": "number"
+        },
+        {
+          "name": "analyte_isolation_batch_id",
+          "description": "Nucleic acid isolation batch ID",
+          "type": "string"
+        },
+        {
+          "name": "analyte_isolation_method",
+          "description": "Type of nucleic acid isolation batch",
+          "type": "string"
+        },
+        {
+          "name": "analyte_isolation_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "analyte_type",
+          "description": "Text term that represents the kind of molecular specimen analyte.",
+          "type": "string"
+        },
+        {
+          "name": "concentration",
+          "description": "Numeric value that represents the concentration of an analyte or aliquot extracted from the sample or sample portion, measured in milligrams per milliliter.",
+          "type": "number"
+        },
+        {
+          "name": "exclude",
+          "description": "Samples flagged for removal from analysis",
+          "type": "boolean"
+        },
+        {
+          "name": "exclusion_criteria",
+          "description": "Additional remarks about flagged samples",
+          "type": "string"
+        },
+        {
+          "name": "experiment_batch_id",
+          "description": "Genotype or expression batch ID",
+          "type": "string"
+        },
+        {
+          "name": "experiment_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "Type of genotype or expression batch",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'aliquot' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "A unique identifier for records in this 'aliquot' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample_id",
+      "description": "Additional ID used to identify sample.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "id_type",
+        "value",
+        "sample.id",
+        "sample_id.id"
+      ],
+      "properties": [
+        {
+          "name": "id_type",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "value",
+          "description": "Alphanumeric value identifying an individual sample.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'sample_id' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample_id.id",
+          "description": "A unique identifier for records in this 'sample_id' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "raw_snp_genotype",
+      "description": "Raw results from SNP microarray",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "sample.id",
+        "raw_snp_genotype.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "assay_method",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "assay_instrument",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "assay_instrument_model",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'raw_snp_genotype' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "raw_snp_genotype.id",
+          "description": "A unique identifier for records in this 'raw_snp_genotype' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "qc_workflow",
+      "description": "Metadata for the qc pipeline used to create annotation files.",
+      "links": [
+        "raw_snp_genotype"
+      ],
+      "required": [
+        "workflow_link",
+        "workflow_type",
+        "raw_snp_genotype.id",
+        "qc_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "string"
+        },
+        {
+          "name": "raw_snp_genotype.id",
+          "description": "Unique identifiers for records in the 'raw_snp_genotype' table that relate via this foreign key to records in this 'qc_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "qc_workflow.id",
+          "description": "A unique identifier for records in this 'qc_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group",
+      "description": "Sequencing reads from one lane of an NGS experiment.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "read_group.id"
+      ],
+      "properties": [
+        {
+          "name": "experiment_name",
+          "description": "Submitter-defined name for the experiment.",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_center",
+          "description": "Name of the center that provided the sequence files.",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "instrument_model",
+          "description": "Numeric value that represents the sample dimension that is greater than the shortest dimension and less than the longest dimension, measured in millimeters.",
+          "type": "enum"
+        },
+        {
+          "name": "library_strategy",
+          "description": "Library strategy.",
+          "type": "enum"
+        },
+        {
+          "name": "RIN",
+          "description": "A numerical assessment of the integrity of RNA based on the entire electrophoretic trace of the RNA sample including the presence or absence of degradation products.",
+          "type": "number"
+        },
+        {
+          "name": "flow_cell_barcode",
+          "description": "Flow Cell Barcode.",
+          "type": "string"
+        },
+        {
+          "name": "includes_spike_ins",
+          "description": "Spike-in included?",
+          "type": "boolean"
+        },
+        {
+          "name": "spike_ins_fasta",
+          "description": "Name of the FASTA file that contains the spike-in sequences.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_concentration",
+          "description": "Spike in concentration.",
+          "type": "string"
+        },
+        {
+          "name": "library_selection",
+          "description": "Library Selection Method",
+          "type": "enum"
+        },
+        {
+          "name": "library_preparation_kit_name",
+          "description": "Name of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_vendor",
+          "description": "Vendor of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_catalog_number",
+          "description": "Catalog of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_version",
+          "description": "Version of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_name",
+          "description": "Name of the library.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_name",
+          "description": "Name of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_vendor",
+          "description": "Vendor of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_catalog_number",
+          "description": "Catalog of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_version",
+          "description": "Version of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_target_region",
+          "description": "Target Capture Kit BED file.",
+          "type": "string"
+        },
+        {
+          "name": "size_selection_range",
+          "description": "Range of size selection.",
+          "type": "string"
+        },
+        {
+          "name": "adapter_name",
+          "description": "Name of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "adapter_sequence",
+          "description": "Base sequence of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "to_trim_adapter_sequence",
+          "description": "Does the user suggest adapter trimming?",
+          "type": "boolean"
+        },
+        {
+          "name": "library_strand",
+          "description": "Library stranded-ness.",
+          "type": "enum"
+        },
+        {
+          "name": "base_caller_name",
+          "description": "Name of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "base_caller_version",
+          "description": "Version of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "is_paired_end",
+          "description": "Are the reads paired end?",
+          "type": "boolean"
+        },
+        {
+          "name": "read_length",
+          "description": "The length of the reads.",
+          "type": "integer"
+        },
+        {
+          "name": "read_group_name",
+          "description": "Read Group Name",
+          "type": "string"
+        },
+        {
+          "name": "barcoding_applied",
+          "description": "True/False: was barcoding applied?",
+          "type": "boolean"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'read_group' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "A unique identifier for records in this 'read_group' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "annotation_file",
+      "description": "Data file containing the functional annotation of single sample VCF files.",
+      "links": [
+        "raw_snp_genotype",
+        "qc_workflow"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "annotation_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow",
+          "description": "Information on the variant annotation process that were used to generate the VCF annotation.",
+          "type": "string"
+        },
+        {
+          "name": "annotation_tool",
+          "description": "Information on the tools/softwares to generate the annotated VCF file.",
+          "type": "string"
+        },
+        {
+          "name": "filter",
+          "description": "Description of filters that have been applied to the variants.",
+          "type": "string"
+        },
+        {
+          "name": "reference",
+          "description": "The reference genome used to generate the VCF file.",
+          "type": "enum"
+        },
+        {
+          "name": "contig",
+          "description": "A list of IDs for the contiguous DNA sequences that appear in the reference genome used to produce VCF files.",
+          "type": "string"
+        },
+        {
+          "name": "command",
+          "description": "Commands used by the annotation tool to generate the annotated VCF files.",
+          "type": "string"
+        },
+        {
+          "name": "raw_snp_genotype.id",
+          "description": "Unique identifiers for records in the 'raw_snp_genotype' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "qc_workflow.id",
+          "description": "Unique identifiers for records in the 'qc_workflow' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "annotation_file.id",
+          "description": "A unique identifier for records in this 'annotation_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_aligned_reads",
+      "description": "Data file containing aligned reads that are used as input to GDC workflows.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_aligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_unaligned_reads",
+      "description": "Data file containing unaligned reads that have not been GDC Harmonized.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_unaligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "alignment_cocleaning_workflow",
+      "description": "Metadata for the alignment and cocleaning pipeline used to align reads in the GDC harmonization pipelines.",
+      "links": [
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads"
+      ],
+      "required": [
+        "workflow_link",
+        "workflow_type",
+        "alignment_cocleaning_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'alignment_cocleaning_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'alignment_cocleaning_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "alignment_cocleaning_workflow.id",
+          "description": "A unique identifier for records in this 'alignment_cocleaning_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "alignment_workflow",
+      "description": "Metadata for the alignment pipeline used to align reads in the GDC harmonization pipelines.",
+      "links": [
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads"
+      ],
+      "required": [
+        "workflow_type",
+        "alignment_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'alignment_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'alignment_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "alignment_workflow.id",
+          "description": "A unique identifier for records in this 'alignment_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads",
+      "description": "Data file containing aligned reads that are generated internally by the GDC.",
+      "links": [
+        "alignment_cocleaning_workflow",
+        "alignment_workflow",
+        "submitted_unaligned_reads",
+        "submitted_aligned_reads"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "platform",
+        "aligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "alignment_cocleaning_workflow.id",
+          "description": "Unique identifiers for records in the 'alignment_cocleaning_workflow' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "alignment_workflow.id",
+          "description": "Unique identifiers for records in the 'alignment_workflow' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "A unique identifier for records in this 'aligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "germline_mutation_calling_workflow",
+      "description": "Metadata for the germline mutation calling pipeline used to call variants in the GDC DNA-Seq pipelines.",
+      "links": [
+        "submitted_aligned_reads",
+        "aligned_reads"
+      ],
+      "required": [
+        "workflow_link",
+        "workflow_type",
+        "germline_mutation_calling_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'germline_mutation_calling_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "Unique identifiers for records in the 'aligned_reads' table that relate via this foreign key to records in this 'germline_mutation_calling_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "germline_mutation_calling_workflow.id",
+          "description": "A unique identifier for records in this 'germline_mutation_calling_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "simple_germline_variation",
+      "description": "Data file containing simple germline variations called from aligned reads.",
+      "links": [
+        "germline_mutation_calling_workflow",
+        "read_group",
+        "submitted_aligned_reads",
+        "aligned_reads"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "simple_germline_variation.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "germline_mutation_calling_workflow.id",
+          "description": "Unique identifiers for records in the 'germline_mutation_calling_workflow' table that relate via this foreign key to records in this 'simple_germline_variation' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'simple_germline_variation' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'simple_germline_variation' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "Unique identifiers for records in the 'aligned_reads' table that relate via this foreign key to records in this 'simple_germline_variation' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "simple_germline_variation.id",
+          "description": "A unique identifier for records in this 'simple_germline_variation' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "germline_variation_index",
+      "description": "Data file containing the index for a set of germline variants.",
+      "links": [
+        "simple_germline_variation"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "simple_germline_variation.id",
+        "germline_variation_index.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "simple_germline_variation.id",
+          "description": "Unique identifiers for records in the 'simple_germline_variation' table that relate via this foreign key to records in this 'germline_variation_index' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "germline_variation_index.id",
+          "description": "A unique identifier for records in this 'germline_variation_index' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

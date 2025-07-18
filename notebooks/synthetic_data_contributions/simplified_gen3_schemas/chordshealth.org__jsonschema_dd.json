@@ -1,0 +1,1183 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made available.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "complete",
+          "description": "Description of whether the project submission is complete or still in progress.",
+          "type": "enum"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Unique name for the project.",
+          "type": "string"
+        },
+        {
+          "name": "project_sponsor",
+          "description": "The name of an agency, institution, consortium, or other body that oversees the projects and resources. For academic programs that center around a lab or individual use the department or consortium name.",
+          "type": "array"
+        },
+        {
+          "name": "project_sponsor_other",
+          "description": "If \"Other\" is selected in the previous field, type the project sponsor name.",
+          "type": "array"
+        },
+        {
+          "name": "project_sponsor_type",
+          "description": "Type of sponsor organization.",
+          "type": "array"
+        },
+        {
+          "name": "project_sponsor_type_other",
+          "description": "If \"Other\" is selected in the previous field, type of sponsor organization.",
+          "type": "array"
+        },
+        {
+          "name": "project_url",
+          "description": "Link to project website.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "short_name",
+          "description": "Project name abbreviation or short name, unique ID.",
+          "type": "string"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "publication",
+      "description": "Publication for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "publication.id"
+      ],
+      "properties": [
+        {
+          "name": "author",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "co_author",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "full_citation",
+          "description": "Full citation",
+          "type": "string"
+        },
+        {
+          "name": "institution",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "internal_id",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "link",
+          "description": "GEO Accession link for project level data",
+          "type": "string"
+        },
+        {
+          "name": "title",
+          "description": "Title of the publication",
+          "type": "string"
+        },
+        {
+          "name": "year_published",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'publication' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "A unique identifier for records in this 'publication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "resource",
+      "description": "A collection of data or resources, can have files attached or may point to an external reference",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "name",
+        "resource_type",
+        "project.id",
+        "resource.id"
+      ],
+      "properties": [
+        {
+          "name": "access_type",
+          "description": "Type of resource access provided.",
+          "type": "array"
+        },
+        {
+          "name": "description",
+          "description": "A text description of the resource.",
+          "type": "string"
+        },
+        {
+          "name": "domain",
+          "description": "Subject domain of the resource, broad categories.",
+          "type": "array"
+        },
+        {
+          "name": "domain_other",
+          "description": "If \"Other\" is selected in previous field, type the domain name.",
+          "type": "array"
+        },
+        {
+          "name": "is_static",
+          "description": "Check yes if the data are static or no if the resource is expected to be updated in the future.",
+          "type": "boolean"
+        },
+        {
+          "name": "keywords",
+          "description": "Enter keywords that describe the resource, preferably from controlled vocabulary, glossary, or MESH.",
+          "type": "array"
+        },
+        {
+          "name": "name",
+          "description": "Name of resource, typically project name.",
+          "type": "string"
+        },
+        {
+          "name": "payment_required",
+          "description": "Indicate whether resource is free or fee based",
+          "type": "boolean"
+        },
+        {
+          "name": "publication_links",
+          "description": "Link to corresponding publication(s).",
+          "type": "array"
+        },
+        {
+          "name": "publications",
+          "description": "A citation and related link to a resource publication (# - preferred data field)",
+          "type": "array"
+        },
+        {
+          "name": "resource_id",
+          "description": "Internal identifier.",
+          "type": "string"
+        },
+        {
+          "name": "resource_reference",
+          "description": "Enter reference details for citing the resource in a publication (# - preferred data).",
+          "type": "string"
+        },
+        {
+          "name": "resource_reference_link",
+          "description": "URL to online information about how to cite the resource.",
+          "type": "string"
+        },
+        {
+          "name": "resource_type",
+          "description": "Type of resource, should match template type.",
+          "type": "string"
+        },
+        {
+          "name": "resource_url",
+          "description": "resource website",
+          "type": "string"
+        },
+        {
+          "name": "resource_use_agreement",
+          "description": "If agreement terms for using the resource are given, copy the exact terms here (# - preferred data).",
+          "type": "string"
+        },
+        {
+          "name": "resource_use_agreement_link",
+          "description": "URL to online information about requirements/conditions for using the resource.",
+          "type": "string"
+        },
+        {
+          "name": "short_name",
+          "description": "Resource name abbreviation, typically project_short_name.",
+          "type": "string"
+        },
+        {
+          "name": "verification_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'resource' table.",
+          "type": "string"
+        },
+        {
+          "name": "resource.id",
+          "description": "A unique identifier for records in this 'resource' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "geospatial_data_resource",
+      "description": "A collection of geospatial data or resources, can have files attached or may point to an external reference",
+      "links": [
+        "resource"
+      ],
+      "required": [
+        "resource.id",
+        "geospatial_data_resource.id"
+      ],
+      "properties": [
+        {
+          "name": "comments",
+          "description": "Notes on usage of the data, including warnings.",
+          "type": "string"
+        },
+        {
+          "name": "data_formats",
+          "description": "Select the format(s) of data in the collection (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "data_link",
+          "description": "URL to online location where data can be downloaded",
+          "type": "array"
+        },
+        {
+          "name": "data_location_text",
+          "description": "A list of locations for data files, such as a ftp site, an Amazon S3 bucket, or a URL.",
+          "type": "array"
+        },
+        {
+          "name": "display_type",
+          "description": "Display type of resource",
+          "type": "string"
+        },
+        {
+          "name": "exposure_media",
+          "description": "Media to which the phenomena is related.",
+          "type": "array"
+        },
+        {
+          "name": "geographic_feature",
+          "description": "The type of geographic feature associated with the data.",
+          "type": "array"
+        },
+        {
+          "name": "geographic_feature_other",
+          "description": "If \"Other\" was selected in the previous field, enter the type of geographic feature associated with the data.",
+          "type": "array"
+        },
+        {
+          "name": "geometry_source",
+          "description": "Source or provider of the geometry data.",
+          "type": "array"
+        },
+        {
+          "name": "geometry_source_other",
+          "description": "If \"Other\" was selected in the previous field, enter the geometry source here.",
+          "type": "array"
+        },
+        {
+          "name": "geometry_type",
+          "description": "Type of geometric data, the file extension will be different for different types (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "has_api",
+          "description": "Flag indicating whether or not resource has an api.",
+          "type": "boolean"
+        },
+        {
+          "name": "has_visualization_tool",
+          "description": "Flag indicating whether or not resource has visualization tool(s).",
+          "type": "boolean"
+        },
+        {
+          "name": "includes_citizen_collected",
+          "description": "Flag indicating whether or not resource includes citizen science.",
+          "type": "boolean"
+        },
+        {
+          "name": "intended_use",
+          "description": "Brief narrative about how the data can be used in research projects, could include references to good data uses.",
+          "type": "string"
+        },
+        {
+          "name": "measurement_method",
+          "description": "Method used to capture the measures.",
+          "type": "array"
+        },
+        {
+          "name": "measurement_method_other",
+          "description": "If \"Other\" is selected in previous field, enter the method used to capture the measure.",
+          "type": "array"
+        },
+        {
+          "name": "measures",
+          "description": "Enter list of specific variables collected by the resource system. If the variables are part of a set of variables, then enter the set name, e.g., clinical labs for clinical laboratory tests (especially if the specific labs vary from individual to individual), or VOC if for a list of volatile organic chemicals. Copy measure terms from measure_list worksheet.",
+          "type": "array"
+        },
+        {
+          "name": "measures_other",
+          "description": "If terms are not included in the measue_list worksheet, enter them here.",
+          "type": "array"
+        },
+        {
+          "name": "measures_parent_category",
+          "description": "type of environmental phenomena being observed at the parent concept level",
+          "type": "array"
+        },
+        {
+          "name": "measures_subcategory_major",
+          "description": "type of environmental phenomena being observed at the subcategory level",
+          "type": "array"
+        },
+        {
+          "name": "measures_subcategory_minor",
+          "description": "type of environmental phenomena being observed at the subcategory level",
+          "type": "array"
+        },
+        {
+          "name": "model_methods",
+          "description": "If data are modeled, describe modeling method(s) used to generate the data.",
+          "type": "array"
+        },
+        {
+          "name": "model_methods_other",
+          "description": "If \"Other\" is selected in the previous field, enter the name of the modeling method used.",
+          "type": "array"
+        },
+        {
+          "name": "source_name",
+          "description": "Name of the primary data source if not generated by this resource (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "spatial_bounding_box",
+          "description": "Boundary coordinates for the geographical region (should be included in the model spatial metadata).",
+          "type": "array"
+        },
+        {
+          "name": "spatial_coverage",
+          "description": "Maximum spatial coverage of the data, if specific regions list in next field.",
+          "type": "array"
+        },
+        {
+          "name": "spatial_coverage_other",
+          "description": "If \"Other\" is selected in previous field, enter the specific region covered here; avoid using special symbols following same convention as in spatial_resolution_other (e.g., convert 40\u00b0 to 40 degrees.). Do not convert latitude, longitude pairs if given as decimal.",
+          "type": "array"
+        },
+        {
+          "name": "spatial_resolution",
+          "description": "The finest spatial resolution of the data. If there are multiple resources and determining the highest spatial resolution is impractical, use \"Other\".",
+          "type": "array"
+        },
+        {
+          "name": "spatial_resolution_other",
+          "description": "If \"Other\" is selected in previous field, enter the finest spatial resolution of the data. May be a specific distance measure (e.g., '5 km\u2019, \u20182 degrees\u2019, and \u20182 degrees by 5 degrees\u2019). Convert 40\u00b0 11.25\u2032 to 40 degrees, 11 arc min, 25 arc sec.",
+          "type": "array"
+        },
+        {
+          "name": "temporal_resolution",
+          "description": "The finest available temporal resolution (i.e., highest frequency, finest scale) from CV (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "temporal_resolution_other",
+          "description": "If \"Other\" is selected in the previous field, enter the finest temporal resolution here.",
+          "type": "array"
+        },
+        {
+          "name": "time_available_comment",
+          "description": "Description of the time extent details if multiple times exist in the resource or if there are discontinuities over time.",
+          "type": "string"
+        },
+        {
+          "name": "time_extent_end_yyyy",
+          "description": "Four digit year (YYYY)",
+          "type": "integer"
+        },
+        {
+          "name": "time_extent_start_yyyy",
+          "description": "Four digit year (YYYY)",
+          "type": "integer"
+        },
+        {
+          "name": "update_frequency",
+          "description": "Frequency of data resource update (# - preferred data)",
+          "type": "array"
+        },
+        {
+          "name": "update_frequency_other",
+          "description": "If \"Other\" is selected in previous field, enter the frequency here.",
+          "type": "string"
+        },
+        {
+          "name": "resource.id",
+          "description": "Unique identifiers for records in the 'resource' table that relate via this foreign key to records in this 'geospatial_data_resource' table.",
+          "type": "string"
+        },
+        {
+          "name": "geospatial_data_resource.id",
+          "description": "A unique identifier for records in this 'geospatial_data_resource' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "geospatial_tool_resource",
+      "description": "A tool for dealing with geospatial data",
+      "links": [
+        "resource"
+      ],
+      "required": [
+        "resource.id",
+        "geospatial_tool_resource.id"
+      ],
+      "properties": [
+        {
+          "name": "comments",
+          "description": "Optional submitter comment",
+          "type": "string"
+        },
+        {
+          "name": "display_type",
+          "description": "Display type of resource",
+          "type": "string"
+        },
+        {
+          "name": "intended_use",
+          "description": "Brief description of how the data can be used in research projects, could include references to good data uses.",
+          "type": "string"
+        },
+        {
+          "name": "is_open",
+          "description": "Is the tool open source?",
+          "type": "boolean"
+        },
+        {
+          "name": "languages",
+          "description": "List the programming languages in which the tools is written.",
+          "type": "array"
+        },
+        {
+          "name": "languages_other",
+          "description": "If \"Other\" was selected in previous field, enter the programming languages in which the tool(s) is written.",
+          "type": "array"
+        },
+        {
+          "name": "license_type",
+          "description": "Type of license needed for use of software.",
+          "type": "array"
+        },
+        {
+          "name": "license_type_other",
+          "description": "If \"Other\" is selected in previous field, enter the type of license needed for use of software.",
+          "type": "array"
+        },
+        {
+          "name": "operating_system",
+          "description": "Type of operating system on which the tool runs.",
+          "type": "array"
+        },
+        {
+          "name": "operating_system_other",
+          "description": "If \"Other\" is selected in previous field, enter the type of system on which the tool runs.",
+          "type": "array"
+        },
+        {
+          "name": "suggested_audience",
+          "description": "suggested audience to use this tool",
+          "type": "array"
+        },
+        {
+          "name": "tool_type",
+          "description": "Type of tool.",
+          "type": "array"
+        },
+        {
+          "name": "tool_type_other",
+          "description": "If \"Other\" is selected in the previous field, enter the tool type here.",
+          "type": "array"
+        },
+        {
+          "name": "resource.id",
+          "description": "Unique identifiers for records in the 'resource' table that relate via this foreign key to records in this 'geospatial_tool_resource' table.",
+          "type": "string"
+        },
+        {
+          "name": "geospatial_tool_resource.id",
+          "description": "A unique identifier for records in this 'geospatial_tool_resource' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "key_data_resource",
+      "description": "A key dataset for climate and health",
+      "links": [
+        "resource"
+      ],
+      "required": [
+        "resource.id",
+        "key_data_resource.id"
+      ],
+      "properties": [
+        {
+          "name": "comments",
+          "description": "Notes on usage of the data, including warnings.",
+          "type": "string"
+        },
+        {
+          "name": "data_formats",
+          "description": "Format of data download files (# - preferred data)",
+          "type": "array"
+        },
+        {
+          "name": "data_link",
+          "description": "URL to online location where data can be downloaded.",
+          "type": "array"
+        },
+        {
+          "name": "data_location_text",
+          "description": "Location(s) where data files are downloaded, e.g., ftp site, Amazon S3 bucket (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "display_type",
+          "description": "Display type of resource",
+          "type": "string"
+        },
+        {
+          "name": "exposure_media",
+          "description": "The media to which the phenomena is related.",
+          "type": "array"
+        },
+        {
+          "name": "geographic_feature",
+          "description": "The type of geographic feature associated with the data.",
+          "type": "array"
+        },
+        {
+          "name": "geographic_feature_other",
+          "description": "If \"Other\" is selected in the previous field, enter the type of geographic feature associated with the data.",
+          "type": "array"
+        },
+        {
+          "name": "geometry_source",
+          "description": "Source or provider of the geometry data.",
+          "type": "array"
+        },
+        {
+          "name": "geometry_source_other",
+          "description": "If \"Other\" is selected in the previous field, enter the geometry source here.",
+          "type": "array"
+        },
+        {
+          "name": "geometry_type",
+          "description": "Type of geometric data, the file extension will be different for different types (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "has_api",
+          "description": "Flag indicating whether or not resource has an api.",
+          "type": "boolean"
+        },
+        {
+          "name": "has_visualization_tool",
+          "description": "Flag indicating whether or not resource has visualization tool(s).",
+          "type": "boolean"
+        },
+        {
+          "name": "includes_citizen_collected",
+          "description": "Flag indicating whether or not resource includes citizen science.",
+          "type": "boolean"
+        },
+        {
+          "name": "intended_use",
+          "description": "Suggested, intended, or applied uses for dataset in environmental health research. This is drawn from the example applications and review of documentation from the data providers on the intended uses.",
+          "type": "string"
+        },
+        {
+          "name": "license_type",
+          "description": "License needed for using the dataset.",
+          "type": "array"
+        },
+        {
+          "name": "license_type_other",
+          "description": "If \"Other\" is selected in the previous field, enter the type of license needed to use the dataset.",
+          "type": "array"
+        },
+        {
+          "name": "measurement_method",
+          "description": "Method used to capture the data measurements.",
+          "type": "array"
+        },
+        {
+          "name": "measurement_method_other",
+          "description": "If \"Other\" is selected in the previous field, enter the method used to capture the data measurements.",
+          "type": "array"
+        },
+        {
+          "name": "measures",
+          "description": "List of specific variables collected by the system. If the variables are part of a set of variables then the set name can be provided, e.g., clinical labs for clinical laboratory tests especially if the specific labs vary from individual to individual, or VOC for a list of volatile organic chemicals. Copy measure terms from 'measure_list file'.",
+          "type": "array"
+        },
+        {
+          "name": "measures_other",
+          "description": "If term is not in 'measures_list file' e.g., not part of VOC, enter it here for discussion with others about incorporation into VOC.",
+          "type": "array"
+        },
+        {
+          "name": "measures_parent_category",
+          "description": "type of environmental phenomena being observed at the parent concept level",
+          "type": "array"
+        },
+        {
+          "name": "measures_subcategory_major",
+          "description": "type of environmental phenomena being observed at the subcategory level",
+          "type": "array"
+        },
+        {
+          "name": "measures_subcategory_minor",
+          "description": "type of environmental phenomena being observed at the subcategory level",
+          "type": "array"
+        },
+        {
+          "name": "model_methods",
+          "description": "If data are modeled, description of modeling approaches used to generate them.",
+          "type": "array"
+        },
+        {
+          "name": "model_methods_other",
+          "description": "If \"Other\" is selected in the previous field, enter the data modelling method(s) here.",
+          "type": "array"
+        },
+        {
+          "name": "source_name",
+          "description": "Name of the primary data source if not generated by this resource (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "spatial_bounding_box",
+          "description": "Boundary coordinates for the geographical region (should be included in the model spatial metadata).",
+          "type": "array"
+        },
+        {
+          "name": "spatial_coverage",
+          "description": "Maximum spatial coverage of the data; if specific regions, list in next field below",
+          "type": "array"
+        },
+        {
+          "name": "spatial_resolution",
+          "description": "The finest spatial resolution of the data. If there are multiple resources and determining the finest spatial resolution is impractical, use \"Other\".",
+          "type": "array"
+        },
+        {
+          "name": "spatial_resolution_all_available",
+          "description": "All available horizontal spatial resolutions of the dataset, such as 1-km grid or ZIP codes, from CV. Use \"Other\" for spatial resolutions not included in the CV.",
+          "type": "array"
+        },
+        {
+          "name": "spatial_resolution_all_other_available",
+          "description": "If \"Other\" is selected in the previous field, enter all other spatial resolutions not in CV, such as value and unit of measure, e.g., 50 km, 1 degree, 0.75 sq. km.",
+          "type": "array"
+        },
+        {
+          "name": "spatial_resolution_comment",
+          "description": "Any other relevant details describing the spatial resolution of the dataset, such as variable spatial resolution (e.g., nested grids), or grids with less common geometry (hexagonal grid, 0.5 degree x 0.625 degree, etc.).",
+          "type": "string"
+        },
+        {
+          "name": "spatial_resolution_other",
+          "description": "If \"Other\" is selected in the previous field, enter the finest spatial resolution of the dataset. It may be a specific distance measure (e.g., '5 km\u2019, \u20182 degrees\u2019, \u20182 degrees by 5 degrees\u2019). Convert resolutions like 40 deg. 11.25 min. to 40 degrees, 11 arc min, 25 arc sec.",
+          "type": "array"
+        },
+        {
+          "name": "temporal_resolution",
+          "description": "The finest available temporal resolution (i.e., highest frequency, finest scale) from CV (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "temporal_resolution_all_available",
+          "description": "All available temporal resolutions (i.e., scale or frequency) of the dataset, such as daily or annual, selected from a CV.",
+          "type": "array"
+        },
+        {
+          "name": "temporal_resolution_all_other_available",
+          "description": "If \"Other\" is selected in the previous field, enter all other temporal resolutions for the dataset.",
+          "type": "array"
+        },
+        {
+          "name": "temporal_resolution_comment",
+          "description": "Description of the time extent details if multiple times exist in the resource or if there are discontinuities over time.",
+          "type": "string"
+        },
+        {
+          "name": "temporal_resolution_other",
+          "description": "If \"Other\" is selected in the previous field, enter the the temporal resolution here, e.g., one year daily average.",
+          "type": "array"
+        },
+        {
+          "name": "time_available_comment",
+          "description": "Description of the time extent details if multiple times exist in the resource or if there are discontinuities over time.",
+          "type": "string"
+        },
+        {
+          "name": "time_extent_end_yyyy",
+          "description": "Four digit year (YYYY)",
+          "type": "integer"
+        },
+        {
+          "name": "time_extent_start_yyyy",
+          "description": "Four digit year (YYYY)",
+          "type": "integer"
+        },
+        {
+          "name": "update_frequency",
+          "description": "Frequency of data resource update (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "update_frequency_other",
+          "description": "If \"Other\" is selected in previous field, enter the frequency here.",
+          "type": "string"
+        },
+        {
+          "name": "use_example_application_link",
+          "description": "The URL corresponding to each example application to document specific data use (if available) and/or the homepage.",
+          "type": "array"
+        },
+        {
+          "name": "use_example_application_text",
+          "description": "Examples of applications (e.g., health cohorts) that have used the dataset and are the basis for the example uses, metrics, and key variables. (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "use_example_metrics",
+          "description": "Example metrics derived from example applications, that can be calculated using the dataset to assess individuals' (e.g., patients, health cohort participants) environmental exposures based on geocoded addresses and time period of exposure.",
+          "type": "array"
+        },
+        {
+          "name": "use_limitations",
+          "description": "Key limitations or restrictions for the suggested use(s).",
+          "type": "array"
+        },
+        {
+          "name": "use_strengths",
+          "description": "Key strengths of the dataset for the suggested use(s).",
+          "type": "array"
+        },
+        {
+          "name": "use_suggested",
+          "description": "Suggested, intended, or applied use(s) in environmental and public health research based on example use applications and the data-provider's documentation on intended uses. (# = preferred).",
+          "type": "array"
+        },
+        {
+          "name": "use_suggested_other",
+          "description": "If \"Other\" is selected in the previous field, enter the suggested use(s) here.",
+          "type": "array"
+        },
+        {
+          "name": "resource.id",
+          "description": "Unique identifiers for records in the 'resource' table that relate via this foreign key to records in this 'key_data_resource' table.",
+          "type": "string"
+        },
+        {
+          "name": "key_data_resource.id",
+          "description": "A unique identifier for records in this 'key_data_resource' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "population_data_resource",
+      "description": "Data resource dealing with populations",
+      "links": [
+        "resource"
+      ],
+      "required": [
+        "resource.id",
+        "population_data_resource.id"
+      ],
+      "properties": [
+        {
+          "name": "biospecimens",
+          "description": "Were human biospecimens collected?",
+          "type": "boolean"
+        },
+        {
+          "name": "biospecimens_type",
+          "description": "Select type(s) of biospecimen(s) collected.",
+          "type": "array"
+        },
+        {
+          "name": "comments",
+          "description": "Notes on usage of the data, including warnings.",
+          "type": "string"
+        },
+        {
+          "name": "data_formats",
+          "description": "Format of data in the collection (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "data_link",
+          "description": "URL to online location where data can be downloaded",
+          "type": "array"
+        },
+        {
+          "name": "data_location_text",
+          "description": "A list of locations for data files, such as a ftp site, an Amazon S3 bucket, or a URL.",
+          "type": "array"
+        },
+        {
+          "name": "display_type",
+          "description": "Display type of resource",
+          "type": "string"
+        },
+        {
+          "name": "exposure_media",
+          "description": "Media to which the phenomena is related.",
+          "type": "array"
+        },
+        {
+          "name": "geometry_source",
+          "description": "Source or provider of the geometry data.",
+          "type": "array"
+        },
+        {
+          "name": "geometry_source_other",
+          "description": "If \"Other\" is selected in the previous field, enter geometry source here.",
+          "type": "array"
+        },
+        {
+          "name": "geometry_type",
+          "description": "Type of geometric data, the file extension will be different for different types (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "has_api",
+          "description": "Flag indicating whether or not resource has an api.",
+          "type": "boolean"
+        },
+        {
+          "name": "has_visualization_tool",
+          "description": "Flag indicating whether or not resource has visualization tool(s).",
+          "type": "boolean"
+        },
+        {
+          "name": "includes_citizen_collected",
+          "description": "Flag indicating whether or not resource includes citizen science.",
+          "type": "boolean"
+        },
+        {
+          "name": "individual_level",
+          "description": "Does resource provide individual human (patient/volunteer) data",
+          "type": "boolean"
+        },
+        {
+          "name": "intended_use",
+          "description": "Brief narrative about how the data can be used in research projects, could include references to good data uses.",
+          "type": "string"
+        },
+        {
+          "name": "linkable_encounters",
+          "description": "Are individual level data is linkable across encounters?",
+          "type": "boolean"
+        },
+        {
+          "name": "measures",
+          "description": "Enter list of specific variables collected by the resource system. If the variables are part of a set of variables then the set name can be provided, e.g., clinical labs for clinical laboratory tests especially if the specific labs vary from individual to individual, or VOC for a list of volatile organic chemicals. Copy list of measure from measure_list worksheet here.",
+          "type": "array"
+        },
+        {
+          "name": "measures_other",
+          "description": "If terms are not included in the measue_list worksheet, enter them here.",
+          "type": "array"
+        },
+        {
+          "name": "measures_parent_category",
+          "description": "type of environmental phenomena being observed at the parent concept level",
+          "type": "array"
+        },
+        {
+          "name": "measures_subcategory_major",
+          "description": "type of environmental phenomena being observed at the subcategory level",
+          "type": "array"
+        },
+        {
+          "name": "measures_subcategory_minor",
+          "description": "type of environmental phenomena being observed at the subcategory level",
+          "type": "array"
+        },
+        {
+          "name": "model_methods",
+          "description": "If data are modeled, describe the modeling approaches used to generate the data.",
+          "type": "array"
+        },
+        {
+          "name": "model_methods_other",
+          "description": "If \"Other\" was selected in the previous field, enter the data modelling method(s) here.",
+          "type": "array"
+        },
+        {
+          "name": "population_studied",
+          "description": "Type of population in the study.",
+          "type": "array"
+        },
+        {
+          "name": "population_studied_other",
+          "description": "If \"Others\" is selected in previous field, enter the population studied.",
+          "type": "array"
+        },
+        {
+          "name": "source_name",
+          "description": "Name of the primary data source if not generated by this resource (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "spatial_coverage",
+          "description": "Maximum spatial coverage of the data, if specific regions list in next field.",
+          "type": "array"
+        },
+        {
+          "name": "spatial_coverage_other",
+          "description": "If \"Other\" is selected in the previous field, enter the spatial coverage region here; Avoid using special symbols following same convention as in spatial_resolution_other (e.g., convert 40\u00b0 to 40 degrees.). Do not convert latitude, longitude pairs if given as decimal.",
+          "type": "array"
+        },
+        {
+          "name": "spatial_resolution",
+          "description": "The finest spatial resolution of the data. If there are multiple resources and determining the highest spatial resolution is impractical, use \"Other\".",
+          "type": "array"
+        },
+        {
+          "name": "spatial_resolution_other",
+          "description": "If \"Other\" is selected in previous field, enter the finest spatial resolution of the data. May be a specific distance measure (e.g., '5 km\u2019, \u20182 degrees\u2019, and \u20182 degrees by 5 degrees\u2019). Convert 40\u00b0 11.25\u2032 to 40 degrees, 11 arc min, 25 arc sec.",
+          "type": "array"
+        },
+        {
+          "name": "temporal_resolution",
+          "description": "The finest available temporal resolution (i.e., highest frequency, finest scale) from CV (# - preferred data).\"",
+          "type": "array"
+        },
+        {
+          "name": "temporal_resolution_other",
+          "description": "If \"Other\" is selected in the previous field, enter the finest temporal resolution here.",
+          "type": "array"
+        },
+        {
+          "name": "time_available_comment",
+          "description": "Description of the time extent details if multiple times exist in the resource or if there are discontinuities over time.",
+          "type": "string"
+        },
+        {
+          "name": "time_extent_end_yyyy",
+          "description": "Four digit year (YYYY)",
+          "type": "integer"
+        },
+        {
+          "name": "time_extent_start_yyyy",
+          "description": "Four digit year (YYYY)",
+          "type": "integer"
+        },
+        {
+          "name": "update_frequency",
+          "description": "Frequency of data resource update (# - preferred data).",
+          "type": "array"
+        },
+        {
+          "name": "update_frequency_other",
+          "description": "If \"Other\" is selected in previous field, enter the frequency here.",
+          "type": "string"
+        },
+        {
+          "name": "resource.id",
+          "description": "Unique identifiers for records in the 'resource' table that relate via this foreign key to records in this 'population_data_resource' table.",
+          "type": "string"
+        },
+        {
+          "name": "population_data_resource.id",
+          "description": "A unique identifier for records in this 'population_data_resource' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "supplementary_file",
+      "description": "Supplementary files associated with a study.",
+      "links": [
+        "geospatial_data_resource",
+        "population_data_resource",
+        "geospatial_tool_resource",
+        "key_data_resource"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "supplementary_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "The text term describing the broad category that the supplementary file falls into.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "The text term describing the file format of the supplementary file, for example, PDF, XLSX, JPEG, PNG, TSV, etc.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "The type of supplementary file, for example, figures, tables, clinical data, notes, publications, summary statistics, etc.",
+          "type": "string"
+        },
+        {
+          "name": "file_description",
+          "description": "Free text to expand upon details for this file",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "storage_urls",
+          "description": "A list of URLs where the file is stored in the cloud.",
+          "type": "array"
+        },
+        {
+          "name": "geospatial_data_resource.id",
+          "description": "Unique identifiers for records in the 'geospatial_data_resource' table that relate via this foreign key to records in this 'supplementary_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "population_data_resource.id",
+          "description": "Unique identifiers for records in the 'population_data_resource' table that relate via this foreign key to records in this 'supplementary_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "geospatial_tool_resource.id",
+          "description": "Unique identifiers for records in the 'geospatial_tool_resource' table that relate via this foreign key to records in this 'supplementary_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "key_data_resource.id",
+          "description": "Unique identifiers for records in the 'key_data_resource' table that relate via this foreign key to records in this 'supplementary_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "supplementary_file.id",
+          "description": "A unique identifier for records in this 'supplementary_file' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

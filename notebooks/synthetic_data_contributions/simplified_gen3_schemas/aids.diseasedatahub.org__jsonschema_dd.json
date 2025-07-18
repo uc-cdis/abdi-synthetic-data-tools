@@ -1,0 +1,5306 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made available.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "acknowledgement",
+      "description": "Acknowledgement of an individual involved in a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "acknowledgement.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgee",
+          "description": "The individual or group being acknowledged by the project.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'acknowledgement' table.",
+          "type": "string"
+        },
+        {
+          "name": "acknowledgement.id",
+          "description": "A unique identifier for records in this 'acknowledgement' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "study",
+      "description": "A coordinated set of actions and observations designed to generate data, with the ultimate goal of discovery or hypothesis testing.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "study_description",
+        "study_objective",
+        "project.id",
+        "study.id"
+      ],
+      "properties": [
+        {
+          "name": "data_description",
+          "description": "Brief description of the data being provided for this study. Free text",
+          "type": "string"
+        },
+        {
+          "name": "is_clinical_trial",
+          "description": "Flag that indicates whether this is a clinical trial study",
+          "type": "boolean"
+        },
+        {
+          "name": "patric_comments",
+          "description": "Comments from PATRIC's genome metadata.",
+          "type": "array"
+        },
+        {
+          "name": "study_completeness",
+          "description": "Description of data status. 0=Descriptive data and results as originally received from the data provider. 1=Includes updates to the original data submission short of completeness. 2=Complete set of descriptive data and results, as ascertained by curator.",
+          "type": "enum"
+        },
+        {
+          "name": "study_description",
+          "description": "A brief description of the study being performed. Free text",
+          "type": "string"
+        },
+        {
+          "name": "study_design",
+          "description": "Summary of the goals the study is designed to discover. General description of the study's place in relation to a clinical application.",
+          "type": "string"
+        },
+        {
+          "name": "study_doi",
+          "description": "Digital object identifier (DOI) is a type of persistent identifier used to uniquely identify objects",
+          "type": "string"
+        },
+        {
+          "name": "study_objective",
+          "description": "The general objective of the study.",
+          "type": "enum"
+        },
+        {
+          "name": "study_organization",
+          "description": "Name of the primary organization that oversees implementation of the study",
+          "type": "string"
+        },
+        {
+          "name": "study_release_date",
+          "description": "Latest date when the study was shared",
+          "type": "string"
+        },
+        {
+          "name": "study_release_version",
+          "description": "Latest version of study shared",
+          "type": "string"
+        },
+        {
+          "name": "study_setup",
+          "description": "Category",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'study' table.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "A unique identifier for records in this 'study' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "keyword",
+      "description": "A keyword for a project.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "study.id",
+        "keyword.id"
+      ],
+      "properties": [
+        {
+          "name": "keyword_definition",
+          "description": "Description of the keyword.",
+          "type": "string"
+        },
+        {
+          "name": "keyword_name",
+          "description": "The name of the keyword.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'keyword' table.",
+          "type": "string"
+        },
+        {
+          "name": "keyword.id",
+          "description": "A unique identifier for records in this 'keyword' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "protocol",
+      "description": "Data file containing the metadata for the experiment performed.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "study.id",
+        "protocol.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "protocol_description",
+          "description": "Free text to expand upon details",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'protocol' table.",
+          "type": "string"
+        },
+        {
+          "name": "protocol.id",
+          "description": "A unique identifier for records in this 'protocol' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "publication",
+      "description": "Publication for a project.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "study.id",
+        "publication.id"
+      ],
+      "properties": [
+        {
+          "name": "authors",
+          "description": "list of authors of the article",
+          "type": "string"
+        },
+        {
+          "name": "doi",
+          "description": "Digital object identifier (DOI) is a type of persistent identifier used to uniquely identify objects",
+          "type": "integer"
+        },
+        {
+          "name": "issue",
+          "description": "Journal issue in which the article was published",
+          "type": "string"
+        },
+        {
+          "name": "journal",
+          "description": "Publication in which the article appears",
+          "type": "string"
+        },
+        {
+          "name": "pmid",
+          "description": "Pubmed identifier for the article",
+          "type": "integer"
+        },
+        {
+          "name": "title",
+          "description": "Title of the article as it appears in Pubmed",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'publication' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "A unique identifier for records in this 'publication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "description": "The collection of all data related to a specific subject in the context of a specific experiment.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "study.id",
+        "subject.id"
+      ],
+      "properties": [
+        {
+          "name": "cohort_id",
+          "description": "Cohort identifier",
+          "type": "integer"
+        },
+        {
+          "name": "cohort_name",
+          "description": "Cohort name",
+          "type": "string"
+        },
+        {
+          "name": "geographic_location",
+          "description": "Location of experiment.",
+          "type": "string"
+        },
+        {
+          "name": "hiv_status",
+          "description": "HIV Status",
+          "type": "enum"
+        },
+        {
+          "name": "index_date",
+          "description": "The reference or anchor date used during date obfuscation, where a single date is obscurred by creating one or more date ranges in relation to this date.",
+          "type": "enum"
+        },
+        {
+          "name": "species",
+          "description": "Taxonomic species of the subject.",
+          "type": "enum"
+        },
+        {
+          "name": "study_center",
+          "description": "Study Site (where enrolled)",
+          "type": "enum"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'subject' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "A unique identifier for records in this 'subject' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "supplementary_file",
+      "description": "Supplementary files associated to any study",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "study.id",
+        "supplementary_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Study file type",
+          "type": "enum"
+        },
+        {
+          "name": "file_description",
+          "description": "Free text to expand upon details for this file",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "protocol_description",
+          "description": "Free text to expand upon details",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'supplementary_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "supplementary_file.id",
+          "description": "A unique identifier for records in this 'supplementary_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "comorbidity",
+      "description": "History of comorbidities related to the subject.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "comorbidity.id"
+      ],
+      "properties": [
+        {
+          "name": "bshbvstat",
+          "description": "Baseline HBV serostatus (based on 1st 3 visits)",
+          "type": "enum"
+        },
+        {
+          "name": "bshcvstat",
+          "description": "Baseline HCV serostatus (based on 1st 3 visits)",
+          "type": "enum"
+        },
+        {
+          "name": "frstcncrd",
+          "description": "First confirmed cancer year",
+          "type": "integer"
+        },
+        {
+          "name": "frstcncrv",
+          "description": "First confirmed cancer visit",
+          "type": "integer"
+        },
+        {
+          "name": "frstdmd",
+          "description": "First visit year with diabetes",
+          "type": "integer"
+        },
+        {
+          "name": "frstdmmd",
+          "description": "First visit year with all necessary components to determine diabetes",
+          "type": "integer"
+        },
+        {
+          "name": "frstdmmv",
+          "description": "First visit with all necessary components to determine diabetes",
+          "type": "integer"
+        },
+        {
+          "name": "frstdmv",
+          "description": "First visit with diabetes",
+          "type": "integer"
+        },
+        {
+          "name": "frsthtnd",
+          "description": "First visit year with hypertension",
+          "type": "integer"
+        },
+        {
+          "name": "frsthtnmd",
+          "description": "First visit year with all necessary components to determine hypertension",
+          "type": "integer"
+        },
+        {
+          "name": "frsthtnmv",
+          "description": "First visit with all necessary components to determine hypertension",
+          "type": "integer"
+        },
+        {
+          "name": "frsthtnv",
+          "description": "First visit with hypertension",
+          "type": "integer"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'comorbidity' table.",
+          "type": "string"
+        },
+        {
+          "name": "comorbidity.id",
+          "description": "A unique identifier for records in this 'comorbidity' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "demographic",
+      "description": "Data for the characterization of the patient by means of segmenting the population (e.g., characterization by age, sex, or race).",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "demographic.id"
+      ],
+      "properties": [
+        {
+          "name": "caribbean_islander",
+          "description": "Caribbean precedence",
+          "type": "enum"
+        },
+        {
+          "name": "country_of_birth",
+          "description": "Country of birth",
+          "type": "string"
+        },
+        {
+          "name": "dominant_hand",
+          "description": "Hand the subject use to write",
+          "type": "enum"
+        },
+        {
+          "name": "ethnicity",
+          "description": "An individual's self-described social and cultural grouping, specifically whether an individual describes themselves as Hispanic or Latino. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "enum"
+        },
+        {
+          "name": "gender",
+          "description": "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]",
+          "type": "enum"
+        },
+        {
+          "name": "race",
+          "description": "An arbitrary classification of a taxonomic group that is a division of a species. It usually arises as a consequence of geographical isolation within a species and is characterized by shared heredity, physical attributes and behavior, and in the case of humans, by common history, nationality, or geographic distribution. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "array"
+        },
+        {
+          "name": "sexual_orientation",
+          "description": "Definition of sexual orientation",
+          "type": "enum"
+        },
+        {
+          "name": "year_of_birth",
+          "description": "Numeric value to represent the calendar year in which an individual was born.",
+          "type": "number"
+        },
+        {
+          "name": "year_of_death",
+          "description": "Numeric value to represent the year of the death of an individual. 9999=Missing/Alive",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'demographic' table.",
+          "type": "string"
+        },
+        {
+          "name": "demographic.id",
+          "description": "A unique identifier for records in this 'demographic' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "exposure",
+      "description": "Clinically relevant patient information not immediately resulting from genetic predispositions.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "exposure.id"
+      ],
+      "properties": [
+        {
+          "name": "ageatbl",
+          "description": "Age at Baseline visit. If the age at baseline visit is greater than 89, see 'ageatbl_gt89'.",
+          "type": "number"
+        },
+        {
+          "name": "ageatbl_gt89",
+          "description": "Indicate whether the Age at Baseline visit is greater than 89.",
+          "type": "enum"
+        },
+        {
+          "name": "basecch",
+          "description": "Ever used crack/cocaine/ heroin (baseline visit)",
+          "type": "boolean"
+        },
+        {
+          "name": "basecoc",
+          "description": "Ever used cocaine (baseline visit, not asked separately of 1994/95 recruits)",
+          "type": "enum"
+        },
+        {
+          "name": "basecrack",
+          "description": "Ever used crack/freebase cocaine (baseline visit, not asked separately of 1994/95 recruits)",
+          "type": "enum"
+        },
+        {
+          "name": "basefhiv",
+          "description": "Ever had sex with HIV+ woman (baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "basefinj",
+          "description": "Ever had sex with woman who injected (baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "basefsex",
+          "description": "# lifetime female partners (baseline visit)",
+          "type": "integer"
+        },
+        {
+          "name": "baseher",
+          "description": "Ever used heroin (baseline visit, not asked separately of 1994/95 recruits)",
+          "type": "enum"
+        },
+        {
+          "name": "baseidu",
+          "description": "Participant ever injected drugs (baseline visit, based on self-report, F00/IDU_SC, F20/IDU_NR, INJCNR)",
+          "type": "boolean"
+        },
+        {
+          "name": "basemdon",
+          "description": "Ever used (illicit) methadone (baseline visit)",
+          "type": "boolean"
+        },
+        {
+          "name": "basemdonrx",
+          "description": "Ever in methadone maintenance program or reported prescribed use of methadone at baseline visit",
+          "type": "enum"
+        },
+        {
+          "name": "basemhem",
+          "description": "Ever had sex with male hemophiliac (baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "basemhiv",
+          "description": "Ever had sex with HIV+ male (baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "baseminj",
+          "description": "Ever had sex with male who injected (baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "basemman",
+          "description": "Ever sex w/male who had sex w/ male (baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "basemsex",
+          "description": "# lifetime male sex partners (baseline visit)",
+          "type": "integer"
+        },
+        {
+          "name": "basenidu",
+          "description": "Non-injected recreational drugs ever used (baseline visit). Baseline rec drug use questions change over time. This may include CCH use, amphetamines, any marijuana, use, hallucinogens, club drugs, methamphetamines.",
+          "type": "boolean"
+        },
+        {
+          "name": "basepot",
+          "description": "Ever used marijuana/hash (baseline visit)",
+          "type": "boolean"
+        },
+        {
+          "name": "basesbxnrx",
+          "description": "Ever in suboxone maintenance program (V39+) or reported prescribed use of suboxone at baseline visit",
+          "type": "enum"
+        },
+        {
+          "name": "basesex",
+          "description": "Number of sex partners (baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "basetran",
+          "description": "Blood transfusion between 1975-1985 (baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "drug_used",
+          "description": "Ever used any medical or recreational drugs since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "eductn",
+          "description": "Highest level of education (baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "highest_education",
+          "description": "Highest grade or level of regular school or college that the subject finished or got credit for",
+          "type": "enum"
+        },
+        {
+          "name": "insurance_coverage",
+          "description": "Does the participant have insurance coverage?",
+          "type": "boolean"
+        },
+        {
+          "name": "paidsex",
+          "description": "Ever had sex for drugs,money, shelter (baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "riskcat",
+          "description": "Exposure Category(baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "sexident",
+          "description": "Sexual identity (baseline visit)",
+          "type": "enum"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'exposure' table.",
+          "type": "string"
+        },
+        {
+          "name": "exposure.id",
+          "description": "A unique identifier for records in this 'exposure' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "hiv_history",
+      "description": "History of HIV and other important dates related to the subject.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "hiv_history.id"
+      ],
+      "properties": [
+        {
+          "name": "arthxbase",
+          "description": "Did participant report use of ART prior to baseline (screening) visit?",
+          "type": "boolean"
+        },
+        {
+          "name": "bsdate",
+          "description": "Baseline year. First year enrolled.",
+          "type": "integer"
+        },
+        {
+          "name": "bsvisit",
+          "description": "Baseline visit ID",
+          "type": "integer"
+        },
+        {
+          "name": "cd4nadir",
+          "description": "HAART experienced only, CD4 nadir prior to HAART initiation (measured during followup or at HAART initiation for HAART- experienced recruits)",
+          "type": "integer"
+        },
+        {
+          "name": "ehaart",
+          "description": "Ever HAART use (This is a derived value)",
+          "type": "boolean"
+        },
+        {
+          "name": "fcd4lowd",
+          "description": "First year seen with CD4N < 200 or CD4% < 14",
+          "type": "integer"
+        },
+        {
+          "name": "fcd4lowv",
+          "description": "First visit seen with CD4N < 200 or CD4% < 14",
+          "type": "integer"
+        },
+        {
+          "name": "fposdate",
+          "description": "First time seen seropositive (year)",
+          "type": "integer"
+        },
+        {
+          "name": "frstaidd",
+          "description": "First reported AIDS year",
+          "type": "integer"
+        },
+        {
+          "name": "frstaidv",
+          "description": "First reported AIDS visit",
+          "type": "integer"
+        },
+        {
+          "name": "frstartd",
+          "description": "First reported ART year",
+          "type": "integer"
+        },
+        {
+          "name": "frstartv",
+          "description": "First reported ART visit",
+          "type": "integer"
+        },
+        {
+          "name": "frstdthd",
+          "description": "Year of death",
+          "type": "integer"
+        },
+        {
+          "name": "frsthaad",
+          "description": "First reported HAART year",
+          "type": "integer"
+        },
+        {
+          "name": "frsthaav",
+          "description": "First reported HAART visit",
+          "type": "integer"
+        },
+        {
+          "name": "lastafrd",
+          "description": "Last reported AIDS free year",
+          "type": "integer"
+        },
+        {
+          "name": "lastafrv",
+          "description": "Last reported AIDS free visit (derived from WIHS only)",
+          "type": "integer"
+        },
+        {
+          "name": "lastcond",
+          "description": "Year of last study visit attended",
+          "type": "integer"
+        },
+        {
+          "name": "lastcontact",
+          "description": "Last year of contact (includes in-person or phone contact)",
+          "type": "integer"
+        },
+        {
+          "name": "lastconv",
+          "description": "Last study visit attended",
+          "type": "integer"
+        },
+        {
+          "name": "lastnoad",
+          "description": "Last reported ART free",
+          "type": "integer"
+        },
+        {
+          "name": "lastnoav",
+          "description": "Last reported ART free visit",
+          "type": "integer"
+        },
+        {
+          "name": "lastnohd",
+          "description": "Last reported HAART free year",
+          "type": "integer"
+        },
+        {
+          "name": "lastnohv",
+          "description": "Last reported HAART free visit",
+          "type": "integer"
+        },
+        {
+          "name": "lcd4higd",
+          "description": "Last year seen with CD4N >= 200 and CD4% >= 14",
+          "type": "integer"
+        },
+        {
+          "name": "lcd4higv",
+          "description": "Last visit seen with CD4N >= 200 and CD4% >= 14",
+          "type": "integer"
+        },
+        {
+          "name": "lnegdate",
+          "description": "Last time seen seronegative (year)",
+          "type": "integer"
+        },
+        {
+          "name": "mortcutd",
+          "description": "Mortality cut-off year based on NDI submission (site-level year)",
+          "type": "integer"
+        },
+        {
+          "name": "negvis",
+          "description": "Last visit seen seronegative",
+          "type": "integer"
+        },
+        {
+          "name": "posvis",
+          "description": "First visit seen seropositive",
+          "type": "integer"
+        },
+        {
+          "name": "status",
+          "description": "Summarized HIV sero-status",
+          "type": "enum"
+        },
+        {
+          "name": "version",
+          "description": "Version number of data",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'hiv_history' table.",
+          "type": "string"
+        },
+        {
+          "name": "hiv_history.id",
+          "description": "A unique identifier for records in this 'hiv_history' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "visit",
+      "description": "A visit by a patient or study participant to a medical professional. A clinical encounter that encompasses planned and unplanned trial interventions, procedures and assessments that may be performed on a subject. A visit has a start and an end, each described with a rule. The process by which information about the health status of an individual is obtained before and after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done.",
+      "links": [
+        "subject",
+        "study"
+      ],
+      "required": [
+        "subject.id",
+        "visit.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_visit",
+          "description": "Age at visit in years - round to nearest integer. If the age in years at the visit is greater than 89, see 'age_at_visit_gt89'.",
+          "type": "integer"
+        },
+        {
+          "name": "bmi",
+          "description": "The body mass divided by the square of the body height expressed in units of kg/m^2.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_follow_up",
+          "description": "Number of days between the date used for index and the date the patient was seen or contacted at follow-up.",
+          "type": "integer"
+        },
+        {
+          "name": "ever_transferred",
+          "description": "Participant ever transferred sites (changed ids)",
+          "type": "enum"
+        },
+        {
+          "name": "harmonized_visit_number",
+          "description": "The derived harmonized visit number for the studies MACS and WIHS.",
+          "type": "integer"
+        },
+        {
+          "name": "health_insurance",
+          "description": "Currently have any health insurance",
+          "type": "boolean"
+        },
+        {
+          "name": "height",
+          "description": "The height of the patient in meters.",
+          "type": "number"
+        },
+        {
+          "name": "pregnancy_status",
+          "description": "Is the participant pregnant (women) or has been pregnant since the last visit",
+          "type": "boolean"
+        },
+        {
+          "name": "version_data",
+          "description": "Version number of data",
+          "type": "string"
+        },
+        {
+          "name": "visit_date",
+          "description": "Year of the visit.",
+          "type": "integer"
+        },
+        {
+          "name": "visit_id",
+          "description": "ID at time of interview (prior to transfer)",
+          "type": "integer"
+        },
+        {
+          "name": "visit_number",
+          "description": "Visit number",
+          "type": "integer"
+        },
+        {
+          "name": "visit_type",
+          "description": "Define if the visit is a follow-up or the baseline visit.",
+          "type": "enum"
+        },
+        {
+          "name": "weight",
+          "description": "The weight of the subject measured in grams.",
+          "type": "number"
+        },
+        {
+          "name": "weight_percentage",
+          "description": "The percentage of the weight considering the weight measured at the index date as the reference.",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'visit' table.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'visit' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "A unique identifier for records in this 'visit' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "behavior_questionnaire",
+      "description": "Values obtained from a behavior questionnaire performed at one of the recurrent patient visit.",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "behavior_questionnaire.id"
+      ],
+      "properties": [
+        {
+          "name": "aejm1",
+          "description": "Had anus ejaculation without using condom with main male partner",
+          "type": "boolean"
+        },
+        {
+          "name": "ainf1",
+          "description": "The sexual intercourse with the main partner included anal sex",
+          "type": "boolean"
+        },
+        {
+          "name": "altsv",
+          "description": "Need any alcohol treatment program since the last visit",
+          "type": "boolean"
+        },
+        {
+          "name": "anin1",
+          "description": "The sexual intercourse with the main male partner included anal sex",
+          "type": "boolean"
+        },
+        {
+          "name": "caif1",
+          "description": "Used condom for anal sex every time with the main partner",
+          "type": "boolean"
+        },
+        {
+          "name": "cain1",
+          "description": "Had unprotected anal sex with main male partner",
+          "type": "boolean"
+        },
+        {
+          "name": "cvif1",
+          "description": "Used condom for vaginal sex every time with the main partner",
+          "type": "boolean"
+        },
+        {
+          "name": "drnk6",
+          "description": "Frequency drinking six or more drinks containing alcohol in the past 6 months",
+          "type": "enum"
+        },
+        {
+          "name": "dwkw1",
+          "description": "The sexual intercourse with the main partner included deep wet kissing (including tongue into other's mouth)",
+          "type": "boolean"
+        },
+        {
+          "name": "esmok",
+          "description": "Ever smoked cigarettes",
+          "type": "boolean"
+        },
+        {
+          "name": "fadrnk",
+          "description": "Frequency drinking alcohol in the last 6 months",
+          "type": "enum"
+        },
+        {
+          "name": "fndfl",
+          "description": "The financial difficulties are similar that last visit",
+          "type": "enum"
+        },
+        {
+          "name": "fndif",
+          "description": "Financial difficulties meeting the basic expenses",
+          "type": "boolean"
+        },
+        {
+          "name": "fprt1",
+          "description": "Description of the woman (in case sexual intercourses only with one woman)",
+          "type": "enum"
+        },
+        {
+          "name": "fprtm",
+          "description": "Consider any of the women with sexual intercourses a partner",
+          "type": "boolean"
+        },
+        {
+          "name": "hivstat1",
+          "description": "Main male partner status when had unprotected anal sex",
+          "type": "enum"
+        },
+        {
+          "name": "hnaim",
+          "description": "Had sexual intercourses including unprotected anal sex with HIV negative men",
+          "type": "boolean"
+        },
+        {
+          "name": "hpaim",
+          "description": "Had sexual intercourses including unprotected anal sex with HIV positive men",
+          "type": "boolean"
+        },
+        {
+          "name": "huaim",
+          "description": "Had sexual intercourses including unprotected anal sex without knowing HIV status",
+          "type": "boolean"
+        },
+        {
+          "name": "incomnew",
+          "description": "Categories for current annual individual gross incomes before taxes",
+          "type": "enum"
+        },
+        {
+          "name": "jobhi",
+          "description": "Employment status changed for any reason related to HIV disease",
+          "type": "boolean"
+        },
+        {
+          "name": "jobot",
+          "description": "Other reasons not specified to change employment",
+          "type": "boolean"
+        },
+        {
+          "name": "jobpe",
+          "description": "Reason for employment changes was a personal decision",
+          "type": "boolean"
+        },
+        {
+          "name": "metplv",
+          "description": "Had met new partners to have sexual intercourse since the last visit",
+          "type": "boolean"
+        },
+        {
+          "name": "metplvhow",
+          "description": "Place where the last new partner was met",
+          "type": "enum"
+        },
+        {
+          "name": "mpfiv",
+          "description": "Had unprotected sexual intercourses with your main female partner",
+          "type": "boolean"
+        },
+        {
+          "name": "mphivf",
+          "description": "HIV status of main female partner",
+          "type": "enum"
+        },
+        {
+          "name": "mphivm",
+          "description": "HIV status of main male partner",
+          "type": "enum"
+        },
+        {
+          "name": "mpmiv",
+          "description": "Had unprotected sexual intercourses with your main male partner",
+          "type": "boolean"
+        },
+        {
+          "name": "mprt1",
+          "description": "Description of the man (in case sexual intercourses only with one man)",
+          "type": "enum"
+        },
+        {
+          "name": "mprtm",
+          "description": "Consider any of the men with sexual intercourses a partner",
+          "type": "boolean"
+        },
+        {
+          "name": "nadrnk",
+          "description": "Number of drinks containing alcohol on a typical day",
+          "type": "enum"
+        },
+        {
+          "name": "naejm",
+          "description": "Number of men with anus ejaculation without using condom",
+          "type": "integer"
+        },
+        {
+          "name": "nainf",
+          "description": "Number of sexual intercourses including anal sex",
+          "type": "integer"
+        },
+        {
+          "name": "nainm",
+          "description": "Number of sexual intercourses with men including anal sex",
+          "type": "integer"
+        },
+        {
+          "name": "ncaif",
+          "description": "Number of sexual intercourses with anal sex using condom",
+          "type": "integer"
+        },
+        {
+          "name": "ncaim",
+          "description": "Number of sexual intercourses with anal sex with men using condom",
+          "type": "integer"
+        },
+        {
+          "name": "ncvif",
+          "description": "Number of sexual intercourses with vaginal sex using condom",
+          "type": "integer"
+        },
+        {
+          "name": "ndwkw",
+          "description": "Number of sexual intercourses including deep wet kissing (including tongue into other's mouth)",
+          "type": "integer"
+        },
+        {
+          "name": "nnsxm",
+          "description": "Number of sexual activities without including intercourse with men since the last visit",
+          "type": "integer"
+        },
+        {
+          "name": "noinf",
+          "description": "Number of sexual intercourses including oral sex",
+          "type": "integer"
+        },
+        {
+          "name": "noinm",
+          "description": "Number of sexual intercourses with men including oral sex",
+          "type": "integer"
+        },
+        {
+          "name": "nsexf",
+          "description": "Number of sexual intercourses with women since the last visit",
+          "type": "integer"
+        },
+        {
+          "name": "nsexm",
+          "description": "Number of sexual intercourses with men since the last visit",
+          "type": "integer"
+        },
+        {
+          "name": "nsxaf",
+          "description": "Number of sexual activities without including intercourse with women since the last visit",
+          "type": "integer"
+        },
+        {
+          "name": "nvinf",
+          "description": "Number of sexual intercourses including vaginal sex",
+          "type": "integer"
+        },
+        {
+          "name": "oinf1",
+          "description": "The sexual intercourse with the main partner included oral sex",
+          "type": "boolean"
+        },
+        {
+          "name": "orin1",
+          "description": "The sexual intercourse with the main male partner included oral sex",
+          "type": "boolean"
+        },
+        {
+          "name": "packs",
+          "description": "Number of packs smoked per day",
+          "type": "enum"
+        },
+        {
+          "name": "prop1asex",
+          "description": "First drug was taken within 12 hours before having sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop1bsex",
+          "description": "First drug was taken more than 12 hours before having sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop1csex",
+          "description": "First drug was taken within 12 hours after having sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop1frq",
+          "description": "Frequency using the first drug in the last six months",
+          "type": "enum"
+        },
+        {
+          "name": "prop1l6m",
+          "description": "First drug was used when suspected would be having sex or after sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop1med",
+          "description": "First taken anti-HIV medication.",
+          "type": "enum"
+        },
+        {
+          "name": "prop1ob1",
+          "description": "The first drug was prescribed by a doctor",
+          "type": "boolean"
+        },
+        {
+          "name": "prop1ob2",
+          "description": "The first drug was part of a clinical research",
+          "type": "boolean"
+        },
+        {
+          "name": "prop1ob3",
+          "description": "The first drug was provided by a sexual partner",
+          "type": "boolean"
+        },
+        {
+          "name": "prop1ob4",
+          "description": "The first drug was obtained by a non-medical source",
+          "type": "boolean"
+        },
+        {
+          "name": "prop2asex",
+          "description": "Second drug was taken within 12 hours before having sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop2bsex",
+          "description": "Second drug was taken more than 12 hours before having sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop2csex",
+          "description": "Second drug was taken within 12 hours after having sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop2frq",
+          "description": "Frequency using the second drug in the last six months",
+          "type": "enum"
+        },
+        {
+          "name": "prop2l6m",
+          "description": "Second drug was used when suspected would be having sex or after sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop2med",
+          "description": "Second taken anti-HIV medication.",
+          "type": "enum"
+        },
+        {
+          "name": "prop2ob1",
+          "description": "The second drug was prescribed by a doctor",
+          "type": "boolean"
+        },
+        {
+          "name": "prop2ob2",
+          "description": "The second drug was part of a clinical research",
+          "type": "boolean"
+        },
+        {
+          "name": "prop2ob3",
+          "description": "The second drug was provided by a sexual partner",
+          "type": "boolean"
+        },
+        {
+          "name": "prop2ob4",
+          "description": "The second drug was obtained by a non-medical source",
+          "type": "boolean"
+        },
+        {
+          "name": "prop3asex",
+          "description": "Third drug was taken within 12 hours before having sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop3bsex",
+          "description": "Third drug was taken more than 12 hours before having sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop3csex",
+          "description": "Third drug was taken within 12 hours after having sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop3frq",
+          "description": "Frequency using the third drug in the last six months",
+          "type": "enum"
+        },
+        {
+          "name": "prop3l6m",
+          "description": "Third drug was used when suspected would be having sex or after sex",
+          "type": "boolean"
+        },
+        {
+          "name": "prop3med",
+          "description": "Third taken anti-HIV medication.",
+          "type": "enum"
+        },
+        {
+          "name": "prop3ob1",
+          "description": "The third drug was prescribed by a doctor",
+          "type": "boolean"
+        },
+        {
+          "name": "prop3ob2",
+          "description": "The third drug was part of a clinical research",
+          "type": "boolean"
+        },
+        {
+          "name": "prop3ob3",
+          "description": "The third drug was provided by a sexual partner",
+          "type": "boolean"
+        },
+        {
+          "name": "prop3ob4",
+          "description": "The third drug was obtained by a non-medical source",
+          "type": "boolean"
+        },
+        {
+          "name": "propexp",
+          "description": "Took anti-HIV medications to prevent getting infected either before being exposed to HIV or following a possible exposure.",
+          "type": "enum"
+        },
+        {
+          "name": "retey",
+          "description": "Reason for employment changes was for early retirement",
+          "type": "boolean"
+        },
+        {
+          "name": "sexav",
+          "description": "Engaged in any sort of sexual activities with another person since the last visit",
+          "type": "boolean"
+        },
+        {
+          "name": "sexvf",
+          "description": "Had any sort of sexual activities with a woman since the last visit",
+          "type": "boolean"
+        },
+        {
+          "name": "sexvm",
+          "description": "Had any sort of sexual activities with a man since the last visit",
+          "type": "boolean"
+        },
+        {
+          "name": "smokhm",
+          "description": "Number of months living in a household with at least one other cigarette smoker",
+          "type": "integer"
+        },
+        {
+          "name": "smokm",
+          "description": "Percentage of the entire time moking cigarettes",
+          "type": "enum"
+        },
+        {
+          "name": "smokn",
+          "description": "Currently smoking cigarettes",
+          "type": "enum"
+        },
+        {
+          "name": "tsick",
+          "description": "Reason for employment changes was to become too sick",
+          "type": "boolean"
+        },
+        {
+          "name": "vinf1",
+          "description": "The sexual intercourse with the main partner included vaginal sex",
+          "type": "boolean"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'behavior_questionnaire' table.",
+          "type": "string"
+        },
+        {
+          "name": "behavior_questionnaire.id",
+          "description": "A unique identifier for records in this 'behavior_questionnaire' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "gynecological_exam",
+      "description": "Values obtained from a extense gynecological exam required by a medical professional and performed at one of the recurrent patient visit.",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "gynecological_exam.id"
+      ],
+      "properties": [
+        {
+          "name": "adnexae_left_mass",
+          "description": "Presence of left adnexal mass",
+          "type": "enum"
+        },
+        {
+          "name": "adnexae_left_tenderness",
+          "description": "Presence of left adnexal tenderness",
+          "type": "enum"
+        },
+        {
+          "name": "adnexae_presence",
+          "description": "Presence of Adnexae",
+          "type": "enum"
+        },
+        {
+          "name": "adnexae_right_mass",
+          "description": "Presence of right  adnexal mass",
+          "type": "enum"
+        },
+        {
+          "name": "adnexae_right_tenderness",
+          "description": "Presence of right  adnexal tenderness",
+          "type": "enum"
+        },
+        {
+          "name": "amine_odor_koh_test",
+          "description": "Amine odor KOH mount test",
+          "type": "enum"
+        },
+        {
+          "name": "cervical_discharge_color",
+          "description": "Cervical discharge color",
+          "type": "enum"
+        },
+        {
+          "name": "cervical_exam_done",
+          "description": "Check if the cervical exam has been done",
+          "type": "boolean"
+        },
+        {
+          "name": "cervical_lesion_presence",
+          "description": "Presence of cervical lesions",
+          "type": "enum"
+        },
+        {
+          "name": "cervical_motion_tenderness",
+          "description": "Presence of ervical motion tenderness",
+          "type": "enum"
+        },
+        {
+          "name": "cervix_presence",
+          "description": "Presence of cervix",
+          "type": "enum"
+        },
+        {
+          "name": "clinical_impression_lesions",
+          "description": "List of clinical impression episodes",
+          "type": "string"
+        },
+        {
+          "name": "clue_cells_percentage",
+          "description": "Percentage of clue cells observed (more or less 20%)",
+          "type": "enum"
+        },
+        {
+          "name": "clue_cells_test",
+          "description": "Clue cells wet prep test",
+          "type": "enum"
+        },
+        {
+          "name": "ectopy_presence",
+          "description": "Presence of visible ectopy",
+          "type": "enum"
+        },
+        {
+          "name": "exudate_presence",
+          "description": "Presence of exudate",
+          "type": "enum"
+        },
+        {
+          "name": "friability_presence",
+          "description": "Presence of friability",
+          "type": "enum"
+        },
+        {
+          "name": "genital_lesions",
+          "description": "Genital lesions",
+          "type": "string"
+        },
+        {
+          "name": "increased_wbcs",
+          "description": "Increased wbcs",
+          "type": "enum"
+        },
+        {
+          "name": "lesions_count",
+          "description": "Total number of lesions",
+          "type": "integer"
+        },
+        {
+          "name": "trichomonas_test",
+          "description": "Trichomonas wet prep test",
+          "type": "enum"
+        },
+        {
+          "name": "uterine_enlargement",
+          "description": "Presence of uterine enlargement",
+          "type": "enum"
+        },
+        {
+          "name": "uterine_tenderness",
+          "description": "Presence of uterine tenderness",
+          "type": "enum"
+        },
+        {
+          "name": "uterus_presence",
+          "description": "Presence of uterus",
+          "type": "enum"
+        },
+        {
+          "name": "vagina_ph",
+          "description": "Vagina PH",
+          "type": "number"
+        },
+        {
+          "name": "vaginal_discharge_character_bloody",
+          "description": "Vaginal discharge character: bloody",
+          "type": "enum"
+        },
+        {
+          "name": "vaginal_discharge_character_curdy",
+          "description": "Vaginal discharge character: curdy",
+          "type": "enum"
+        },
+        {
+          "name": "vaginal_discharge_character_frothy",
+          "description": "Vaginal discharge character: frothy",
+          "type": "enum"
+        },
+        {
+          "name": "vaginal_discharge_character_mucoid",
+          "description": "Vaginal discharge character: mucoid/floccular",
+          "type": "enum"
+        },
+        {
+          "name": "vaginal_discharge_character_nonfloccular",
+          "description": "Vaginal discharge character: milky/creamy (non-floccular)",
+          "type": "enum"
+        },
+        {
+          "name": "vaginal_discharge_character_purulent",
+          "description": "Vaginal discharge character: purulent",
+          "type": "enum"
+        },
+        {
+          "name": "vaginal_discharge_color",
+          "description": "Vaginal discharge volume",
+          "type": "enum"
+        },
+        {
+          "name": "vaginal_discharge_volume",
+          "description": "Vaginal discharge volume",
+          "type": "enum"
+        },
+        {
+          "name": "yeast_koh_test",
+          "description": "Yeast KOH mount test",
+          "type": "enum"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'gynecological_exam' table.",
+          "type": "string"
+        },
+        {
+          "name": "gynecological_exam.id",
+          "description": "A unique identifier for records in this 'gynecological_exam' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "health_questionnaire",
+      "description": "Values obtained from a general health questionnaire performed at one of the recurrent patient visit.",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "health_questionnaire.id"
+      ],
+      "properties": [
+        {
+          "name": "blue",
+          "description": "Frequency feeling downhearted and blue in the last four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "bodpn",
+          "description": "Amount of bodily pain during the past four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "calm",
+          "description": "Frequency feeling calm and peaceful in the last four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "comhl",
+          "description": "Subject perception of current health compared to one year ago.",
+          "type": "enum"
+        },
+        {
+          "name": "dumps",
+          "description": "Frequency feeling so down in the dumps that nothing could cheer up in the last four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "energy",
+          "description": "Frequency having a lot of energy in the last four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "epcar",
+          "description": "Didn't work as carefully as usual due to emotional problems in the last four weeks.",
+          "type": "boolean"
+        },
+        {
+          "name": "eples",
+          "description": "Emotional problems produced less accomplishment than desired in the last four weeks.",
+          "type": "boolean"
+        },
+        {
+          "name": "epwta",
+          "description": "Emotional problems cut down the amount of time on work or other activities in the last four weeks.",
+          "type": "boolean"
+        },
+        {
+          "name": "excel",
+          "description": "Feeling health is excellent.",
+          "type": "enum"
+        },
+        {
+          "name": "genhl",
+          "description": "Subject perception about his current health.",
+          "type": "enum"
+        },
+        {
+          "name": "happy",
+          "description": "Frequency feeling a happy person in the last four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "health",
+          "description": "Feeling as healthy as anybody known.",
+          "type": "enum"
+        },
+        {
+          "name": "hltba",
+          "description": "Health limitation for bathing or dressing.",
+          "type": "enum"
+        },
+        {
+          "name": "hltbe",
+          "description": "Health limitation for bending, kneeling or stooping.",
+          "type": "enum"
+        },
+        {
+          "name": "hltli",
+          "description": "Health limitation for lifting or carrying groceries.",
+          "type": "enum"
+        },
+        {
+          "name": "hltma",
+          "description": "Health limitation for moderate activities such as moving a table, pushing a vacuum cleaner, bowling or playing golf.",
+          "type": "enum"
+        },
+        {
+          "name": "hlts1",
+          "description": "Health limitation for climbing one flight of stairs.",
+          "type": "enum"
+        },
+        {
+          "name": "hltst",
+          "description": "Health limitation for climbing several flights of stairs.",
+          "type": "enum"
+        },
+        {
+          "name": "hltva",
+          "description": "Health limitation for vigorous activities such as running, lifting heavy objects, participating in strenuous sports.",
+          "type": "enum"
+        },
+        {
+          "name": "hltw1",
+          "description": "Health limitation for walking one block.",
+          "type": "enum"
+        },
+        {
+          "name": "hltwb",
+          "description": "Health limitation for walking several blocks.",
+          "type": "enum"
+        },
+        {
+          "name": "hltwm",
+          "description": "Health limitation for walking more than one mile.",
+          "type": "enum"
+        },
+        {
+          "name": "nerves",
+          "description": "Frequency feeling a very nervous person in the last four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "peppy",
+          "description": "Frequency feeling full of pep in the last four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "phdwa",
+          "description": "Physical health resulted in having difficulties performing the work or other activities in the last four weeks.",
+          "type": "boolean"
+        },
+        {
+          "name": "phkwa",
+          "description": "Physical health limited some kind of work or other activities in the last four weeks.",
+          "type": "boolean"
+        },
+        {
+          "name": "phles",
+          "description": "Physical health produced less accomplishment than desired in the last four weeks.",
+          "type": "boolean"
+        },
+        {
+          "name": "phwta",
+          "description": "Physical health cut down the amount of time on work or other activities in the last four weeks.",
+          "type": "boolean"
+        },
+        {
+          "name": "sick",
+          "description": "Feeling to get sick a little easier than other people.",
+          "type": "enum"
+        },
+        {
+          "name": "socac",
+          "description": "Interference of your physical health or emotional problems with your normal social activities with family, friends, neighbors or other groups in the last four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "soctm",
+          "description": "Frequency feeling your physical health or emotional problems interfered with your social activities (family, friends, neighbors or other groups) in the last four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "tired",
+          "description": "Frequency feeling tired in the last four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "workp",
+          "description": "Interference of your bodily pain with your normal work (including both work outside the home and housework).",
+          "type": "enum"
+        },
+        {
+          "name": "worn",
+          "description": "Frequency feeling worn out in the last four weeks.",
+          "type": "enum"
+        },
+        {
+          "name": "worse",
+          "description": "Feeling health is getting worse.",
+          "type": "enum"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'health_questionnaire' table.",
+          "type": "string"
+        },
+        {
+          "name": "health_questionnaire.id",
+          "description": "A unique identifier for records in this 'health_questionnaire' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mental_health_questionnaire",
+      "description": "Values obtained from a mental health questionnaire performed at one of the recurrent patient visit. The mental health test includes depression, quality of life and daily activities questions.",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "mental_health_questionnaire.id"
+      ],
+      "properties": [
+        {
+          "name": "freq_as_good",
+          "description": "Frequency of feeling as\u00a0good as others.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_blue",
+          "description": "Frequency of feeling blue.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_bothering",
+          "description": "Frequency of feeling bothered in the past week.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_crying",
+          "description": "Frequency crying spells.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_depressed",
+          "description": "Frequency feeling depressed.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_disliked",
+          "description": "Frequency disliked.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_effort",
+          "description": "Frequency everything effort.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_enjoy_life",
+          "description": "Frequency enjoyed life.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_fearful",
+          "description": "Frequency fearful.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_focused",
+          "description": "Frequency trouble keeping\u00a0the mind on what doing.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_fresh_rested",
+          "description": "Frequency waking up fresh and rested during the past month.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_happy",
+          "description": "Frequency happy.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_hopeful",
+          "description": "Frequency hopeful for future.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_life_failure",
+          "description": "Frequency thought life was failure.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_lonely",
+          "description": "Frequency lonely.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_not_eating",
+          "description": "Frequency of not feeling like eating.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_not_going",
+          "description": "Frequency of feeling could not get going.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_restless",
+          "description": "Frequency restless sleep.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_sadness",
+          "description": "Frequency sadness.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_talked_less",
+          "description": "Frequency talked less.",
+          "type": "enum"
+        },
+        {
+          "name": "freq_unfriendly",
+          "description": "Frequency people unfriendly.",
+          "type": "enum"
+        },
+        {
+          "name": "life_feeling",
+          "description": "Feeling description about life as a whole.",
+          "type": "enum"
+        },
+        {
+          "name": "run_own_life",
+          "description": "Ability to run your own life",
+          "type": "boolean"
+        },
+        {
+          "name": "talk_support",
+          "description": "Number of people the subject can count on for understanding and support.",
+          "type": "enum"
+        },
+        {
+          "name": "worth_feeling",
+          "description": "Feeling about being a person of worth, at least as much as others.",
+          "type": "enum"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'mental_health_questionnaire' table.",
+          "type": "string"
+        },
+        {
+          "name": "mental_health_questionnaire.id",
+          "description": "A unique identifier for records in this 'mental_health_questionnaire' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "neurocognitive_test",
+      "description": "Values obtained from a neurocognitive questionnaire performed at one of the recurrent patient visit. The neurocognitive test includes peripheral neuropathy (perception and reflexes) and neuropsychological screenings.",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "neurocognitive_test.id"
+      ],
+      "properties": [
+        {
+          "name": "avg_dominant_finger_tap",
+          "description": "Average score at finger tapping test for dementia screening (dominant hand).",
+          "type": "number"
+        },
+        {
+          "name": "avg_nondominant_finger_tap",
+          "description": "Average score at finger tapping test for dementia screening (non-dominant hand).",
+          "type": "number"
+        },
+        {
+          "name": "left_ankle_reflexes",
+          "description": "Deep tendon reflexes at left ankle.",
+          "type": "enum"
+        },
+        {
+          "name": "left_vibration_perception",
+          "description": "Perception of vibration in great toe (left side) using a 128 Hz tuning fork.",
+          "type": "enum"
+        },
+        {
+          "name": "neurocognitive_test_total_time",
+          "description": "Total time taken for the neurocognitive examination (minutes).",
+          "type": "number"
+        },
+        {
+          "name": "paired_recall",
+          "description": "Number of boxes filled from memory in the Symbol Digit Task (Form 18).",
+          "type": "integer"
+        },
+        {
+          "name": "pegboard_actual_score",
+          "description": "Actual score at the pegboard test.",
+          "type": "integer"
+        },
+        {
+          "name": "pegboard_dominant_hand_drops",
+          "description": "Number of drops at the pegboard test with the dominant hand.",
+          "type": "integer"
+        },
+        {
+          "name": "pegboard_dominant_hand_time",
+          "description": "Time taken to complete the pegboard test with the dominant hand.",
+          "type": "number"
+        },
+        {
+          "name": "pegboard_nondominant_hand_drops",
+          "description": "Number of drops at the pegboard test with the non-dominant hand.",
+          "type": "integer"
+        },
+        {
+          "name": "pegboard_nondominant_hand_time",
+          "description": "Time taken to complete the pegboard test with the non-dominant hand.",
+          "type": "number"
+        },
+        {
+          "name": "rey_osterreith_copy_score",
+          "description": "Total score copying the Rey-Osterreith Complex Figure.",
+          "type": "integer"
+        },
+        {
+          "name": "rey_osterreith_delayed_recall_score",
+          "description": "Total score recalling the Rey-Osterreith Complex Figure after 20 minutes.",
+          "type": "integer"
+        },
+        {
+          "name": "rey_osterreith_immediate_recall_score",
+          "description": "Total score immediately recalling the Rey-Osterreith Complex Figure.",
+          "type": "integer"
+        },
+        {
+          "name": "right_ankle_reflexes",
+          "description": "Deep tendon reflexes at right ankle.",
+          "type": "enum"
+        },
+        {
+          "name": "right_vibration_perception",
+          "description": "Perception of vibration at great toe (right side) using a 128 Hz tuning fork.",
+          "type": "enum"
+        },
+        {
+          "name": "stroop_color_name_error_count",
+          "description": "Number of errors at the color-naming task in Stroop test.",
+          "type": "integer"
+        },
+        {
+          "name": "stroop_color_name_time",
+          "description": "Time taken to complete the color-naming task in Stroop test (seconds).",
+          "type": "number"
+        },
+        {
+          "name": "stroop_interference_trial_error_count",
+          "description": "Number of errors at the interference trial task in Stroop test.",
+          "type": "integer"
+        },
+        {
+          "name": "stroop_interference_trial_read_time",
+          "description": "Time taken to complete the interference trial task in Stroop test (seconds).",
+          "type": "number"
+        },
+        {
+          "name": "stroop_word_read_error_count",
+          "description": "Number of errors at the word-reading task in Stroop test.",
+          "type": "integer"
+        },
+        {
+          "name": "stroop_word_read_time",
+          "description": "Time taken to complete the word-reading task in Stroop test (seconds).",
+          "type": "number"
+        },
+        {
+          "name": "symbol_digit_actual_score",
+          "description": "Symbol-digit paired recall, actual score.",
+          "type": "integer"
+        },
+        {
+          "name": "symbol_digit_raw_score",
+          "description": "Symbol-digit raw score.",
+          "type": "integer"
+        },
+        {
+          "name": "trail_making_connected_points_a",
+          "description": "Number of connected points in Trail-Making Task (Part A).",
+          "type": "integer"
+        },
+        {
+          "name": "trail_making_connected_points_b",
+          "description": "Number of connected points in Trail-Making Task (Part B).",
+          "type": "integer"
+        },
+        {
+          "name": "trail_making_error_count_a",
+          "description": "Number of errors in the Trail-Making Task (Part A).",
+          "type": "integer"
+        },
+        {
+          "name": "trail_making_error_count_b",
+          "description": "Number of errors in the Trail-Making Task (Part B).",
+          "type": "integer"
+        },
+        {
+          "name": "trail_making_prompt_count_a",
+          "description": "Number of prompts in Trail-Making Task (Part A).",
+          "type": "integer"
+        },
+        {
+          "name": "trail_making_prompt_count_b",
+          "description": "Number of prompts in Trail-Making Task (Part B).",
+          "type": "integer"
+        },
+        {
+          "name": "trail_making_time_a",
+          "description": "Elapsed time taken to complete the Trail-Making Task (Part A).",
+          "type": "number"
+        },
+        {
+          "name": "trail_making_time_b",
+          "description": "Elapsed time taken to complete the Trail-Making Task (Part B).",
+          "type": "number"
+        },
+        {
+          "name": "verbal_learning_correct_word_count",
+          "description": "Number of correct words in the delayed recall for Rey Auditory Verbal Learning Test.",
+          "type": "integer"
+        },
+        {
+          "name": "verbal_learning_false_positive_word_count",
+          "description": "Number of false-positive words in the recognition task for Rey Auditory Verbal Learning Test.",
+          "type": "integer"
+        },
+        {
+          "name": "verbal_learning_recognized_word_count",
+          "description": "Number of recognized words in the recognition task for Rey Auditory Verbal Learning Test.",
+          "type": "integer"
+        },
+        {
+          "name": "verbal_learning_wrong_word_count",
+          "description": "Number of wrong words in the delayed recall for Rey Auditory Verbal Learning Test.",
+          "type": "integer"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'neurocognitive_test' table.",
+          "type": "string"
+        },
+        {
+          "name": "neurocognitive_test.id",
+          "description": "A unique identifier for records in this 'neurocognitive_test' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospecimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.",
+      "links": [
+        "subject",
+        "visit"
+      ],
+      "required": [
+        "subject.id",
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "biospecimen_anatomic_site",
+          "description": "Text term that represents the name of the primary disease site of the submitted tumor sample.",
+          "type": "enum"
+        },
+        {
+          "name": "cell_culture_vessel",
+          "description": "Flasks, Petri dishes, roller bottles, or multiwell plates to grow cells.",
+          "type": "string"
+        },
+        {
+          "name": "cell_line",
+          "description": "A cell culture developed from a single cell and therefore consisting of cells with a uniform genetic makeup.",
+          "type": "string"
+        },
+        {
+          "name": "cell_number",
+          "description": "Number of cells cultured in one container.",
+          "type": "integer"
+        },
+        {
+          "name": "collection_date",
+          "description": "Date range in which samples were collected.",
+          "type": "string"
+        },
+        {
+          "name": "composition",
+          "description": "Text term that represents the cellular composition of the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "current_weight",
+          "description": "Numeric value that represents the current weight of the sample, measured  in milligrams.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_collection",
+          "description": "Time interval from the date of biospecimen collection to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_sample_procurement",
+          "description": "The number of days from the date the patient was diagnosed to the date of the procedure that produced the sample.",
+          "type": "integer"
+        },
+        {
+          "name": "diagnoses",
+          "description": "A 128-bit identifier. Depending on the mechanism used to generate it, it is either guaranteed to be different from all other UUIDs/GUIDs generated until 3400 AD or extremely likely to be different. Its relatively small size lends itself well to sorting, ordering, and hashing of all sorts, storing in databases, simple allocation, and ease of programming in general.",
+          "type": "array"
+        },
+        {
+          "name": "diagnosis_pathologically_confirmed",
+          "description": "The histologic description of tissue or cells confirmed by a pathology review of frozen or formalin fixed slide(s) completed after the diagnostic pathology review of the tumor sample used to extract analyte(s).",
+          "type": "enum"
+        },
+        {
+          "name": "hours_to_collection",
+          "description": "Time interval from the date of biospecimen collection to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "integer"
+        },
+        {
+          "name": "initial_weight",
+          "description": "Numeric value that represents the initial weight of the sample, measured in milligrams.",
+          "type": "number"
+        },
+        {
+          "name": "intermediate_dimension",
+          "description": "Intermediate dimension of the sample, in millimeters.",
+          "type": "string"
+        },
+        {
+          "name": "lysis_buffer",
+          "description": "A buffer solution used for the purpose of breaking open cells for use in molecular biology experiments that analyze the compounds of the cells.",
+          "type": "string"
+        },
+        {
+          "name": "ncbi_bioproject",
+          "description": "Record identifier assigned by NCBI for entry in the BioProject database.",
+          "type": "string"
+        },
+        {
+          "name": "ncbi_biosample",
+          "description": "Record identifier assigned by NCBI for entry in the BioSample database.",
+          "type": "string"
+        },
+        {
+          "name": "passage",
+          "description": "A record of the number of times the culture has been subcultured.",
+          "type": "integer"
+        },
+        {
+          "name": "preservation_method",
+          "description": "Text term that represents the method used to preserve the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "sample_volume",
+          "description": "The volume of the sample in mL.",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "summary_socio_demographic",
+      "description": "Summary of socio-demographic information including drug use, sex partners, race background, income, insurance, etc asked to a patient at each of the recurrent visit.",
+      "links": [
+        "subject",
+        "visit"
+      ],
+      "required": [
+        "summary_socio_demographic.id"
+      ],
+      "properties": [
+        {
+          "name": "cesd",
+          "description": "Overall depression score (F26/ C1-C20). If CESD >= 16 then depressed.",
+          "type": "integer"
+        },
+        {
+          "name": "cocuse",
+          "description": "Use cocaine since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "cognf",
+          "description": "Cognitive function (F26/B8b-c)",
+          "type": "integer"
+        },
+        {
+          "name": "cokmtc",
+          "description": "Documented contact of known MDR TB Case",
+          "type": "boolean"
+        },
+        {
+          "name": "crackuse",
+          "description": "Use crack/freebase cocaine since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "drink_status",
+          "description": "Current Alcohol Use (If > 0 drinks then Yes)",
+          "type": "enum"
+        },
+        {
+          "name": "drinkcat",
+          "description": "Alcohol Use Categories",
+          "type": "enum"
+        },
+        {
+          "name": "emotl",
+          "description": "Emotional wellbeing (F26/B8d- e,h)",
+          "type": "number"
+        },
+        {
+          "name": "employ",
+          "description": "Participant currently employed (F21/EMP_SD)",
+          "type": "enum"
+        },
+        {
+          "name": "enfat",
+          "description": "Energy/Fatigue function (F26/ B8f,g",
+          "type": "integer"
+        },
+        {
+          "name": "ex_prisoner",
+          "description": "Social risk factors for a patient (yes or no) as ex prisoner",
+          "type": "boolean"
+        },
+        {
+          "name": "fsex6mo",
+          "description": "Number of female sexual intercourse partners since last visit",
+          "type": "integer"
+        },
+        {
+          "name": "heruse",
+          "description": "Use heroin since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "hlthp",
+          "description": "Health perception (F26/B1,B9a- b)",
+          "type": "number"
+        },
+        {
+          "name": "hlthr",
+          "description": "Health rating (F26/B10)",
+          "type": "number"
+        },
+        {
+          "name": "homeless",
+          "description": "homeless status",
+          "type": "boolean"
+        },
+        {
+          "name": "idu",
+          "description": "Injected drugs since last visit (based on self-report, INJEBH, INJCBH)",
+          "type": "enum"
+        },
+        {
+          "name": "income",
+          "description": "Average household income/year",
+          "type": "enum"
+        },
+        {
+          "name": "insurance",
+          "description": "Participant currently has insurance",
+          "type": "enum"
+        },
+        {
+          "name": "lang",
+          "description": "Interview language preference",
+          "type": "enum"
+        },
+        {
+          "name": "marsp",
+          "description": "Specify other marital status (F21/MRSPSD)",
+          "type": "string"
+        },
+        {
+          "name": "marstat",
+          "description": "Marital status (F21/MAR_SD)",
+          "type": "enum"
+        },
+        {
+          "name": "mdonrxuse",
+          "description": "In methadone maintenance program or reported prescribed use of methadone since last visit (F04/F24/ F24BEH,F22/F22MED,Drug2)",
+          "type": "enum"
+        },
+        {
+          "name": "mdonuse",
+          "description": "Use (illicit) Methadone since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "msex6mo",
+          "description": "Number of men sexual intercourse partners since last visit",
+          "type": "integer"
+        },
+        {
+          "name": "mthause",
+          "description": "Use Methamphetamines since last visit (V21+)",
+          "type": "boolean"
+        },
+        {
+          "name": "ndrnkwk",
+          "description": "Number of drinks/week since last visit",
+          "type": "number"
+        },
+        {
+          "name": "nidu",
+          "description": "Non-injected recreational drugs used since last visit. Includes CCH use, any marijuana use, hallucinogens, club drugs, methamphetamines.",
+          "type": "enum"
+        },
+        {
+          "name": "number_of_daily_contacts",
+          "description": "Number of daily contacts an individual with TB has",
+          "type": "integer"
+        },
+        {
+          "name": "odrguse",
+          "description": "Use amphetamines (pre-V21), narcotics (pre-V21), hallucinogens, other drugs (V39+) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "pain",
+          "description": "Pain (F26/B3,B6)",
+          "type": "number"
+        },
+        {
+          "name": "physf",
+          "description": "Physical function (F26/B7a-d)",
+          "type": "number"
+        },
+        {
+          "name": "potuse",
+          "description": "Use marijuana/hash since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "qlindx",
+          "description": "Quality of life health index scale (.2*physf +.17*pain + .28*enfat +.2*emotl + .05*soclf + .1*rolef)",
+          "type": "number"
+        },
+        {
+          "name": "recrxuse",
+          "description": "Use of prescription drugs in a way not prescribed (methadone, amphetamines (V21+ ), Other Narcotic use (V21+), tranquilizers (V39+)",
+          "type": "enum"
+        },
+        {
+          "name": "resid",
+          "description": "Place of residence (F21/ RES_SD)",
+          "type": "enum"
+        },
+        {
+          "name": "residsp",
+          "description": "Specify other place of residence (F21/RESPSD)",
+          "type": "string"
+        },
+        {
+          "name": "rolef",
+          "description": "Role function (F26/B2,B5)",
+          "type": "integer"
+        },
+        {
+          "name": "sbxnrxuse",
+          "description": "In suboxone maintenance program (V39+) or reported prescribed use of suboxone since last visit (F22s4/ F22MEDs4, F22s6/F22MEDs6)",
+          "type": "enum"
+        },
+        {
+          "name": "smkgrp",
+          "description": "History of Smoking cigarettes status",
+          "type": "enum"
+        },
+        {
+          "name": "smkhist",
+          "description": "Number of years smoked cigarettes. If the number is greater than 89 years, see 'smkhist_gt89'.",
+          "type": "number"
+        },
+        {
+          "name": "smkhist_gt89",
+          "description": "Indicate whether the 'Number of years smoked cigarettes' is greater than 89 years.",
+          "type": "enum"
+        },
+        {
+          "name": "smoke_status",
+          "description": "Current cigarette smoking status",
+          "type": "enum"
+        },
+        {
+          "name": "soclf",
+          "description": "Social function (F26/B4,B8a)",
+          "type": "number"
+        },
+        {
+          "name": "tb_care_worker",
+          "description": "whether have been a tuberculosis care worker",
+          "type": "boolean"
+        },
+        {
+          "name": "v17idu",
+          "description": "Participant ever injected drugs (Reported visit 17)",
+          "type": "enum"
+        },
+        {
+          "name": "v20evndl",
+          "description": "Participant ever used a needle AFTER another user (Reported vis 20)",
+          "type": "enum"
+        },
+        {
+          "name": "v24idu",
+          "description": "Participant ever injected drugs (Reported visit 24)",
+          "type": "enum"
+        },
+        {
+          "name": "version",
+          "description": "Version number of data",
+          "type": "string"
+        },
+        {
+          "name": "worked_abroad",
+          "description": "whether worked abroad",
+          "type": "boolean"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'summary_socio_demographic' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'summary_socio_demographic' table.",
+          "type": "string"
+        },
+        {
+          "name": "summary_socio_demographic.id",
+          "description": "A unique identifier for records in this 'summary_socio_demographic' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "treatment",
+      "description": "Record of the administration and intention of therapeutic agents provided to a patient to alter the course of a pathologic process.",
+      "links": [
+        "visit"
+      ],
+      "required": [
+        "visit.id",
+        "treatment.id"
+      ],
+      "properties": [
+        {
+          "name": "abc",
+          "description": "Used Abacavir (218) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "abcv",
+          "description": "Used Abacavir (218) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "acv",
+          "description": "Used Acyclovir (146) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "acvv",
+          "description": "Used Acyclovir (146) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "adh",
+          "description": "How often took antiretrovirals as prescribed over past 6 months (start from visit 9 and after)",
+          "type": "enum"
+        },
+        {
+          "name": "amb",
+          "description": "Used Amphoceterin B (124) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "ambv",
+          "description": "Used Amphoceterin B (124) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "apn",
+          "description": "Used aerosolized Pentamidine (114) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "apnv",
+          "description": "Used aerosolized Pentamidine (114) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "apv",
+          "description": "Used Amprenavir (219) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "apvv",
+          "description": "Used Amprenavir (219) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "atp",
+          "description": "Used Atripla(EFV/TDF/FTC) (262) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "atpv",
+          "description": "Used Atripla(EFV/TDF/FTC) (262) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "atz",
+          "description": "Used Atazanavir (243) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "atzv",
+          "description": "Used Atazanavir (243) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "azi",
+          "description": "Used Azithromycin (zithromax) (152) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "aziv",
+          "description": "Used Azithromycin (zithromax) (152) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "azt",
+          "description": "Used AZT (92) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "aztv",
+          "description": "Used AZT (92) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "cbv",
+          "description": "Used Combivir (AZT/3TC) (227) since last visit (no summ)",
+          "type": "enum"
+        },
+        {
+          "name": "cbvv",
+          "description": "Used Combivir (AZT/3TC) (227) at visit (no summ)",
+          "type": "enum"
+        },
+        {
+          "name": "cip",
+          "description": "Used Ciprofloxacin (CIPRO) (153) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "cipv",
+          "description": "Used Ciprofloxacin (CIPRO) (153) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "cla",
+          "description": "Used Clarithromycin (Biaxin) (184) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "clav",
+          "description": "Used Clarithromycin (Biaxin) (184) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "cob",
+          "description": "Used cobicistat (283) since last visit (added at visit 37)",
+          "type": "enum"
+        },
+        {
+          "name": "cobv",
+          "description": "Used cobicistat (283) at visit (added at visit 37)",
+          "type": "enum"
+        },
+        {
+          "name": "cpr",
+          "description": "Used complera (280) since last visit (added at visit 34)",
+          "type": "enum"
+        },
+        {
+          "name": "cprv",
+          "description": "Used complera (280) at visit (added at visit 34)",
+          "type": "enum"
+        },
+        {
+          "name": "d4t",
+          "description": "Used d4T (159) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "d4tv",
+          "description": "Used d4T (159) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "dcv",
+          "description": "Used descovy  (308) since last visit (added at visit 44)",
+          "type": "enum"
+        },
+        {
+          "name": "dcvv",
+          "description": "Used descovy  (308) at visit (added at visit 44)",
+          "type": "enum"
+        },
+        {
+          "name": "ddc",
+          "description": "Used ddC (94) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "ddcv",
+          "description": "Used ddC (94) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "ddi",
+          "description": "Used ddI (147) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "ddiv",
+          "description": "Used ddI (147) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "dgt",
+          "description": "Used dolutegravir  (286) since last visit (added at visit 39)",
+          "type": "enum"
+        },
+        {
+          "name": "dgtv",
+          "description": "Used dolutegravir  (286) at visit (added at visit 39)",
+          "type": "enum"
+        },
+        {
+          "name": "diagnoses",
+          "description": "A 128-bit identifier. Depending on the mechanism used to generate it, it is either guaranteed to be different from all other UUIDs/GUIDs generated until 3400 AD or extremely likely to be different. Its relatively small size lends itself well to sorting, ordering, and hashing of all sorts, storing in databases, simple allocation, and ease of programming in general.",
+          "type": "array"
+        },
+        {
+          "name": "dlv",
+          "description": "Used Delavirdine (194) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "dlvv",
+          "description": "Used Delavirdine (194) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "dps",
+          "description": "Used Dapsone (113) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "dpsv",
+          "description": "Used Dapsone (113) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "drv",
+          "description": "Used Darunavir(TMC-114) (256) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "drvv",
+          "description": "Used Darunavir(TMC-114) (256) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "ecft",
+          "description": "Used genvoya  (290) since last visit (added at visit 44)",
+          "type": "enum"
+        },
+        {
+          "name": "ecftv",
+          "description": "Used genvoya  (290) at visit (added at visit 44)",
+          "type": "enum"
+        },
+        {
+          "name": "efv",
+          "description": "Used Sustiva (220) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "efvv",
+          "description": "Used Sustiva (220) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "ei",
+          "description": "Number of Entry inhibitors used since last visit",
+          "type": "integer"
+        },
+        {
+          "name": "eiv",
+          "description": "Number of Entry inhibitors using at visit",
+          "type": "integer"
+        },
+        {
+          "name": "elv",
+          "description": "Used elvitegravir  (284) since last visit (added at visit 37)",
+          "type": "enum"
+        },
+        {
+          "name": "elvv",
+          "description": "Used elvitegravir  (284) at visit (added at visit 37)",
+          "type": "enum"
+        },
+        {
+          "name": "enf",
+          "description": "Used Fuzeon T20 (233) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "enfv",
+          "description": "Used Fuzeon T20 (233) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "epo",
+          "description": "Used epogen (117) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "epov",
+          "description": "Used epogen (117) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "epz",
+          "description": "Used Epzicom (ABC/LAM) (254) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "epzv",
+          "description": "Used Epzicom (ABC/LAM) (254) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "eth",
+          "description": "Used Ethambutol (137) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "ethv",
+          "description": "Used Ethambutol (137) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "etv",
+          "description": "Used Intelence (etravirine, TMC-125) (255) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "etvv",
+          "description": "Used Intelence (etravirine, TMC-125) (255) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "evo",
+          "description": "Used Evotaz  (296) since last visit (added at visit 40)",
+          "type": "enum"
+        },
+        {
+          "name": "evov",
+          "description": "Used Evotaz  (296) at visit (added at visit 40)",
+          "type": "enum"
+        },
+        {
+          "name": "fcv",
+          "description": "Used Famcyclovir (213) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "fcvv",
+          "description": "Used Famcyclovir (213) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "flz",
+          "description": "Used Fluconazole (116) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "flzv",
+          "description": "Used Fluconazole (116) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "fpv",
+          "description": "Used Fosamprenavir (249) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "fpvv",
+          "description": "Used Fosamprenavir (249) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "fsc",
+          "description": "Used Foscarnet (91) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "fscv",
+          "description": "Used Foscarnet (91) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "ftc",
+          "description": "Used FTC Emtriva(239) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "ftcv",
+          "description": "Used FTC Emtriva (239) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "gcv",
+          "description": "Used Ganciclovir (DHPG) (125) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "gcvv",
+          "description": "Used Ganciclovir (DHPG) (125) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "h",
+          "description": "Yes / No if Isoniazid was included in the regimen",
+          "type": "boolean"
+        },
+        {
+          "name": "hor",
+          "description": "Used  hormones (507) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "horv",
+          "description": "Used hormones (507) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "hxu",
+          "description": "Used Hydroxyurea (207) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "hxuv",
+          "description": "Used Hydroxyurea (207) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "idv",
+          "description": "Used Indinavir (212) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "idvv",
+          "description": "Used Indinavir (212) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "ii",
+          "description": "Number of Integrase inhibitors used since last visit",
+          "type": "integer"
+        },
+        {
+          "name": "iiv",
+          "description": "Number of Integrase inhibitors using at visit",
+          "type": "integer"
+        },
+        {
+          "name": "ist",
+          "description": "Used Isentress (raltegravir, MK-0518) (264) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "istv",
+          "description": "Used Isentress (raltegravir, MK-0518) (264) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "isz",
+          "description": "Used Isoniazid (138) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "iszv",
+          "description": "Used Isoniazid (138) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "itf",
+          "description": "Used interferon (90) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "itfv",
+          "description": "Used interferon (90) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "itz",
+          "description": "Used Itraconazole (169) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "itzv",
+          "description": "Used Itraconazole (169) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "ktz",
+          "description": "Used Ketocanazole (127) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "ktzv",
+          "description": "Used Ketocanazole (127) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "lam",
+          "description": "Used Lamivudine (3TC) (204) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "lamv",
+          "description": "Used Lamivudine (3TC) (204) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "lpv",
+          "description": "Used Lopinavir (217) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "lpvv",
+          "description": "Used Lopinavir (217) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "mb",
+          "description": "Yes / No if Mycobutin was included in the regimen",
+          "type": "boolean"
+        },
+        {
+          "name": "mcx",
+          "description": "Used Mycelex (145) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "mcxv",
+          "description": "Used Mycelex (145) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "mep",
+          "description": "Used Atovaquone (190) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "mepv",
+          "description": "Used Atovaquone (190) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "mon",
+          "description": "Used Monistat (229) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "monv",
+          "description": "Used Monistat (229) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "mpl",
+          "description": "Used methyl-prednisolone (705) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "mplv",
+          "description": "Used methyl-prednisolone (705) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "nan",
+          "description": "Used nandralone (232) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "nanv",
+          "description": "Used nandralone (232) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "neu",
+          "description": "Used neupogen (157) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "neuv",
+          "description": "Used neupogen (157) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "nfv",
+          "description": "Used Nelfinavir (216) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "nfvv",
+          "description": "Used Nelfinavir (216) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "nnrti",
+          "description": "Number of Non-Nucleoside RTIs used since last visit",
+          "type": "integer"
+        },
+        {
+          "name": "nnrtiv",
+          "description": "Number of Non-Nucleoside RTIs using at visit",
+          "type": "integer"
+        },
+        {
+          "name": "nrti",
+          "description": "Number of Nucleoside-RTIs used since last visit",
+          "type": "integer"
+        },
+        {
+          "name": "nrtiv",
+          "description": "Number of Nucleoside-RTIs using at visit",
+          "type": "integer"
+        },
+        {
+          "name": "nvp",
+          "description": "Used Nevirapine (191) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "nvpv",
+          "description": "Used Nevirapine (191) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "nys",
+          "description": "Used Nystatin (144) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "nysv",
+          "description": "Used Nystatin (144) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "odf",
+          "description": "Used odefsey  (306) since last visit (added at visit 44)",
+          "type": "enum"
+        },
+        {
+          "name": "odfv",
+          "description": "Used odefsey  (306) at visit (added at visit 44)",
+          "type": "enum"
+        },
+        {
+          "name": "pdl",
+          "description": "Used prednisolone (707) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "pdlv",
+          "description": "Used prednisolone (707) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "peg",
+          "description": "Used pegasys (242) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "pegv",
+          "description": "Used  pegasys (242) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "pi",
+          "description": "Number of Protease Inhibs used since last visit",
+          "type": "integer"
+        },
+        {
+          "name": "piv",
+          "description": "Number of Protease Inhibs using at visit",
+          "type": "integer"
+        },
+        {
+          "name": "prd",
+          "description": "Used prednisone (704) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "prdv",
+          "description": "Used prednisone (704) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "prz",
+          "description": "Used Prezcobix  (295) since last visit (added at visit 40)",
+          "type": "enum"
+        },
+        {
+          "name": "przv",
+          "description": "Used Prezcobix  (295) at visit (added at visit 40)",
+          "type": "enum"
+        },
+        {
+          "name": "pyz",
+          "description": "Used Pyrazinamide (182) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "pyzv",
+          "description": "Used Pyrazinamide (182) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "reb",
+          "description": "Used rebetron(235) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "rebv",
+          "description": "Used rebetron(235) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "rfm",
+          "description": "Used Rifampin (Rifidin) (138) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "rfmv",
+          "description": "Used Rifampin (Rifidin) (139) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "rif",
+          "description": "Used Rifabutin (Mycobutin) (93) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "rifv",
+          "description": "Used Rifabutin (Mycobutin) (93) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "rpv",
+          "description": "Used rilpivirine (276) since last visit (added at visit 34)",
+          "type": "enum"
+        },
+        {
+          "name": "rpvv",
+          "description": "Used rilpivirine (276) at visit (added at visit 34)",
+          "type": "enum"
+        },
+        {
+          "name": "rtv",
+          "description": "Used Ritonavir (211) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "rtvv",
+          "description": "Used Ritonavir (211) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "sbd",
+          "description": "Used Stribild (287) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "sbdv",
+          "description": "Used Stribild (287) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "slz",
+          "description": "Used Selzentry (maraviroc) (265) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "slzv",
+          "description": "Used Selzentry (maraviroc) (265) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "sqv",
+          "description": "Used Saquinavir (210) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "sqvv",
+          "description": "Used Saquinavir (210) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "taf",
+          "description": "Used alafenamide tenofovir (305) since last visit (added at visit 44)",
+          "type": "enum"
+        },
+        {
+          "name": "tafv",
+          "description": "Used alafenamide tenofovir (305) at visit (added at visit 44)",
+          "type": "enum"
+        },
+        {
+          "name": "tdf",
+          "description": "Used Tenofovir (234) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "tdfv",
+          "description": "Used Tenofovir (234) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "thrpy",
+          "description": "Type of therapy used since last visit, simplified definition suggested on June 2, 2009",
+          "type": "enum"
+        },
+        {
+          "name": "thrpyv",
+          "description": "Type of therapy used at visit, simplified definition suggested on June 2, 2009",
+          "type": "enum"
+        },
+        {
+          "name": "tmp",
+          "description": "Used Bactrim (112) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "tmpv",
+          "description": "Used Bactrim (112) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "tpv",
+          "description": "Used Tipranavir(Aptivus) (238) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "tpvv",
+          "description": "Used Tipranavir(Aptivus) (238) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "trd",
+          "description": "Yes / No if Terizidone was included in the regimen",
+          "type": "boolean"
+        },
+        {
+          "name": "tru",
+          "description": "Used Truvada (TDF/FTC) (253) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "truv",
+          "description": "Used Truvada (TDF/FTC) (253) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "trz",
+          "description": "Used Terazol (230) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "trzv",
+          "description": "Used Terazol (230) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "tum",
+          "description": "Used Triumeq  (293) since last visit (added at visit 40)",
+          "type": "enum"
+        },
+        {
+          "name": "tumv",
+          "description": "Used Triumeq  (293) at visit (added at visit 40)",
+          "type": "enum"
+        },
+        {
+          "name": "tzv",
+          "description": "Used Trizivir (AZT/3TC/ABC) (240) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "tzvv",
+          "description": "Used Trizivir (AZT/3TC/ABC) (240) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "vcv",
+          "description": "Used Valcyclovir (198) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "vcvv",
+          "description": "Used Valcyclovir (198) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "vcz",
+          "description": "Used Vfend (Voriconazole) (247) since last visit",
+          "type": "enum"
+        },
+        {
+          "name": "vczv",
+          "description": "Used Vfend (Voriconazole) (247) at visit",
+          "type": "enum"
+        },
+        {
+          "name": "version",
+          "description": "Version number of data",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'treatment' table.",
+          "type": "string"
+        },
+        {
+          "name": "treatment.id",
+          "description": "A unique identifier for records in this 'treatment' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aliquot",
+      "description": "Pertaining to a portion of the whole; any one of two or more samples of something, of the same volume or weight.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "aliquot.id"
+      ],
+      "properties": [
+        {
+          "name": "aliquot_description",
+          "description": "Free text to describe the aliquot.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot_quantity",
+          "description": "The quantity in micrograms (ug) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "aliquot_volume",
+          "description": "The volume in microliters (ml) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "amount",
+          "description": "Weight in grams or volume in mL.",
+          "type": "number"
+        },
+        {
+          "name": "analyte_type",
+          "description": "Text term that represents the kind of molecular specimen analyte.",
+          "type": "string"
+        },
+        {
+          "name": "concentration",
+          "description": "Numeric value that represents the concentration of an analyte or aliquot extracted from the sample or sample portion, measured in milligrams per milliliter.",
+          "type": "number"
+        },
+        {
+          "name": "source_center",
+          "description": "Name of the center that provided the item.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'aliquot' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "A unique identifier for records in this 'aliquot' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "summary_lab_result",
+      "description": "Summary of important values obtained from blood or other laboratory tests required by a medical professional and performed at one of the recurrent patient visit.",
+      "links": [
+        "visit",
+        "sample"
+      ],
+      "required": [
+        "summary_lab_result.id"
+      ],
+      "properties": [
+        {
+          "name": "baff",
+          "description": "The determination of the amount of B-cell activating factor present in a sample.  Tumor necrosis factor ligand superfamily member 13B (285 aa, ~31 kDa) is encoded by the human TNFSF13B gene. This protein is involved in signal transduction and the modulation of B- and T-cell proliferation.",
+          "type": "number"
+        },
+        {
+          "name": "bca1",
+          "description": "The determination of the amount of chemokine (C-X-C motif) ligand 13 present in a sample.  C-C motif chemokine 13 (98 aa, ~11 kDa) is encoded by the human CCL13 gene. This protein is involved in leukocyte chemotaxis and inflammation.",
+          "type": "number"
+        },
+        {
+          "name": "ccr5",
+          "description": "The determination of the amount of C-C chemokine receptor type 5 in a biological specimen.  C-C chemokine receptor type 5 (352 aa, ~41 kDa) is encoded by the human CCR5 gene. This protein is involved in the modulation of inflammatory responses and cellular signaling.",
+          "type": "number"
+        },
+        {
+          "name": "ccr5d32",
+          "description": "Term will by requested to NCIt and the description will be updated once the term is added to NCIt.",
+          "type": "number"
+        },
+        {
+          "name": "cd27",
+          "description": "Term will by requested to NCIt and the description will be updated once the term is added to NCIt.",
+          "type": "number"
+        },
+        {
+          "name": "cd4dt",
+          "description": "Year that CD4 was collected",
+          "type": "integer"
+        },
+        {
+          "name": "chol",
+          "description": "Cholesterol (mg/dL)",
+          "type": "number"
+        },
+        {
+          "name": "chol_hdl_ration",
+          "description": "Cholesterol/HDL ratio",
+          "type": "number"
+        },
+        {
+          "name": "crp",
+          "description": "A quantitative measurement of the amount of C-reactive protein present in a sample.  C-reactive protein (224 aa, ~25 kDa) is encoded by the human CRP gene. This protein is cleaved during biological activation and is associated with host defense mechanisms and inflammatory responses.",
+          "type": "number"
+        },
+        {
+          "name": "eotaxin",
+          "description": "The determination of the amount of eotaxin present in a sample.  Eotaxin (97 aa, ~11 kDa) is encoded by the human CCL11 gene. This protein plays a role in allergen-dependent eosinophil chemotaxis.",
+          "type": "number"
+        },
+        {
+          "name": "gmcsf",
+          "description": "The determination of the amount of granulocyte macrophage colony stimulating factor present in a sample.  Granulocyte-macrophage colony-stimulating factor (144 aa, ~16 kDa) is encoded by the human CSF2 gene. This protein plays a role in the positive regulation of the growth and differentiation of cells in the granulocyte, macrophage, eosinophil and erythrocyte lineages.",
+          "type": "number"
+        },
+        {
+          "name": "gp130",
+          "description": "Interleukin-6 receptor subunit beta (918 aa, ~104 kDa) is encoded by the human IL6ST gene. This protein is involved in cytokine receptor-mediated signal transduction.",
+          "type": "number"
+        },
+        {
+          "name": "hdlchol",
+          "description": "HDL Cholesterol (mg/dL)",
+          "type": "number"
+        },
+        {
+          "name": "hematocrit",
+          "description": "Hematocrit (%)",
+          "type": "number"
+        },
+        {
+          "name": "hemoglobin",
+          "description": "Hemoglobin (gm/dl)",
+          "type": "number"
+        },
+        {
+          "name": "hsrat",
+          "description": "Helper/Suppressor Ratio (CD4N/ CD8N)",
+          "type": "number"
+        },
+        {
+          "name": "ifng",
+          "description": "The determination of the amount of interleukin 1 beta present in a sample.  Interleukin-1 beta (269 aa, ~31 kDa) is encoded by the human IL1B gene. This protein is involved in the macrophage-dependent inflammatory response.",
+          "type": "number"
+        },
+        {
+          "name": "il10",
+          "description": "The determination of the amount of interleukin 10 present in a sample.  Interleukin-10 (178 aa, ~21 kDa) is encoded by the human IL10 gene. This protein plays a role in the negative regulation of cytokine expression.",
+          "type": "number"
+        },
+        {
+          "name": "il12",
+          "description": "The determination of the amount of interleukin 12 present in a sample.  Exhibiting a broad range of biological activities on T and natural killer cells, Interleukin-12 is a disulfide-bonded heterodimeric cytokine composed of a 35-kD IL12A subunit (IL-6 Superfamily) and a 40-kDa IL12B subunit (Type I Cytokine Receptor 3 Family). IL12 stimulates T-cell-independent production of IFN-gamma by PBMCs, enhances NK cell lytic activity, acts as a growth factor for T- and NK-cells, and is important for Th1 and Th2 cell differentiation. Lymphocyte responses to IL12 require NOS2A and are mediated by STAT4 activator of transcription. (NCI).",
+          "type": "number"
+        },
+        {
+          "name": "il17",
+          "description": "The determination of the amount of interleukin 17 present in a sample.  Interleukin-17A (155 aa, ~18 kDa) is encoded by the human IL17A gene. This protein is involved in the positive regulation of cytokine production.",
+          "type": "number"
+        },
+        {
+          "name": "il1b",
+          "description": "The determination of the amount of interferon gamma present in a sample.  Interferon gamma (166 aa, ~19 kDa) is encoded by the human IFNG gene. This protein is involved in antiviral activity, macrophage activation, antiproliferative activity and immunopotentiation.",
+          "type": "number"
+        },
+        {
+          "name": "il2",
+          "description": "The determination of the amount of interleukin 2 present in a sample.  Interleukin-2 (153 aa, ~18 kDa) is encoded by the human IL2 gene. This protein is involved in T-cell proliferation, leukocyte stimulation and immune responses.",
+          "type": "number"
+        },
+        {
+          "name": "il4",
+          "description": "The determination of the amount of interleukin 4 present in a sample.  Interleukin-4 (153 aa, ~17 kDa) is encoded by the human IL4 gene. This protein is involved in the regulation of the expression of class II MHC molecules, Fc receptors and cell surface-bound immunoglobulins.",
+          "type": "number"
+        },
+        {
+          "name": "il6",
+          "description": "The determination of the amount of soluble interleukin 6 Receptor present in a sample.  Interleukin-6 (212 aa, ~24 kDa) is encoded by the human IL6 gene. This protein is involved in signaling affecting a wide variety of cell types including monocytes, lymphocytes, hepatocytes and nerve cells.",
+          "type": "number"
+        },
+        {
+          "name": "il8",
+          "description": "The determination of the amount of interleukin 8 present in a sample.  Interleukin-8 (99 aa, ~11 kDa) is encoded by the human CXCL8 gene. This protein is involved in chemotaxis and neutrophil activation.",
+          "type": "number"
+        },
+        {
+          "name": "ldlcholc",
+          "description": "LDL Cholesterol calculated from other measurements (mg/dL)",
+          "type": "number"
+        },
+        {
+          "name": "ldlchold",
+          "description": "LDL Cholesterol measured directly in the laboratory (mg/dL)",
+          "type": "number"
+        },
+        {
+          "name": "ldlchold_ratio",
+          "description": "LDL/HDL Cholesterol ratio",
+          "type": "number"
+        },
+        {
+          "name": "leu2n",
+          "description": "# of CD8 positive cells (suppressors, cells per mm^3)",
+          "type": "integer"
+        },
+        {
+          "name": "leu2p",
+          "description": "% CD8 positive cells (suppressors)",
+          "type": "number"
+        },
+        {
+          "name": "leu3n",
+          "description": "# of CD4 positive cells (helpers, cells per mm^3)",
+          "type": "integer"
+        },
+        {
+          "name": "leu3p",
+          "description": "% CD4 positive cells (helpers)",
+          "type": "number"
+        },
+        {
+          "name": "leu4n",
+          "description": "# of CD3 positive cells (cells per mm^3)",
+          "type": "integer"
+        },
+        {
+          "name": "leu4p",
+          "description": "% CD3 positive cells",
+          "type": "number"
+        },
+        {
+          "name": "llq_vl",
+          "description": "Lower limit of quantification of HIV RNA assay",
+          "type": "enum"
+        },
+        {
+          "name": "mcp1",
+          "description": "The determination of the amount of monocyte chemotactic protein 1 present in a sample.  Human CCL2 wild-type allele is located within 17q11.2-q12 and is approximately 2 kb in length. This allele, which encodes C-C motif chemokine 2 protein, is involved in the mediation of immune cell chemotaxis during tissue injury.",
+          "type": "number"
+        },
+        {
+          "name": "percent_infection",
+          "description": "percentage of cells that infected by virus.",
+          "type": "number"
+        },
+        {
+          "name": "platelets",
+          "description": "Platelets (thousands/mm3)",
+          "type": "number"
+        },
+        {
+          "name": "rbc",
+          "description": "Count of Red blood cells (millions/mm3)",
+          "type": "number"
+        },
+        {
+          "name": "s_cd14",
+          "description": "Term will by requested to NCIt and the description will be updated once the term is added to NCIt. This term is the same as s_cd14 but was collected at a different timepoint.",
+          "type": "number"
+        },
+        {
+          "name": "scd14",
+          "description": "Term will by requested to NCIt and the description will be updated once the term is added to NCIt. This term is the same as s_cd14 but was collected at a different timepoint.",
+          "type": "number"
+        },
+        {
+          "name": "sil2ra",
+          "description": "Serum levels of soluble interleukin-2 receptor alpha (sIL-2Ra).",
+          "type": "number"
+        },
+        {
+          "name": "stnfr2",
+          "description": "Term will by requested to NCIt and the description will be updated once the term is added to NCIt.",
+          "type": "number"
+        },
+        {
+          "name": "titer_PFU_per_gram",
+          "description": "A numerical expression of the quantity of virus normalized by weight. It is expressed in plaque forming unites (pfu) per gram.",
+          "type": "number"
+        },
+        {
+          "name": "tnfa",
+          "description": "The determination of the amount of TNF-alpha production inhibitory activity present in a sample.  Tumor necrosis factor (233 aa, ~26 kDa) is encoded by the human TNF gene. This protein is involved in the induction of cytokine expression, the stimulation of cell proliferation and the positive regulation of cell differentiation.",
+          "type": "number"
+        },
+        {
+          "name": "triglyc",
+          "description": "Triglycerides (mg/dL)",
+          "type": "number"
+        },
+        {
+          "name": "ud_vl",
+          "description": "HIV RNA detection status",
+          "type": "enum"
+        },
+        {
+          "name": "version",
+          "description": "Version number of data",
+          "type": "string"
+        },
+        {
+          "name": "viral_load",
+          "description": "Standardized viral load (copies/ml)",
+          "type": "number"
+        },
+        {
+          "name": "viral_load_kit",
+          "description": "Viral Load Kit used",
+          "type": "enum"
+        },
+        {
+          "name": "virus_NP_gRNA",
+          "description": "A numerical expression of the quantity of virus NP genomic RNA relative to RPL14 with log transformation.",
+          "type": "number"
+        },
+        {
+          "name": "virus_NP_mRNA",
+          "description": "A numerical expression of the quantity of virus NP mRNA level relative to RPL14 with log transformation.",
+          "type": "number"
+        },
+        {
+          "name": "virus_titer_rep1",
+          "description": "A numerical expression of the quantity of virus in a given volume in first test. It is expressed in plaque forming unites (pfu) per mL.",
+          "type": "integer"
+        },
+        {
+          "name": "virus_titer_rep2",
+          "description": "A numerical expression of the quantity of virus in a given volume in second test. It is expressed in plaque forming unites (pfu) per mL.",
+          "type": "integer"
+        },
+        {
+          "name": "virus_titer_rep3",
+          "description": "A numerical expression of the quantity of virus in a given volume in third test. It is expressed in plaque forming unites (pfu) per mL.",
+          "type": "integer"
+        },
+        {
+          "name": "virus_titer_rep4",
+          "description": "A numerical expression of the quantity of virus in a given volume in fourth test. It is expressed in plaque forming unites (pfu) per mL.",
+          "type": "integer"
+        },
+        {
+          "name": "virus_titer_rep5",
+          "description": "A numerical expression of the quantity of virus in a given volume in fifth test. It is expressed in plaque forming unites (pfu) per mL.",
+          "type": "integer"
+        },
+        {
+          "name": "vldt",
+          "description": "Year that Viral Load was collected",
+          "type": "integer"
+        },
+        {
+          "name": "wbc",
+          "description": "Count of white blood cells",
+          "type": "number"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'summary_lab_result' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'summary_lab_result' table.",
+          "type": "string"
+        },
+        {
+          "name": "summary_lab_result.id",
+          "description": "A unique identifier for records in this 'summary_lab_result' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "experiment",
+      "description": "Experiment performed over an aliquot",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "experiment.id"
+      ],
+      "properties": [
+        {
+          "name": "experiment_description",
+          "description": "Free text to expand upon details about experiment",
+          "type": "string"
+        },
+        {
+          "name": "experiment_type",
+          "description": "Name or identifier of the experiment",
+          "type": "string"
+        },
+        {
+          "name": "measurement_technique",
+          "description": "Technique used to measure results in this experiment.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'experiment' table.",
+          "type": "string"
+        },
+        {
+          "name": "experiment.id",
+          "description": "A unique identifier for records in this 'experiment' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mirna_microarray",
+      "description": "Data file containing raw miRNA microarray intensity.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "aliquot.id",
+        "mirna_microarray.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'mirna_microarray' table.",
+          "type": "string"
+        },
+        {
+          "name": "mirna_microarray.id",
+          "description": "A unique identifier for records in this 'mirna_microarray' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mrna_microarray",
+      "description": "Data file containing raw mRNA microarray intensity.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "aliquot.id",
+        "mrna_microarray.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'mrna_microarray' table.",
+          "type": "string"
+        },
+        {
+          "name": "mrna_microarray.id",
+          "description": "A unique identifier for records in this 'mrna_microarray' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group",
+      "description": "Sequencing reads from one lane of an NGS experiment.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "read_group.id"
+      ],
+      "properties": [
+        {
+          "name": "RIN",
+          "description": "A numerical assessment of the integrity of RNA based on the entire electrophoretic trace of the RNA sample including the presence or absence of degradation products.",
+          "type": "number"
+        },
+        {
+          "name": "adapter_name",
+          "description": "Name of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "adapter_sequence",
+          "description": "Base sequence of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "barcoding_applied",
+          "description": "True/False: was barcoding applied?",
+          "type": "boolean"
+        },
+        {
+          "name": "base_caller_name",
+          "description": "Name of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "base_caller_version",
+          "description": "Version of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "experiment_name",
+          "description": "Submitter-defined name for the experiment.",
+          "type": "string"
+        },
+        {
+          "name": "flow_cell_barcode",
+          "description": "Flow Cell Barcode.",
+          "type": "string"
+        },
+        {
+          "name": "includes_spike_ins",
+          "description": "Spike-in included?",
+          "type": "boolean"
+        },
+        {
+          "name": "instrument_model",
+          "description": "Numeric value that represents the sample dimension that is greater than the shortest dimension and less than the longest dimension, measured in millimeters.",
+          "type": "enum"
+        },
+        {
+          "name": "is_paired_end",
+          "description": "Are the reads paired end?",
+          "type": "boolean"
+        },
+        {
+          "name": "library_name",
+          "description": "Name of the library.",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_catalog_number",
+          "description": "Catalog of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_name",
+          "description": "Name of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_vendor",
+          "description": "Vendor of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_version",
+          "description": "Version of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_selection",
+          "description": "Library Selection Method",
+          "type": "enum"
+        },
+        {
+          "name": "library_strand",
+          "description": "Library stranded-ness.",
+          "type": "enum"
+        },
+        {
+          "name": "library_strategy",
+          "description": "Library strategy.",
+          "type": "enum"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group_name",
+          "description": "Read Group Name",
+          "type": "string"
+        },
+        {
+          "name": "read_length",
+          "description": "The length of the reads.",
+          "type": "integer"
+        },
+        {
+          "name": "sequencing_center",
+          "description": "Name of the center that provided the sequence files.",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "size_selection_range",
+          "description": "Range of size selection.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_concentration",
+          "description": "Spike in concentration.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_fasta",
+          "description": "Name of the FASTA file that contains the spike-in sequences.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_catalog_number",
+          "description": "Catalog of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_name",
+          "description": "Name of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_target_region",
+          "description": "Target Capture Kit BED file.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_vendor",
+          "description": "Vendor of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_version",
+          "description": "Version of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "to_trim_adapter_sequence",
+          "description": "Does the user suggest adapter trimming?",
+          "type": "boolean"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'read_group' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "A unique identifier for records in this 'read_group' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_methylation",
+      "description": "DNA methylation data files contain information on raw and normalized signal intensities, detection confidence and calculated beta values for methylated and unmethylated probes. DNA methylation is an epigenetic mark which can be associated with transcriptional inactivity when located in promoter regions.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "aliquot.id",
+        "submitted_methylation.id"
+      ],
+      "properties": [
+        {
+          "name": "assay_instrument",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "assay_instrument_model",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "assay_method",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'submitted_methylation' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_methylation.id",
+          "description": "A unique identifier for records in this 'submitted_methylation' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "visit_file",
+      "description": "Data file containing information obtained from a any baseline visit or follow-up. These follow-ups are usually performed when visiting a clinical site. Files can include physical examinations, laboratory results, neurocognitive tests, etc.",
+      "links": [
+        "neurocognitive_test",
+        "mental_health_questionnaire",
+        "gynecological_exam",
+        "behavior_questionnaire",
+        "summary_lab_result",
+        "summary_socio_demographic",
+        "treatment"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "visit_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "neurocognitive_test.id",
+          "description": "Unique identifiers for records in the 'neurocognitive_test' table that relate via this foreign key to records in this 'visit_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "mental_health_questionnaire.id",
+          "description": "Unique identifiers for records in the 'mental_health_questionnaire' table that relate via this foreign key to records in this 'visit_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "gynecological_exam.id",
+          "description": "Unique identifiers for records in the 'gynecological_exam' table that relate via this foreign key to records in this 'visit_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "behavior_questionnaire.id",
+          "description": "Unique identifiers for records in the 'behavior_questionnaire' table that relate via this foreign key to records in this 'visit_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "summary_lab_result.id",
+          "description": "Unique identifiers for records in the 'summary_lab_result' table that relate via this foreign key to records in this 'visit_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "summary_socio_demographic.id",
+          "description": "Unique identifiers for records in the 'summary_socio_demographic' table that relate via this foreign key to records in this 'visit_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "treatment.id",
+          "description": "Unique identifiers for records in the 'treatment' table that relate via this foreign key to records in this 'visit_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit_file.id",
+          "description": "A unique identifier for records in this 'visit_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "elisa_assay",
+      "description": "Results obtained from an ELISA assay",
+      "links": [
+        "experiment"
+      ],
+      "required": [
+        "experiment.id",
+        "elisa_assay.id"
+      ],
+      "properties": [
+        {
+          "name": "analyte_preferred",
+          "description": "Standardized analyte type",
+          "type": "string"
+        },
+        {
+          "name": "analyte_reported",
+          "description": "Reported analyte name",
+          "type": "string"
+        },
+        {
+          "name": "comment",
+          "description": "Free text to expand upon details",
+          "type": "string"
+        },
+        {
+          "name": "unit_preferred",
+          "description": "Standardized unit used to measure results",
+          "type": "string"
+        },
+        {
+          "name": "unit_reported",
+          "description": "Reported unit used to measure results",
+          "type": "string"
+        },
+        {
+          "name": "value_preferred",
+          "description": "Standardized value",
+          "type": "number"
+        },
+        {
+          "name": "value_reported",
+          "description": "Reported value",
+          "type": "string"
+        },
+        {
+          "name": "experiment.id",
+          "description": "Unique identifiers for records in the 'experiment' table that relate via this foreign key to records in this 'elisa_assay' table.",
+          "type": "string"
+        },
+        {
+          "name": "elisa_assay.id",
+          "description": "A unique identifier for records in this 'elisa_assay' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mrna_expression",
+      "description": "Data file containing normalized mRNA expression.",
+      "links": [
+        "mrna_microarray"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "mrna_microarray.id",
+        "mrna_expression.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "mrna_microarray.id",
+          "description": "Unique identifiers for records in the 'mrna_microarray' table that relate via this foreign key to records in this 'mrna_expression' table.",
+          "type": "string"
+        },
+        {
+          "name": "mrna_expression.id",
+          "description": "A unique identifier for records in this 'mrna_expression' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_aligned_reads",
+      "description": "Data file containing aligned reads that are used as input to GDC workflows.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_aligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_copy_number",
+      "description": "Data file containing normalized copy number information from an aliquot.",
+      "links": [
+        "aliquot",
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "submitted_copy_number.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'submitted_copy_number' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_copy_number' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_copy_number.id",
+          "description": "A unique identifier for records in this 'submitted_copy_number' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_genomic_profile",
+      "description": "Data file containing genomic profile information.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_genomic_profile.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_genomic_profile' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_genomic_profile.id",
+          "description": "A unique identifier for records in this 'submitted_genomic_profile' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_somatic_mutation",
+      "description": "Data file containing somatic mutation calls from a read group.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_somatic_mutation.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "total_variants",
+          "description": "The total number of variants detected carrying a base change difference from the reference genome.",
+          "type": "integer"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_somatic_mutation' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_somatic_mutation.id",
+          "description": "A unique identifier for records in this 'submitted_somatic_mutation' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_unaligned_reads",
+      "description": "Data file containing unaligned reads that have not been GDC Harmonized.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_unaligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "cds",
+          "description": "The coding region of a gene.",
+          "type": "integer"
+        },
+        {
+          "name": "contigs",
+          "description": "The number of reads that can be assembled into a longer continuous read.",
+          "type": "integer"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "gc_content",
+          "description": "gc content of data sequenced.",
+          "type": "number"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "mycobacterium_tuberculosis_lineage",
+          "description": "Classification determined by spoligotype using the lorikeet spoligotype analysis software.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "octal_spoligotype",
+          "description": "Octal spoligotype determined by the lorikeet spoligotype analysis software.",
+          "type": "string"
+        },
+        {
+          "name": "source_organism",
+          "description": "Type of organism the sequencing was performed on",
+          "type": "string"
+        },
+        {
+          "name": "sra_accession",
+          "description": "Sequence Read Archive accession number of raw data generated",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads_index",
+      "description": "Data file containing the index for a set of aligned reads.",
+      "links": [
+        "submitted_aligned_reads"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "submitted_aligned_reads.id",
+        "aligned_reads_index.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'aligned_reads_index' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_index.id",
+          "description": "A unique identifier for records in this 'aligned_reads_index' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group_qc",
+      "description": "GDC QC run metadata.",
+      "links": [
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads",
+        "read_group"
+      ],
+      "required": [
+        "workflow_link",
+        "percent_gc_content",
+        "encoding",
+        "total_sequences",
+        "basic_statistics",
+        "per_base_sequence_quality",
+        "per_tile_sequence_quality",
+        "per_sequence_quality_score",
+        "per_base_sequence_content",
+        "per_sequence_gc_content",
+        "per_base_n_content",
+        "sequence_length_distribution",
+        "sequence_duplication_levels",
+        "overrepresented_sequences",
+        "adapter_content",
+        "kmer_content",
+        "read_group.id",
+        "read_group_qc.id"
+      ],
+      "properties": [
+        {
+          "name": "adapter_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "basic_statistics",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "encoding",
+          "description": "Version of ASCII encoding of quality values found in the file.",
+          "type": "string"
+        },
+        {
+          "name": "fastq_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "kmer_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "overrepresented_sequences",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_base_n_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_base_sequence_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_base_sequence_quality",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_sequence_gc_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_sequence_quality_score",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_tile_sequence_quality",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "percent_aligned",
+          "description": "The percent of reads with at least one reported alignment.",
+          "type": "integer"
+        },
+        {
+          "name": "percent_gc_content",
+          "description": "The overall %GC of all bases in all sequences.",
+          "type": "integer"
+        },
+        {
+          "name": "sequence_duplication_levels",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "sequence_length_distribution",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "total_aligned_reads",
+          "description": "The total number of reads with at least one reported alignment.",
+          "type": "integer"
+        },
+        {
+          "name": "total_sequences",
+          "description": "A count of the total number of sequences processed.",
+          "type": "integer"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group_qc.id",
+          "description": "A unique identifier for records in this 'read_group_qc' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

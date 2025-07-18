@@ -1,0 +1,2919 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgement",
+          "description": "Publication acknowledgement(s) for the published dataset.",
+          "type": "string"
+        },
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made avilable.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "complete",
+          "description": "Description of whether the project submission is complete or still in progress.",
+          "type": "enum"
+        },
+        {
+          "name": "data_citation",
+          "description": "The citation for the published dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_contributor",
+          "description": "The name of the organization or individual that the contributed dataset belongs to.",
+          "type": "string"
+        },
+        {
+          "name": "data_description",
+          "description": "A brief, free-text description of the data files and associated metadata provided for this dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_url_doi",
+          "description": "A URL or DOI for the source of the dataset or the contributing organization's website.",
+          "type": "string"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "disease_type",
+          "description": "The primary type of disease studied in this dataset, if applicable.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "license",
+          "description": "The license under which the daaset has been published.",
+          "type": "string"
+        },
+        {
+          "name": "longitudinal",
+          "description": "Indicates whether the dataset has longitudinal or time-series data.",
+          "type": "boolean"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "The primary body site studied in this dataset.",
+          "type": "string"
+        },
+        {
+          "name": "publication_citation",
+          "description": "The major or main publication(s) associated with the data itself or with the publication that published the dataset.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "research_description",
+          "description": "If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results.",
+          "type": "string"
+        },
+        {
+          "name": "research_design",
+          "description": "A summary of the goals of the research or a general description of the research's relationship to a clinical application.",
+          "type": "string"
+        },
+        {
+          "name": "research_objective",
+          "description": "The general objective of the research; what the researchers hope to discover or determine.",
+          "type": "string"
+        },
+        {
+          "name": "research_setup",
+          "description": "A high level description of the setup used to achieve the research objectives.",
+          "type": "string"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "dataset",
+      "description": "A set of metadata and associated data file objects originating from single a research study, clinical trial or patient cohort.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "data_description",
+        "project.id",
+        "dataset.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgement",
+          "description": "Publication acknowledgement(s) for the published dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_citation",
+          "description": "The citation for the published dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_contributor",
+          "description": "The name of the organization or individual that the contributed dataset belongs to.",
+          "type": "string"
+        },
+        {
+          "name": "data_description",
+          "description": "A brief, free-text description of the data files and associated metadata provided for this dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_url_doi",
+          "description": "A URL or DOI for the source of the dataset or the contributing organization's website.",
+          "type": "string"
+        },
+        {
+          "name": "disease_type",
+          "description": "The primary type of disease studied in this dataset, if applicable.",
+          "type": "string"
+        },
+        {
+          "name": "full_name",
+          "description": "The full name or title of the dataset or publication.",
+          "type": "string"
+        },
+        {
+          "name": "license",
+          "description": "The license under which the dataset has been published.",
+          "type": "string"
+        },
+        {
+          "name": "longitudinal",
+          "description": "Indicates whether the dataset has longitudinal or time-series data.",
+          "type": "boolean"
+        },
+        {
+          "name": "primary_site",
+          "description": "The primary body site studied in this dataset.",
+          "type": "string"
+        },
+        {
+          "name": "publication_citation",
+          "description": "The major or main publication(s) associated with the data itself or with the publication that published the dataset.",
+          "type": "string"
+        },
+        {
+          "name": "research_description",
+          "description": "If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results.",
+          "type": "string"
+        },
+        {
+          "name": "research_design",
+          "description": "A summary of the goals of the research or a general description of the research's relationship to a clinical application.",
+          "type": "string"
+        },
+        {
+          "name": "research_objective",
+          "description": "The general objective of the research; what the researchers hope to discover or determine.",
+          "type": "string"
+        },
+        {
+          "name": "research_setup",
+          "description": "A high level description of the setup used to achieve the research objectives.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'dataset' table.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "A unique identifier for records in this 'dataset' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "case",
+      "description": "The collection of all data related to a specific patient or case in the context of a specific dataset or experiment.",
+      "links": [
+        "dataset"
+      ],
+      "required": [
+        "dataset.id",
+        "case.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_index",
+          "description": "The study participant's age, in years, at the index event. The index event is determined by the data submitter and used as an anchor date for all temporal variables. Note that an age of 0 indicates a participant who is younger than 1 year old. For participants with ages greater than 89 years, please use the property 'age_at_index_gt89'. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.",
+          "type": "number"
+        },
+        {
+          "name": "age_at_index_gt89",
+          "description": "Indicates whether the subject's age at the time of the study was greater than 89 years. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.",
+          "type": "enum"
+        },
+        {
+          "name": "country_of_residence",
+          "description": "The country where the subject resides.",
+          "type": "string"
+        },
+        {
+          "name": "covid19_positive",
+          "description": "An indicator of whether the patient has ever had a positive COVID-19 test or been diagnosed with one of the following ICD-10 COVID-19 conditions: COVID-19 (U07. 1), Influenza due to unidentified influenza virus with other manifestations (J11.8), Post COVID-19 condition (U09.9), Myalgic encephalomyelitis/chronic fatigue syndrome (G93.32), or Sequelae of other specified infectious and parasitic diseases (B94.8). For more information about a patient's specific COVID-19 diagnosis, details can be found under Condition.",
+          "type": "enum"
+        },
+        {
+          "name": "ethnicity",
+          "description": "A social group characterized by a distinctive social and cultural tradition that is maintained from generation to generation. Members share a common history and origin and a sense of identification with the group. They have similar and distinctive features in their lifestyle habits and shared experiences. They often have a common genetic heritage which may be reflected in their experience of health and disease.",
+          "type": "enum"
+        },
+        {
+          "name": "gen3_linked_subjects_available",
+          "description": "Indicates whether there is data available for the subject in other data resources.",
+          "type": "boolean"
+        },
+        {
+          "name": "icu_indicator",
+          "description": "Indicates whether the subject has been admitted to the ICU.",
+          "type": "boolean"
+        },
+        {
+          "name": "index_event",
+          "description": "The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.",
+          "type": "enum"
+        },
+        {
+          "name": "linked_external_data",
+          "description": "A list of all external data resources that are confirmed to have data for the case.",
+          "type": "array"
+        },
+        {
+          "name": "long_covid_diagnosis",
+          "description": "An indicator of whether the patient has ever been diagnosed with one of the following ICD-10 long COVID-19 conditions: U09.9 (Post COVID-19 condition, unspecified), G93.32 (Myalgic encephalomyelitis/chronic fatigue syndrome), and B94.8 (Sequelae of other specified infectious and parasitic diseases). 'Positive' means the patient was diagnosed with a long COVID condition, while 'Not Reported' means the patient has never been diagnosed with a long COVID condition.",
+          "type": "enum"
+        },
+        {
+          "name": "race",
+          "description": "A geographic ancestral origin category that is assigned to a population group based mainly on physical characteristics that are thought to be distinct and inherent.",
+          "type": "enum"
+        },
+        {
+          "name": "sex",
+          "description": "The biologic character or quality that distinguishes male and female from one another as expressed by analysis of the person's gonadal, morphologic (internal and external), chromosomal, and hormonal characteristics.",
+          "type": "enum"
+        },
+        {
+          "name": "site_id",
+          "description": "A de-identified code used to classify a case as part of a specific data submission.",
+          "type": "string"
+        },
+        {
+          "name": "treatment_info",
+          "description": "Indicates whether detailed treatment information is available for the subject.",
+          "type": "boolean"
+        },
+        {
+          "name": "ventilator_indicator",
+          "description": "Indicates whether the subject has been on a ventilator.",
+          "type": "boolean"
+        },
+        {
+          "name": "zip",
+          "description": "The three-digit United States zip code of residence for any population greater than 20,000. For zip codes where the three digit number represents a population less than 20,000 \"000\" will be provided.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'case' table.",
+          "type": "string"
+        },
+        {
+          "name": "case.id",
+          "description": "A unique identifier for records in this 'case' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "supplementary_file",
+      "description": "Supplementary files associated with a study.",
+      "links": [
+        "dataset"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "dataset.id",
+        "supplementary_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "The text term describing the broad category that the supplementary file falls into.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "The text term describing the file format of the supplementary file, for example, PDF, XLSX, JPEG, PNG, TSV, etc.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "The type of supplementary file, for example, figures, tables, clinical data, notes, publications, summary statistics, etc.",
+          "type": "string"
+        },
+        {
+          "name": "file_description",
+          "description": "Free text to expand upon details for this file",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'supplementary_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "supplementary_file.id",
+          "description": "A unique identifier for records in this 'supplementary_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "condition",
+      "description": "Information pertaining to relevant medical condition(s) of a case's subject (e.g., medical diagnoses, diseases, disorders, symptoms, injuries, illnesses, comorbidities) recorded in the process of clinical care (e.g., data extracted from the electronic medical record).",
+      "links": [
+        "case"
+      ],
+      "required": [
+        "case.id",
+        "condition.id"
+      ],
+      "properties": [
+        {
+          "name": "condition_code",
+          "description": "The code for a specific condition, assigned by the code system.",
+          "type": "string"
+        },
+        {
+          "name": "condition_code_system",
+          "description": "The system that assigned the code for a specific condition.",
+          "type": "string"
+        },
+        {
+          "name": "condition_name",
+          "description": "The name of the condition the patient has experienced.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_condition_end",
+          "description": "The number of days from the index date to the date the subject no longer experienced the condition. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_condition_start",
+          "description": "The number of days from the index date to the date the subject was diagnosed with or began experiencing the condition. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.",
+          "type": "integer"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'condition' table.",
+          "type": "string"
+        },
+        {
+          "name": "condition.id",
+          "description": "A unique identifier for records in this 'condition' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "imaging_study",
+      "description": "Information related to an imaging study or exam done for diagnostic or research purposes, including patient clinical or contextual data recorded at the time of the imaging study.",
+      "links": [
+        "case",
+        "dataset"
+      ],
+      "required": [
+        "case.id",
+        "dataset.id",
+        "imaging_study.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_imaging",
+          "description": "The study participant's age, in years, at the time the imaging study was performed. Note that an age of 0 indicates a participant who is younger than 1 year old. For participants with ages greater than 89 years, please use the property 'age_at_index_gt89'.",
+          "type": "number"
+        },
+        {
+          "name": "age_at_imaging_gt89",
+          "description": "Indicates whether the age of the patient in years at the time the imaging study was performed is greater than 89 years. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.",
+          "type": "enum"
+        },
+        {
+          "name": "body_part_examined",
+          "description": "(0018, 0015) Body Part Examined. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "days_from_study_to_neg_covid_test",
+          "description": "The number of days from the imaging study to the patient's negative COVID-19 test(s).  This property takes a list of values, each of which represents a COVID-19 test for the patient. A positive value for this property means that a negative COVID-19 test result was obtained for the patient that many days after the imaging study was performed. A negative value indicates that a negative COVID-19 test result was obtained prior to the date of imaging. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.",
+          "type": "array"
+        },
+        {
+          "name": "days_from_study_to_pos_covid_test",
+          "description": "The number of days from the imaging study to the patient's positive COVID-19 test(s).  This property takes a list of values, each of which represents a COVID-19 test for the patient. A positive value for this property means that a positive COVID-19 test result was obtained for the patient that many days after the imaging study was performed. A negative value indicates that the positive COVID-19 test result was obtained prior to the date of imaging. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.",
+          "type": "array"
+        },
+        {
+          "name": "days_to_study",
+          "description": "The number of days between the case's index date and the date of the imaging study. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.",
+          "type": "number"
+        },
+        {
+          "name": "image_data_modified",
+          "description": "An indicator of whether any post-clinical modification of image pixel data has been performed on the study.",
+          "type": "boolean"
+        },
+        {
+          "name": "loinc_code",
+          "description": "The LOINC code assigned based on the study description provided. The Logical Observation Identifiers, Names, and Codes (LOINC) standard is A common language (set of identifiers, names, and codes) for clinical and laboratory observations.",
+          "type": "string"
+        },
+        {
+          "name": "loinc_contrast",
+          "description": "The LOINC indicator noting whether the image was completed with or without contrast, as associated with the assigned LOINC code. The Logical Observation Identifiers, Names, and Codes (LOINC) standard is A common language (set of identifiers, names, and codes) for clinical and laboratory observations.",
+          "type": "string"
+        },
+        {
+          "name": "loinc_long_common_name",
+          "description": "The LOINC long common name associated with the assigned LOINC code. The Logical Observation Identifiers, Names, and Codes (LOINC) standard is A common language (set of identifiers, names, and codes) for clinical and laboratory observations.",
+          "type": "string"
+        },
+        {
+          "name": "loinc_method",
+          "description": "The LOINC method or imaging modality associated with the assigned LOINC code. The Logical Observation Identifiers, Names, and Codes (LOINC) standard is A common language (set of identifiers, names, and codes) for clinical and laboratory observations.",
+          "type": "string"
+        },
+        {
+          "name": "loinc_system",
+          "description": "The LOINC system or body part examined associated with the assigned LOINC code. The Logical Observation Identifiers, Names, and Codes (LOINC) standard is A common language (set of identifiers, names, and codes) for clinical and laboratory observations.",
+          "type": "string"
+        },
+        {
+          "name": "study_description",
+          "description": "(0008, 1030) Study Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "study_modality",
+          "description": "The modalities of the imaging study; derived from (0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "study_uid",
+          "description": "(0020, 000d) Study Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "study_year",
+          "description": "The year when imaging study was performed; year component of Study Date (0008, 0020).",
+          "type": "integer"
+        },
+        {
+          "name": "study_year_shifted",
+          "description": "Indicates whether the study year has been shifted for de-identification. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.",
+          "type": "boolean"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'imaging_study' table.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'imaging_study' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "A unique identifier for records in this 'imaging_study' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "medication",
+      "description": "Information related to medication prescribed, dispensed or administered to the case.",
+      "links": [
+        "case"
+      ],
+      "required": [
+        "case.id",
+        "medication.id"
+      ],
+      "properties": [
+        {
+          "name": "days_to_medication_end",
+          "description": "The number of days from the index date to the date the case stopped a specific medication.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_medication_start",
+          "description": "The number of days from the index date to the date the case started a specific medication.",
+          "type": "integer"
+        },
+        {
+          "name": "dose_sequence_number",
+          "description": "The sequence number of a specific dose of a medication given in a series of doses.",
+          "type": "integer"
+        },
+        {
+          "name": "medication_code",
+          "description": "The code for a specific medication, assigned by the code system.",
+          "type": "string"
+        },
+        {
+          "name": "medication_code_system",
+          "description": "The code for a specific medication, assigned by the code system.",
+          "type": "string"
+        },
+        {
+          "name": "medication_manufacturer",
+          "description": "The name of the company that manufactured the medication.",
+          "type": "string"
+        },
+        {
+          "name": "medication_name",
+          "description": "The name of the specific medication the case was prescribed or administered.",
+          "type": "string"
+        },
+        {
+          "name": "medication_type",
+          "description": "A categorization of medication used to describe the type of medication the patient was perscribed or administered.",
+          "type": "enum"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'medication' table.",
+          "type": "string"
+        },
+        {
+          "name": "medication.id",
+          "description": "A unique identifier for records in this 'medication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "observation",
+      "description": "Information about the subject obtained in the context of examination, questioning or during a procedure.",
+      "links": [
+        "case"
+      ],
+      "required": [
+        "case.id",
+        "observation.id"
+      ],
+      "properties": [
+        {
+          "name": "days_to_observation",
+          "description": "The number of days from the index date to the date of the observation.",
+          "type": "integer"
+        },
+        {
+          "name": "observation_answer",
+          "description": "The answer or value provided for a specific observation about a subject obtained in the context of examination, questioning or during a procedure.",
+          "type": "string"
+        },
+        {
+          "name": "observation_name",
+          "description": "The short name of the observation about the subject obtained in the context of examination, questioning or a during procedure.",
+          "type": "string"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'observation' table.",
+          "type": "string"
+        },
+        {
+          "name": "observation.id",
+          "description": "A unique identifier for records in this 'observation' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "visit",
+      "description": "Information about a specific visit for a specific case or patient.",
+      "links": [
+        "case"
+      ],
+      "required": [
+        "case.id",
+        "visit.id"
+      ],
+      "properties": [
+        {
+          "name": "days_to_hospital_admission",
+          "description": "The number of days between the case's index date and the date of the patient's hospital admission.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_hospital_discharge",
+          "description": "The number of days between the case's index date and the date of the patient's hospital discharge.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_icu_admission",
+          "description": "The number of days between the case's index date and the date of the patient's ICU admission.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_icu_discharge",
+          "description": "The number of days between the case's index date and the date of the patient's ICU discharge..",
+          "type": "integer"
+        },
+        {
+          "name": "discharge_type",
+          "description": "The status or destination of the patient at the time of discharge.",
+          "type": "string"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'visit' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "A unique identifier for records in this 'visit' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "cr_series_file",
+      "description": "A package of image files and metadata related to a CR imaging series to which one or more computed radiograph (CR) instances belong.",
+      "links": [
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "imaging_study.id",
+        "cr_series_file.id"
+      ],
+      "properties": [
+        {
+          "name": "contrast_bolus_agent",
+          "description": "(0018, 0010) Contrast/Bolus Agent. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "detector_type",
+          "description": "(0018, 7004) Detector Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modification_method",
+          "description": "A categorical description of the type of image modification performed on the study series.",
+          "type": "enum"
+        },
+        {
+          "name": "image_data_modification_name",
+          "description": "A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modified",
+          "description": "An indicator of whether any post-clinical modification of image pixel data has been performed on the study series.",
+          "type": "boolean"
+        },
+        {
+          "name": "image_type",
+          "description": "(0008, 0008) Image Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imager_pixel_spacing",
+          "description": "(0018, 1164) Imager Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "lossy_image_compression",
+          "description": "(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to \"01\". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains \"01\". The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "manufacturer",
+          "description": "(0008, 0070) Manufacturer. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "manufacturer_model_name",
+          "description": "(0008, 1090) Manufacturer's Model Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "number_of_instances",
+          "description": "The number of instances included in this series.",
+          "type": "integer"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "pixel_spacing",
+          "description": "(0028, 0030) Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "series_description",
+          "description": "(0008, 103e) Series Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_uid",
+          "description": "(0020, 000e) Series Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "spatial_resolution",
+          "description": "(0018, 1050) Spatial Resolution. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "number"
+        },
+        {
+          "name": "view_position",
+          "description": "(0018, 5101) View Position. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'cr_series_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "cr_series_file.id",
+          "description": "A unique identifier for records in this 'cr_series_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ct_series_file",
+      "description": "A package of image files and metadata related to a CT imaging series to which one or more computed tomography instances belong.",
+      "links": [
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "imaging_study.id",
+        "ct_series_file.id"
+      ],
+      "properties": [
+        {
+          "name": "acquisition_type",
+          "description": "(0018, 9302) Acquisition Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "contrast_bolus_agent",
+          "description": "(0018, 0010) Contrast/Bolus Agent. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "convolution_kernel",
+          "description": "(0018, 1210) Convolution Kernel. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "exposure_modulation_type",
+          "description": "(0018, 9323) Exposure Modulation Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modification_method",
+          "description": "A categorical description of the type of image modification performed on the study series.",
+          "type": "enum"
+        },
+        {
+          "name": "image_data_modification_name",
+          "description": "A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modified",
+          "description": "An indicator of whether any post-clinical modification of image pixel data has been performed on the study series.",
+          "type": "boolean"
+        },
+        {
+          "name": "image_type",
+          "description": "(0008, 0008) Image Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "lossy_image_compression",
+          "description": "(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to \"01\". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains \"01\". The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "manufacturer",
+          "description": "(0008, 0070) Manufacturer. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "manufacturer_model_name",
+          "description": "(0008, 1090) Manufacturer's Model Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "number_of_instances",
+          "description": "The number of instances included in this series.",
+          "type": "integer"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "patient_position",
+          "description": "(0018,5100) Patient Position. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "pixel_spacing",
+          "description": "(0028, 0030) Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "series_description",
+          "description": "(0008, 103e) Series Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_uid",
+          "description": "(0020, 000e) Series Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "slice_thickness",
+          "description": "(0018, 0050) Slice Thickness. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "spacing_between_slices",
+          "description": "(0018, 0088) Spacing Between Slices. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'ct_series_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "ct_series_file.id",
+          "description": "A unique identifier for records in this 'ct_series_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "dicom_annotation_file",
+      "description": "The dicom_annotation_file node provides the ability to link a DICOM series file containing annotation information to an imaging study.",
+      "links": [
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "annotation_name",
+        "modality",
+        "series_description",
+        "series_uid",
+        "imaging_study.id",
+        "dicom_annotation_file.id"
+      ],
+      "properties": [
+        {
+          "name": "annotation_method",
+          "description": "Defines the method by which the annotation was created. Clinically_derived - Based on information produced in the process of the subject's medical care; Retrospective_expert - Based on information produced retrospective to the subject's care by annotators with relevant special clinical expertise; Retrospective_general - Based on information produced retrospective to the subject's care by annotators without relevant special clinical expertise; Retrospective_auto - Based on information produced retrospective to the subject's care using automated means.",
+          "type": "enum"
+        },
+        {
+          "name": "annotation_name",
+          "description": "The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected.  All MIDRC created annotations start with \"midrc_\".",
+          "type": "enum"
+        },
+        {
+          "name": "annotator_id",
+          "description": "Coded value to represent a particular annotator in a group. These need only be unique per annotation.",
+          "type": "string"
+        },
+        {
+          "name": "data_category",
+          "description": "The category of the annotation file. Must be \"DICOM Annotation Series File\".",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "The file format of the annotation file, e.g., JSON.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "An indication of whether the annotation is expert validated by MIDRC (\u201cInternal Annotation\u201d) or has not be validated by MIDRC experts (\u201cExternal Annotation\u201d).",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "manufacturer",
+          "description": "(0008, 0070) Manufacturer",
+          "type": "string"
+        },
+        {
+          "name": "manufacturer_model_name",
+          "description": "(0008, 1090) Manufacturer's Model Name",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality",
+          "type": "enum"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "series_description",
+          "description": "(0008, 103e) Series Description; a general description of or additional information about the imaging series. If possible, the Series Description should match the annotation_name provided.",
+          "type": "string"
+        },
+        {
+          "name": "series_uid",
+          "description": "(0020, 000e) Series Instance UID; the UID or unique identification code of the imaging series.",
+          "type": "string"
+        },
+        {
+          "name": "software_versions",
+          "description": "(0018,1020) Software Versions. This is the software version of the application where the annotation series was created.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'dicom_annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "dicom_annotation_file.id",
+          "description": "A unique identifier for records in this 'dicom_annotation_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "dx_series_file",
+      "description": "A package of image files and metadata related to a DX imaging series to which one or more digital radiograph (x-rays) instances belong.",
+      "links": [
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "imaging_study.id",
+        "dx_series_file.id"
+      ],
+      "properties": [
+        {
+          "name": "contrast_bolus_agent",
+          "description": "(0018, 0010) Contrast/Bolus Agent. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "detector_type",
+          "description": "(0018, 7004) Detector Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modification_method",
+          "description": "A categorical description of the type of image modification performed on the study series.",
+          "type": "enum"
+        },
+        {
+          "name": "image_data_modification_name",
+          "description": "A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modified",
+          "description": "An indicator of whether any post-clinical modification of image pixel data has been performed on the study series.",
+          "type": "boolean"
+        },
+        {
+          "name": "image_type",
+          "description": "(0008, 0008) Image Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imager_pixel_spacing",
+          "description": "(0018, 1164) Imager Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "lossy_image_compression",
+          "description": "(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to \"01\". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains \"01\". The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "manufacturer",
+          "description": "(0008, 0070) Manufacturer. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "manufacturer_model_name",
+          "description": "(0008, 1090) Manufacturer's Model Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "number_of_instances",
+          "description": "The number of instances included in this series.",
+          "type": "integer"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "pixel_spacing",
+          "description": "(0028, 0030) Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "series_description",
+          "description": "(0008, 103e) Series Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_uid",
+          "description": "(0020, 000e) Series Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "spatial_resolution",
+          "description": "(0018, 1050) Spatial Resolution. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "number"
+        },
+        {
+          "name": "view_position",
+          "description": "(0018, 5101) View Position. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'dx_series_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "dx_series_file.id",
+          "description": "A unique identifier for records in this 'dx_series_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mg_series_file",
+      "description": "Information related to a mammography (MG) imaging series to which one or more mammography images belong.",
+      "links": [
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "imaging_study.id",
+        "mg_series_file.id"
+      ],
+      "properties": [
+        {
+          "name": "code_meaning",
+          "description": "(0008,0104) Code Meaning. Note that code_meaning is pulled from the View Code Sequence (0054,0220). The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "contrast_bolus_agent",
+          "description": "(0018, 0010) Contrast/Bolus Agent. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "detector_type",
+          "description": "(0018, 7004) Detector Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modification_method",
+          "description": "A categorical description of the type of image modification performed on the study series.",
+          "type": "enum"
+        },
+        {
+          "name": "image_data_modification_name",
+          "description": "A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modified",
+          "description": "An indicator of whether any post-clinical modification of image pixel data has been performed on the study series.",
+          "type": "boolean"
+        },
+        {
+          "name": "image_type",
+          "description": "(0008, 0008) Image Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imager_pixel_spacing",
+          "description": "(0018, 1164) Imager Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "lossy_image_compression",
+          "description": "(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to \"01\". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains \"01\". The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "manufacturer",
+          "description": "(0008, 0070) Manufacturer. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "manufacturer_model_name",
+          "description": "(0008, 1090) Manufacturer's Model Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "number_of_instances",
+          "description": "The number of instances included in this series.",
+          "type": "integer"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "pixel_spacing",
+          "description": "(0028, 0030) Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "series_description",
+          "description": "(0008, 103e) Series Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_uid",
+          "description": "(0020, 000e) Series Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "sop_class_name",
+          "description": "The textual description for the (0008, 0016) SOP Class UID Attribute. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "sop_class_uid",
+          "description": "(0008, 0016) SOP Class UID Attribute.. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "spatial_resolution",
+          "description": "(0018, 1050) Spatial Resolution. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "number"
+        },
+        {
+          "name": "view_position",
+          "description": "(0018, 5101) View Position. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'mg_series_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "mg_series_file.id",
+          "description": "A unique identifier for records in this 'mg_series_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "mr_series_file",
+      "description": "A package of image files and metadata related to an MR imaging series to which one or more MR (magnetic resonance) images belong.",
+      "links": [
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "imaging_study.id",
+        "mr_series_file.id"
+      ],
+      "properties": [
+        {
+          "name": "angio_flag",
+          "description": "(0018, 0025) Angio Flag. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "contrast_bolus_agent",
+          "description": "(0018, 0010) Contrast/Bolus Agent. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "diffusion_b_value",
+          "description": "(0018, 9087) Diffusion b-value. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "diffusion_gradient_orientation",
+          "description": "(0018, 9089) Diffusion Gradient Orientation. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "echo_number",
+          "description": "(0018, 0086) Echo Number. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "echo_time",
+          "description": "(0018, 0081) Echo Time. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "echo_train_length",
+          "description": "(0018, 0091) Echo Train Length. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modification_method",
+          "description": "A categorical description of the type of image modification performed on the study series.",
+          "type": "enum"
+        },
+        {
+          "name": "image_data_modification_name",
+          "description": "A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modified",
+          "description": "An indicator of whether any post-clinical modification of image pixel data has been performed on the study series.",
+          "type": "boolean"
+        },
+        {
+          "name": "image_type",
+          "description": "(0008, 0008) Image Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imaged_nucleus",
+          "description": "(0018, 0085) Imaged Nucleus. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imager_pixel_spacing",
+          "description": "(0018, 1164) Imager Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "lossy_image_compression",
+          "description": "(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to \"01\". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains \"01\". The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "magnetic_field_strength",
+          "description": "(0018,0087) Magnetic Field Strength. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "manufacturer",
+          "description": "(0008, 0070) Manufacturer. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "manufacturer_model_name",
+          "description": "(0008, 1090) Manufacturer's Model Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "mr_acquisition_type",
+          "description": "(0018, 0023) MR Acquisition Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "number_of_instances",
+          "description": "The number of instances included in this series.",
+          "type": "integer"
+        },
+        {
+          "name": "number_of_temporal_positions",
+          "description": "(0018, 0023) MR Acquisition Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "pixel_spacing",
+          "description": "(0028, 0030) Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "repetition_time",
+          "description": "(0018, 0080) Repetition Time. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "scan_options",
+          "description": "(0018, 0022) Scan Options. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "scanning_sequence",
+          "description": "(0018, 0020) Scanning Sequence. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "sequence_name",
+          "description": "(0018, 0024) Sequence Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "sequence_variant",
+          "description": "(0018, 0021) Sequence Variant. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "series_description",
+          "description": "(0008, 103e) Series Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_uid",
+          "description": "(0020, 000e) Series Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "slice_thickness",
+          "description": "(0018, 0050) Slice Thickness. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "software_version",
+          "description": "(0018, 1020) Software Version(s). The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "spacing_between_slices",
+          "description": "(0018, 0088) Spacing Between Slices. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'mr_series_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "mr_series_file.id",
+          "description": "A unique identifier for records in this 'mr_series_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "nm_series_file",
+      "description": "Information related to a NM imaging series to which one or more nuclear medicine images belong.",
+      "links": [
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "imaging_study.id",
+        "nm_series_file.id"
+      ],
+      "properties": [
+        {
+          "name": "body_part_examined",
+          "description": "(0018, 0015) Body Part Examined. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modification_method",
+          "description": "A categorical description of the type of image modification performed on the study series.",
+          "type": "enum"
+        },
+        {
+          "name": "image_data_modification_name",
+          "description": "A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modified",
+          "description": "An indicator of whether any post-clinical modification of image pixel data has been performed on the study series.",
+          "type": "boolean"
+        },
+        {
+          "name": "lossy_image_compression",
+          "description": "(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to \"01\". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains \"01\". The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "manufacturer",
+          "description": "(0008, 0070) Manufacturer. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "manufacturer_model_name",
+          "description": "(0008, 1090) Manufacturer's Model Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "number_of_instances",
+          "description": "The number of instances included in this series.",
+          "type": "integer"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "radiopharmaceutical",
+          "description": "(0018,0031) Radiopharmaceutical. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_description",
+          "description": "(0008, 103e) Series Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_uid",
+          "description": "(0020, 000e) Series Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'nm_series_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "nm_series_file.id",
+          "description": "A unique identifier for records in this 'nm_series_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "procedure",
+      "description": "Activities or processes ordered by and/or carried out by a healthcare provider on the patient with diagnostic and/or therapeutic purposes.",
+      "links": [
+        "condition",
+        "case"
+      ],
+      "required": [
+        "case.id",
+        "procedure.id"
+      ],
+      "properties": [
+        {
+          "name": "breathing_support_type",
+          "description": "The type of breathing support the patient received.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_procedure_end",
+          "description": "The number of days between the case's index date and the end date of the procedure.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_procedure_start",
+          "description": "The number of days between the case's index date and the start date of the procedure.",
+          "type": "integer"
+        },
+        {
+          "name": "procedure_name",
+          "description": "The name of the procedure performed.",
+          "type": "enum"
+        },
+        {
+          "name": "condition.id",
+          "description": "Unique identifiers for records in the 'condition' table that relate via this foreign key to records in this 'procedure' table.",
+          "type": "string"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'procedure' table.",
+          "type": "string"
+        },
+        {
+          "name": "procedure.id",
+          "description": "A unique identifier for records in this 'procedure' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "pt_series_file",
+      "description": "Information related to a PT imaging series to which one or more positron emission tomography (PET) images belong.",
+      "links": [
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "imaging_study.id",
+        "pt_series_file.id"
+      ],
+      "properties": [
+        {
+          "name": "body_part_examined",
+          "description": "(0018, 0015) Body Part Examined. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "ct_images",
+          "description": "Indicates whether a computed tomography image(s) are assocated with this PET scan (e.g. PET/CT).",
+          "type": "boolean"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modification_method",
+          "description": "A categorical description of the type of image modification performed on the study series.",
+          "type": "enum"
+        },
+        {
+          "name": "image_data_modification_name",
+          "description": "A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modified",
+          "description": "An indicator of whether any post-clinical modification of image pixel data has been performed on the study series.",
+          "type": "boolean"
+        },
+        {
+          "name": "lossy_image_compression",
+          "description": "(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to \"01\". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains \"01\". The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "manufacturer",
+          "description": "(0008, 0070) Manufacturer. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "manufacturer_model_name",
+          "description": "(0008, 1090) Manufacturer's Model Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "number_of_instances",
+          "description": "The number of instances included in this series.",
+          "type": "integer"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "radiopharmaceutical",
+          "description": "(0018,0031) Radiopharmaceutical. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_description",
+          "description": "(0008, 103e) Series Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_uid",
+          "description": "(0020, 000e) Series Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "slice_thickness",
+          "description": "(0018, 0050) Slice Thickness. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'pt_series_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "pt_series_file.id",
+          "description": "A unique identifier for records in this 'pt_series_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "radiology_report",
+      "description": "A detailed report that describes the results of an imaging test. A radiology report can include narrative information about the type of imaging test that was done, how it was done, and any labels representing the results of the test.",
+      "links": [
+        "dataset",
+        "case",
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_format",
+        "data_type",
+        "study_description",
+        "radiology_report.id"
+      ],
+      "properties": [
+        {
+          "name": "body_part_examined",
+          "description": "(0018, 0015) Body Part Examined.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "report_generation_method",
+          "description": "A categorical description of the way the report was generated, either through clinical care (Clinical) or through computational means (Synethic).",
+          "type": "enum"
+        },
+        {
+          "name": "report_modification_method",
+          "description": "A categorical description of the type of modification performed on the report, either by redaction of sensitive information (Redacted) or by obscuring it through replacement with random or shifted values (Synthetic replacement).",
+          "type": "enum"
+        },
+        {
+          "name": "study_description",
+          "description": "(0008, 1030) Study Description.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'radiology_report' table.",
+          "type": "string"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'radiology_report' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'radiology_report' table.",
+          "type": "string"
+        },
+        {
+          "name": "radiology_report.id",
+          "description": "A unique identifier for records in this 'radiology_report' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "rf_series_file",
+      "description": "Information related to a RF imaging series to which one or more X-ray Radiofluoroscopic image belong.",
+      "links": [
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "imaging_study.id",
+        "rf_series_file.id"
+      ],
+      "properties": [
+        {
+          "name": "contrast_bolus_agent",
+          "description": "(0018, 0010) Contrast/Bolus Agent. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "detector_type",
+          "description": "(0018, 7004) Detector Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modification_method",
+          "description": "A categorical description of the type of image modification performed on the study series.",
+          "type": "enum"
+        },
+        {
+          "name": "image_data_modification_name",
+          "description": "A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modified",
+          "description": "An indicator of whether any post-clinical modification of image pixel data has been performed on the study series.",
+          "type": "boolean"
+        },
+        {
+          "name": "image_type",
+          "description": "(0008, 0008) Image Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imager_pixel_spacing",
+          "description": "(0018, 1164) Imager Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "lossy_image_compression",
+          "description": "(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to \"01\". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains \"01\". The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "manufacturer",
+          "description": "(0008, 0070) Manufacturer. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "manufacturer_model_name",
+          "description": "(0008, 1090) Manufacturer's Model Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "number_of_instances",
+          "description": "The number of instances included in this series.",
+          "type": "integer"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "pixel_spacing",
+          "description": "(0028, 0030) Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "series_description",
+          "description": "(0008, 103e) Series Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_uid",
+          "description": "(0020, 000e) Series Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "spatial_resolution",
+          "description": "(0018, 1050) Spatial Resolution. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "number"
+        },
+        {
+          "name": "view_position",
+          "description": "(0018, 5101) View Position. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'rf_series_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "rf_series_file.id",
+          "description": "A unique identifier for records in this 'rf_series_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "us_series_file",
+      "description": "Information related to a US imaging series to which one or more Ultrasound images belong.",
+      "links": [
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "imaging_study.id",
+        "us_series_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modification_method",
+          "description": "A categorical description of the type of image modification performed on the study series.",
+          "type": "enum"
+        },
+        {
+          "name": "image_data_modification_name",
+          "description": "A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modified",
+          "description": "An indicator of whether any post-clinical modification of image pixel data has been performed on the study series.",
+          "type": "boolean"
+        },
+        {
+          "name": "lossy_image_compression",
+          "description": "(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to \"01\". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains \"01\". The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "manufacturer",
+          "description": "(0008, 0070) Manufacturer. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "manufacturer_model_name",
+          "description": "(0008, 1090) Manufacturer's Model Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "number_of_instances",
+          "description": "The number of instances included in this series.",
+          "type": "integer"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "region_spatial_format",
+          "description": "(0018,6012) Region Spatial Format. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "series_description",
+          "description": "(0008, 103e) Series Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_uid",
+          "description": "(0020, 000e) Series Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "transducer_type",
+          "description": "(0018,6031) Transducer type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'us_series_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "us_series_file.id",
+          "description": "A unique identifier for records in this 'us_series_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "xa_series_file",
+      "description": "Information related to a XA imaging series.",
+      "links": [
+        "imaging_study"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "imaging_study.id",
+        "xa_series_file.id"
+      ],
+      "properties": [
+        {
+          "name": "body_part_examined",
+          "description": "(0018, 0015) Body Part Examined. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "contrast_bolus_agent",
+          "description": "(0018, 0010) Contrast/Bolus Agent. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "detector_type",
+          "description": "(0018, 7004) Detector Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modification_method",
+          "description": "A categorical description of the type of image modification performed on the study series.",
+          "type": "enum"
+        },
+        {
+          "name": "image_data_modification_name",
+          "description": "A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.",
+          "type": "integer"
+        },
+        {
+          "name": "image_data_modified",
+          "description": "An indicator of whether any post-clinical modification of image pixel data has been performed on the study series.",
+          "type": "boolean"
+        },
+        {
+          "name": "image_type",
+          "description": "(0008, 0008) Image Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imager_pixel_spacing",
+          "description": "(0018, 1164) Imager Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "lossy_image_compression",
+          "description": "(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to \"01\". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains \"01\". The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "enum"
+        },
+        {
+          "name": "manufacturer",
+          "description": "(0008, 0070) Manufacturer. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "manufacturer_model_name",
+          "description": "(0008, 1090) Manufacturer's Model Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "(0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "number_of_instances",
+          "description": "The number of instances included in this series.",
+          "type": "integer"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "pixel_spacing",
+          "description": "(0028, 0030) Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "radiation_setting",
+          "description": "(0018, 1155) Radiation Setting. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "series_description",
+          "description": "(0008, 103e) Series Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "series_uid",
+          "description": "(0020, 000e) Series Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "spatial_resolution",
+          "description": "(0018, 1050) Spatial Resolution. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "number"
+        },
+        {
+          "name": "view_position",
+          "description": "(0018, 5101) View Position. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "array"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'xa_series_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "xa_series_file.id",
+          "description": "A unique identifier for records in this 'xa_series_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "annotation_file",
+      "description": "The annotation_file node provides the ability to link a file containing annotation information to a case, imaging study or imaging series.",
+      "links": [
+        "dataset",
+        "case",
+        "imaging_study",
+        "cr_series_file",
+        "ct_series_file",
+        "dx_series_file",
+        "mg_series_file",
+        "mr_series_file",
+        "nm_series_file",
+        "pt_series_file",
+        "rf_series_file",
+        "us_series_file",
+        "xa_series_file"
+      ],
+      "required": [
+        "annotation_name",
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "annotation_file.id"
+      ],
+      "properties": [
+        {
+          "name": "annotation_long_name",
+          "description": "The long name of the annotation provides more information about the specific annotation.",
+          "type": "string"
+        },
+        {
+          "name": "annotation_method",
+          "description": "Defines the method by which the annotation was created. Clinically_derived - Based on information produced in the process of the subject's medical care; Retrospective_expert - Based on information produced retrospective to the subject's care by annotators with relevant special clinical expertise; Retrospective_general - Based on information produced retrospective to the subject's care by annotators without relevant special clinical expertise; Retrospective_auto - Based on information produced retrospective to the subject's care using automated means.",
+          "type": "enum"
+        },
+        {
+          "name": "annotation_name",
+          "description": "The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected.  All MIDRC created annotations start with \"midrc_\".",
+          "type": "enum"
+        },
+        {
+          "name": "annotator_id",
+          "description": "Coded value to represent a particular annotator in a group. These need only be unique per annotation.",
+          "type": "string"
+        },
+        {
+          "name": "data_category",
+          "description": "The category of the file; must be \"annotation_file\".",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "The file format of the annotation file, e.g., JSON.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "An indication of whether the annotation is expert validated by MIDRC (\u201cInternal Annotation\u201d) or has not been validated by MIDRC experts (\u201cExternal Annotation\u201d).",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "instance_uids",
+          "description": "Used to denote that this annotation applies only to specific images (image instances) in a series.  If absent, an annotation that references an imaging series node applies to the entire imaging series.",
+          "type": "array"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "software_versions",
+          "description": "(0018,1020) Software Versions. This is the software version of the application where the annotation series was created.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "cr_series_file.id",
+          "description": "Unique identifiers for records in the 'cr_series_file' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "ct_series_file.id",
+          "description": "Unique identifiers for records in the 'ct_series_file' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "dx_series_file.id",
+          "description": "Unique identifiers for records in the 'dx_series_file' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "mg_series_file.id",
+          "description": "Unique identifiers for records in the 'mg_series_file' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "mr_series_file.id",
+          "description": "Unique identifiers for records in the 'mr_series_file' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "nm_series_file.id",
+          "description": "Unique identifiers for records in the 'nm_series_file' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "pt_series_file.id",
+          "description": "Unique identifiers for records in the 'pt_series_file' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "rf_series_file.id",
+          "description": "Unique identifiers for records in the 'rf_series_file' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "us_series_file.id",
+          "description": "Unique identifiers for records in the 'us_series_file' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "xa_series_file.id",
+          "description": "Unique identifiers for records in the 'xa_series_file' table that relate via this foreign key to records in this 'annotation_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "annotation_file.id",
+          "description": "A unique identifier for records in this 'annotation_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "measurement",
+      "description": "A structured value (numerical or categorical) obtained through systematic examination of a person or sample.",
+      "links": [
+        "condition",
+        "procedure",
+        "case"
+      ],
+      "required": [
+        "measurement.id"
+      ],
+      "properties": [
+        {
+          "name": "test_days_from_index",
+          "description": "A number of days beginning with the index date and ending with the date of the test.",
+          "type": "integer"
+        },
+        {
+          "name": "test_method",
+          "description": "The test method used to confirm a condition or produce a measurement.",
+          "type": "enum"
+        },
+        {
+          "name": "test_name",
+          "description": "The name of the test for which this measurement was the result.",
+          "type": "enum"
+        },
+        {
+          "name": "test_result_text",
+          "description": "The measured result of the test described using a list of enumerations.",
+          "type": "enum"
+        },
+        {
+          "name": "condition.id",
+          "description": "Unique identifiers for records in the 'condition' table that relate via this foreign key to records in this 'measurement' table.",
+          "type": "string"
+        },
+        {
+          "name": "procedure.id",
+          "description": "Unique identifiers for records in the 'procedure' table that relate via this foreign key to records in this 'measurement' table.",
+          "type": "string"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'measurement' table.",
+          "type": "string"
+        },
+        {
+          "name": "measurement.id",
+          "description": "A unique identifier for records in this 'measurement' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "annotation",
+      "description": "Information describing characteristics of imaging studies, series and instances (e.g., segmentations, bounding boxes, feature labels) and inferences based on those characteristics (e.g., predicted diagnoses). Annotations may be recorded in the course of clinical care or retrospectively for purposes of research (e.g., imaging annotations from PACS or retrospective labeling tools). Please refer to https://midrc.org/annotations to learn more about a particular batch of annotations.",
+      "links": [
+        "dataset",
+        "case",
+        "imaging_study",
+        "cr_series_file",
+        "ct_series_file",
+        "dx_series_file",
+        "mg_series_file",
+        "mr_series_file",
+        "nm_series_file",
+        "pt_series_file",
+        "rf_series_file",
+        "us_series_file",
+        "xa_series_file",
+        "annotation_file",
+        "dicom_annotation_file"
+      ],
+      "required": [
+        "annotation.id"
+      ],
+      "properties": [
+        {
+          "name": "airspace_disease_grading",
+          "description": "Values are extracted from the annotation file midrc_mdai_chestxr. Accepted values are \"mild\" opacities (1-2 lung zones), \"moderate\" opacities (3-4 lung zones), and \"severe\" opacities (>4 lung zones).",
+          "type": "enum"
+        },
+        {
+          "name": "annotation_long_name",
+          "description": "The long name of the annotation provides more information about the specific annotation.",
+          "type": "string"
+        },
+        {
+          "name": "annotation_method",
+          "description": "Defines the method by which the annotation was created. Clinically_derived - Based on information produced in the process of the subject's medical care; Retrospective_expert - Based on information produced retrospective to the subject's care by annotators with relevant special clinical expertise; Retrospective_general - Based on information produced retrospective to the subject's care by annotators without relevant special clinical expertise; Retrospective_auto - Based on information produced retrospective to the subject's care using automated means.",
+          "type": "enum"
+        },
+        {
+          "name": "annotation_name",
+          "description": "The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected.  All MIDRC created annotations start with \"midrc_\".",
+          "type": "enum"
+        },
+        {
+          "name": "annotator_id",
+          "description": "Coded value to represent a particular annotator in a group. These need only be unique per annotation.",
+          "type": "string"
+        },
+        {
+          "name": "class_covid19_pneumonia",
+          "description": "Values are extracted from the annotation file midrc_mdai_chestxr; Accepted values include \"typical\" appearance, which is multifocal bilateral, peripheral opacities, or opacities with rounded morphology, lower lung-predominant distribution;  \"indeterminate\" appearance, which is absence of typical findings and unilateral, central or upper lung predominant distribution of airspace disease; \"atypical\" appearance, which is pneumothorax or pleural effusion, pulmonary edema, lobar consolidation, solitary lung nodule, or mass diffuse tiny nodules cavity; \"negative\" for pneumonia, which is no lung opacities.",
+          "type": "enum"
+        },
+        {
+          "name": "instance_uids",
+          "description": "Used to denote that this annotation applies only to specific images (image instances) in a series.  If absent, an annotation that references an imaging series node applies to the entire imaging series.",
+          "type": "array"
+        },
+        {
+          "name": "midrc_mRALE_score",
+          "description": "Values are extracted from the annotation file mRALE_Mastermind_Challenge. The Radiographic Assessment of Lung Edema (RALE) score is provided as a reference standard assessment of disease severity on chest radiograph.  A normal chest radiograph receives a score of 0, while a chest radiograph with complete consolidation of both lungs receives the maximum score of 24.",
+          "type": "integer"
+        },
+        {
+          "name": "sift_image_quality_index",
+          "description": "A score of image quality based on the SIFT annotation software.",
+          "type": "enum"
+        },
+        {
+          "name": "software_version",
+          "description": "(0018, 1020) Software Version(s). The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_study.id",
+          "description": "Unique identifiers for records in the 'imaging_study' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "cr_series_file.id",
+          "description": "Unique identifiers for records in the 'cr_series_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "ct_series_file.id",
+          "description": "Unique identifiers for records in the 'ct_series_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "dx_series_file.id",
+          "description": "Unique identifiers for records in the 'dx_series_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "mg_series_file.id",
+          "description": "Unique identifiers for records in the 'mg_series_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "mr_series_file.id",
+          "description": "Unique identifiers for records in the 'mr_series_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "nm_series_file.id",
+          "description": "Unique identifiers for records in the 'nm_series_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "pt_series_file.id",
+          "description": "Unique identifiers for records in the 'pt_series_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "rf_series_file.id",
+          "description": "Unique identifiers for records in the 'rf_series_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "us_series_file.id",
+          "description": "Unique identifiers for records in the 'us_series_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "xa_series_file.id",
+          "description": "Unique identifiers for records in the 'xa_series_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "annotation_file.id",
+          "description": "Unique identifiers for records in the 'annotation_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "dicom_annotation_file.id",
+          "description": "Unique identifiers for records in the 'dicom_annotation_file' table that relate via this foreign key to records in this 'annotation' table.",
+          "type": "string"
+        },
+        {
+          "name": "annotation.id",
+          "description": "A unique identifier for records in this 'annotation' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

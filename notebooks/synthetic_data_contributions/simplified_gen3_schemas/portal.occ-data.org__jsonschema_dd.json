@@ -1,0 +1,828 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "dbgap_accession_number",
+        "code",
+        "name",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made avilable.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "acknowledgement",
+      "description": "Acknowledgement of an individual involved in a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "acknowledgement.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgee",
+          "description": "The indvidiual or group being acknowledged by the project.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'acknowledgement' table.",
+          "type": "string"
+        },
+        {
+          "name": "acknowledgement.id",
+          "description": "A unique identifier for records in this 'acknowledgement' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "keyword",
+      "description": "A keyword for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "keyword.id"
+      ],
+      "properties": [
+        {
+          "name": "keyword_name",
+          "description": "The name of the keyword.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'keyword' table.",
+          "type": "string"
+        },
+        {
+          "name": "keyword.id",
+          "description": "A unique identifier for records in this 'keyword' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "publication",
+      "description": "Publication for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "publication.id"
+      ],
+      "properties": [
+        {
+          "name": "author",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "doi",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "organization",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "pmid",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'publication' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "A unique identifier for records in this 'publication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "radar",
+      "description": "Describes a radar at a fixed site on the ground, mobile on a truck, or moveable.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "name",
+        "project.id",
+        "radar.id"
+      ],
+      "properties": [
+        {
+          "name": "band",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "radar_id",
+          "description": "The identifier of the radar system.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'radar' table.",
+          "type": "string"
+        },
+        {
+          "name": "radar.id",
+          "description": "A unique identifier for records in this 'radar' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "satellite",
+      "description": "Describes a satellite which contains scientific instruments.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "name",
+        "project.id",
+        "satellite.id"
+      ],
+      "properties": [
+        {
+          "name": "description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'satellite' table.",
+          "type": "string"
+        },
+        {
+          "name": "satellite.id",
+          "description": "A unique identifier for records in this 'satellite' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "stream_gauge",
+      "description": "Describes a stream gauge at a fixed site measuring height or discharge.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "name",
+        "project.id",
+        "stream_gauge.id"
+      ],
+      "properties": [
+        {
+          "name": "action_flow",
+          "description": "The flow rate associated with the NWS action stage in cms.",
+          "type": "number"
+        },
+        {
+          "name": "description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "drainage_area",
+          "description": "The contributing drainage area of this stream gauge in square km.",
+          "type": "number"
+        },
+        {
+          "name": "latitude",
+          "description": "The latitude of the stream gauge in decimal degrees.",
+          "type": "number"
+        },
+        {
+          "name": "longitude",
+          "description": "The longitude of the stream gauge in decimal degrees.",
+          "type": "number"
+        },
+        {
+          "name": "major_flow",
+          "description": "The flow rate associated with the NWS major flood stage in cms.",
+          "type": "number"
+        },
+        {
+          "name": "minor_flow",
+          "description": "The flow rate associated with the NWS minor flood stage in cms.",
+          "type": "number"
+        },
+        {
+          "name": "moderate_flow",
+          "description": "The flow rate associated with the NWS moderate flood stage in cms.",
+          "type": "number"
+        },
+        {
+          "name": "name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "nws_id",
+          "description": "The identifier assigned by the US NWS, if available.",
+          "type": "string"
+        },
+        {
+          "name": "state_id",
+          "description": "The identifier assigned by the State or local authority, if available.",
+          "type": "string"
+        },
+        {
+          "name": "usgs_id",
+          "description": "The identifier assigned by the USGS, if available.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'stream_gauge' table.",
+          "type": "string"
+        },
+        {
+          "name": "stream_gauge.id",
+          "description": "A unique identifier for records in this 'stream_gauge' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "weather_station",
+      "description": "Describes a weather station at a fixed site. Weather stations typically measure temperature, humidity, and precipitation.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "name",
+        "project.id",
+        "weather_station.id"
+      ],
+      "properties": [
+        {
+          "name": "country",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "elevation",
+          "description": "The elevation of the weather station in meters.",
+          "type": "number"
+        },
+        {
+          "name": "icao_id",
+          "description": "The identifier of the weather station.",
+          "type": "string"
+        },
+        {
+          "name": "latitude",
+          "description": "The latitude of the weather station in decimal degrees.",
+          "type": "number"
+        },
+        {
+          "name": "longitude",
+          "description": "The longitude of the weather station in decimal degrees.",
+          "type": "number"
+        },
+        {
+          "name": "name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "place",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'weather_station' table.",
+          "type": "string"
+        },
+        {
+          "name": "weather_station.id",
+          "description": "A unique identifier for records in this 'weather_station' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "geo_orbit",
+      "description": "A geosynchronous satellite orbit.",
+      "links": [
+        "satellite"
+      ],
+      "required": [
+        "longitude",
+        "altitude",
+        "satellite.id",
+        "geo_orbit.id"
+      ],
+      "properties": [
+        {
+          "name": "altitude",
+          "description": "",
+          "type": "number"
+        },
+        {
+          "name": "longitude",
+          "description": "",
+          "type": "number"
+        },
+        {
+          "name": "satellite.id",
+          "description": "Unique identifiers for records in the 'satellite' table that relate via this foreign key to records in this 'geo_orbit' table.",
+          "type": "string"
+        },
+        {
+          "name": "geo_orbit.id",
+          "description": "A unique identifier for records in this 'geo_orbit' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "leo_orbit",
+      "description": "A low Earth orbit.",
+      "links": [
+        "satellite"
+      ],
+      "required": [
+        "inclination",
+        "apogee_altitude",
+        "perigee_altitude",
+        "satellite.id",
+        "leo_orbit.id"
+      ],
+      "properties": [
+        {
+          "name": "apogee_altitude",
+          "description": "The height of the apogee of the orbit in meters.",
+          "type": "number"
+        },
+        {
+          "name": "inclination",
+          "description": "The orbital inclination in degrees.",
+          "type": "number"
+        },
+        {
+          "name": "perigee_altitude",
+          "description": "The height of the perigee of the orbit in meters.",
+          "type": "number"
+        },
+        {
+          "name": "satellite.id",
+          "description": "Unique identifiers for records in the 'satellite' table that relate via this foreign key to records in this 'leo_orbit' table.",
+          "type": "string"
+        },
+        {
+          "name": "leo_orbit.id",
+          "description": "A unique identifier for records in this 'leo_orbit' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "passive_instrument",
+      "description": "A passive instrument aboad a satellite receiving at a specific wavelength.",
+      "links": [
+        "satellite"
+      ],
+      "required": [
+        "satellite.id",
+        "passive_instrument.id"
+      ],
+      "properties": [
+        {
+          "name": "band_name",
+          "description": "The nickname used for the instrument band.",
+          "type": "string"
+        },
+        {
+          "name": "central_wavelength",
+          "description": "The central wavelength the instrument receives data at in micrometers.",
+          "type": "number"
+        },
+        {
+          "name": "instrument_name",
+          "description": "The name of the instrument on the satellite which is recording data.",
+          "type": "enum"
+        },
+        {
+          "name": "resolution",
+          "description": "The spatial resolution of the band in meters.",
+          "type": "number"
+        },
+        {
+          "name": "satellite.id",
+          "description": "Unique identifiers for records in the 'satellite' table that relate via this foreign key to records in this 'passive_instrument' table.",
+          "type": "string"
+        },
+        {
+          "name": "passive_instrument.id",
+          "description": "A unique identifier for records in this 'passive_instrument' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "publication_file",
+      "description": "A file representing a publication.",
+      "links": [
+        "publication"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "publication.id",
+        "publication_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "Unique identifiers for records in the 'publication' table that relate via this foreign key to records in this 'publication_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication_file.id",
+          "description": "A unique identifier for records in this 'publication_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "radar_location",
+      "description": "A latitude, longitude, and elevation for where the radar was located when it was operating.",
+      "links": [
+        "radar"
+      ],
+      "required": [
+        "longitude",
+        "latitude",
+        "elevation",
+        "radar.id",
+        "radar_location.id"
+      ],
+      "properties": [
+        {
+          "name": "elevation",
+          "description": "The elevation of the site of the radar in meters.",
+          "type": "number"
+        },
+        {
+          "name": "latitude",
+          "description": "The latitude of the radar in decimal degrees.",
+          "type": "number"
+        },
+        {
+          "name": "longitude",
+          "description": "The longitude of the radar in decimal degrees.",
+          "type": "number"
+        },
+        {
+          "name": "tower_height",
+          "description": "The height of the radar above ground level in meters.",
+          "type": "number"
+        },
+        {
+          "name": "radar.id",
+          "description": "Unique identifiers for records in the 'radar' table that relate via this foreign key to records in this 'radar_location' table.",
+          "type": "string"
+        },
+        {
+          "name": "radar_location.id",
+          "description": "A unique identifier for records in this 'radar_location' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "volume_coverage_pattern",
+      "description": "The volume coverage pattern when data was collected by the radar system.",
+      "links": [
+        "radar"
+      ],
+      "required": [
+        "radar.id",
+        "volume_coverage_pattern.id"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "vcp_number",
+          "description": "The volume coverage pattern when the radar collected this dataset.",
+          "type": "number"
+        },
+        {
+          "name": "radar.id",
+          "description": "Unique identifiers for records in the 'radar' table that relate via this foreign key to records in this 'volume_coverage_pattern' table.",
+          "type": "string"
+        },
+        {
+          "name": "volume_coverage_pattern.id",
+          "description": "A unique identifier for records in this 'volume_coverage_pattern' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "derived_scene",
+      "description": "Describes a scene derived from potentially multiple satellite instruments.",
+      "links": [
+        "passive_instrument"
+      ],
+      "required": [
+        "passive_instrument.id",
+        "derived_scene.id"
+      ],
+      "properties": [
+        {
+          "name": "desciption",
+          "description": "A description of the derived scene.",
+          "type": "string"
+        },
+        {
+          "name": "passive_instrument.id",
+          "description": "Unique identifiers for records in the 'passive_instrument' table that relate via this foreign key to records in this 'derived_scene' table.",
+          "type": "string"
+        },
+        {
+          "name": "derived_scene.id",
+          "description": "A unique identifier for records in this 'derived_scene' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "spatiotemporal_file",
+      "description": "A file with data also containing a timestamp and geographical bounding box.",
+      "links": [
+        "passive_instrument",
+        "geo_orbit",
+        "leo_orbit",
+        "derived_scene",
+        "volume_coverage_pattern",
+        "radar_location",
+        "stream_gauge",
+        "project"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "spatiotemporal_file.id"
+      ],
+      "properties": [
+        {
+          "name": "bounding_box_east",
+          "description": "The eastern most longitude in decimal degrees.",
+          "type": "number"
+        },
+        {
+          "name": "bounding_box_north",
+          "description": "The northern latitude in decimal degrees.",
+          "type": "number"
+        },
+        {
+          "name": "bounding_box_south",
+          "description": "The southern latitude in decimal degrees.",
+          "type": "number"
+        },
+        {
+          "name": "bounding_box_west",
+          "description": "The western most longitude in decimal degrees.",
+          "type": "number"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "passive_instrument.id",
+          "description": "Unique identifiers for records in the 'passive_instrument' table that relate via this foreign key to records in this 'spatiotemporal_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "geo_orbit.id",
+          "description": "Unique identifiers for records in the 'geo_orbit' table that relate via this foreign key to records in this 'spatiotemporal_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "leo_orbit.id",
+          "description": "Unique identifiers for records in the 'leo_orbit' table that relate via this foreign key to records in this 'spatiotemporal_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "derived_scene.id",
+          "description": "Unique identifiers for records in the 'derived_scene' table that relate via this foreign key to records in this 'spatiotemporal_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "volume_coverage_pattern.id",
+          "description": "Unique identifiers for records in the 'volume_coverage_pattern' table that relate via this foreign key to records in this 'spatiotemporal_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "radar_location.id",
+          "description": "Unique identifiers for records in the 'radar_location' table that relate via this foreign key to records in this 'spatiotemporal_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "stream_gauge.id",
+          "description": "Unique identifiers for records in the 'stream_gauge' table that relate via this foreign key to records in this 'spatiotemporal_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'spatiotemporal_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "spatiotemporal_file.id",
+          "description": "A unique identifier for records in this 'spatiotemporal_file' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
