@@ -1,0 +1,771 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made avilable.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "study",
+      "description": "A coordinated set of actions and observations designed to generate data, with the ultimate goal of discovery or hypothesis testing.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "study.id"
+      ],
+      "properties": [
+        {
+          "name": "prometheus_study_id",
+          "description": "The Prometheus Study Identifier for this study.",
+          "type": "string"
+        },
+        {
+          "name": "project_number",
+          "description": "The project number for this study.",
+          "type": "string"
+        },
+        {
+          "name": "institution",
+          "description": "The name of the affiliated institution.",
+          "type": "string"
+        },
+        {
+          "name": "principal_investigator",
+          "description": "The name of the principal investigator.",
+          "type": "string"
+        },
+        {
+          "name": "investigators",
+          "description": "The names of the investigators.",
+          "type": "array"
+        },
+        {
+          "name": "study_description",
+          "description": "A brief description of the study being performed. Free text",
+          "type": "string"
+        },
+        {
+          "name": "data_description",
+          "description": "Brief description of the data being provided for this study. Free text",
+          "type": "string"
+        },
+        {
+          "name": "study_type",
+          "description": "The type of study from controlled vocabulary.",
+          "type": "string"
+        },
+        {
+          "name": "subject_type",
+          "description": "The type of subjects from controlled vocabulary.",
+          "type": "string"
+        },
+        {
+          "name": "research_program",
+          "description": "The research program associated with the study.",
+          "type": "string"
+        },
+        {
+          "name": "research_focus_area",
+          "description": "The research focus area for the study.",
+          "type": "string"
+        },
+        {
+          "name": "version",
+          "description": "The current study version in the data commons.",
+          "type": "string"
+        },
+        {
+          "name": "last_updated",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "access_type",
+          "description": "The type of access for this study.",
+          "type": "string"
+        },
+        {
+          "name": "accural_status",
+          "description": "The accrual status of the study.",
+          "type": "string"
+        },
+        {
+          "name": "hosted_commons",
+          "description": "The data commons and environments where the study data is hosted.",
+          "type": "array"
+        },
+        {
+          "name": "geographical_region",
+          "description": "The geographical regions associated with the study.",
+          "type": "array"
+        },
+        {
+          "name": "military_population",
+          "description": "The military population of the study.",
+          "type": "string"
+        },
+        {
+          "name": "study_registration",
+          "description": "External source from which the identifier included in study_id originates.",
+          "type": "string"
+        },
+        {
+          "name": "study_id",
+          "description": "Unique identifier that can be used to retrieve more information for a study.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession",
+          "description": "The dbgap accession number provided for the project (example, phs123456.v1.p1.c1).",
+          "type": "string"
+        },
+        {
+          "name": "short_name",
+          "description": "The shorthand name for the project.",
+          "type": "string"
+        },
+        {
+          "name": "full_name",
+          "description": "The full name for the project.",
+          "type": "string"
+        },
+        {
+          "name": "complete",
+          "description": "Description of whether the project submission is complete or still in progress.",
+          "type": "enum"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'study' table.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "A unique identifier for records in this 'study' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "description": "The collection of all data related to a specific patient, case, or subject in the context of a specific dataset or experiment.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "study.id",
+        "subject.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_index",
+          "description": "The study participant's age, in years, at the index event. The index event is determined by the data submitter and used as an anchor date for all temporal variables. Note that an age of 0 indicates a participant who is younger than 1 year old. For participants with ages greater than 89 years, please use the property 'age_at_index_gt89'.",
+          "type": "number"
+        },
+        {
+          "name": "age_at_index_gt89",
+          "description": "Indicates whether the subject's age at the time of the study was greater than 89 years.",
+          "type": "enum"
+        },
+        {
+          "name": "consent_codes",
+          "description": "Data Use Restrictions that are used to indicate  permissions/restrictions for datasets and/or materials, and relates to the purposes for which datasets and/or material might be removed, stored or used. \\n Based on the Data Use Ontology : see http://www.obofoundry.org/ontology/duo.html \\n GRU - For general research use for any research purpose. Example of usage: This includes but is not limited to: health/medical/biomedical purposes, fundamental biology research, the study of population origins or ancestry, statistical methods and algorithms development, and social-sciences research. \\n HMB - Use of the data is limited to health/medical/biomedical purposes; does not include the study of population origins or ancestry. \\n DS-X - Use of the data must be related to [disease]. \\n NPU - Use of the data is limited to not-for-profit organizations and not-for-profit use, non-commercial use. \\n IRB - Requestor must provide documentation of local IRB/REC approval.",
+          "type": "array"
+        },
+        {
+          "name": "ethnicity",
+          "description": "The ethnicity of the subject.",
+          "type": "enum"
+        },
+        {
+          "name": "gender",
+          "description": "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]",
+          "type": "string"
+        },
+        {
+          "name": "biological_sex",
+          "description": "The biological sex of the subject.",
+          "type": "enum"
+        },
+        {
+          "name": "year_born",
+          "description": "The year of birth of the subject.",
+          "type": "integer"
+        },
+        {
+          "name": "race",
+          "description": "An arbitrary classification of a taxonomic group that is a division of a species. It usually arises as a consequence of geographical isolation within a species and is characterized by shared heredity, physical attributes and behavior, and in the case of humans, by common history, nationality, or geographic distribution. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "string"
+        },
+        {
+          "name": "subject_id",
+          "description": "An additional identifier for the subject.",
+          "type": "string"
+        },
+        {
+          "name": "prometheus_global_id",
+          "description": "The Prometheus Global Identifier for the subject.",
+          "type": "string"
+        },
+        {
+          "name": "apollo_id",
+          "description": "The Apollo Identifier for the subject.",
+          "type": "string"
+        },
+        {
+          "name": "results_type",
+          "description": "The type of results for this subject (example, [\"metabolomic\"]).",
+          "type": "array"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'subject' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "A unique identifier for records in this 'subject' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "exposure",
+      "description": "Clinically relevant patient information not immediately resulting from genetic predispositions.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "exposure.id"
+      ],
+      "properties": [
+        {
+          "name": "smoking_status",
+          "description": "Smoking condition (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "years_smoked",
+          "description": "Numeric value (or unknown) to represent the number of years a person has been smoking.",
+          "type": "number"
+        },
+        {
+          "name": "years_smoked_gt89",
+          "description": "Indicate whether the numeric value to represent the number of years a person has been smoking (HARMONIZED) is greater than 89 years.",
+          "type": "enum"
+        },
+        {
+          "name": "current_smoker_baseline",
+          "description": "Indicates whether subject currently smokes cigarettes. (HARMONIZED)",
+          "type": "boolean"
+        },
+        {
+          "name": "age_at_current_smoker_baseline",
+          "description": "age at measurement of current_smoker_baseline (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_ever_smoker_baseline",
+          "description": "age at measurement of ever_smoker_baseline (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "ever_smoker_baseline",
+          "description": "Indicates whether subject ever regularly smoked cigarettes. (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "unit_current_smoker_baseline",
+          "description": "harmonization unit for current_smoker_baseline (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_ever_smoker_baseline",
+          "description": "harmonization unit for ever_smoker_baseline (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "exposure_category",
+          "description": "The category of exposure.",
+          "type": "enum"
+        },
+        {
+          "name": "exposure_type",
+          "description": "The type of exposure.",
+          "type": "enum"
+        },
+        {
+          "name": "exposure_agent",
+          "description": "The agent of exposure.",
+          "type": "enum"
+        },
+        {
+          "name": "exposure_job",
+          "description": "The type of employment during the exposure.",
+          "type": "enum"
+        },
+        {
+          "name": "exposure_start_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "exposure_end_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "exposure_method",
+          "description": "The method of exposure.",
+          "type": "enum"
+        },
+        {
+          "name": "exposure_frequency",
+          "description": "The type of employment during the exposure.",
+          "type": "enum"
+        },
+        {
+          "name": "exposure_protection",
+          "description": "Indicates whether subject wore protection during the exposure.",
+          "type": "boolean"
+        },
+        {
+          "name": "exposure_protection_yes",
+          "description": "Indicates the type of protection if the subject wore protection",
+          "type": "enum"
+        },
+        {
+          "name": "results_file",
+          "description": "The results file for exposure data.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "The type of file for the subject-metabolite combination.",
+          "type": "enum"
+        },
+        {
+          "name": "guid",
+          "description": "The GUID for the exposure data results file.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'exposure' table.",
+          "type": "string"
+        },
+        {
+          "name": "exposure.id",
+          "description": "A unique identifier for records in this 'exposure' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "imaging",
+      "description": "Metadata related to an imaging series to which one or more image instances belong.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "imaging.id"
+      ],
+      "properties": [
+        {
+          "name": "AcquisitionType",
+          "description": "(0018, 9302) Acquisition Type",
+          "type": "string"
+        },
+        {
+          "name": "BodyPartExamined",
+          "description": "(0018, 0015) Body Part Examined.",
+          "type": "string"
+        },
+        {
+          "name": "Contrast",
+          "description": "Imaging done with contrast, 'Yes' or 'No'?",
+          "type": "string"
+        },
+        {
+          "name": "ContrastBolusAgent",
+          "description": "(0018, 0010) Contrast/Bolus Agent",
+          "type": "string"
+        },
+        {
+          "name": "dicom_viewer_url",
+          "description": "A URL where the imaging series can be viewed.",
+          "type": "string"
+        },
+        {
+          "name": "file_names",
+          "description": "The file names of any data files associated with this imaging series.",
+          "type": "array"
+        },
+        {
+          "name": "file_urls",
+          "description": "The URLs of any data files associated with this imaging series.",
+          "type": "array"
+        },
+        {
+          "name": "MagneticFieldStrength",
+          "description": "(0018, 0087) Magnetic Field Strength",
+          "type": "string"
+        },
+        {
+          "name": "Manufacturer",
+          "description": "(0008, 0070) Manufacturer",
+          "type": "string"
+        },
+        {
+          "name": "ManufacturerModelName",
+          "description": "(0008, 1090) Manufacturer's Model Name",
+          "type": "string"
+        },
+        {
+          "name": "Modality",
+          "description": "(0008, 0060) Modality",
+          "type": "string"
+        },
+        {
+          "name": "object_ids",
+          "description": "The list of file identifiers (data GUIDs, DRS URIs, or URLs, etc.) for the imaging series, if applicable.",
+          "type": "array"
+        },
+        {
+          "name": "Radiopharmaceutical",
+          "description": "(0018, 0031) Radiopharmaceutical",
+          "type": "string"
+        },
+        {
+          "name": "ReceiveCoilName",
+          "description": "(0018, 1250) Receive Coil Name",
+          "type": "string"
+        },
+        {
+          "name": "ScanningSequence",
+          "description": "(0018, 0020) Scanning Sequence",
+          "type": "string"
+        },
+        {
+          "name": "ScanOptions",
+          "description": "(0018, 0022) ScanOptions",
+          "type": "string"
+        },
+        {
+          "name": "SeriesDescription",
+          "description": "(0008, 103e) Series Description",
+          "type": "string"
+        },
+        {
+          "name": "SeriesInstanceUID",
+          "description": "(0020, 000e) Series Instance UID",
+          "type": "string"
+        },
+        {
+          "name": "SequenceVariant",
+          "description": "(0018, 0021) Sequence Variant",
+          "type": "string"
+        },
+        {
+          "name": "SliceThickness",
+          "description": "(0018, 0050) Slice Thickness",
+          "type": "string"
+        },
+        {
+          "name": "SoftwareVersions",
+          "description": "(0018, 1020) Software Versions",
+          "type": "string"
+        },
+        {
+          "name": "TransmitCoilName",
+          "description": "(0018, 1251) Transmit Coil Name",
+          "type": "string"
+        },
+        {
+          "name": "ViewPosition",
+          "description": "(0018, 5101) Radiographic view associated with (0018, 5100) Patient Position.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'imaging' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging.id",
+          "description": "A unique identifier for records in this 'imaging' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "Any biological or material sample used for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "biospecimen_anatomic_site",
+          "description": "Text term that represents the name of the primary disease site of the submitted tumor sample.",
+          "type": "string"
+        },
+        {
+          "name": "biospecimen_anatomic_site_detail",
+          "description": "Tissue type, more specific detail of tissue type.",
+          "type": "string"
+        },
+        {
+          "name": "biospecimen_anatomic_site_uberon_id",
+          "description": "Uberon ID, anatomical location as described by the Uber Anatomy Ontology (UBERON)",
+          "type": "string"
+        },
+        {
+          "name": "biospecimen_anatomic_site_uberon_term",
+          "description": "Uberon Term, anatomical location as described by the Uber Anatomy Ontology (UBERON)",
+          "type": "string"
+        },
+        {
+          "name": "sample_type",
+          "description": "Original material type of the collected sample",
+          "type": "string"
+        },
+        {
+          "name": "tissue_type",
+          "description": "Text term that represents a description of the kind of tissue collected with respect to disease status or proximity to tumor tissue.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_id",
+          "description": "Unique identifier that can be used to retrieve more information for a specimen.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "medical_record",
+      "description": "Standard questionnaire used to collect medical records from the subject",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "medical_record.id"
+      ],
+      "properties": [
+        {
+          "name": "primary_disease",
+          "description": "The primary disease of the subject.",
+          "type": "string"
+        },
+        {
+          "name": "cancer_type",
+          "description": "The cancer type of the subject.",
+          "type": "string"
+        },
+        {
+          "name": "metastasis",
+          "description": "Has the cancer metastasized? (Yes/No)",
+          "type": "boolean"
+        },
+        {
+          "name": "cancer_grade",
+          "description": "The cancer grade of the subject.",
+          "type": "enum"
+        },
+        {
+          "name": "cancer_stage",
+          "description": "The cancer stage of the subject.",
+          "type": "enum"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'medical_record' table.",
+          "type": "string"
+        },
+        {
+          "name": "medical_record.id",
+          "description": "A unique identifier for records in this 'medical_record' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "metabolomic",
+      "description": "Pertaining to the study and analysis of metabolites within a biological system; involves the identification and quantification of small molecules produced during metabolism.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "metabolomic.id"
+      ],
+      "properties": [
+        {
+          "name": "windber_id",
+          "description": "The Windber ID for the metabolite.",
+          "type": "string"
+        },
+        {
+          "name": "casrn",
+          "description": "The Chemical Abstracts Service Registry Number (CASRN) for the metabolite.",
+          "type": "string"
+        },
+        {
+          "name": "dtxs_id",
+          "description": "The Distributed Structure-Searchable Toxicity Identifier (DTXSID) for the metabolite.",
+          "type": "string"
+        },
+        {
+          "name": "name_tar",
+          "description": "The target compound name for the metabolite.",
+          "type": "string"
+        },
+        {
+          "name": "reference",
+          "description": "The reference or citation for the metabolite.",
+          "type": "string"
+        },
+        {
+          "name": "carcinogen",
+          "description": "Indicates whether the metabolite is carcinogenic.",
+          "type": "boolean"
+        },
+        {
+          "name": "chemical_class",
+          "description": "The chemical class for the metabolite.",
+          "type": "enum"
+        },
+        {
+          "name": "results_file",
+          "description": "The file containing results for the subject-metabolite combination.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "The type of file for the subject-metabolite combination.",
+          "type": "enum"
+        },
+        {
+          "name": "guid",
+          "description": "The Globally Unique Identifier (GUID) of file for the subject-metabolite combination.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'metabolomic' table.",
+          "type": "string"
+        },
+        {
+          "name": "metabolomic.id",
+          "description": "A unique identifier for records in this 'metabolomic' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "liquid_biopsy",
+      "description": "Pertaining to the study and analysis of liquid biopsies.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "liquid_biopsy.id"
+      ],
+      "properties": [
+        {
+          "name": "results_file",
+          "description": "The file containing results for the subject-metabolite combination.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "The type of file for the subject-metabolite combination.",
+          "type": "enum"
+        },
+        {
+          "name": "guid",
+          "description": "The Globally Unique Identifier (GUID) of file for the subject-metabolite combination.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'liquid_biopsy' table.",
+          "type": "string"
+        },
+        {
+          "name": "liquid_biopsy.id",
+          "description": "A unique identifier for records in this 'liquid_biopsy' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3153 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made avilable.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "acknowledgement",
+      "description": "Acknowledgement of an individual involved in a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "acknowledgement.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgee",
+          "description": "The indvidiual or group being acknowledged by the project.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'acknowledgement' table.",
+          "type": "string"
+        },
+        {
+          "name": "acknowledgement.id",
+          "description": "A unique identifier for records in this 'acknowledgement' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "original_file",
+      "description": "A storage node for the original, raw contents of a study ingested into our system.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "original_file.id"
+      ],
+      "properties": [
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'original_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "original_file.id",
+          "description": "A unique identifier for records in this 'original_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "publication",
+      "description": "Publication for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "publication.id"
+      ],
+      "properties": [
+        {
+          "name": "doi",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "pmid",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'publication' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "A unique identifier for records in this 'publication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "reference_file",
+      "description": "Data file containing any type of reference required for a data analysis.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "project.id",
+        "reference_file.id"
+      ],
+      "properties": [
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "source_file",
+          "description": "The originating compressed file's name.",
+          "type": "string"
+        },
+        {
+          "name": "study_version",
+          "description": "The version of the study that was released by data source (e.g., dbGaP)",
+          "type": "number"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'reference_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "reference_file.id",
+          "description": "A unique identifier for records in this 'reference_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "study",
+      "description": "A coordinated set of actions and observations designed to generate data, with the ultimate goal of discovery or hypothesis testing.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "study_id",
+        "study_registration",
+        "project.id",
+        "study.id"
+      ],
+      "properties": [
+        {
+          "name": "data_description",
+          "description": "Brief description of the data being provided for this study. Free text",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession",
+          "description": "The dbgap accession number provided for the project (example, phs123456.v1.p1.c1).",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_consent",
+          "description": "The dbGaP consent number (example, c1).",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_consent_text",
+          "description": "The dbGaP consent text (example, HMB-IRB).",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_participant_set",
+          "description": "The dbGaP participant set (example, p1).",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_phs",
+          "description": "The dbGaP phs accession (example, phs123456).",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_version",
+          "description": "The dbGaP version (example, v1).",
+          "type": "string"
+        },
+        {
+          "name": "exclude_from_aggregations",
+          "description": "Should the study be excluded from aggregations (e.g., Counts of total numbers of studies or total numbers of subjects) for users who are not authorized to access this study?",
+          "type": "boolean"
+        },
+        {
+          "name": "full_name",
+          "description": "The full name for the project.",
+          "type": "string"
+        },
+        {
+          "name": "short_name",
+          "description": "The shorthand name for the project.",
+          "type": "string"
+        },
+        {
+          "name": "study_description",
+          "description": "A brief description of the study being performed. Free text",
+          "type": "string"
+        },
+        {
+          "name": "study_id",
+          "description": "Unique identifier that can be used to retrieve more information for a study.",
+          "type": "string"
+        },
+        {
+          "name": "study_registration",
+          "description": "External source from which the identifier included in study_id originates.",
+          "type": "string"
+        },
+        {
+          "name": "study_setup",
+          "description": "A high level description of the setup used to achieve the study objectives.",
+          "type": "enum"
+        },
+        {
+          "name": "type_of_data",
+          "description": "Is the data raw or processed?",
+          "type": "enum"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'study' table.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "A unique identifier for records in this 'study' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "reference_file_index",
+      "description": "Data file containing the index for a set of germline variants.",
+      "links": [
+        "reference_file"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "reference_file.id",
+        "reference_file_index.id"
+      ],
+      "properties": [
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "source_file",
+          "description": "The originating compressed file's name.",
+          "type": "string"
+        },
+        {
+          "name": "study_version",
+          "description": "The version of the study that was released by data source (e.g., dbGaP)",
+          "type": "number"
+        },
+        {
+          "name": "reference_file.id",
+          "description": "Unique identifiers for records in the 'reference_file' table that relate via this foreign key to records in this 'reference_file_index' table.",
+          "type": "string"
+        },
+        {
+          "name": "reference_file_index.id",
+          "description": "A unique identifier for records in this 'reference_file_index' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "description": "The collection of all data related to a specific subject in the context of a specific experiment.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "consent_codes",
+        "participant_id",
+        "study.id",
+        "subject.id"
+      ],
+      "properties": [
+        {
+          "name": "amputation_type",
+          "description": "If amputated, the amputation type for leg, above the knee or below the knee.",
+          "type": "string"
+        },
+        {
+          "name": "cohort_id",
+          "description": "The study subgroup that the participant belongs to. This indicates whether the participant was a postmortem donor,  an organ donor, or a surgical donor.",
+          "type": "enum"
+        },
+        {
+          "name": "consent_codes",
+          "description": "Data Use Restrictions that are used to indicate  permissions/restrictions for datasets and/or materials, and relates to the purposes for which datasets and/or material might be removed, stored or used. \\n Based on the Data Use Ontology : see http://www.obofoundry.org/ontology/duo.html \\n GRU - For general research use for any research purpose. Example of usage: This includes but is not limited to: health/medical/biomedical purposes, fundamental biology research, the study of population origins or ancestry, statistical methods and algorithms development, and social-sciences research. \\n HMB - Use of the data is limited to health/medical/biomedical purposes; does not include the study of population origins or ancestry. \\n DS-X - Use of the data must be related to [disease]. \\n NPU - Use of the data is limited to not-for-profit organizations and not-for-profit use, non-commercial use. \\n IRB - Requestor must provide documentation of local IRB/REC approval.",
+          "type": "array"
+        },
+        {
+          "name": "data_submission_guid",
+          "description": "A Globally Unique IDentifier (GUID) provided by the data submitter, used to identify this subject across multiple projects, commons, etc.",
+          "type": "string"
+        },
+        {
+          "name": "derived_parent_subject_id",
+          "description": "Unique subject identifier associated with parent project; derived from parent accession and submitted subject ID.",
+          "type": "string"
+        },
+        {
+          "name": "derived_topmed_subject_id",
+          "description": "Unique subject identifier associated with TOPMed project; derived from TOPMed accession and submitted subject ID.",
+          "type": "string"
+        },
+        {
+          "name": "eligibility",
+          "description": "A verification field of whether the Donor has met the overall eligibility criteria for GTEx collection based on answers  to eligibility questions. All Eligibility conditions require confirmation from the donor procurement team (staff team where  tissue collection and data abstraction takes place) and must be met in order for donor to eligible.",
+          "type": "boolean"
+        },
+        {
+          "name": "geographic_site",
+          "description": "\"Site where the subject was recruted. ARIC_A=field center A representing one of four anonymized centers (Forsyth County, NC, USA; Jackson, MS, USA; the northwest suburbs of Minneapolis, MN, USA; and Washington County, MD, USA) where baseline exam was conducted for ARIC (Atherosclerosis Risk in Communities), ARIC_B=field center B representing one of four anonymized centers (Forsyth County, NC, USA; Jackson, MS, USA; the northwest suburbs of Minneapolis, MN, USA; and Washington County, MD, USA) where baseline exam was conducted for ARIC (Atherosclerosis Risk in Communities), ARIC_C=field center C representing one of four anonymized centers (Forsyth County, NC, USA; Jackson, MS, USA; the northwest suburbs of Minneapolis, MN, USA; and Washington County, MD, USA) where baseline exam was conducted for ARIC (Atherosclerosis Risk in Communities), ARIC_D=field center D representing one of four anonymized centers (Forsyth County, NC, USA; Jackson, MS, USA; the northwest suburbs of Minneapolis, MN, USA; and Washington County, MD, USA) where baseline exam was conducted for ARIC (Atherosclerosis Risk in Communities), CARDIA_1=field center 1 representing one of four anonymized field centers (University of Alabama, Birmingham, AL, USA; Northwestern University, IL, USA; University of Minnesota, MN, USA; Kaiser Foundation Research Institute, Oakland, CA, USA) for subjects in the CARE project within CARDIA (Coronary Artery Risk Development in Young Adults), CARDIA_2=field center 2 representing one of four anonymized field centers (University of Alabama, Birmingham, AL, USA; Northwestern University, IL, USA; University of Minnesota, MN, USA; Kaiser Foundation Research Institute, Oakland, CA, USA) for subjects in the CARE project within CARDIA (Coronary Artery Risk Development in Young Adults), CARDIA_3=field center 3 representing one of four anonymized field centers (University of Alabama, Birmingham, AL, USA; Northwestern University, IL, USA; University of Minnesota, MN, USA; Kaiser Foundation Research Institute, Oakland, CA, USA) for subjects in the CARE project within CARDIA (Coronary Artery Risk Development in Young Adults), CARDIA_4=field center 4 representing one of four anonymized field centers (University of Alabama, Birmingham, AL, USA; Northwestern University, IL, USA; University of Minnesota, MN, USA; Kaiser Foundation Research Institute, Oakland, CA, USA) for subjects in the CARE project within CARDIA (Coronary Artery Risk Development in Young Adults), CHS_BOWMAN.GRAY=clinic at Bowman Gray University (Forsyth County, NC, USA) for CHS (Cardiovascular Health Study), CHS_DAVIS=clinic at Davis University (Sacramento County, CA, USA) for CHS (Cardiovascular Health Study), CHS_HOPKINS=clinic at Johns Hopkins University (Washington County, MD, USA) for CHS (Cardiovascular Health Study), CHS_PITT=clinic at University of Pittsburgh (Pittsburgh, PA, USA) for CHS (Cardiovascular Health Study), COPDGene_C01=clinical center C01 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C02=clinical center C02 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C03=clinical center C03 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C04=clinical center C04 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C05=clinical center C05 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C06=clinical center C06 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C07=clinical center C07 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C08=clinical center C08 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C09=clinical center C09 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C10=clinical center C10 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C11=clinical center C11 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C12=clinical center C12 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C13=clinical center C13 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C14=clinical center C14 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C15=clinical center C15 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C16=clinical center C16 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C17=clinical center C17 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C18=clinical center C18 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C19=clinical center C19 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C20=clinical center C20 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), COPDGene_C21=clinical center C21 representing one of 21 de-identified clinical centers for COPDGene (Genetic Epidemiology of COPD), GENOA_MN=recruitment from Rochester, MN, US, GENOA_MS=recruitment from Jackson, MS, US, GOLDN_MN=recruitment center at Minneapolis, MN, USA for GOLDN (Genetics of Lipid Lowering Drugs and Diet Network Lipodemics Study), GOLDN_UT=recruitment center at Salt Lake City, UT, USA for GOLDN (Genetics of Lipid Lowering Drugs and Diet Network Lipodemics Study), HCHS_SOL_Bronx=recruitment center Bronx, NY, USA for HCHS/SOL (Hispanic Community Health Study/Study of Latinos), HCHS_SOL_Chicago=recruitment center Chicago, IL, USA for HCHS/SOL (Hispanic Community Health Study/Study of Latinos), HCHS_SOL_Miami=recruitment center Miami, FL, USA for HCHS/SOL (Hispanic Community Health Study/Study of Latinos), HCHS_SOL_SanDiego=recruitment center San Diego, CA, USA for HCHS/SOL (Hispanic Community Health Study/Study of Latinos), JHS_Hinds=recruitment from urban and rural areas of Hinds county, MS, USA for JHS (Jackson Heart Study), JHS_Madison=recruitment from urban and rural areas of Madison county, MS, USA for JHS (Jackson Heart Study), JHS_Rankin=recruitment from urban and rural areas of Rankin county, MS, USA for JHS (Jackson Heart Study), JHS_Unknown=recruitment from unknown county in MS, USA for JHS (Jackson Heart Study), Mayo_VTE_Midwest_US=state of residence (at time of enrollment for Mayo_VTE study) is in the South region of the USA as defined by the Census Bureau, Mayo_VTE_Northeast_US=state of residence (at time of enrollment for Mayo_VTE study) is in the Northeast region of the USA as defined by the Census Bureau, Mayo_VTE_non_US=state of residence (at time of enrollment for Mayo_VTE study) is from a country outside the USA, Mayo_VTE_South_US=state of residence (at time of enrollment for Mayo_VTE study) is in the Midwest region of the USA as defined by the Census Bureau, Mayo_VTE_West_US=state of residence (at time of enrollment for Mayo_VTE study) is in the West region of the USA as defined by the Census Bureau, MESA_COL=field center/baseline clinic at Columbia University, NY, USA for MESA (Multi-Ethnic Study of Atherosclerosis Cohort), MESA_JHU=field center/baseline clinic at Johns Hopkins University, MD, USA for MESA (Multi-Ethnic Study of Atherosclerosis Cohort), MESA_NWU=field center/baseline clinic at Northwestern University, IL, USA for MESA (Multi-Ethnic Study of Atherosclerosis Cohort), MESA_UCLA=field center/baseline clinic at University of California, Los Angeles, CA, USA for MESA (Multi-Ethnic Study of Atherosclerosis Cohort), MESA_UMN=field center/baseline clinic at University of Minnesota, MN, USA for MESA (Multi-Ethnic Study of Atherosclerosis Cohort), MESA_WFU=field center/baseline clinic at Wake Forest University, NC, USA for MESA (Multi-Ethnic Study of Atherosclerosis Cohort), SAS_Apia.urban=recruitment census region of Apia Urban Area in Samoa for SAS (Genome-wide Association Study of Adiposity in Samoans), SAS_NW.Upola=recruitment census region of Northwest Upola in Samoa for SAS (Genome-wide Association Study of Adiposity in Samoans), SAS_rest.Upola=recruitment census region including rest of Upola in Samoa for SAS (Genome-wide Association Study of Adiposity in Samoans), SAS_Savaii=recruitment census region of Savaii in Samoa for SAS (Genome-wide Association Study of Adiposity in Samoans), WHI_Midwest=recruitment from Midwest region of the USA for WHI (Womens Health Initiative), WHI_Northeast=recruitment from Northeast region of the USA for WHI (Womens Health Initiative), WHI_South=recruitment from South region of the USA for WHI (Womens Health Initiative), WHI_West=recruitment from West region of the USA for WHI (Womens Health Initiative)\" (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "index_date",
+          "description": "\"Indicates whether the time point reference begins at the donor's actual death, presumed death,  or when the cross clamp was applied in the case of surgical donors.\"",
+          "type": "enum"
+        },
+        {
+          "name": "participant_id",
+          "description": "Unique identifier that can be used to retrieve more information for a participant.",
+          "type": "string"
+        },
+        {
+          "name": "transplanted_organ",
+          "description": "If the Donor was an Organ Donor, which Organs were donated.",
+          "type": "string"
+        },
+        {
+          "name": "unit_geographic_site",
+          "description": "harmonization unit for site (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'subject' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "A unique identifier for records in this 'subject' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "blood_pressure_test",
+      "description": "Resting blood pressure will be measured in the right arm after five minutes in the seated position. An automated oscillometric method (Dinamap) and appropriate cuff size will be used. Three readings will be taken; the second and third readings will be averaged to obtain the blood pressure levels used in analyses. An additional systolic blood pressure will be measured in both the right and left brachial, posterior tibial, and dorsalis pedis arteries with a Doppler instrument.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "blood_pressure_test.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_bp_diastolic",
+          "description": "age at measurement of bp_diastolic (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_bp_systolic",
+          "description": "age at measurement of bp_systolic (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "bp_diastolic",
+          "description": "Resting diastolic blood pressure from the upper arm in a clinical setting. (mmHg) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "bp_systolic",
+          "description": "Resting systolic blood pressure from the upper arm in a clinical setting. (mmHg) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "unit_bp_diastolic",
+          "description": "harmonization unit for bp_diastolic (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.)",
+          "type": "string"
+        },
+        {
+          "name": "unit_bp_systolic",
+          "description": "harmonization unit for bp_systolic (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'blood_pressure_test' table.",
+          "type": "string"
+        },
+        {
+          "name": "blood_pressure_test.id",
+          "description": "A unique identifier for records in this 'blood_pressure_test' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "cardiac_mri",
+      "description": "Cardiac MRI used to obtain measures of left ventricular mass, wall thickness, ejection fraction, cardiac output, aortic atherosclerosis, and aortic distensibility.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "cardiac_mri.id"
+      ],
+      "properties": [
+        {
+          "name": "cardiac_output",
+          "description": "RV Cardiac output (l/min) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'cardiac_mri' table.",
+          "type": "string"
+        },
+        {
+          "name": "cardiac_mri.id",
+          "description": "A unique identifier for records in this 'cardiac_mri' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "demographic",
+      "description": "Data for the characterization of the patient by means of segementing the population (e.g., characterization by age, sex, or race).",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "demographic.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_bmi_baseline",
+          "description": "age at measurement of bmi (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_height_baseline",
+          "description": "age at measurement of height_baseline (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_index",
+          "description": "The subject's age (in years) on the reference or anchor date used during date obfuscation (HARMONIZED). If age is greater than 89 years, see 'age_at_index_gt89'.",
+          "type": "number"
+        },
+        {
+          "name": "age_at_index_gt89",
+          "description": "Indicate whether the subject's age (in years) on the reference or anchor date used during date obfuscation (HARMONIZED) is greater than 89 years.",
+          "type": "enum"
+        },
+        {
+          "name": "age_at_weight_baseline",
+          "description": "age at measurement of weight_baseline (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "annotated_sex",
+          "description": "Subject sex, as recorded by the study. (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "bmi_baseline",
+          "description": "Body mass index calculated at baseline. (kg/m^2) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "ethnicity",
+          "description": "An individual's self-described social and cultural grouping, specifically whether an individual describes themselves as Hispanic or Latino (HARMONIZED). The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "enum"
+        },
+        {
+          "name": "height_baseline",
+          "description": "Body height at baseline. (cm) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "hispanic_subgroup",
+          "description": "classification of Hispanic/Latino background for Hispanic/Latino subjects where country or region of origin information is available (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "population",
+          "description": "CHB Han Chinese in Beijing, China EAS; JPT Japanese in Tokyo, Japan EAS; CHS Southern Han Chinese EAS; CDX Chinese Dai in Xishuangbanna, China EAS; KHV Kinh in Ho Chi Minh City, Vietnam EAS; CEU Utah Residents (CEPH) with Northern and Western European Ancestry EUR; TSI Toscani in Italia EUR; FIN Finnish in Finland EUR; GBR British in England and Scotland EUR; IBS Iberian Population in Spain EUR; YRI Yoruba in Ibadan, Nigeria AFR; LWK Luhya in Webuye, Kenya AFR; GWD Gambian in Western Divisions in the Gambia AFR; MSL Mende in Sierra Leone AFR; ESN Esan in Nigeria AFR; ASW Americans of African Ancestry in SW USA AFR; ACB African Caribbeans in Barbados AFR; MXL Mexican Ancestry from Los Angeles USA AMR; PUR Puerto Ricans from Puerto Rico AMR; CLM Colombians from Medellin, Colombia AMR; PEL Peruvians from Lima, Peru AMR; GIH Gujarati Indian from Houston, Texas SAS; PJL Punjabi from Lahore, Pakistan SAS; BEB Bengali from Bangladesh SAS; STU Sri Lankan Tamil from the UK SAS; ITU Indian Telugu from the UK",
+          "type": "enum"
+        },
+        {
+          "name": "race",
+          "description": "Harmonized race category of participant. Acceptable values: white,american indian or alaska native,black or african american,asian,native hawaiian or other pacific islander,hispanic,multiple,other,Unknown,not reported,not allowed to collect (HARMONIZED)",
+          "type": "array"
+        },
+        {
+          "name": "subcohort",
+          "description": "A distinct subgroup within a study, generally indicating subjects who share similar characteristics due to study design. Subjects may belong to only one subcohort. (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "unit_annotated_sex",
+          "description": "harmonization unit for annotated_sex (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_bmi_baseline",
+          "description": "harmonization unit for bmi_baseline (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_ethnicity",
+          "description": "harmonization unit for ethnicity (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_height_baseline",
+          "description": "harmonization unit for height_baseline (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_hispanic_subgroup",
+          "description": "harmonization unit for hispanic_subgroup (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_race",
+          "description": "harmonization unit for race (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_subcohort",
+          "description": "harmonization unit for subcohort (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_weight_baseline",
+          "description": "harmonization unit for weight_baseline (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "weight",
+          "description": "Body weight at baseline. (kg) (HARMONIZED).",
+          "type": "number"
+        },
+        {
+          "name": "weight_baseline",
+          "description": "Body weight at baseline. (kg) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'demographic' table.",
+          "type": "string"
+        },
+        {
+          "name": "demographic.id",
+          "description": "A unique identifier for records in this 'demographic' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "electrocardiogram_test",
+      "description": "A 12-lead ECG will be obtained and transmitted to the ECG Reading Center via telephone lines for Minnesota coding.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "electrocardiogram_test.id"
+      ],
+      "properties": [
+        {
+          "name": "gtc_duration",
+          "description": "QTC interval (msec) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "pr_duration",
+          "description": "PR interval (msec) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "qrs_duration",
+          "description": "QRS interval (msec) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "qt_duration",
+          "description": "QT interval (msec) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'electrocardiogram_test' table.",
+          "type": "string"
+        },
+        {
+          "name": "electrocardiogram_test.id",
+          "description": "A unique identifier for records in this 'electrocardiogram_test' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "exposure",
+      "description": "Clinically relevant patient information not immediately resulting from genetic predispositions.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "exposure.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_current_smoker_baseline",
+          "description": "age at measurement of current_smoker_baseline (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_ever_smoker_baseline",
+          "description": "age at measurement of ever_smoker_baseline (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "current_smoker_baseline",
+          "description": "Indicates whether subject currently smokes cigarettes. (HARMONIZED)",
+          "type": "boolean"
+        },
+        {
+          "name": "ever_smoker_baseline",
+          "description": "Indicates whether subject ever regularly smoked cigarettes. (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "smoking_status",
+          "description": "Smoking condition (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "unit_current_smoker_baseline",
+          "description": "harmonization unit for current_smoker_baseline (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_ever_smoker_baseline",
+          "description": "harmonization unit for ever_smoker_baseline (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "years_smoked",
+          "description": "Numeric value (or unknown) to represent the number of years a person has been smoking (HARMONIZED). If the number of years is greater than 89, see 'years_smoked_gt89'.",
+          "type": "number"
+        },
+        {
+          "name": "years_smoked_gt89",
+          "description": "Indicate whether the numeric value to represent the number of years a person has been smoking (HARMONIZED) is greater than 89 years.",
+          "type": "enum"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'exposure' table.",
+          "type": "string"
+        },
+        {
+          "name": "exposure.id",
+          "description": "A unique identifier for records in this 'exposure' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "imaging_file",
+      "description": "Data file containing raw imaging data",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "subject.id",
+        "imaging_file.id"
+      ],
+      "properties": [
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file referred to by the ga4gh_drs_uri.",
+          "type": "string"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_phase",
+          "description": "The image file's data release Phase for a particular study.",
+          "type": "integer"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "image_quality",
+          "description": "Good, poor, or average image quality",
+          "type": "enum"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "series_instance_number",
+          "description": "order number for this image or other content.",
+          "type": "integer"
+        },
+        {
+          "name": "series_instance_uid",
+          "description": "Formal identifier for this image or other content.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'imaging_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_file.id",
+          "description": "A unique identifier for records in this 'imaging_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "lab_result",
+      "description": "Measurements obtained from blood or other laboratory tests required by a medical professional. These will include lipids and lipid metabolism parameters, lipid oxidation markers, cytokines, adhesion molecules, nitric oxide, and hemostasis/fibrinolysis markers.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "lab_result.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_basophil_ncnc_bld",
+          "description": "age at measurement of basophil_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_eosinophil_ncnc_bld",
+          "description": "age at measurement of eosinophil_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_hdl",
+          "description": "age at measurement of hdl (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_hematocrit_vfr_bld",
+          "description": "Measurement of hematocrit, the fraction of volume (vfr) of blood (bld) that is composed of red blood cells. (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_hemoglobin_mcnc_bld",
+          "description": "age at measurement of hemoglobin_mcnc_bld. (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_ldl",
+          "description": "age at measurement of ldl (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_lymphocyte_ncnc_bld",
+          "description": "age at measurement of lymphocyte_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_mch_entmass_rbc",
+          "description": "age at measurement of mch_entmass_rbc (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_mchc_mcnc_rbc",
+          "description": "age at measurement of mchc_mcnc_rbc (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_mcv_entvol_rbc",
+          "description": "age at measurement of mcv_entvol_rbc (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_monocyte_ncnc_bld",
+          "description": "age at measurement of monocyte_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_neutrophil_ncnc_bld",
+          "description": "age at measurement of neutrophil_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_platelet_ncnc_bld",
+          "description": "age at measurement of platelet_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_pmv_entvol_bld",
+          "description": "age at measurement of pmv_entvol_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_rbc_ncnc_bld",
+          "description": "age at measurement of rbc_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_rdw_ratio_rbc",
+          "description": "age at measurement of rdw_ratio_rbc (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_total_cholesterol",
+          "description": "age at measurement of total_cholesterol (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_triglycerides",
+          "description": "age at measurement of triglycerides (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_wbc_ncnc_bld",
+          "description": "age at measurement of wbc_ncnc_bld (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "basophil_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of basophils in the blood (bld). (thousands / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "eosinophil_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of eosinophils in the blood (bld). (thousands / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "hdl",
+          "description": "Hdl cholesterol (mg/dl) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "hematocrit_vfr_bld",
+          "description": "Measurement of hematocrit, the fraction of volume (vfr) of blood (bld) that is composed of red blood cells. (percentage) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "hemoglobin_mcnc_bld",
+          "description": "Measurement of mass per volume, or mass concentration (mcnc), of hemoglobin in the blood (bld). (g / dL = grams per deciliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "ldl",
+          "description": "Ldl cholesterol (mg/dl) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "lymphocyte_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of lymphocytes in the blood (bld). (thousands / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "mch_entmass_rbc",
+          "description": "Measurement of the average mass (entmass) of hemoglobin per red blood cell(rbc), known as mean corpuscular hemoglobin (MCH). (pg = picogram) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "mchc_mcnc_rbc",
+          "description": "Measurement of the mass concentration (mcnc) of hemoglobin in a given volume of packed red blood cells (rbc), known as mean corpuscular hemoglobin concentration (MCHC). (g /dL = grams per deciliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "mcv_entvol_rbc",
+          "description": "Measurement of the mass concentration (mcnc) of hemoglobin in a given volume of packed red blood cells (rbc), known as mean corpuscular hemoglobin concentration (MCHC). (g /dL = grams per deciliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "monocyte_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of monocytes in the blood (bld). (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "neutrophil_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of neutrophils in the blood (bld). (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "platelet_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of platelets in the blood (bld). (thousands / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "pmv_entvol_bld",
+          "description": "Measurement of the mean volume (entvol) of platelets in the blood (bld), known as mean platelet volume (MPV or PMV). (fL = femtoliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "rbc_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of red blood cells in the blood (bld). (millions / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "rdw_ratio_rbc",
+          "description": "Measurement of the ratio of variation in width to the mean width of the red blood cell (rbc) volume distribution curve taken at +/- 1 CV, known as red cell distribution width (RDW). (percentage) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "total_cholesterol",
+          "description": "Total cholesterol (mg/dl) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "triglycerides",
+          "description": "Triglycerides (mg/dl) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "unit_basophil_ncnc_bld",
+          "description": "harmonization unit for basophil_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_eosinophil_ncnc_bld",
+          "description": "harmonization unit for eosinophil_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_hdl",
+          "description": "harmonization unit for hdl (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_hematocrit_vfr_bld",
+          "description": "harmonization unit for hematocrit_vfr_bld. (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_hemoglobin_mcnc_bld",
+          "description": "Measurement of hematocrit, the fraction of volume (vfr) of blood (bld) that is composed of red blood cells. (percentage) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_ldl",
+          "description": "harmonization unit for ldl (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_lymphocyte_ncnc_bld",
+          "description": "harmonization unit for lymphocyte_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_mch_entmass_rbc",
+          "description": "harmonization unit for mch_entmass_rbc (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_mchc_mcnc_rbc",
+          "description": "harmonization unit for mchc_mcnc_rbc (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_mcv_entvol_rbc",
+          "description": "harmonization unit for mcv_entvol_rbc (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_monocyte_ncnc_bld",
+          "description": "harmonization unit for monocyte_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_neutrophil_ncnc_bld",
+          "description": "harmonization unit for neutrophil_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_platelet_ncnc_bld",
+          "description": "harmonization unit for platelet_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_pmv_entvol_bld",
+          "description": "harmonization unit for pmv_entvol_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_rbc_ncnc_bld",
+          "description": "harmonization unit for rbc_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_rdw_ratio_rbc",
+          "description": "harmonization unit for rdw_ratio_rbc (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_total_cholesterol",
+          "description": "harmonization unit for total_cholesterol (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_triglycerides",
+          "description": "harmonization unit for triglycerides (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_wbc_ncnc_bld",
+          "description": "harmonization unit for wbc_ncnc_bld (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "wbc_ncnc_bld",
+          "description": "Count by volume, or number concentration (ncnc), of white blood cells in the blood (bld). (thousands / microliter) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'lab_result' table.",
+          "type": "string"
+        },
+        {
+          "name": "lab_result.id",
+          "description": "A unique identifier for records in this 'lab_result' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "medical_history",
+      "description": "Standard questionnaire used to collect medical records from the subject",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "medical_history.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_cac_score",
+          "description": "age at measurement of cac_score (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_cac_volume",
+          "description": "age at measurement of cac_volume (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_carotid_plaque",
+          "description": "age at measurement of carotid_plaque (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_carotid_stenosis",
+          "description": "age at measurement of carotid_stenosis (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_cimt_1",
+          "description": "age at measurement of cimt_1 (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_cimt_2",
+          "description": "age at measurement of cimt_2 (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_vte_case_status",
+          "description": "age at measurement of vte_case_status (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_vte_prior_history",
+          "description": "age at measurement of vte_prior_history (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "asthma",
+          "description": "Reported Asthma condition in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "atrial_fibrillation",
+          "description": "Reported atrial fibrillation condition in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "cabg_presence",
+          "description": "Reported presence of coronary artery bypass graft (CABG) in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "cac_score",
+          "description": "Coronary artery calcification (CAC) score using Agatston scoring of CT scan(s) of coronary arteries decimal (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "cac_volume",
+          "description": "Coronary artery calcium volume using CT scan(s) of coronary arteries (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "carotid_plaque",
+          "description": "Presence or absence of carotid plaque. (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "carotid_stenosis",
+          "description": "Extent of narrowing of the carotid artery. (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "cerebrovascular_disease",
+          "description": "Reported Cerebrovascular disease in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "chronic_bronchitis",
+          "description": "Reported chronic bronchitis condition in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "chronic_respiratory_disease",
+          "description": "Reported Chronic Respiratory disease in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "cimt_1",
+          "description": "Common carotid intima-media thickness, calculated as the mean of two values: mean of multiple thickness estimates from the left far wall and from the right far wall. (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "cimt_2",
+          "description": "Common carotid intima-media thickness, calculated as the mean of four values: maximum of multiple thickness estimates from the left far wall, left near wall, right far wall, and right near wall. (mm) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "copd",
+          "description": "Reported Chronic Obstructive Pulmonary Disease (COPD) in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "coronary_artery_disease",
+          "description": "Reported Coronary Artery disease in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "covid_hospital_admission",
+          "description": "Did COVID-19 contribute to need for hospital admission?",
+          "type": "enum"
+        },
+        {
+          "name": "covid_hospital_admission_age",
+          "description": "Age on hospital admit (years, age \u22651 year)",
+          "type": "integer"
+        },
+        {
+          "name": "covid_icu",
+          "description": "Was patient admitted to ICU during hospitalization?",
+          "type": "enum"
+        },
+        {
+          "name": "covid_icu_stay_length",
+          "description": "Total ICU length of stay (from hospital admit)",
+          "type": "integer"
+        },
+        {
+          "name": "covid_pos_ever_yn",
+          "description": "Any positive COVID-19 test?",
+          "type": "enum"
+        },
+        {
+          "name": "diabetes",
+          "description": "Reported Diabetes in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "emphysema",
+          "description": "Reported Emphysema in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "heart_failure",
+          "description": "Reported Heart failure in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "hyperlipidemia",
+          "description": "Reported Hyperlipidemia condition in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "hypertension",
+          "description": "Reported Hypertension condition in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "myocardial_infarction",
+          "description": "Reported Myocardial Infarction in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "stroke",
+          "description": "Reported Stroke in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "type1_diabetes",
+          "description": "Reported Type-1 Diabetes in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "type2_diabetes",
+          "description": "Reported Type-2 Diabetes in the participant (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "unit_cac_score",
+          "description": "harmonization unit for cac_score (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_cac_volume",
+          "description": "harmonization unit for cac_volume (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_carotid_plaque",
+          "description": "harmonization unit for carotid_plaque (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_carotid_stenosis",
+          "description": "harmonization unit for carotid_stenosis (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_cimt_1",
+          "description": "harmonization unit for cimt_1 (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_cimt_2",
+          "description": "harmonization unit for cimt_2 (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_vte_case_status",
+          "description": "harmonization unit for vte_case_status (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_vte_followup_start_age",
+          "description": "harmonization unit for vte_followup_start_age (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_vte_prior_history",
+          "description": "harmonization unit for vte_prior_history (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "vte_case_status",
+          "description": "An indicator of whether a subject experienced a venous thromboembolismevent (VTE) that was verified by adjudication or by medical professionals. (HARMONIZED)",
+          "type": "boolean"
+        },
+        {
+          "name": "vte_followup_start_age",
+          "description": "Age of subject at the start of the follow up period during which venousthromboembolism (VTE) events were reviewed and adjudicated. (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "vte_prior_history",
+          "description": "An indicator of whether a subject had a venous thromboembolism (VTE)event prior to the start of the medical review process (includingself-reported events). (HARMONIZED)",
+          "type": "boolean"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'medical_history' table.",
+          "type": "string"
+        },
+        {
+          "name": "medical_history.id",
+          "description": "A unique identifier for records in this 'medical_history' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "medication",
+      "description": "Recods about historical medication use",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "medication.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_antihypertensive_meds",
+          "description": "age at measurement of antihypertensive_meds (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_fasting_lipids",
+          "description": "age at measurement of fasting_lipids (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "age_at_lipid_lowering_medication",
+          "description": "age at measurement of age_at_lipid1c (years) (HARMONIZED)",
+          "type": "number"
+        },
+        {
+          "name": "antihypertensive_meds",
+          "description": "Indicator for use of antihypertensive medication at the time of blood pressure measurement. (HARMONIZED)",
+          "type": "enum"
+        },
+        {
+          "name": "fasting_lipids",
+          "description": "Indicates whether participant fasted for at least eight hours prior to blood draw to measure lipids phenotypes. (HARMONIZED)",
+          "type": "boolean"
+        },
+        {
+          "name": "hypertension_meds",
+          "description": "Take medication for hypertension (HARMONIZED)",
+          "type": "boolean"
+        },
+        {
+          "name": "lipid_lowering_medication",
+          "description": "Any lipid-lowering medication (HARMONIZED)",
+          "type": "boolean"
+        },
+        {
+          "name": "unit_antihypertensive_meds",
+          "description": "harmonization unit for antihypertensive_meds (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_fasting_lipids",
+          "description": "harmonization unit for fasting_lipids (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "unit_lipid_lowering_medication",
+          "description": "harmonization unit for unit_lipid1c (A \"harmonization unit\" is a defined group of subjects whose phenotypes can be similarly processed.) (HARMONIZED)",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'medication' table.",
+          "type": "string"
+        },
+        {
+          "name": "medication.id",
+          "description": "A unique identifier for records in this 'medication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospecimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "autolysis_score",
+          "description": "Autolysis Score",
+          "type": "enum"
+        },
+        {
+          "name": "biospecimen_anatomic_site",
+          "description": "Text term that represents the name of the primary disease site of the submitted tumor sample.",
+          "type": "enum"
+        },
+        {
+          "name": "biospecimen_anatomic_site_detail",
+          "description": "Tissue type, more specific detail of tissue tyep",
+          "type": "enum"
+        },
+        {
+          "name": "biospecimen_anatomic_site_uberon_id",
+          "description": "Uberon ID, anatomical location as described by the Uber Anatomy Ontology (UBERON)",
+          "type": "string"
+        },
+        {
+          "name": "biospecimen_anatomic_site_uberon_term",
+          "description": "Uberon Term, anatomical location as described by the Uber Anatomy Ontology (UBERON)",
+          "type": "string"
+        },
+        {
+          "name": "biospecimen_physical_site",
+          "description": "Tissue location",
+          "type": "string"
+        },
+        {
+          "name": "biospecimen_type",
+          "description": "Original material type of the collected sample",
+          "type": "string"
+        },
+        {
+          "name": "collection_kit",
+          "description": "Category or classifier of a set of responses, indicates the color of the sample collection kit",
+          "type": "enum"
+        },
+        {
+          "name": "collection_site",
+          "description": "Code for BSS collection site. Indicates the site that enrolled the donor, brain subregions may have more than one site.",
+          "type": "string"
+        },
+        {
+          "name": "composition",
+          "description": "Text term that represents the cellular composition of the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "current_weight",
+          "description": "Numeric value that represents the current weight of the sample, measured  in milligrams.",
+          "type": "number"
+        },
+        {
+          "name": "freezing_method",
+          "description": "Text term that represents the method used for freezing the sample.",
+          "type": "string"
+        },
+        {
+          "name": "hours_to_collection",
+          "description": "Total Ischemic time for a sample",
+          "type": "integer"
+        },
+        {
+          "name": "hours_to_sample_procurement",
+          "description": "Time a sample spent in the PAXgene fixative",
+          "type": "integer"
+        },
+        {
+          "name": "internal_notes",
+          "description": "Internal notes about the sample generated by the LDACC",
+          "type": "string"
+        },
+        {
+          "name": "is_ffpe",
+          "description": "Indicator to signify whether or not the tissue sample was fixed in formalin and embedded in paraffin (FFPE).",
+          "type": "boolean"
+        },
+        {
+          "name": "method_of_sample_procurement",
+          "description": "The method used to procure the sample used to extract analyte(s).",
+          "type": "enum"
+        },
+        {
+          "name": "oct_embedded",
+          "description": "Indicator of whether or not the sample was embedded in Optimal Cutting Temperature (OCT) compound.",
+          "type": "string"
+        },
+        {
+          "name": "pathology_notes",
+          "description": "Pathology Notes, notes from PRC Report",
+          "type": "string"
+        },
+        {
+          "name": "preservation_method",
+          "description": "Text term that represents the method used to preserve the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "prosector_notes",
+          "description": "Prosector comments",
+          "type": "string"
+        },
+        {
+          "name": "sample_type",
+          "description": "Current material type of the sample as stored at the LDACC",
+          "type": "enum"
+        },
+        {
+          "name": "specimen_id",
+          "description": "Unique identifier that can be used to retrieve more information for a specimen.",
+          "type": "string"
+        },
+        {
+          "name": "tissue_type",
+          "description": "Text term that represents a description of the kind of tissue collected with respect to disease status or proximity to tumor tissue.",
+          "type": "enum"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sleep_test_file",
+      "description": "Polysomnography data containing signal files and event scoring and event staging annotation files.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "subject.id",
+        "sleep_test_file.id"
+      ],
+      "properties": [
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file referred to by the ga4gh_drs_uri.",
+          "type": "enum"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'sleep_test_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "sleep_test_file.id",
+          "description": "A unique identifier for records in this 'sleep_test_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aliquot",
+      "description": "Pertaining to a portion of the whole; any one of two or more samples of something, of the same volume or weight.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "experimental_strategy",
+        "sample.id",
+        "aliquot.id"
+      ],
+      "properties": [
+        {
+          "name": "aliquot_quantity",
+          "description": "The quantity in micrograms (ug) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "aliquot_volume",
+          "description": "The volume in microliters (ml) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "amount",
+          "description": "Weight in grams or volume in mL.",
+          "type": "number"
+        },
+        {
+          "name": "analyte_isolation_batch_id",
+          "description": "Nucleic acid isolation batch ID",
+          "type": "string"
+        },
+        {
+          "name": "analyte_isolation_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "analyte_isolation_method",
+          "description": "Type of nucleic acid isolation batch",
+          "type": "string"
+        },
+        {
+          "name": "analyte_type",
+          "description": "Text term that represents the kind of molecular specimen analyte.",
+          "type": "string"
+        },
+        {
+          "name": "concentration",
+          "description": "Numeric value that represents the concentration of an analyte or aliquot extracted from the sample or sample portion, measured in milligrams per milliliter.",
+          "type": "number"
+        },
+        {
+          "name": "exclude",
+          "description": "Samples flagged for removal from analysis",
+          "type": "boolean"
+        },
+        {
+          "name": "exclusion_criteria",
+          "description": "Additional remarks about flagged samples",
+          "type": "string"
+        },
+        {
+          "name": "experiment_batch_id",
+          "description": "Genotype or expression batch ID",
+          "type": "string"
+        },
+        {
+          "name": "experiment_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file referred to by the ga4gh_drs_uri.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'aliquot' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "A unique identifier for records in this 'aliquot' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "imaging_file_reference",
+      "description": "Reference data file for raw imaging data",
+      "links": [
+        "imaging_file"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "imaging_file.id",
+        "imaging_file_reference.id"
+      ],
+      "properties": [
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_file.id",
+          "description": "Unique identifiers for records in the 'imaging_file' table that relate via this foreign key to records in this 'imaging_file_reference' table.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_file_reference.id",
+          "description": "A unique identifier for records in this 'imaging_file_reference' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "analyte",
+      "description": "Any aspect of an aliquot used in an analysis or assay to characterize the sample. These aspects range from molecules, such as DNA and RNA, that can be extracted from the aliquot to general descriptions of the aliquot's components, such as cell count and morphology.",
+      "links": [
+        "aliquot",
+        "study"
+      ],
+      "required": [
+        "analyte_type",
+        "analyte_isolation_method",
+        "analyte.id"
+      ],
+      "properties": [
+        {
+          "name": "analyte_isolation_method",
+          "description": "The name or general description of the method used to isolate the analyte. Alternatively, if you have provided a protocol, put the file_name here.",
+          "type": "string"
+        },
+        {
+          "name": "analyte_type",
+          "description": "Text term that represents the kind of molecular specimen analyte.",
+          "type": "enum"
+        },
+        {
+          "name": "cell_identifier",
+          "description": "The identifying name or number for the cell being identified.",
+          "type": "string"
+        },
+        {
+          "name": "cell_type",
+          "description": "In the case of single cell analysis, this is the type of cell being analyzed.",
+          "type": "enum"
+        },
+        {
+          "name": "days_to_assay",
+          "description": "The amount of time, in days, between the date used for index and the assay used to address this analyte.",
+          "type": "integer"
+        },
+        {
+          "name": "frame_identifier",
+          "description": "In an analysis of a slide, the frame denotes the region of the slide that is being examined. Within a frame are multiple cells.",
+          "type": "string"
+        },
+        {
+          "name": "llod",
+          "description": "The lower limit of detection. The lowest quantity of a substance that can be distinguished from the absence of that substance (a blank value) within a stated confidence limit (generally 1%). If the lower limit of detection is not a number ('WT', for example), see 'llod_other'.",
+          "type": "number"
+        },
+        {
+          "name": "llod_other",
+          "description": "If the lower limit of detection is not a number (for example, 'WT'), enter the text here.",
+          "type": "string"
+        },
+        {
+          "name": "run_identifier",
+          "description": "The identifier given to the run during which this particular analyte was tested or evaluated. If you analyze multiple analytes through the same experimentation run, this is a good way to keep track.",
+          "type": "string"
+        },
+        {
+          "name": "sensitivity",
+          "description": "The true positive rate. If this value is not a number ('WT', for example), see 'sensitivity_other'.",
+          "type": "number"
+        },
+        {
+          "name": "sensitivity_other",
+          "description": "If the true positive rate is not a numnber (for example, 'WT'), enter the text here.",
+          "type": "string"
+        },
+        {
+          "name": "specificity",
+          "description": "The true negative rate. If this value is not a number ('WT', for example), see 'specificty_other'.",
+          "type": "number"
+        },
+        {
+          "name": "specificity_other",
+          "description": "If the true negative rate is something other than a number (for example, 'WT'), enter the text here.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'analyte' table.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'analyte' table.",
+          "type": "string"
+        },
+        {
+          "name": "analyte.id",
+          "description": "A unique identifier for records in this 'analyte' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group",
+      "description": "Sequencing reads from one lane of an NGS experiment.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "read_group.id"
+      ],
+      "properties": [
+        {
+          "name": "RIN",
+          "description": "A numerical assessment of the integrity of RNA based on the entire electrophoretic trace of the RNA sample including the presence or absence of degradation products.",
+          "type": "number"
+        },
+        {
+          "name": "adapter_name",
+          "description": "Name of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "adapter_sequence",
+          "description": "Base sequence of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "barcoding_applied",
+          "description": "True/False: was barcoding applied?",
+          "type": "boolean"
+        },
+        {
+          "name": "base_caller_name",
+          "description": "Name of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "base_caller_version",
+          "description": "Version of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "experiment_name",
+          "description": "Submitter-defined name for the experiment.",
+          "type": "string"
+        },
+        {
+          "name": "flow_cell_barcode",
+          "description": "Flow Cell Barcode.",
+          "type": "string"
+        },
+        {
+          "name": "includes_spike_ins",
+          "description": "Spike-in included?",
+          "type": "boolean"
+        },
+        {
+          "name": "instrument_model",
+          "description": "Numeric value that represents the sample dimension that is greater than the shortest dimension and less than the longest dimension, measured in millimeters.",
+          "type": "enum"
+        },
+        {
+          "name": "is_paired_end",
+          "description": "Are the reads paired end?",
+          "type": "boolean"
+        },
+        {
+          "name": "library_name",
+          "description": "Name of the library.",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_catalog_number",
+          "description": "Catalog of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_name",
+          "description": "Name of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_vendor",
+          "description": "Vendor of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_version",
+          "description": "Version of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_selection",
+          "description": "Library Selection Method",
+          "type": "enum"
+        },
+        {
+          "name": "library_strand",
+          "description": "Library stranded-ness.",
+          "type": "enum"
+        },
+        {
+          "name": "library_strategy",
+          "description": "Library strategy.",
+          "type": "enum"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group_name",
+          "description": "Read Group Name",
+          "type": "string"
+        },
+        {
+          "name": "read_length",
+          "description": "The length of the reads.",
+          "type": "integer"
+        },
+        {
+          "name": "sequencing_center",
+          "description": "Name of the center that provided the sequence files.",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "size_selection_range",
+          "description": "Range of size selection.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_concentration",
+          "description": "Spike in concentration.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_fasta",
+          "description": "Name of the FASTA file that contains the spike-in sequences.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_catalog_number",
+          "description": "Catalog of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_name",
+          "description": "Name of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_target_region",
+          "description": "Target Capture Kit BED file.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_vendor",
+          "description": "Vendor of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_version",
+          "description": "Version of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "to_trim_adapter_sequence",
+          "description": "Does the user suggest adapter trimming?",
+          "type": "boolean"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'read_group' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "A unique identifier for records in this 'read_group' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_aligned_reads",
+      "description": "Data file containing aligned reads that are used as input to GDC workflows.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_aligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file referred to by the ga4gh_drs_uri.",
+          "type": "enum"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_methylation",
+      "description": "DNA methylation data files contain information on raw and normalized signal intensities, detection confidence and calculated beta values for methylated and unmethylated probes. DNA methylation is an epigenetic mark which can be associated with transcriptional inactivity when located in promoter regions.",
+      "links": [
+        "analyte"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "analyte.id",
+        "submitted_methylation.id"
+      ],
+      "properties": [
+        {
+          "name": "assay_instrument",
+          "description": "The specific instrument type used to perform the assay. If applicable, please also indicate the instrument mode and model in 'assay_instrument_mode' and 'assay_instrument_model'.",
+          "type": "enum"
+        },
+        {
+          "name": "assay_instrument_model",
+          "description": "The specific model of instrument used to perform the assay. Please also indicate the instrument and mode in 'assay_instrument' and 'assay_instrument_mode'.",
+          "type": "enum"
+        },
+        {
+          "name": "assay_method",
+          "description": "General methodology used to perform the assay.",
+          "type": "enum"
+        },
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "analyte.id",
+          "description": "Unique identifiers for records in the 'analyte' table that relate via this foreign key to records in this 'submitted_methylation' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_methylation.id",
+          "description": "A unique identifier for records in this 'submitted_methylation' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_unaligned_reads",
+      "description": "Data file containing unaligned reads that have not been GDC Harmonized.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_unaligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file referred to by the ga4gh_drs_uri.",
+          "type": "enum"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "alignment_cocleaning_workflow",
+      "description": "Metadata for the alignment and cocleaning pipeline used to align reads in the GDC harmonization pipelines.",
+      "links": [
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads"
+      ],
+      "required": [
+        "workflow_link",
+        "workflow_type",
+        "alignment_cocleaning_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'alignment_cocleaning_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'alignment_cocleaning_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "alignment_cocleaning_workflow.id",
+          "description": "A unique identifier for records in this 'alignment_cocleaning_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "alignment_workflow",
+      "description": "Metadata for the alignment pipeline used to align reads in the GDC harmonization pipelines.",
+      "links": [
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads"
+      ],
+      "required": [
+        "workflow_type",
+        "alignment_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'alignment_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'alignment_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "alignment_workflow.id",
+          "description": "A unique identifier for records in this 'alignment_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads",
+      "description": "Data file containing aligned reads that are generated internally by the GDC.",
+      "links": [
+        "alignment_cocleaning_workflow",
+        "alignment_workflow",
+        "submitted_unaligned_reads",
+        "submitted_aligned_reads"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "platform",
+        "aligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file referred to by the ga4gh_drs_uri.",
+          "type": "enum"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "alignment_cocleaning_workflow.id",
+          "description": "Unique identifiers for records in the 'alignment_cocleaning_workflow' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "alignment_workflow.id",
+          "description": "Unique identifiers for records in the 'alignment_workflow' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "A unique identifier for records in this 'aligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads_index",
+      "description": "Data file containing the index for a set of aligned reads.",
+      "links": [
+        "submitted_aligned_reads",
+        "aligned_reads"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "aligned_reads_index.id"
+      ],
+      "properties": [
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'aligned_reads_index' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "Unique identifiers for records in the 'aligned_reads' table that relate via this foreign key to records in this 'aligned_reads_index' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_index.id",
+          "description": "A unique identifier for records in this 'aligned_reads_index' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "germline_mutation_calling_workflow",
+      "description": "Metadata for the germline mutation calling pipeline used to call variants in the GDC DNA-Seq pipelines.",
+      "links": [
+        "submitted_aligned_reads",
+        "aligned_reads"
+      ],
+      "required": [
+        "workflow_link",
+        "workflow_type",
+        "germline_mutation_calling_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'germline_mutation_calling_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "Unique identifiers for records in the 'aligned_reads' table that relate via this foreign key to records in this 'germline_mutation_calling_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "germline_mutation_calling_workflow.id",
+          "description": "A unique identifier for records in this 'germline_mutation_calling_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "simple_germline_variation",
+      "description": "Data file containing simple germline variations called from aligned reads.",
+      "links": [
+        "germline_mutation_calling_workflow",
+        "read_group",
+        "submitted_aligned_reads",
+        "aligned_reads"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "simple_germline_variation.id"
+      ],
+      "properties": [
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file referred to by the ga4gh_drs_uri.",
+          "type": "enum"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "germline_mutation_calling_workflow.id",
+          "description": "Unique identifiers for records in the 'germline_mutation_calling_workflow' table that relate via this foreign key to records in this 'simple_germline_variation' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'simple_germline_variation' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'simple_germline_variation' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "Unique identifiers for records in the 'aligned_reads' table that relate via this foreign key to records in this 'simple_germline_variation' table.",
+          "type": "string"
+        },
+        {
+          "name": "simple_germline_variation.id",
+          "description": "A unique identifier for records in this 'simple_germline_variation' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "germline_variation_index",
+      "description": "Data file containing the index for a set of germline variants.",
+      "links": [
+        "simple_germline_variation"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "simple_germline_variation.id",
+        "germline_variation_index.id"
+      ],
+      "properties": [
+        {
+          "name": "bucket_path",
+          "description": "The directory levels of the file as it would be found in the AWS and/or GCP bucket.",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_format",
+          "description": "The format of the data file object.",
+          "type": "string"
+        },
+        {
+          "name": "file_md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "file_type",
+          "description": "Specific content type of the data file. This version of the property is used for interoperation purposes.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "simple_germline_variation.id",
+          "description": "Unique identifiers for records in the 'simple_germline_variation' table that relate via this foreign key to records in this 'germline_variation_index' table.",
+          "type": "string"
+        },
+        {
+          "name": "germline_variation_index.id",
+          "description": "A unique identifier for records in this 'germline_variation_index' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

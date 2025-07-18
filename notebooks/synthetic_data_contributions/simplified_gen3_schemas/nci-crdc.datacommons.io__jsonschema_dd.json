@@ -1,0 +1,2386 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made avilable.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "acknowledgement",
+      "description": "Acknowledgement of an individual involved in a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "acknowledgement.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgee",
+          "description": "The indvidiual or group being acknowledged by the project.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'acknowledgement' table.",
+          "type": "string"
+        },
+        {
+          "name": "acknowledgement.id",
+          "description": "A unique identifier for records in this 'acknowledgement' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "keyword",
+      "description": "A keyword for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "keyword.id"
+      ],
+      "properties": [
+        {
+          "name": "keyword_name",
+          "description": "The name of the keyword.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'keyword' table.",
+          "type": "string"
+        },
+        {
+          "name": "keyword.id",
+          "description": "A unique identifier for records in this 'keyword' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "publication",
+      "description": "Publication for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "publication.id"
+      ],
+      "properties": [
+        {
+          "name": "doi",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "pmid",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'publication' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "A unique identifier for records in this 'publication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "dataset",
+      "description": "A coordinated set of actions and observations designed to generate data, with the ultimate goal of discovery or hypothesis testing.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "dataset.id"
+      ],
+      "properties": [
+        {
+          "name": "associated_experiment",
+          "description": "The submitter_id for any experiment with which this experiment is associated, paired, or matched.",
+          "type": "string"
+        },
+        {
+          "name": "copy_numbers_identified",
+          "description": "Are copy number variations identified in this experiment?",
+          "type": "boolean"
+        },
+        {
+          "name": "data_description",
+          "description": "Brief description of the data being provided for this experiment.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_description",
+          "description": "A brief description of the experiment being performed.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_intent",
+          "description": "Summary of the goals the experiment is designed to discover.",
+          "type": "string"
+        },
+        {
+          "name": "indels_identified",
+          "description": "Are indels identified in this experiment?",
+          "type": "boolean"
+        },
+        {
+          "name": "marker_panel_description",
+          "description": "Brief description of the marker panel used in this experiment.",
+          "type": "string"
+        },
+        {
+          "name": "number_experimental_group",
+          "description": "The number denoting this experiment's place within the group within the whole.",
+          "type": "integer"
+        },
+        {
+          "name": "number_samples_per_experimental_group",
+          "description": "The number of samples contained within this experimental group.",
+          "type": "integer"
+        },
+        {
+          "name": "somatic_mutations_identified",
+          "description": "Are somatic mutations identified for this experiment?",
+          "type": "boolean"
+        },
+        {
+          "name": "type_of_data",
+          "description": "Is the data raw or processed?",
+          "type": "enum"
+        },
+        {
+          "name": "type_of_sample",
+          "description": "String indicator identifying the types of samples as contrived or clinical.",
+          "type": "string"
+        },
+        {
+          "name": "type_of_specimen",
+          "description": "Broad description of the specimens used in the experiment.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'dataset' table.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "A unique identifier for records in this 'dataset' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "case",
+      "description": "The collection of all data related to a specific subject in the context of a specific experiment.",
+      "links": [
+        "dataset"
+      ],
+      "required": [
+        "dataset.id",
+        "case.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "disease_type",
+          "description": "Name of the disease for the case.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "Primary site for the case.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'case' table.",
+          "type": "string"
+        },
+        {
+          "name": "case.id",
+          "description": "A unique identifier for records in this 'case' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "experimental_metadata",
+      "description": "Data file containing the metadata for the experiment performed.",
+      "links": [
+        "dataset"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "dataset.id",
+        "experimental_metadata.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'experimental_metadata' table.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_metadata.id",
+          "description": "A unique identifier for records in this 'experimental_metadata' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "demographic",
+      "description": "Data for the characterization of the patient by means of segementing the population (e.g., characterization by age, sex, or race).",
+      "links": [
+        "case"
+      ],
+      "required": [
+        "case.id",
+        "demographic.id"
+      ],
+      "properties": [
+        {
+          "name": "ethnicity",
+          "description": "An individual's self-described social and cultural grouping, specifically whether an individual describes themselves as Hispanic or Latino. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "enum"
+        },
+        {
+          "name": "gender",
+          "description": "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]",
+          "type": "enum"
+        },
+        {
+          "name": "race",
+          "description": "An arbitrary classification of a taxonomic group that is a division of a species. It usually arises as a consequence of geographical isolation within a species and is characterized by shared heredity, physical attributes and behavior, and in the case of humans, by common history, nationality, or geographic distribution. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "enum"
+        },
+        {
+          "name": "year_of_birth",
+          "description": "Numeric value to represent the calendar year in which an individual was born.",
+          "type": "number"
+        },
+        {
+          "name": "year_of_death",
+          "description": "Numeric value to represent the year of the death of an individual.",
+          "type": "number"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'demographic' table.",
+          "type": "string"
+        },
+        {
+          "name": "demographic.id",
+          "description": "A unique identifier for records in this 'demographic' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "diagnosis",
+      "description": "Data from the investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation.",
+      "links": [
+        "case"
+      ],
+      "required": [
+        "age_at_diagnosis",
+        "days_to_last_follow_up",
+        "vital_status",
+        "primary_diagnosis",
+        "morphology",
+        "tissue_or_organ_of_origin",
+        "site_of_resection_or_biopsy",
+        "classification_of_tumor",
+        "tumor_stage",
+        "tumor_grade",
+        "progression_or_recurrence",
+        "days_to_recurrence",
+        "days_to_last_known_disease_status",
+        "last_known_disease_status",
+        "case.id",
+        "diagnosis.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_diagnosis",
+          "description": "Age at the time of diagnosis expressed in number of days since birth.",
+          "type": "number"
+        },
+        {
+          "name": "ajcc_clinical_m",
+          "description": "Extent of the distant metastasis for the cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.",
+          "type": "enum"
+        },
+        {
+          "name": "ajcc_clinical_n",
+          "description": "Extent of the regional lymph node involvement for the cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.",
+          "type": "enum"
+        },
+        {
+          "name": "ajcc_clinical_stage",
+          "description": "Stage group determined from clinical information on the tumor (T), regional node (N) and metastases (M) and by grouping cases with similar prognosis for cancer.",
+          "type": "enum"
+        },
+        {
+          "name": "ajcc_clinical_t",
+          "description": "Extent of the primary cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.",
+          "type": "enum"
+        },
+        {
+          "name": "ajcc_pathologic_m",
+          "description": "Code to represent the defined absence or presence of distant spread or metastases (M) to locations via vascular channels or lymphatics beyond the regional lymph nodes, using criteria established by the American Joint Committee on Cancer (AJCC).",
+          "type": "enum"
+        },
+        {
+          "name": "ajcc_pathologic_n",
+          "description": "The codes that represent the stage of cancer based on the nodes present (N stage) according to criteria based on multiple editions of the AJCC's Cancer Staging Manual.",
+          "type": "enum"
+        },
+        {
+          "name": "ajcc_pathologic_stage",
+          "description": "The extent of a cancer, especially whether the disease has spread from the original site to other parts of the body based on AJCC staging criteria.",
+          "type": "enum"
+        },
+        {
+          "name": "ajcc_pathologic_t",
+          "description": "Code of pathological T (primary tumor) to define the size or contiguous extension of the primary tumor (T), using staging criteria from the American Joint Committee on Cancer (AJCC).",
+          "type": "enum"
+        },
+        {
+          "name": "ann_arbor_b_symptoms",
+          "description": "Text term to signify whether lymphoma B-symptoms are present as noted in the patient's medical record.",
+          "type": "enum"
+        },
+        {
+          "name": "ann_arbor_clinical_stage",
+          "description": "The classification of the clinically confirmed anatomic disease extent of lymphoma (Hodgkin's and Non-Hodgkins) based on the Ann Arbor Staging System.",
+          "type": "enum"
+        },
+        {
+          "name": "ann_arbor_extranodal_involvement",
+          "description": "Indicator that identifies whether a patient with malignant lymphoma has lymphomatous involvement of an extranodal site.",
+          "type": "enum"
+        },
+        {
+          "name": "ann_arbor_pathologic_stage",
+          "description": "The classification of the pathologically confirmed anatomic disease extent of lymphoma (Hodgkin's and Non-Hodgkins) based on the Ann Arbor Staging System.",
+          "type": "enum"
+        },
+        {
+          "name": "burkitt_lymphoma_clinical_variant",
+          "description": "Burkitt's lymphoma categorization based on clinical features that differ from other forms of the same disease.",
+          "type": "enum"
+        },
+        {
+          "name": "cause_of_death",
+          "description": "Text term to identify the cause of death for a patient.",
+          "type": "enum"
+        },
+        {
+          "name": "circumferential_resection_margin",
+          "description": "A value in millimeters indicating the measured length between a malignant lesion of the colon or rectum and the nearest radial (or circumferential) border of tissue removed during cancer surgery.",
+          "type": "number"
+        },
+        {
+          "name": "classification_of_tumor",
+          "description": "Text that describes the kind of disease present in the tumor specimen as related to a specific timepoint.",
+          "type": "enum"
+        },
+        {
+          "name": "colon_polyps_history",
+          "description": "Yes/No indicator to describe if the subject had a previous history of colon polyps as noted in the history/physical or previous endoscopic report (s).",
+          "type": "enum"
+        },
+        {
+          "name": "days_to_birth",
+          "description": "Time interval from a person's date of birth to the date of initial pathologic diagnosis, represented as a calculated negative number of days.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_death",
+          "description": "Time interval from a person's date of death to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_hiv_diagnosis",
+          "description": "Time interval from the date of the initial pathologic diagnosis to the date of human immunodeficiency diagnosis, represented as a calculated number of days.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_last_follow_up",
+          "description": "Time interval from the date of last follow up to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_last_known_disease_status",
+          "description": "Time interval from the date of last follow up to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_new_event",
+          "description": "Time interval from the date of new tumor event including progression, recurrence and new primary malignacies to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_recurrence",
+          "description": "Time interval from the date of new tumor event including progression, recurrence and new primary malignancies to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "number"
+        },
+        {
+          "name": "figo_stage",
+          "description": "The extent of a cervical or endometrial cancer within the body, especially whether the disease has spread from the original site to other parts of the body, as described by the International Federation of Gynecology and Obstetrics (FIGO) stages.",
+          "type": "enum"
+        },
+        {
+          "name": "hiv_positive",
+          "description": "Text term to signify whether a physician has diagnosed HIV infection in a patient.",
+          "type": "enum"
+        },
+        {
+          "name": "hpv_positive_type",
+          "description": "Text classification to represent the strain or type of human papillomavirus identified in an individual.",
+          "type": "enum"
+        },
+        {
+          "name": "hpv_status",
+          "description": "The findings of the oncogenic HPV.",
+          "type": "enum"
+        },
+        {
+          "name": "last_known_disease_status",
+          "description": "Text term that describes the last known state or condition of an individual's neoplasm.",
+          "type": "enum"
+        },
+        {
+          "name": "laterality",
+          "description": "For tumors in paired organs, designates the side on which the cancer originates.",
+          "type": "enum"
+        },
+        {
+          "name": "ldh_level_at_diagnosis",
+          "description": "The 2 decimal place numeric laboratory value measured, assigned or computed related to the assessment of lactate dehydrogenase in a specimen.",
+          "type": "number"
+        },
+        {
+          "name": "ldh_normal_range_upper",
+          "description": "The top value of the range of statistical characteristics that are supposed to represent accepted standard, non-pathological pattern for lactate dehydrogenase (units not specified).",
+          "type": "number"
+        },
+        {
+          "name": "lymph_nodes_positive",
+          "description": "The number of lymph nodes involved with disease as determined by pathologic examination.",
+          "type": "integer"
+        },
+        {
+          "name": "lymphatic_invasion_present",
+          "description": "A yes/no indicator to ask if small or thin-walled vessel invasion is present, indicating lymphatic involvement",
+          "type": "enum"
+        },
+        {
+          "name": "method_of_diagnosis",
+          "description": "The method used to initially the patient's diagnosis.",
+          "type": "enum"
+        },
+        {
+          "name": "morphology",
+          "description": "The third edition of the International Classification of Diseases for Oncology, published in 2000 used principally in tumor and cancer registries for coding the site (topography) and the histology (morphology) of neoplasms. The study of the structure of the cells and their arrangement to constitute tissues and, finally, the association among these to form organs. In pathology, the microscopic process of identifying normal and abnormal morphologic characteristics in tissues, by employing various cytochemical and immunocytochemical stains. A system of numbered categories for representation of data.",
+          "type": "string"
+        },
+        {
+          "name": "new_event_anatomic_site",
+          "description": "Text term to specify the anatomic location of the return of tumor after treatment.",
+          "type": "enum"
+        },
+        {
+          "name": "new_event_type",
+          "description": "Text term to identify a new tumor event.",
+          "type": "enum"
+        },
+        {
+          "name": "perineural_invasion_present",
+          "description": "a yes/no indicator to ask if perineural invasion or infiltration of tumor or cancer is present.",
+          "type": "enum"
+        },
+        {
+          "name": "primary_diagnosis",
+          "description": "Text term for the structural pattern of cancer cells used to define a microscopic diagnosis.",
+          "type": "string"
+        },
+        {
+          "name": "prior_malignancy",
+          "description": "Text term to describe the patient's history of prior cancer diagnosis and the spatial location of any previous cancer occurrence.",
+          "type": "enum"
+        },
+        {
+          "name": "prior_treatment",
+          "description": "A yes/no/unknown/not applicable indicator related to the administration of therapeutic agents received before the body specimen was collected.",
+          "type": "enum"
+        },
+        {
+          "name": "progression_or_recurrence",
+          "description": "Yes/No/Unknown indicator to identify whether a patient has had a new tumor event after initial treatment.",
+          "type": "enum"
+        },
+        {
+          "name": "residual_disease",
+          "description": "Text terms to describe the status of a tissue margin following surgical resection.",
+          "type": "enum"
+        },
+        {
+          "name": "site_of_resection_or_biopsy",
+          "description": "The third edition of the International Classification of Diseases for Oncology, published in 2000, used principally in tumor and cancer registries for coding the site (topography) and the histology (morphology) of neoplasms. The description of an anatomical region or of a body part. Named locations of, or within, the body. A system of numbered categories for representation of data.",
+          "type": "string"
+        },
+        {
+          "name": "tissue_or_organ_of_origin",
+          "description": "Text term that describes the anatomic site of the tumor or disease.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_grade",
+          "description": "Numeric value to express the degree of abnormality of cancer cells, a measure of differentiation and aggressiveness.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_stage",
+          "description": "The extent of a cancer in the body. Staging is usually based on the size of the tumor, whether lymph nodes contain cancer, and whether the cancer has spread from the original site to other parts of the body. The accepted values for tumor_stage depend on the tumor site, type, and accepted staging system. These items should accompany the tumor_stage value as associated metadata.",
+          "type": "string"
+        },
+        {
+          "name": "vascular_invasion_present",
+          "description": "The yes/no indicator to ask if large vessel or venous invasion was detected by surgery or presence in a tumor specimen.",
+          "type": "enum"
+        },
+        {
+          "name": "vital_status",
+          "description": "The survival state of the person registered on the protocol.",
+          "type": "enum"
+        },
+        {
+          "name": "year_of_diagnosis",
+          "description": "Numeric value to represent the year of an individual's initial pathologic diagnosis of cancer.",
+          "type": "number"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'diagnosis' table.",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "A unique identifier for records in this 'diagnosis' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "exposure",
+      "description": "Clinically relevant patient information not immediately resulting from genetic predispositions.",
+      "links": [
+        "case"
+      ],
+      "required": [
+        "case.id",
+        "exposure.id"
+      ],
+      "properties": [
+        {
+          "name": "alcohol_history",
+          "description": "A response to a question that asks whether the participant has consumed at least 12 drinks of any kind of alcoholic beverage in their lifetime.",
+          "type": "string"
+        },
+        {
+          "name": "alcohol_intensity",
+          "description": "Category to describe the patient's current level of alcohol use as self-reported by the patient.",
+          "type": "string"
+        },
+        {
+          "name": "bmi",
+          "description": "The body mass divided by the square of the body height expressed in units of kg/m^2.",
+          "type": "number"
+        },
+        {
+          "name": "cigarettes_per_day",
+          "description": "The average number of cigarettes smoked per day.",
+          "type": "number"
+        },
+        {
+          "name": "height",
+          "description": "The height of the patient in centimeters.",
+          "type": "number"
+        },
+        {
+          "name": "pack_years_smoked",
+          "description": "Numeric computed value to represent lifetime tobacco exposure defined as number of cigarettes smoked per day x number of years smoked divided by 20.",
+          "type": "number"
+        },
+        {
+          "name": "tobacco_smoking_onset_year",
+          "description": "The year in which the participant began smoking.",
+          "type": "integer"
+        },
+        {
+          "name": "tobacco_smoking_quit_year",
+          "description": "The year in which the participant quit smoking.",
+          "type": "integer"
+        },
+        {
+          "name": "tobacco_smoking_status",
+          "description": "Category describing current smoking status and smoking history as self-reported by a patient.",
+          "type": "enum"
+        },
+        {
+          "name": "weight",
+          "description": "The weight of the patient measured in kilograms.",
+          "type": "number"
+        },
+        {
+          "name": "years_smoked",
+          "description": "Numeric value (or unknown) to represent the number of years a person has been smoking.",
+          "type": "number"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'exposure' table.",
+          "type": "string"
+        },
+        {
+          "name": "exposure.id",
+          "description": "A unique identifier for records in this 'exposure' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "family_history",
+      "description": "Record of a patient's background regarding cancer events of blood relatives.",
+      "links": [
+        "case"
+      ],
+      "required": [
+        "case.id",
+        "family_history.id"
+      ],
+      "properties": [
+        {
+          "name": "relationship_age_at_diagnosis",
+          "description": "The age (in years) when the patient's relative was first diagnosed.",
+          "type": "number"
+        },
+        {
+          "name": "relationship_gender",
+          "description": "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]",
+          "type": "enum"
+        },
+        {
+          "name": "relationship_primary_diagnosis",
+          "description": "Text term for the structural pattern of cancer cells used to define a microscopic diagnosis.",
+          "type": "string"
+        },
+        {
+          "name": "relationship_type",
+          "description": "The subgroup that describes the state of connectedness between members of the unit of society organized around kinship ties.",
+          "type": "string"
+        },
+        {
+          "name": "relative_with_cancer_history",
+          "description": "Indicator to signify whether or not an individual's biological relative has been diagnosed with another type of cancer.",
+          "type": "enum"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'family_history' table.",
+          "type": "string"
+        },
+        {
+          "name": "family_history.id",
+          "description": "A unique identifier for records in this 'family_history' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "clinical_test",
+      "description": "Metadata concerning any clinical tests used in relation to a case diagnosis.",
+      "links": [
+        "case",
+        "diagnosis"
+      ],
+      "required": [
+        "biomarker_name",
+        "biomarker_result",
+        "biomarker_test_method",
+        "case.id",
+        "clinical_test.id"
+      ],
+      "properties": [
+        {
+          "name": "biomarker_name",
+          "description": "The name of the biomarker being tested for this specimen and set of test results.",
+          "type": "string"
+        },
+        {
+          "name": "biomarker_result",
+          "description": "Text term to define the results of genetic testing.",
+          "type": "enum"
+        },
+        {
+          "name": "biomarker_test_method",
+          "description": "Text descriptor of a molecular analysis method used for an individual.",
+          "type": "enum"
+        },
+        {
+          "name": "cea_level_preoperative",
+          "description": "Numeric value of the Carcinoembryonic antigen or CEA at the time before surgery. [Manually- curated]",
+          "type": "number"
+        },
+        {
+          "name": "dlco_ref_predictive_percent",
+          "description": "The value, as a percentage of predicted lung volume, measuring the amount of carbon monoxide detected in a patient's lungs.",
+          "type": "number"
+        },
+        {
+          "name": "estrogen_receptor_percent_positive_ihc",
+          "description": "Classification to represent ER Positive results expressed as a percentage value.",
+          "type": "enum"
+        },
+        {
+          "name": "estrogen_receptor_result_ihc",
+          "description": "Text term to represent the overall result of Estrogen Receptor (ER) testing.",
+          "type": "enum"
+        },
+        {
+          "name": "fev1_fvc_post_bronch_percent",
+          "description": "Percentage value to represent result of Forced Expiratory Volume in 1 second (FEV1) divided by the Forced Vital Capacity (FVC) post-bronchodilator.",
+          "type": "number"
+        },
+        {
+          "name": "fev1_fvc_pre_bronch_percent",
+          "description": "Percentage value to represent result of Forced Expiratory Volume in 1 second (FEV1) divided by the Forced Vital Capacity (FVC) pre-bronchodilator.",
+          "type": "number"
+        },
+        {
+          "name": "fev1_ref_post_bronch_percent",
+          "description": "The percentage comparison to a normal value reference range of the volume of air that a patient can forcibly exhale from the lungs in one second post-bronchodilator.",
+          "type": "number"
+        },
+        {
+          "name": "fev1_ref_pre_bronch_percent",
+          "description": "The percentage comparison to a normal value reference range of the volume of air that a patient can forcibly exhale from the lungs in one second pre-bronchodilator.",
+          "type": "number"
+        },
+        {
+          "name": "her2_erbb2_percent_positive_ihc",
+          "description": "Classification to represent the number of positive HER2/ERBB2 cells in a specimen or sample.",
+          "type": "enum"
+        },
+        {
+          "name": "her2_erbb2_result_fish",
+          "description": "the type of outcome for HER2 as determined by an in situ hybridization (ISH) assay.",
+          "type": "enum"
+        },
+        {
+          "name": "her2_erbb2_result_ihc",
+          "description": "Text term to signify the result of the medical procedure that involves testing a sample of blood or tissue for HER2 by histochemical localization of immunoreactive substances using labeled antibodies as reagents.",
+          "type": "enum"
+        },
+        {
+          "name": "ldh_level_at_diagnosis",
+          "description": "The 2 decimal place numeric laboratory value measured, assigned or computed related to the assessment of lactate dehydrogenase in a specimen.",
+          "type": "number"
+        },
+        {
+          "name": "ldh_normal_range_upper",
+          "description": "The top value of the range of statistical characteristics that are supposed to represent accepted standard, non-pathological pattern for lactate dehydrogenase (units not specified).",
+          "type": "number"
+        },
+        {
+          "name": "microsatellite_instability_abnormal",
+          "description": "The yes/no indicator to signify the status of a tumor for microsatellite instability.",
+          "type": "enum"
+        },
+        {
+          "name": "progesterone_receptor_percent_positive_ihc",
+          "description": "Classification to represent Progesterone Receptor Positive results expressed as a percentage value.",
+          "type": "enum"
+        },
+        {
+          "name": "progesterone_receptor_result_ihc",
+          "description": "Text term to represent the overall result of Progresterone Receptor (PR) testing.",
+          "type": "enum"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'clinical_test' table.",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "Unique identifiers for records in the 'diagnosis' table that relate via this foreign key to records in this 'clinical_test' table.",
+          "type": "string"
+        },
+        {
+          "name": "clinical_test.id",
+          "description": "A unique identifier for records in this 'clinical_test' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospecimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.",
+      "links": [
+        "case",
+        "diagnosis"
+      ],
+      "required": [
+        "case.id",
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "biospecimen_anatomic_site",
+          "description": "Text term that represents the name of the primary disease site of the submitted tumor sample.",
+          "type": "enum"
+        },
+        {
+          "name": "composition",
+          "description": "Text term that represents the cellular composition of the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "current_weight",
+          "description": "Numeric value that represents the current weight of the sample, measured  in milligrams.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_collection",
+          "description": "Time interval from the date of biospecimen collection to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_sample_procurement",
+          "description": "The number of days from the date the patient was diagnosed to the date of the procedure that produced the sample.",
+          "type": "integer"
+        },
+        {
+          "name": "diagnosis_pathologically_confirmed",
+          "description": "The histologic description of tissue or cells confirmed by a pathology review of frozen or formalin fixed slide(s) completed after the diagnostic pathology review of the tumor sample used to extract analyte(s).",
+          "type": "enum"
+        },
+        {
+          "name": "freezing_method",
+          "description": "Text term that represents the method used for freezing the sample.",
+          "type": "string"
+        },
+        {
+          "name": "initial_weight",
+          "description": "Numeric value that represents the initial weight of the sample, measured in milligrams.",
+          "type": "number"
+        },
+        {
+          "name": "intermediate_dimension",
+          "description": "Intermediate dimension of the sample, in millimeters.",
+          "type": "string"
+        },
+        {
+          "name": "is_ffpe",
+          "description": "Indicator to signify whether or not the tissue sample was fixed in formalin and embedded in paraffin (FFPE).",
+          "type": "boolean"
+        },
+        {
+          "name": "longest_dimension",
+          "description": "Numeric value that represents the longest dimension of the sample, measured in millimeters.",
+          "type": "string"
+        },
+        {
+          "name": "method_of_sample_procurement",
+          "description": "The method used to procure the sample used to extract analyte(s).",
+          "type": "enum"
+        },
+        {
+          "name": "oct_embedded",
+          "description": "Indicator of whether or not the sample was embedded in Optimal Cutting Temperature (OCT) compound.",
+          "type": "string"
+        },
+        {
+          "name": "preservation_method",
+          "description": "Text term that represents the method used to preserve the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "sample_type",
+          "description": "Characterization of the sample as either clinical or contrived.",
+          "type": "enum"
+        },
+        {
+          "name": "sample_type_id",
+          "description": "The accompanying sample type id for the sample type.",
+          "type": "enum"
+        },
+        {
+          "name": "sample_volume",
+          "description": "The volume of the sample in mL.",
+          "type": "number"
+        },
+        {
+          "name": "shortest_dimension",
+          "description": "Numeric value that represents the shortest dimension of the sample, measured in millimeters.",
+          "type": "string"
+        },
+        {
+          "name": "time_between_clamping_and_freezing",
+          "description": "Numeric representation of the elapsed time between the surgical clamping of blood supply and freezing of the sample, measured in minutes.",
+          "type": "string"
+        },
+        {
+          "name": "time_between_excision_and_freezing",
+          "description": "Numeric representation of the elapsed time between the excision and freezing of the sample, measured in minutes.",
+          "type": "string"
+        },
+        {
+          "name": "tissue_type",
+          "description": "Text term that represents a description of the kind of tissue collected with respect to disease status or proximity to tumor tissue.",
+          "type": "enum"
+        },
+        {
+          "name": "tumor_code",
+          "description": "Diagnostic tumor code of the tissue sample source.",
+          "type": "enum"
+        },
+        {
+          "name": "tumor_code_id",
+          "description": "BCR-defined id code for the tumor sample.",
+          "type": "enum"
+        },
+        {
+          "name": "tumor_descriptor",
+          "description": "Text that describes the kind of disease present in the tumor specimen as related to a specific timepoint.",
+          "type": "enum"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "Unique identifiers for records in the 'diagnosis' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "treatment",
+      "description": "Record of the administration and intention of therapeutic agents provided to a patient to alter the course of a pathologic process.",
+      "links": [
+        "diagnosis"
+      ],
+      "required": [
+        "diagnosis.id",
+        "treatment.id"
+      ],
+      "properties": [
+        {
+          "name": "days_to_treatment",
+          "description": "Number of days from date of initial pathologic diagnosis that treatment began.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_treatment_end",
+          "description": "Time interval from the date of the initial pathologic diagnosis to the date of treatment end, represented as a calculated number of days.",
+          "type": "number"
+        },
+        {
+          "name": "days_to_treatment_start",
+          "description": "Time interval from the date of the initial pathologic diagnosis to the start of treatment, represented as a calculated number of days.",
+          "type": "number"
+        },
+        {
+          "name": "therapeutic_agents",
+          "description": "Text identification of the individual agent(s) used as part of a prior treatment regimen.",
+          "type": "string"
+        },
+        {
+          "name": "treatment_anatomic_site",
+          "description": "The anatomic site or field targeted by a treatment regimen or single agent therapy.",
+          "type": "enum"
+        },
+        {
+          "name": "treatment_intent_type",
+          "description": "Text term to identify the reason for the administration of a treatment regimen. [Manually-curated]",
+          "type": "string"
+        },
+        {
+          "name": "treatment_or_therapy",
+          "description": "A yes/no/unknown/not applicable indicator related to the administration of therapeutic agents received before the body specimen was collected.",
+          "type": "enum"
+        },
+        {
+          "name": "treatment_outcome",
+          "description": "Text term that describes the patient\u00bfs final outcome after the treatment was administered.",
+          "type": "enum"
+        },
+        {
+          "name": "treatment_type",
+          "description": "Text term that describes the kind of treatment administered.",
+          "type": "enum"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "Unique identifiers for records in the 'diagnosis' table that relate via this foreign key to records in this 'treatment' table.",
+          "type": "string"
+        },
+        {
+          "name": "treatment.id",
+          "description": "A unique identifier for records in this 'treatment' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aliquot",
+      "description": "Pertaining to a portion of the whole; any one of two or more samples of something, of the same volume or weight.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "aliquot.id"
+      ],
+      "properties": [
+        {
+          "name": "aliquot_quantity",
+          "description": "The quantity in micrograms (ug) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "aliquot_volume",
+          "description": "The volume in microliters (ml) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "amount",
+          "description": "Weight in grams or volume in mL.",
+          "type": "number"
+        },
+        {
+          "name": "analyte_type",
+          "description": "Text term that represents the kind of molecular specimen analyte.",
+          "type": "string"
+        },
+        {
+          "name": "analyte_type_id",
+          "description": "A single letter code used to identify a type of molecular analyte.",
+          "type": "enum"
+        },
+        {
+          "name": "concentration",
+          "description": "Numeric value that represents the concentration of an analyte or aliquot extracted from the sample or sample portion, measured in milligrams per milliliter.",
+          "type": "number"
+        },
+        {
+          "name": "source_center",
+          "description": "Name of the center that provided the item.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'aliquot' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "A unique identifier for records in this 'aliquot' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "slide",
+      "description": "A digital image, microscopic or otherwise, of any sample, portion, or sub-part thereof. (GDC)",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "slide.id"
+      ],
+      "properties": [
+        {
+          "name": "apoptotic_concentration",
+          "description": "The concentration, in cells/mL, of apoptotic cells in the slide blood.",
+          "type": "number"
+        },
+        {
+          "name": "ctc_concentration",
+          "description": "The concentration, in cells/mL, of traditional CTC cells (intact and enlarged cell and nucleus, cytokeratin positive, and CD45 negative) in the slide blood.",
+          "type": "number"
+        },
+        {
+          "name": "ctc_low_concentration",
+          "description": "The concentration, in cells/mL, of CTC-low cells (those with low cytokeratin levels compared to traditional CTCs) in the slide blood.",
+          "type": "number"
+        },
+        {
+          "name": "ctc_small_concentration",
+          "description": "The concentration, in cells/mL, of CTC-small cells (those with a small nuclear and cellular size relative to traditional CTCs) in the slide blood.",
+          "type": "number"
+        },
+        {
+          "name": "methanol_added",
+          "description": "True/False indicator for if methanol was used in the slide preparation process.",
+          "type": "boolean"
+        },
+        {
+          "name": "number_nucleated_cells",
+          "description": "The total number of nucleated cells identified on the slide.",
+          "type": "integer"
+        },
+        {
+          "name": "number_proliferating_cells",
+          "description": "Numeric value that represents the count of proliferating cells determined during pathologic review of the sample slide(s).",
+          "type": "integer"
+        },
+        {
+          "name": "percent_eosinophil_infiltration",
+          "description": "Numeric value to represent the percentage of infiltration by eosinophils in a tumor sample or specimen.",
+          "type": "number"
+        },
+        {
+          "name": "percent_granulocyte_infiltration",
+          "description": "Numeric value to represent the percentage of infiltration by granulocytes in a tumor sample or specimen.",
+          "type": "number"
+        },
+        {
+          "name": "percent_inflam_infiltration",
+          "description": "Numeric value to represent local response to cellular injury, marked by capillary dilatation, edema and leukocyte infiltration; clinically, inflammation is manifest by reddness, heat, pain, swelling and loss of function, with the need to heal damaged tissue.",
+          "type": "number"
+        },
+        {
+          "name": "percent_lymphocyte_infiltration",
+          "description": "Numeric value to represent the percentage of infiltration by lymphocytes in a solid tissue normal sample or specimen.",
+          "type": "number"
+        },
+        {
+          "name": "percent_monocyte_infiltration",
+          "description": "Numeric value to represent the percentage of monocyte infiltration in a sample or specimen.",
+          "type": "number"
+        },
+        {
+          "name": "percent_necrosis",
+          "description": "Numeric value to represent the percentage of cell death in a malignant tumor sample or specimen.",
+          "type": "number"
+        },
+        {
+          "name": "percent_neutrophil_infiltration",
+          "description": "Numeric value to represent the percentage of infiltration by neutrophils in a tumor sample or specimen.",
+          "type": "number"
+        },
+        {
+          "name": "percent_normal_cells",
+          "description": "Numeric value to represent the percentage of normal cell content in a malignant tumor sample or specimen.",
+          "type": "number"
+        },
+        {
+          "name": "percent_stromal_cells",
+          "description": "Numeric value to represent the percentage of reactive cells that are present in a malignant tumor sample or specimen but are not malignant such as fibroblasts, vascular structures, etc.",
+          "type": "number"
+        },
+        {
+          "name": "percent_tumor_cells",
+          "description": "Numeric value that represents the percentage of infiltration by granulocytes in a sample.",
+          "type": "number"
+        },
+        {
+          "name": "percent_tumor_nuclei",
+          "description": "Numeric value to represent the percentage of tumor nuclei in a malignant neoplasm sample or specimen.",
+          "type": "number"
+        },
+        {
+          "name": "run_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "run_name",
+          "description": "Name, number, or other identifier given to this slide's run.",
+          "type": "string"
+        },
+        {
+          "name": "section_location",
+          "description": "Tissue source of the slide.",
+          "type": "string"
+        },
+        {
+          "name": "slide_identifier",
+          "description": "Unique identifier given to the this slide.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'slide' table.",
+          "type": "string"
+        },
+        {
+          "name": "slide.id",
+          "description": "A unique identifier for records in this 'slide' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group",
+      "description": "Sequencing reads from one lane of an NGS experiment.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "read_group.id"
+      ],
+      "properties": [
+        {
+          "name": "RIN",
+          "description": "A numerical assessment of the integrity of RNA based on the entire electrophoretic trace of the RNA sample including the presence or absence of degradation products.",
+          "type": "number"
+        },
+        {
+          "name": "adapter_name",
+          "description": "Name of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "adapter_sequence",
+          "description": "Base sequence of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "barcoding_applied",
+          "description": "True/False: was barcoding applied?",
+          "type": "boolean"
+        },
+        {
+          "name": "base_caller_name",
+          "description": "Name of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "base_caller_version",
+          "description": "Version of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "experiment_name",
+          "description": "Submitter-defined name for the experiment.",
+          "type": "string"
+        },
+        {
+          "name": "flow_cell_barcode",
+          "description": "Flow Cell Barcode.",
+          "type": "string"
+        },
+        {
+          "name": "includes_spike_ins",
+          "description": "Spike-in included?",
+          "type": "boolean"
+        },
+        {
+          "name": "instrument_model",
+          "description": "Numeric value that represents the sample dimension that is greater than the shortest dimension and less than the longest dimension, measured in millimeters.",
+          "type": "enum"
+        },
+        {
+          "name": "is_paired_end",
+          "description": "Are the reads paired end?",
+          "type": "boolean"
+        },
+        {
+          "name": "library_name",
+          "description": "Name of the library.",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_catalog_number",
+          "description": "Catalog of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_name",
+          "description": "Name of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_vendor",
+          "description": "Vendor of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_version",
+          "description": "Version of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_selection",
+          "description": "Library Selection Method",
+          "type": "enum"
+        },
+        {
+          "name": "library_strand",
+          "description": "Library stranded-ness.",
+          "type": "enum"
+        },
+        {
+          "name": "library_strategy",
+          "description": "Library strategy.",
+          "type": "enum"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group_name",
+          "description": "Read Group Name",
+          "type": "string"
+        },
+        {
+          "name": "read_length",
+          "description": "The length of the reads.",
+          "type": "integer"
+        },
+        {
+          "name": "sequencing_center",
+          "description": "Name of the center that provided the sequence files.",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "size_selection_range",
+          "description": "Range of size selection.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_concentration",
+          "description": "Spike in concentration.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_fasta",
+          "description": "Name of the FASTA file that contains the spike-in sequences.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_catalog_number",
+          "description": "Catalog of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_name",
+          "description": "Name of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_target_region",
+          "description": "Target Capture Kit BED file.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_vendor",
+          "description": "Vendor of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_version",
+          "description": "Version of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "to_trim_adapter_sequence",
+          "description": "Does the user suggest adapter trimming?",
+          "type": "boolean"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'read_group' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "A unique identifier for records in this 'read_group' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "slide_count",
+      "description": "Information pertaining to processed results obtained from slides; often in the form of counts.",
+      "links": [
+        "slide"
+      ],
+      "required": [
+        "slide.id",
+        "slide_count.id"
+      ],
+      "properties": [
+        {
+          "name": "biomarker_signal",
+          "description": "Numeric quantification of the biomarker signal.",
+          "type": "number"
+        },
+        {
+          "name": "cell_count",
+          "description": "Raw count of a particular cell type.",
+          "type": "integer"
+        },
+        {
+          "name": "cell_identifier",
+          "description": "An alternative identifier for a given cell type.",
+          "type": "string"
+        },
+        {
+          "name": "cell_type",
+          "description": "The type of cell being counted or measured.",
+          "type": "string"
+        },
+        {
+          "name": "ck_signal",
+          "description": "Numeric quantification of the CK signal.",
+          "type": "number"
+        },
+        {
+          "name": "er_localization",
+          "description": "Cellular localization of the endoplasmic reticulum as determined by staining.",
+          "type": "enum"
+        },
+        {
+          "name": "frame_identifier",
+          "description": "Name, number, or other identifier given to the frame of the slide from which this image was taken.",
+          "type": "string"
+        },
+        {
+          "name": "relative_cytokeratin_intensity",
+          "description": "The ratio of the single cell's cytokeratin staining intensity to the average of the surrounding cells.",
+          "type": "number"
+        },
+        {
+          "name": "relative_er_intensity",
+          "description": "The ratio of the single cell's endoplasmic reticulum staining intensity to the average of the surrounding cells.",
+          "type": "number"
+        },
+        {
+          "name": "relative_nuclear_intensity",
+          "description": "The ratio of the single cell's nuclear staining intensity to the average of the surrounding cells.",
+          "type": "number"
+        },
+        {
+          "name": "relative_nuclear_size",
+          "description": "The ratio of the single cell's nucleus size to the average of the surrounding cells.",
+          "type": "number"
+        },
+        {
+          "name": "run_name",
+          "description": "The name or identifier given to the run that was used to generate this slide count.",
+          "type": "string"
+        },
+        {
+          "name": "slide.id",
+          "description": "Unique identifiers for records in the 'slide' table that relate via this foreign key to records in this 'slide_count' table.",
+          "type": "string"
+        },
+        {
+          "name": "slide_count.id",
+          "description": "A unique identifier for records in this 'slide_count' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "slide_image",
+      "description": "Data file containing image of a slide.",
+      "links": [
+        "slide"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "slide.id",
+        "slide_image.id"
+      ],
+      "properties": [
+        {
+          "name": "cell_count",
+          "description": "Count of the cell type being imaged or otherwise analysed.",
+          "type": "integer"
+        },
+        {
+          "name": "cell_identifier",
+          "description": "An alternative identifier for a given cell type.",
+          "type": "string"
+        },
+        {
+          "name": "cell_type",
+          "description": "The type of cell being imaged or otherwised analysed.",
+          "type": "string"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "Classification of the slide type with respect to its experimental use.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "frame_identifier",
+          "description": "Name, number, or other identifier given to the frame of the slide from which this image was taken.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "panel_used",
+          "description": "Name or other identifier given to the panel used during an IMC run.",
+          "type": "string"
+        },
+        {
+          "name": "protocol_used",
+          "description": "Name or other identifier given to the protocol used during an IMC run.",
+          "type": "string"
+        },
+        {
+          "name": "run_name",
+          "description": "Name, number, or other identifier given to the run that generated this slide image.",
+          "type": "string"
+        },
+        {
+          "name": "slide.id",
+          "description": "Unique identifiers for records in the 'slide' table that relate via this foreign key to records in this 'slide_image' table.",
+          "type": "string"
+        },
+        {
+          "name": "slide_image.id",
+          "description": "A unique identifier for records in this 'slide_image' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_methylation",
+      "description": "DNA methylation data files contain information on raw and normalized signal intensities, detection confidence and calculated beta values for methylated and unmethylated probes. DNA methylation is an epigenetic mark which can be associated with transcriptional inactivity when located in promoter regions.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "aliquot.id",
+        "submitted_methylation.id"
+      ],
+      "properties": [
+        {
+          "name": "assay_instrument",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "assay_instrument_model",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "assay_method",
+          "description": "",
+          "type": "enum"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'submitted_methylation' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_methylation.id",
+          "description": "A unique identifier for records in this 'submitted_methylation' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_aligned_reads",
+      "description": "Data file containing aligned reads that are used as input to GDC workflows.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_aligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_copy_number",
+      "description": "Data file containing normalized copy number information from an aliquot.",
+      "links": [
+        "aliquot",
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "submitted_copy_number.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'submitted_copy_number' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_copy_number' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_copy_number.id",
+          "description": "A unique identifier for records in this 'submitted_copy_number' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_somatic_mutation",
+      "description": "Data file containing somatic mutation calls from a read group.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_somatic_mutation.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "total_variants",
+          "description": "The total number of variants detected carrying a base change difference from the reference genome.",
+          "type": "integer"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_somatic_mutation' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_somatic_mutation.id",
+          "description": "A unique identifier for records in this 'submitted_somatic_mutation' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_unaligned_reads",
+      "description": "Data file containing unaligned reads that have not been GDC Harmonized.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_unaligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads_index",
+      "description": "Data file containing the index for a set of aligned reads.",
+      "links": [
+        "submitted_aligned_reads"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "submitted_aligned_reads.id",
+        "aligned_reads_index.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'aligned_reads_index' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_index.id",
+          "description": "A unique identifier for records in this 'aligned_reads_index' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group_qc",
+      "description": "GDC QC run metadata.",
+      "links": [
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads",
+        "read_group"
+      ],
+      "required": [
+        "workflow_link",
+        "percent_gc_content",
+        "encoding",
+        "total_sequences",
+        "basic_statistics",
+        "per_base_sequence_quality",
+        "per_tile_sequence_quality",
+        "per_sequence_quality_score",
+        "per_base_sequence_content",
+        "per_sequence_gc_content",
+        "per_base_n_content",
+        "sequence_length_distribution",
+        "sequence_duplication_levels",
+        "overrepresented_sequences",
+        "adapter_content",
+        "kmer_content",
+        "read_group.id",
+        "read_group_qc.id"
+      ],
+      "properties": [
+        {
+          "name": "adapter_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "basic_statistics",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "encoding",
+          "description": "Version of ASCII encoding of quality values found in the file.",
+          "type": "string"
+        },
+        {
+          "name": "fastq_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "kmer_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "overrepresented_sequences",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_base_n_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_base_sequence_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_base_sequence_quality",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_sequence_gc_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_sequence_quality_score",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_tile_sequence_quality",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "percent_aligned",
+          "description": "The percent of reads with at least one reported alignment.",
+          "type": "integer"
+        },
+        {
+          "name": "percent_gc_content",
+          "description": "The overall %GC of all bases in all sequences.",
+          "type": "integer"
+        },
+        {
+          "name": "sequence_duplication_levels",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "sequence_length_distribution",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "total_aligned_reads",
+          "description": "The total number of reads with at least one reported alignment.",
+          "type": "integer"
+        },
+        {
+          "name": "total_sequences",
+          "description": "A count of the total number of sequences processed.",
+          "type": "integer"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group_qc.id",
+          "description": "A unique identifier for records in this 'read_group_qc' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

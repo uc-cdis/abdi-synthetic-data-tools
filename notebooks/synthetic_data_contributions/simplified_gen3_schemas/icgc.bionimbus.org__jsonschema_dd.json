@@ -1,0 +1,2092 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made avilable.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "complete",
+          "description": "Description of whether the project submission is complete or still in progress.",
+          "type": "enum"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "publication",
+      "description": "Publication for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "publication.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgements",
+          "description": "A list of acknowledgees in the publication.",
+          "type": "string"
+        },
+        {
+          "name": "affiliations",
+          "description": "A list of publication author affiliations.",
+          "type": "string"
+        },
+        {
+          "name": "authors",
+          "description": "A list of authors on the publication.",
+          "type": "string"
+        },
+        {
+          "name": "citation",
+          "description": "The citation for the publication.",
+          "type": "string"
+        },
+        {
+          "name": "contact_info",
+          "description": "The contact info for the corresponding author of the publication.",
+          "type": "string"
+        },
+        {
+          "name": "corresponding_author",
+          "description": "The corresponding author for the publication.",
+          "type": "string"
+        },
+        {
+          "name": "doi",
+          "description": "The DOI of the publication.",
+          "type": "string"
+        },
+        {
+          "name": "publication_id",
+          "description": "An standard identification code for a publication (PMID, PMCID, etc.).",
+          "type": "string"
+        },
+        {
+          "name": "publication_title",
+          "description": "The title of an association publication.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'publication' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "A unique identifier for records in this 'publication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "study",
+      "description": "A coordinated set of actions and observations designed to generate data, with the ultimate goal of discovery or hypothesis testing.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "data_description",
+        "study_description",
+        "project.id",
+        "study.id"
+      ],
+      "properties": [
+        {
+          "name": "associated_study",
+          "description": "The submitter_id or id for any study with which this study is associated, paired, or matched.",
+          "type": "string"
+        },
+        {
+          "name": "data_description",
+          "description": "A brief, free-text description of the data being provided for this study.",
+          "type": "string"
+        },
+        {
+          "name": "longitudinal",
+          "description": "Indicates whether the study has longitudinal or time-series data",
+          "type": "boolean"
+        },
+        {
+          "name": "study_description",
+          "description": "A brief, free-text description of the study being performed.",
+          "type": "string"
+        },
+        {
+          "name": "study_design",
+          "description": "Summary of the goals the study is designed to discover. General description of the study's place in relation to a clinical application.",
+          "type": "enum"
+        },
+        {
+          "name": "study_objective",
+          "description": "The general objective of the study. What the study hopes to discover or determine through testing.",
+          "type": "enum"
+        },
+        {
+          "name": "study_setup",
+          "description": "A high level description of the setup used to achieve the study objectives.",
+          "type": "enum"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'study' table.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "A unique identifier for records in this 'study' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "description": "The collection of all data related to a specific subject in the context of a specific experiment.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "study.id",
+        "subject.id"
+      ],
+      "properties": [
+        {
+          "name": "age_at_diagnosis",
+          "description": "The age at which the subject was diagnosed with cancer.",
+          "type": "number"
+        },
+        {
+          "name": "age_at_diagnosis_group",
+          "description": "The age bin to which the subject belongs.",
+          "type": "string"
+        },
+        {
+          "name": "age_at_last_followup",
+          "description": "The age of the subject at the last followup.",
+          "type": "number"
+        },
+        {
+          "name": "analysis_types",
+          "description": "A list of the types of analyses performed on samples procured from this subject.",
+          "type": "array"
+        },
+        {
+          "name": "available_data_types",
+          "description": "A list of the types of data files corresponding to this subject.",
+          "type": "array"
+        },
+        {
+          "name": "cancer_first_relative",
+          "description": "Does the subject have a first degree relative with a history of cancer?",
+          "type": "string"
+        },
+        {
+          "name": "dcc_donor_id",
+          "description": "The donor ID (DO#) of the subject in the dcc.icgc.org data portal (e.g., \"DO222303\").",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis_icd10",
+          "description": "The ICD10 code for the subject's diagnosis.",
+          "type": "string"
+        },
+        {
+          "name": "disease_status_last_followup",
+          "description": "The disease status of the subject at the last followup.",
+          "type": "string"
+        },
+        {
+          "name": "donor_barcode",
+          "description": "The TCGA barcode of the donor or study participant.",
+          "type": "string"
+        },
+        {
+          "name": "ethnicity",
+          "description": "An individual's self-described social and cultural grouping, specifically whether an individual describes themselves as Hispanic or Latino. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "enum"
+        },
+        {
+          "name": "ethnicity_other",
+          "description": "If 'Other (specify)' was chosen for ethnicity, Ethnicity (free text).",
+          "type": "string"
+        },
+        {
+          "name": "experimental_group",
+          "description": "The group into which this subject has been classified for this study.",
+          "type": "string"
+        },
+        {
+          "name": "gender",
+          "description": "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]",
+          "type": "enum"
+        },
+        {
+          "name": "interval_last_followup",
+          "description": "The number of days between the date of last followup and the date of initial pathologic diagnosis.",
+          "type": "number"
+        },
+        {
+          "name": "primary_site",
+          "description": "The primary site of cancer or disease.",
+          "type": "string"
+        },
+        {
+          "name": "prior_malignancy",
+          "description": "Does the subject have a prior history of malignancy?",
+          "type": "string"
+        },
+        {
+          "name": "race",
+          "description": "An arbitrary classification of a taxonomic group that is a division of a species. It usually arises as a consequence of geographical isolation within a species and is characterized by shared heredity, physical attributes and behavior, and in the case of humans, by common history, nationality, or geographic distribution. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "enum"
+        },
+        {
+          "name": "sample_barcodes",
+          "description": "A list of sample TCGA barcodes (e.g., \"TCGA-FF-8046-01A-21-A45K-20\")",
+          "type": "array"
+        },
+        {
+          "name": "sample_ids",
+          "description": "A list of sample IDs (SA#) associated with the subject (e.g., SA566098).",
+          "type": "array"
+        },
+        {
+          "name": "species",
+          "description": "Taxonomic species of the subject.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_barcodes",
+          "description": "A list of specimen TCGA barcodes (e.g., \"TCGA-FF-8046-01A\")",
+          "type": "array"
+        },
+        {
+          "name": "specimen_ids",
+          "description": "A list of specimen IDs (SP#) associated with the subject (e.g., SP127628).",
+          "type": "array"
+        },
+        {
+          "name": "tumor_subtype",
+          "description": "The sub-type of tumor or cancer for the subject's primary_site.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_type",
+          "description": "The type of tumor or cancer for the subject's primary_site.",
+          "type": "string"
+        },
+        {
+          "name": "vital_status",
+          "description": "Was the subject alive or dead at the time of last followup?",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'subject' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "A unique identifier for records in this 'subject' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "specimen",
+      "description": "Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospecimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products. In the case of contrived samples, it describes any material obtained from a normal donor.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "specimen.id"
+      ],
+      "properties": [
+        {
+          "name": "anatomic_site",
+          "description": "The term that best describes the primary anatomic site of the collected sample.",
+          "type": "string"
+        },
+        {
+          "name": "anatomic_site_other",
+          "description": "If 'Other (specify)' was chosen for 'anatomic_site', enter the anatomic site here.",
+          "type": "string"
+        },
+        {
+          "name": "comments",
+          "description": "General comments about the sample or sampling procedure.",
+          "type": "string"
+        },
+        {
+          "name": "composition",
+          "description": "The term that best describes the composition of the sample.",
+          "type": "string"
+        },
+        {
+          "name": "composition_other",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "days_to_collection",
+          "description": "The number of days between the subject's Index Event and the date the sample was collected.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_frozen",
+          "description": "The number of days between the subject's Index Event and the date the sample was frozen.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_shipped",
+          "description": "The number of days between the subject's Index Event and the date the sample was shipped.",
+          "type": "integer"
+        },
+        {
+          "name": "device_used",
+          "description": "List device(s) used for procuring the sample.",
+          "type": "string"
+        },
+        {
+          "name": "fasting_status",
+          "description": "Fasting Status at the time of sample collection",
+          "type": "enum"
+        },
+        {
+          "name": "laterality",
+          "description": "The side of the organ or body the biospecimen was taken from (e.g., 'Left' if 'anatomic_site' was 'Lung' and it was taken from the left lung)",
+          "type": "enum"
+        },
+        {
+          "name": "preservation_method",
+          "description": "The text term that describes the method used to preserve the biospecimen after collection.",
+          "type": "enum"
+        },
+        {
+          "name": "procured_or_purchased",
+          "description": "Was the biospecimen purchased from a vendor or procured from a study participant.",
+          "type": "enum"
+        },
+        {
+          "name": "procurement_method",
+          "description": "The term that best describes the method used to extract the sample from the subject.",
+          "type": "string"
+        },
+        {
+          "name": "procurement_method_other",
+          "description": "If 'Other (specify)' was chosen for 'procurement_method', specify the method of sample procurement here.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_barcode",
+          "description": "The TCGA barcode for the sample.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_container",
+          "description": "The type of container used for sample collection.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_id",
+          "description": "In cases where the same biospecimen is used by multiple institutions, a deidenfitied id may be provided here to tie those together. Work with your collaborators assure the same id is used for the sample in all projects.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_type",
+          "description": "The type of specimen with respect to cancer; is it a specimen dervied from normal tissue or a tumor?",
+          "type": "string"
+        },
+        {
+          "name": "specimen_volume",
+          "description": "The initial volume of the sample in milliliters (mL).",
+          "type": "number"
+        },
+        {
+          "name": "specimen_weight",
+          "description": "The initial mass of the sample in milligrams (mg).",
+          "type": "number"
+        },
+        {
+          "name": "specimen_year",
+          "description": "The year the sample was obtained.",
+          "type": "integer"
+        },
+        {
+          "name": "storage_temperature",
+          "description": "The sample storage temperature (C)",
+          "type": "number"
+        },
+        {
+          "name": "time_point",
+          "description": "Indicate a simple text term that describes the time-point at which the sample was collected (e.g., \"pre-deployment\", \"post-operation\", \"baseline\", etc.). To add more detailed longitudinal information, use the visit_id property to link to a record in the visit node.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_subtype",
+          "description": "The tumor subtype.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_type",
+          "description": "The tumor type.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'specimen' table.",
+          "type": "string"
+        },
+        {
+          "name": "specimen.id",
+          "description": "A unique identifier for records in this 'specimen' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "A portion of the original specimen taken from a subject, donor, or study participant.",
+      "links": [
+        "specimen"
+      ],
+      "required": [
+        "specimen.id",
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "anatomic_site",
+          "description": "The term that best describes the primary anatomic site of the collected sample.",
+          "type": "string"
+        },
+        {
+          "name": "anatomic_site_other",
+          "description": "If 'Other (specify)' was chosen for 'anatomic_site', enter the anatomic site here.",
+          "type": "string"
+        },
+        {
+          "name": "comments",
+          "description": "General comments about the sample or sampling procedure.",
+          "type": "string"
+        },
+        {
+          "name": "composition",
+          "description": "The term that best describes the composition of the sample.",
+          "type": "string"
+        },
+        {
+          "name": "composition_other",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "days_to_collection",
+          "description": "The number of days between the subject's Index Event and the date the sample was collected.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_frozen",
+          "description": "The number of days between the subject's Index Event and the date the sample was frozen.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_shipped",
+          "description": "The number of days between the subject's Index Event and the date the sample was shipped.",
+          "type": "integer"
+        },
+        {
+          "name": "device_used",
+          "description": "List device(s) used for procuring the sample.",
+          "type": "string"
+        },
+        {
+          "name": "fasting_status",
+          "description": "Fasting Status at the time of sample collection",
+          "type": "enum"
+        },
+        {
+          "name": "laterality",
+          "description": "The side of the organ or body the biospecimen was taken from (e.g., 'Left' if 'anatomic_site' was 'Lung' and it was taken from the left lung)",
+          "type": "enum"
+        },
+        {
+          "name": "preservation_method",
+          "description": "The text term that describes the method used to preserve the biospecimen after collection.",
+          "type": "enum"
+        },
+        {
+          "name": "procured_or_purchased",
+          "description": "Was the biospecimen purchased from a vendor or procured from a study participant.",
+          "type": "enum"
+        },
+        {
+          "name": "procurement_method",
+          "description": "The term that best describes the method used to extract the sample from the subject.",
+          "type": "string"
+        },
+        {
+          "name": "procurement_method_other",
+          "description": "If 'Other (specify)' was chosen for 'procurement_method', specify the method of sample procurement here.",
+          "type": "string"
+        },
+        {
+          "name": "sample_barcode",
+          "description": "The TCGA barcode for the sample.",
+          "type": "string"
+        },
+        {
+          "name": "sample_container",
+          "description": "The type of container used for sample collection.",
+          "type": "string"
+        },
+        {
+          "name": "sample_id",
+          "description": "In cases where the same biospecimen is used by multiple institutions, a deidenfitied id may be provided here to tie those together. Work with your collaborators assure the same id is used for the sample in all projects.",
+          "type": "string"
+        },
+        {
+          "name": "sample_type",
+          "description": "The type of sample with respect to cancer; is it a specimen dervied from normal tissue or a tumor?",
+          "type": "string"
+        },
+        {
+          "name": "sample_volume",
+          "description": "The initial volume of the sample in milliliters (mL).",
+          "type": "number"
+        },
+        {
+          "name": "sample_weight",
+          "description": "The initial mass of the sample in milligrams (mg).",
+          "type": "number"
+        },
+        {
+          "name": "sample_year",
+          "description": "The year the sample was obtained.",
+          "type": "integer"
+        },
+        {
+          "name": "specimen_barcode",
+          "description": "The TCGA barcode of the specimen from which this sample is derived.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_id",
+          "description": "The specimen ID (SP#) of the specimen from which this sample is derived.",
+          "type": "string"
+        },
+        {
+          "name": "storage_temperature",
+          "description": "The sample storage temperature (C)",
+          "type": "number"
+        },
+        {
+          "name": "time_point",
+          "description": "Indicate a simple text term that describes the time-point at which the sample was collected (e.g., \"pre-deployment\", \"post-operation\", \"baseline\", etc.). To add more detailed longitudinal information, use the visit_id property to link to a record in the visit node.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_subtype",
+          "description": "The tumor subtype.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_type",
+          "description": "The tumor type.",
+          "type": "string"
+        },
+        {
+          "name": "specimen.id",
+          "description": "Unique identifiers for records in the 'specimen' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aliquot",
+      "description": "A portion of a sample from the original specimen collected from a subject.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "aliquot.id"
+      ],
+      "properties": [
+        {
+          "name": "a260_a280_ratio",
+          "description": "Ratio 260 and 280 nm",
+          "type": "number"
+        },
+        {
+          "name": "aliquot_barcode",
+          "description": "The TCGA barcode of the aliquot (e.g., \"TCGA-AX-A1CI-11A-11R-A137-07\").",
+          "type": "string"
+        },
+        {
+          "name": "aliquot_container",
+          "description": "The device in which the final aliquot is held.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot_volume",
+          "description": "The initial volume of the aliquot.",
+          "type": "number"
+        },
+        {
+          "name": "aliquot_weight",
+          "description": "The initial weight of the aliquot.",
+          "type": "number"
+        },
+        {
+          "name": "analyte_qc_class",
+          "description": "Term that best describes the analyte's QC Class.",
+          "type": "enum"
+        },
+        {
+          "name": "analyte_qc_status",
+          "description": "Analyte QC Status",
+          "type": "enum"
+        },
+        {
+          "name": "analyte_type",
+          "description": "Any aspect of an aliquot used in an analysis or assay to characterize the sample. These aspects range from molecules, such as DNA and RNA, that can be extracted from the aliquot to general descriptions of the aliquot's components, such as cell count and morphology (e.g., DNA, RNA, Leukocytes).",
+          "type": "string"
+        },
+        {
+          "name": "clinical_or_contrived",
+          "description": "Is the aliquot clinical or contrived?",
+          "type": "enum"
+        },
+        {
+          "name": "concentration",
+          "description": "Concentration of the analyte in the aliquot.",
+          "type": "number"
+        },
+        {
+          "name": "concentration_units",
+          "description": "The units used for the analyte's concentration in the aliquot.",
+          "type": "string"
+        },
+        {
+          "name": "contrivance_method",
+          "description": "The name or general description of the contrivance(s) added to the biological aliquot. Alternatively, if you have provided a contrivance protocol, enter its file_name here.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_aliquoting",
+          "description": "The amount of time, in days, between the date used for index and the time the aliquot was separated from the whole sample.",
+          "type": "integer"
+        },
+        {
+          "name": "days_to_assay",
+          "description": "The amount of time, in days, between the date used for index and the assay used to address this analyte.",
+          "type": "integer"
+        },
+        {
+          "name": "isolation_method",
+          "description": "The name or general description of the method used to isolate the analyte. Alternatively, if you have provided a protocol, put the file_name here.",
+          "type": "string"
+        },
+        {
+          "name": "label_name",
+          "description": "The name of the label used in preparation of the analyte for analysis (e.g., Biotin).",
+          "type": "string"
+        },
+        {
+          "name": "label_protocol",
+          "description": "The protocol used to label the analyte (please either provide link to protocol/file or describe in free text).",
+          "type": "string"
+        },
+        {
+          "name": "preservation_method",
+          "description": "Text term that represents the method used to preserve the sample.",
+          "type": "string"
+        },
+        {
+          "name": "storage_temperature",
+          "description": "The temperature, in centigrade, at which the aliquot was preserved and/or stored.",
+          "type": "number"
+        },
+        {
+          "name": "tumor_subtype",
+          "description": "The tumor subtype.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_type",
+          "description": "The tumor type.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'aliquot' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "A unique identifier for records in this 'aliquot' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "expression_array",
+      "description": "Data file containing raw intensity values from an expression array (CEL) or final expression results after array aggregation and normalization.",
+      "links": [
+        "aliquot",
+        "subject"
+      ],
+      "required": [
+        "file_name",
+        "data_category",
+        "data_type",
+        "data_format",
+        "md5sum",
+        "file_size",
+        "expression_array.id"
+      ],
+      "properties": [
+        {
+          "name": "aliquot_barcode",
+          "description": "The TCGA barcode for the corresponding aliquot.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_software",
+          "description": "The name and version of the software use to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_type",
+          "description": "The type of analysis used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "dcc_file_id",
+          "description": "The file ID (FI#) of the file in the dcc.icgc.org data exploration portal (e.g., \"FI208496\").",
+          "type": "string"
+        },
+        {
+          "name": "donor_barcode",
+          "description": "The TCGA barcode for the corresponding donor or study participant.",
+          "type": "string"
+        },
+        {
+          "name": "donor_ids",
+          "description": "A list of donor_ids (DO#) related to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_build",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_name",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_url",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "sample_barcode",
+          "description": "The TCGA barcode for the corresponding sample.",
+          "type": "string"
+        },
+        {
+          "name": "sample_ids",
+          "description": "A list of sample IDs (SA#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_barcode",
+          "description": "The TCGA barcode for the corresponding specimen.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_ids",
+          "description": "A list of specimen IDs (SP#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_type",
+          "description": "A description of the corresponding biospecimen.",
+          "type": "string"
+        },
+        {
+          "name": "storage_urls",
+          "description": "A list of URLs where the file is stored in the cloud.",
+          "type": "array"
+        },
+        {
+          "name": "version",
+          "description": "The version of the expression array file (e.g., version 3 for a CEL file).",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "If a specific workflow or pipeline was used to generate the file (aggregation/normalization workflow), provide the name, location or link to the workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a workflow.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'expression_array' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'expression_array' table.",
+          "type": "string"
+        },
+        {
+          "name": "expression_array.id",
+          "description": "A unique identifier for records in this 'expression_array' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group",
+      "description": "Sequencing reads from one lane of an NGS experiment.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "read_group.id"
+      ],
+      "properties": [
+        {
+          "name": "RIN",
+          "description": "A numerical assessment of the integrity of RNA based on the entire electrophoretic trace of the RNA sample including the presence or absence of degradation products.",
+          "type": "number"
+        },
+        {
+          "name": "adapter_name",
+          "description": "Name of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "adapter_sequence",
+          "description": "Base sequence of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "base_caller_name",
+          "description": "Name of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "base_caller_version",
+          "description": "Version of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "experiment_name",
+          "description": "Submitter-defined name for the experiment.",
+          "type": "string"
+        },
+        {
+          "name": "flow_cell_barcode",
+          "description": "Flow Cell Barcode.",
+          "type": "string"
+        },
+        {
+          "name": "fragment_maximum_length",
+          "description": "Maximum length of the sequenced fragments (e.g., as predicted by Agilent Bioanalyzer).",
+          "type": "integer"
+        },
+        {
+          "name": "fragment_mean_length",
+          "description": "Mean length of the sequenced fragments (e.g., as predicted by Agilent Bioanalyzer).",
+          "type": "number"
+        },
+        {
+          "name": "fragment_minimum_length",
+          "description": "Minimum length of the sequenced fragments (e.g., as predicted by Agilent Bioanalyzer).",
+          "type": "integer"
+        },
+        {
+          "name": "fragment_standard_deviation_length",
+          "description": "Standard deviation of the sequenced fragments length (e.g., as predicted by Agilent Bioanalyzer).",
+          "type": "number"
+        },
+        {
+          "name": "includes_spike_ins",
+          "description": "Spike-in included?",
+          "type": "boolean"
+        },
+        {
+          "name": "instrument_model",
+          "description": "Numeric value that represents the sample dimension that is greater than the shortest dimension and less than the longest dimension, measured in millimeters.",
+          "type": "string"
+        },
+        {
+          "name": "is_paired_end",
+          "description": "Are the reads paired end?",
+          "type": "boolean"
+        },
+        {
+          "name": "lane_number",
+          "description": "The basic machine unit for sequencing. For Illumina machines, this reflects the physical lane number. Wrong or missing information may affect analysis results.",
+          "type": "integer"
+        },
+        {
+          "name": "library_name",
+          "description": "Name of the library.",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_catalog_number",
+          "description": "Catalog of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_name",
+          "description": "Name of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_vendor",
+          "description": "Vendor of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_version",
+          "description": "Version of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_selection",
+          "description": "Library Selection Method",
+          "type": "string"
+        },
+        {
+          "name": "library_strand",
+          "description": "Library stranded-ness.",
+          "type": "enum"
+        },
+        {
+          "name": "library_strategy",
+          "description": "Library strategy.",
+          "type": "string"
+        },
+        {
+          "name": "multiplex_barcode",
+          "description": "The barcode/index sequence used. Wrong or missing information may affect analysis results.",
+          "type": "string"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "string"
+        },
+        {
+          "name": "read_group_name",
+          "description": "Read Group Name",
+          "type": "string"
+        },
+        {
+          "name": "read_length",
+          "description": "Length of the reads",
+          "type": "integer"
+        },
+        {
+          "name": "sequencing_center",
+          "description": "Name of the center that provided the sequence files.",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "size_selection_range",
+          "description": "Range of size selection.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_concentration",
+          "description": "Spike in concentration.",
+          "type": "string"
+        },
+        {
+          "name": "spike_ins_fasta",
+          "description": "Name of the FASTA file that contains the spike-in sequences.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit",
+          "description": "Name of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "to_trim_adapter_sequence",
+          "description": "Does the user suggest adapter trimming?",
+          "type": "boolean"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'read_group' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "A unique identifier for records in this 'read_group' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "reference_file",
+      "description": "Data file containing any type of reference required for a data analysis.",
+      "links": [
+        "subject",
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "reference_file.id"
+      ],
+      "properties": [
+        {
+          "name": "aliquot_barcode",
+          "description": "The TCGA barcode for the corresponding aliquot.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_software",
+          "description": "The name and version of the software use to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_type",
+          "description": "The type of analysis used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "dcc_file_id",
+          "description": "The file ID (FI#) of the file in the dcc.icgc.org data exploration portal (e.g., \"FI208496\").",
+          "type": "string"
+        },
+        {
+          "name": "donor_barcode",
+          "description": "The TCGA barcode for the corresponding donor or study participant.",
+          "type": "string"
+        },
+        {
+          "name": "donor_ids",
+          "description": "A list of donor_ids (DO#) related to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_build",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_name",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_url",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "sample_barcode",
+          "description": "The TCGA barcode for the corresponding sample.",
+          "type": "string"
+        },
+        {
+          "name": "sample_ids",
+          "description": "A list of sample IDs (SA#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_barcode",
+          "description": "The TCGA barcode for the corresponding specimen.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_ids",
+          "description": "A list of specimen IDs (SP#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_type",
+          "description": "A description of the corresponding biospecimen.",
+          "type": "string"
+        },
+        {
+          "name": "storage_urls",
+          "description": "A list of URLs where the file is stored in the cloud.",
+          "type": "array"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'reference_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'reference_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "reference_file.id",
+          "description": "A unique identifier for records in this 'reference_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "supplementary_file",
+      "description": "A file related to the study that provides additional context such as documentation, notes, reference files, data dictionaries, or supplementary files or figures.",
+      "links": [
+        "subject",
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_type",
+        "data_format",
+        "data_category",
+        "supplementary_file.id"
+      ],
+      "properties": [
+        {
+          "name": "aliquot_barcode",
+          "description": "The TCGA barcode for the corresponding aliquot.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_software",
+          "description": "The name and version of the software use to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_type",
+          "description": "The type of analysis used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_description",
+          "description": "Provide a brief description of the supplementary file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "dcc_file_id",
+          "description": "The file ID (FI#) of the file in the dcc.icgc.org data exploration portal (e.g., \"FI208496\").",
+          "type": "string"
+        },
+        {
+          "name": "donor_barcode",
+          "description": "The TCGA barcode for the corresponding donor or study participant.",
+          "type": "string"
+        },
+        {
+          "name": "donor_ids",
+          "description": "A list of donor_ids (DO#) related to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_build",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_name",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_url",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "sample_barcode",
+          "description": "The TCGA barcode for the corresponding sample.",
+          "type": "string"
+        },
+        {
+          "name": "sample_ids",
+          "description": "A list of sample IDs (SA#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_barcode",
+          "description": "The TCGA barcode for the corresponding specimen.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_ids",
+          "description": "A list of specimen IDs (SP#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_type",
+          "description": "A description of the corresponding biospecimen.",
+          "type": "string"
+        },
+        {
+          "name": "storage_urls",
+          "description": "A list of URLs where the file is stored in the cloud.",
+          "type": "array"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'supplementary_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'supplementary_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "supplementary_file.id",
+          "description": "A unique identifier for records in this 'supplementary_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "unaligned_reads_file",
+      "description": "Data file containing unaligned reads.",
+      "links": [
+        "read_group",
+        "subject",
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "unaligned_reads_file.id"
+      ],
+      "properties": [
+        {
+          "name": "aliquot_barcode",
+          "description": "The TCGA barcode for the corresponding aliquot.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_software",
+          "description": "The name and version of the software use to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_type",
+          "description": "The type of analysis used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "dcc_file_id",
+          "description": "The file ID (FI#) of the file in the dcc.icgc.org data exploration portal (e.g., \"FI208496\").",
+          "type": "string"
+        },
+        {
+          "name": "donor_barcode",
+          "description": "The TCGA barcode for the corresponding donor or study participant.",
+          "type": "string"
+        },
+        {
+          "name": "donor_ids",
+          "description": "A list of donor_ids (DO#) related to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "read_pair_number",
+          "description": "Denotes whether a submitted FASTQ file contains forward (R1) or reverse (R2) reads for paired-end sequencing.",
+          "type": "enum"
+        },
+        {
+          "name": "reference_genome_build",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_name",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_url",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "sample_barcode",
+          "description": "The TCGA barcode for the corresponding sample.",
+          "type": "string"
+        },
+        {
+          "name": "sample_ids",
+          "description": "A list of sample IDs (SA#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_barcode",
+          "description": "The TCGA barcode for the corresponding specimen.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_ids",
+          "description": "A list of specimen IDs (SP#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_type",
+          "description": "A description of the corresponding biospecimen.",
+          "type": "string"
+        },
+        {
+          "name": "storage_urls",
+          "description": "A list of URLs where the file is stored in the cloud.",
+          "type": "array"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'unaligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'unaligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'unaligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "unaligned_reads_file.id",
+          "description": "A unique identifier for records in this 'unaligned_reads_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads_file",
+      "description": "Data file containing aligned reads.",
+      "links": [
+        "unaligned_reads_file",
+        "subject",
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "data_type",
+        "data_category",
+        "md5sum",
+        "aligned_reads_file.id"
+      ],
+      "properties": [
+        {
+          "name": "alignment_workflow",
+          "description": "Indicate the alignment workflow or pipeline used for alignment of unaligned reads.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot_barcode",
+          "description": "The TCGA barcode for the corresponding aliquot.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_software",
+          "description": "The name and version of the software use to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_type",
+          "description": "The type of analysis used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "dcc_file_id",
+          "description": "The file ID (FI#) of the file in the dcc.icgc.org data exploration portal (e.g., \"FI208496\").",
+          "type": "string"
+        },
+        {
+          "name": "donor_barcode",
+          "description": "The TCGA barcode for the corresponding donor or study participant.",
+          "type": "string"
+        },
+        {
+          "name": "donor_ids",
+          "description": "A list of donor_ids (DO#) related to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "molecular_tagging_workflow",
+          "description": "A description of the specific bioinformatics workflow or pipeline used for molecular tagging of sequenced reads.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_build",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_name",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_url",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "sample_barcode",
+          "description": "The TCGA barcode for the corresponding sample.",
+          "type": "string"
+        },
+        {
+          "name": "sample_ids",
+          "description": "A list of sample IDs (SA#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_barcode",
+          "description": "The TCGA barcode for the corresponding specimen.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_ids",
+          "description": "A list of specimen IDs (SP#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_type",
+          "description": "A description of the corresponding biospecimen.",
+          "type": "string"
+        },
+        {
+          "name": "storage_urls",
+          "description": "A list of URLs where the file is stored in the cloud.",
+          "type": "array"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "The datetime the workflow ended.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "A hyperlink or storage location for the workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "The datetime the workflow started.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "The version number of the workflow.",
+          "type": "string"
+        },
+        {
+          "name": "unaligned_reads_file.id",
+          "description": "Unique identifiers for records in the 'unaligned_reads_file' table that relate via this foreign key to records in this 'aligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'aligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'aligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_file.id",
+          "description": "A unique identifier for records in this 'aligned_reads_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "variant_call_file",
+      "description": "Data file containing variants called from sequencing reads.",
+      "links": [
+        "subject",
+        "aligned_reads_file",
+        "aliquot"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_type",
+        "data_format",
+        "data_category",
+        "variant_call_file.id"
+      ],
+      "properties": [
+        {
+          "name": "aliquot_barcode",
+          "description": "The TCGA barcode for the corresponding aliquot.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_software",
+          "description": "The name and version of the software use to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "analysis_type",
+          "description": "The type of analysis used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "dcc_file_id",
+          "description": "The file ID (FI#) of the file in the dcc.icgc.org data exploration portal (e.g., \"FI208496\").",
+          "type": "string"
+        },
+        {
+          "name": "donor_barcode",
+          "description": "The TCGA barcode for the corresponding donor or study participant.",
+          "type": "string"
+        },
+        {
+          "name": "donor_ids",
+          "description": "A list of donor_ids (DO#) related to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_build",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_name",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "reference_genome_url",
+          "description": "A general description of the experimental strategy used to generate the file.",
+          "type": "string"
+        },
+        {
+          "name": "sample_barcode",
+          "description": "The TCGA barcode for the corresponding sample.",
+          "type": "string"
+        },
+        {
+          "name": "sample_ids",
+          "description": "A list of sample IDs (SA#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_barcode",
+          "description": "The TCGA barcode for the corresponding specimen.",
+          "type": "string"
+        },
+        {
+          "name": "specimen_ids",
+          "description": "A list of specimen IDs (SP#) corresponding to this file from the dcc.icgc.org portal.",
+          "type": "array"
+        },
+        {
+          "name": "specimen_type",
+          "description": "A description of the corresponding biospecimen.",
+          "type": "string"
+        },
+        {
+          "name": "storage_urls",
+          "description": "A list of URLs where the file is stored in the cloud.",
+          "type": "array"
+        },
+        {
+          "name": "variant_calling_workflow",
+          "description": "Indicate the variant calling workflow or pipeline used to generate the variant calls.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "The datetime the workflow ended.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "A hyperlink or storage location for the workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "The datetime the workflow started.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "The version number of the workflow.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'variant_call_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_file.id",
+          "description": "Unique identifiers for records in the 'aligned_reads_file' table that relate via this foreign key to records in this 'variant_call_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'variant_call_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "variant_call_file.id",
+          "description": "A unique identifier for records in this 'variant_call_file' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

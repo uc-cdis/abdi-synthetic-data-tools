@@ -1,0 +1,2122 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made avilable.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "complete",
+          "description": "Description of whether the project submission is complete or still in progress.",
+          "type": "enum"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "study",
+      "description": "A coordinated set of actions and observations designed to generate data, with the ultimate goal of discovery or hypothesis testing.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "study_description",
+        "project.id",
+        "study.id"
+      ],
+      "properties": [
+        {
+          "name": "study_objective",
+          "description": "The general objective of the study. What the study hopes to discover or determine through testing.",
+          "type": "enum"
+        },
+        {
+          "name": "study_design",
+          "description": "Summary of the goals the study is designed to discover. General description of the study's place in relation to a clinical application.",
+          "type": "enum"
+        },
+        {
+          "name": "study_setup",
+          "description": "A high level description of the setup used to achieve the study objectives.",
+          "type": "enum"
+        },
+        {
+          "name": "associated_study",
+          "description": "The submitter_id for any study with which this study is associated, paired, or matched.",
+          "type": "string"
+        },
+        {
+          "name": "data_description",
+          "description": "Brief description of the data being provided for this study. Free text",
+          "type": "string"
+        },
+        {
+          "name": "study_description",
+          "description": "A brief description of the study being performed. Free text",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'study' table.",
+          "type": "string"
+        },
+        {
+          "name": "study.id",
+          "description": "A unique identifier for records in this 'study' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "description": "The collection of all data related to a specific subject in the context of a specific project.",
+      "links": [
+        "study"
+      ],
+      "required": [
+        "sysid",
+        "study.id",
+        "subject.id"
+      ],
+      "properties": [
+        {
+          "name": "lss",
+          "description": "Is the subject in the LSS cohort?",
+          "type": "boolean"
+        },
+        {
+          "name": "inutero",
+          "description": "Is the subject in the Inutero cohort?",
+          "type": "boolean"
+        },
+        {
+          "name": "f1",
+          "description": "Is the subject in the F1 cohort?",
+          "type": "boolean"
+        },
+        {
+          "name": "ahs",
+          "description": "Is the subject in the AHS cohort?",
+          "type": "boolean"
+        },
+        {
+          "name": "updt",
+          "description": "Last updated date",
+          "type": "string"
+        },
+        {
+          "name": "lss_entry_dt",
+          "description": "Subject's date of entry into the LSS cohort",
+          "type": "string"
+        },
+        {
+          "name": "lss_updt",
+          "description": "Last update of subject's LSS record",
+          "type": "string"
+        },
+        {
+          "name": "inutero_entry_dt",
+          "description": "Date when the subject became a member of the Inutero cohort",
+          "type": "string"
+        },
+        {
+          "name": "inutero_updt",
+          "description": "Last update of subject's Inutero record",
+          "type": "string"
+        },
+        {
+          "name": "f1_entry_dt",
+          "description": "Date when the subject became a member of the F1 cohort",
+          "type": "string"
+        },
+        {
+          "name": "f1_updt",
+          "description": "Last update of subject's F1 record",
+          "type": "string"
+        },
+        {
+          "name": "ahs_updt",
+          "description": "Last update of subject's AHS record",
+          "type": "string"
+        },
+        {
+          "name": "mfup_last_contact",
+          "description": "Mortality follow-up date of last contact",
+          "type": "string"
+        },
+        {
+          "name": "death_dt",
+          "description": "Date of death of the subject",
+          "type": "string"
+        },
+        {
+          "name": "death_updt",
+          "description": "Last update of the subject's death record",
+          "type": "string"
+        },
+        {
+          "name": "death_icd_updt",
+          "description": "Last update of subject's death ICD record",
+          "type": "string"
+        },
+        {
+          "name": "mfup_last_status",
+          "description": "Mortality follow-up last known status of the subject (1 - alive, 2 - dead, 3 - lost, etc)",
+          "type": "enum"
+        },
+        {
+          "name": "dose_expcity",
+          "description": "Subject's city of exposure  1 - Hiro, 2 - Naga",
+          "type": "enum"
+        },
+        {
+          "name": "dose_expstatus86",
+          "description": "Exposure status based on 1986 algorithm",
+          "type": "enum"
+        },
+        {
+          "name": "dose_expstatus02",
+          "description": "Exposure status based on 2002 algorithm",
+          "type": "enum"
+        },
+        {
+          "name": "dose_prish",
+          "description": "Subject's primary shield",
+          "type": "enum"
+        },
+        {
+          "name": "death_src",
+          "description": "Source of the information of subject's death (ex. Death certificate, etc.)",
+          "type": "enum"
+        },
+        {
+          "name": "dose_source",
+          "description": "What is the source of the exposure information?  Ex. Questionnaire",
+          "type": "enum"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "city",
+          "description": "1 = Hiro, 2 = Naga",
+          "type": "enum"
+        },
+        {
+          "name": "sex",
+          "description": "1 = male",
+          "type": "enum"
+        },
+        {
+          "name": "lss_sample_class",
+          "description": "Subject's recruitment class into LSS cohort?",
+          "type": "enum"
+        },
+        {
+          "name": "lss_census",
+          "description": "Census info used for recruitment into LSS cohort?",
+          "type": "enum"
+        },
+        {
+          "name": "mother_sysid",
+          "description": "The globally unique identifier for the subject's mother",
+          "type": "integer"
+        },
+        {
+          "name": "father_sysid",
+          "description": "The globally unique identifier for the subject's father",
+          "type": "integer"
+        },
+        {
+          "name": "f1_sample",
+          "description": "Subject's recruitment class into F1 cohort?",
+          "type": "enum"
+        },
+        {
+          "name": "f1_ind",
+          "description": "Must = 1",
+          "type": "enum"
+        },
+        {
+          "name": "ahs_subgroup",
+          "description": "Subgroup to which the subject belongs.",
+          "type": "enum"
+        },
+        {
+          "name": "ahs_exp_category",
+          "description": "Exposure category?",
+          "type": "enum"
+        },
+        {
+          "name": "death_icd_rev",
+          "description": "ICD version",
+          "type": "enum"
+        },
+        {
+          "name": "death_icd_grp",
+          "description": "RERF-specific ICD grouping code",
+          "type": "enum"
+        },
+        {
+          "name": "dose_abscissa",
+          "description": "X coordinate of subject's position on exposure",
+          "type": "integer"
+        },
+        {
+          "name": "dose_ordinate",
+          "description": "Y coordinate of subject's position on exposure",
+          "type": "integer"
+        },
+        {
+          "name": "dose_gdist",
+          "description": "Subject's ground distance from explosion",
+          "type": "integer"
+        },
+        {
+          "name": "dose_shloc",
+          "description": "Shield location",
+          "type": "enum"
+        },
+        {
+          "name": "dose_ds02cal",
+          "description": "Calculated location?",
+          "type": "enum"
+        },
+        {
+          "name": "dose_ds02cat",
+          "description": "Calculation algorithm",
+          "type": "enum"
+        },
+        {
+          "name": "dose_calgroup02",
+          "description": "Calculation information",
+          "type": "integer"
+        },
+        {
+          "name": "kerma_fiau02g",
+          "description": "Overall dose (gamma radiation)",
+          "type": "number"
+        },
+        {
+          "name": "kerma_fiau02n",
+          "description": "Overall dose (neutron radiation)",
+          "type": "number"
+        },
+        {
+          "name": "kerma_trunc02",
+          "description": "Truncation factor",
+          "type": "number"
+        },
+        {
+          "name": "kerma_adjust02",
+          "description": "Adjustment factor",
+          "type": "number"
+        },
+        {
+          "name": "death_icd",
+          "description": "ICD code",
+          "type": "string"
+        },
+        {
+          "name": "lss_entry_dt_year",
+          "description": "Subject's year of entry into the LSS cohort",
+          "type": "integer"
+        },
+        {
+          "name": "lss_entry_dt_month",
+          "description": "Subject's month of entry into the LSS cohort",
+          "type": "integer"
+        },
+        {
+          "name": "lss_entry_dt_day",
+          "description": "Subject's day of entry into the LSS cohort",
+          "type": "integer"
+        },
+        {
+          "name": "inutero_entry_dt_year",
+          "description": "Year when the subject became a member of the Inutero cohort",
+          "type": "integer"
+        },
+        {
+          "name": "inutero_entry_dt_month",
+          "description": "Month when the subject became a member of the Inutero cohort",
+          "type": "integer"
+        },
+        {
+          "name": "inutero_entry_dt_day",
+          "description": "Day when the subject became a member of the Inutero cohort",
+          "type": "integer"
+        },
+        {
+          "name": "f1_entry_dt_year",
+          "description": "Year when the subject became a member of the F1 cohort",
+          "type": "integer"
+        },
+        {
+          "name": "f1_entry_dt_month",
+          "description": "Month when the subject became a member of the F1 cohort",
+          "type": "integer"
+        },
+        {
+          "name": "f1_entry_dt_day",
+          "description": "Day when the subject became a member of the F1 cohort",
+          "type": "integer"
+        },
+        {
+          "name": "mfup_last_contact_year",
+          "description": "Mortality follow-up year of last contact",
+          "type": "integer"
+        },
+        {
+          "name": "mfup_last_contact_month",
+          "description": "Mortality follow-up month of last contact",
+          "type": "integer"
+        },
+        {
+          "name": "mfup_last_contact_day",
+          "description": "Mortality follow-up day of last contact",
+          "type": "integer"
+        },
+        {
+          "name": "death_dt_year",
+          "description": "Year of death of the subject",
+          "type": "integer"
+        },
+        {
+          "name": "death_dt_month",
+          "description": "Month of death of the subject",
+          "type": "integer"
+        },
+        {
+          "name": "death_dt_day",
+          "description": "Day of death of the subject",
+          "type": "integer"
+        },
+        {
+          "name": "study.id",
+          "description": "Unique identifiers for records in the 'study' table that relate via this foreign key to records in this 'subject' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "subject.id",
+          "description": "A unique identifier for records in this 'subject' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "clinical_supplement",
+      "description": "Data file containing clinical metadata information.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "subject.id",
+        "clinical_supplement.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "A broad category for the type of data contained in the supplemental file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "The specific type of data contained in the supplemental file.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'clinical_supplement' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number (in lower case) used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "clinical_supplement.id",
+          "description": "A unique identifier for records in this 'clinical_supplement' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "dose",
+      "description": "Estimates of organ-level radiation dosage",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "sysid",
+        "subject.id",
+        "dose.id"
+      ],
+      "properties": [
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "dosetype",
+          "description": "Type of dose (organ)",
+          "type": "integer"
+        },
+        {
+          "name": "a02g",
+          "description": "Gamma dose",
+          "type": "number"
+        },
+        {
+          "name": "a02n",
+          "description": "Neutron dose",
+          "type": "number"
+        },
+        {
+          "name": "discript",
+          "description": "Organ name",
+          "type": "enum"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'dose' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "dose.id",
+          "description": "A unique identifier for records in this 'dose' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "cancer_diag",
+      "description": "History of subject's cancer diagnoses",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "sysid",
+        "subject.id",
+        "cancer_diag.id"
+      ],
+      "properties": [
+        {
+          "name": "diag_dt",
+          "description": "Date of diagnosis",
+          "type": "string"
+        },
+        {
+          "name": "updt",
+          "description": "Last update of cancer diagnosis record",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "file_no",
+          "description": "Case number (or file number) for the subject",
+          "type": "integer"
+        },
+        {
+          "name": "seq_no",
+          "description": "Sequence number for multiple occurrence of cancer",
+          "type": "integer"
+        },
+        {
+          "name": "res",
+          "description": "1=in city, 2=in prefecture, 3=outside prefecture, 9=unknown",
+          "type": "enum"
+        },
+        {
+          "name": "city",
+          "description": "City where patient was living at the time of diagnosis 1=Hiro, 2=Naga",
+          "type": "enum"
+        },
+        {
+          "name": "machi",
+          "description": "Similar to zip code",
+          "type": "enum"
+        },
+        {
+          "name": "motiv",
+          "description": "Reason for subject's visit to the hospital",
+          "type": "enum"
+        },
+        {
+          "name": "behavior",
+          "description": "Behavior of the cancer (1 = malignant)",
+          "type": "enum"
+        },
+        {
+          "name": "onc_rev",
+          "description": "ICDO version",
+          "type": "enum"
+        },
+        {
+          "name": "dco",
+          "description": "Death-certificate-only diagnosis",
+          "type": "integer"
+        },
+        {
+          "name": "icdot",
+          "description": "ICDO topography code",
+          "type": "string"
+        },
+        {
+          "name": "icdom",
+          "description": "ICDO morphology code",
+          "type": "string"
+        },
+        {
+          "name": "icd_grp",
+          "description": "Code to gather specific ICDOT/ICDOM values into a simple diagnosis code",
+          "type": "enum"
+        },
+        {
+          "name": "diag_dt_year",
+          "description": "Year of diagnosis",
+          "type": "integer"
+        },
+        {
+          "name": "diag_dt_month",
+          "description": "Month of diagnosis",
+          "type": "integer"
+        },
+        {
+          "name": "diag_dt_day",
+          "description": "Day of diagnosis",
+          "type": "integer"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'cancer_diag' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "cancer_diag.id",
+          "description": "A unique identifier for records in this 'cancer_diag' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "imaging_file",
+      "description": "Data file containing diagnostic image from clinical imaging exam.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_category",
+        "data_type",
+        "subject.id",
+        "imaging_file.id"
+      ],
+      "properties": [
+        {
+          "name": "body_part_examined",
+          "description": "What part of the body was studied.",
+          "type": "string"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "days_to_image",
+          "description": "Days from the case index date to the date the image was acquired.",
+          "type": "integer"
+        },
+        {
+          "name": "imaging_instrument",
+          "description": "The instrument model used to acquire the image.",
+          "type": "string"
+        },
+        {
+          "name": "imaging_type",
+          "description": "The type of imaging exam performed.",
+          "type": "enum"
+        },
+        {
+          "name": "magnification",
+          "description": "Magnification used to capture the image.",
+          "type": "number"
+        },
+        {
+          "name": "manufacturer",
+          "description": "Manufacturer of the study equipment.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "What mode the imaging instrument was in during image acquisition.",
+          "type": "string"
+        },
+        {
+          "name": "patient_id",
+          "description": "Scrambled patient identifier.",
+          "type": "string"
+        },
+        {
+          "name": "patient_sex",
+          "description": "Patient's gender.",
+          "type": "string"
+        },
+        {
+          "name": "scan_id",
+          "description": "The identification number for a stack of images generated during a single scan.",
+          "type": "string"
+        },
+        {
+          "name": "series_description",
+          "description": "Specifics of a given study.",
+          "type": "string"
+        },
+        {
+          "name": "series_instance_uid",
+          "description": "Unique identifier of a series.",
+          "type": "string"
+        },
+        {
+          "name": "series_number",
+          "description": "Number of serial studies.",
+          "type": "number"
+        },
+        {
+          "name": "sop_class_uid",
+          "description": "Classification of image storage.",
+          "type": "string"
+        },
+        {
+          "name": "study_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "study_description",
+          "description": "Type of the study and a studied body part.",
+          "type": "string"
+        },
+        {
+          "name": "study_id",
+          "description": "Identifier of a study.",
+          "type": "number"
+        },
+        {
+          "name": "study_instance_uid",
+          "description": "Unique identifier of a study.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'imaging_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number (in lower case) used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "imaging_file.id",
+          "description": "A unique identifier for records in this 'imaging_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "f1",
+      "description": "Programs within the F1 cohort",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "sysid",
+        "subject.id",
+        "f1.id"
+      ],
+      "properties": [
+        {
+          "name": "updt",
+          "description": "Last update of F1 program record",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "prog",
+          "description": "Program code",
+          "type": "enum"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'f1' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "f1.id",
+          "description": "A unique identifier for records in this 'f1' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Samples can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "sysid",
+        "subject.id",
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "tissue_type",
+          "description": "Text term that represents a description of the kind of tissue collected with respect to disease status or proximity to tumor tissue.",
+          "type": "enum"
+        },
+        {
+          "name": "preservation_method",
+          "description": "Text term that represents the method used to preserve the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "method_of_sample_procurement",
+          "description": "The method used to procure the sample used to extract analyte(s).",
+          "type": "enum"
+        },
+        {
+          "name": "initial_weight",
+          "description": "Numeric value that represents the initial weight of the sample, measured in milligrams.",
+          "type": "number"
+        },
+        {
+          "name": "freezing_method",
+          "description": "Text term that represents the method used for freezing the sample.",
+          "type": "string"
+        },
+        {
+          "name": "days_to_collection",
+          "description": "Time interval from the date of biospecimen collection to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "integer"
+        },
+        {
+          "name": "composition",
+          "description": "Text term that represents the cellular composition of the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "biospecimen_laterality",
+          "description": "For tumors in paired organs, designates the side on which the specimen was obtained.",
+          "type": "enum"
+        },
+        {
+          "name": "biospecimen_anatomic_site",
+          "description": "Text term that represents the name of the primary disease site of the submitted tumor sample.",
+          "type": "enum"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "inutero",
+      "description": "Programs within the Inutero cohort",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "sysid",
+        "subject.id",
+        "inutero.id"
+      ],
+      "properties": [
+        {
+          "name": "updt",
+          "description": "Last update of inutero program record",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "prog",
+          "description": "Program code",
+          "type": "enum"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'inutero' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "inutero.id",
+          "description": "A unique identifier for records in this 'inutero' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "birth",
+      "description": "Birth data from multiple sources",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "sysid",
+        "subject.id",
+        "birth.id"
+      ],
+      "properties": [
+        {
+          "name": "birth_dt",
+          "description": "Date of birth",
+          "type": "string"
+        },
+        {
+          "name": "birth_updt",
+          "description": "Last update of subject's birth records",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "birth_ind",
+          "description": "Indicator of quality of birth data (1 - best information)",
+          "type": "enum"
+        },
+        {
+          "name": "birth_source",
+          "description": "Source of the information of subject's birth (ex. Birth certificate, etc.)",
+          "type": "enum"
+        },
+        {
+          "name": "birth_dt_year",
+          "description": "Year of birth",
+          "type": "integer"
+        },
+        {
+          "name": "birth_dt_month",
+          "description": "Month of birth",
+          "type": "integer"
+        },
+        {
+          "name": "birth_dt_day",
+          "description": "Day of birth",
+          "type": "integer"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'birth' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "birth.id",
+          "description": "A unique identifier for records in this 'birth' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "exam",
+      "description": "Adult Health Study clinical follow-up visits",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "sysid",
+        "smp_id",
+        "subject.id",
+        "exam.id"
+      ],
+      "properties": [
+        {
+          "name": "smp_dt",
+          "description": "Date of visit",
+          "type": "string"
+        },
+        {
+          "name": "updt",
+          "description": "Last update of AHS exam index record",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "smp_id",
+          "description": "Unique visit ID",
+          "type": "integer"
+        },
+        {
+          "name": "primary_id",
+          "description": "Matches smp_id on a primary visit (subject might be asked to attend a follow-up)",
+          "type": "integer"
+        },
+        {
+          "name": "smp_dt_year",
+          "description": "Year of visit",
+          "type": "integer"
+        },
+        {
+          "name": "smp_dt_month",
+          "description": "Month of visit",
+          "type": "integer"
+        },
+        {
+          "name": "smp_dt_day",
+          "description": "Day of visit",
+          "type": "integer"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'exam' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Globally unique identifier for subject",
+          "type": "integer"
+        },
+        {
+          "name": "exam.id",
+          "description": "A unique identifier for records in this 'exam' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "pathology_slide",
+      "description": "Data file containing a pathology slide.",
+      "links": [
+        "subject",
+        "sample"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_category",
+        "data_type",
+        "pathology_slide.id"
+      ],
+      "properties": [
+        {
+          "name": "body_part_examined",
+          "description": "What part of the body was studied.",
+          "type": "string"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "days_to_image",
+          "description": "Days from the case index date to the date the image was acquired.",
+          "type": "integer"
+        },
+        {
+          "name": "imaging_instrument",
+          "description": "The instrument model used to acquire the image.",
+          "type": "string"
+        },
+        {
+          "name": "magnification",
+          "description": "Magnification used to capture the image.",
+          "type": "number"
+        },
+        {
+          "name": "manufacturer",
+          "description": "Manufacturer of the study equipment.",
+          "type": "string"
+        },
+        {
+          "name": "modality",
+          "description": "What mode the imaging instrument was in during image acquisition.",
+          "type": "string"
+        },
+        {
+          "name": "patient_id",
+          "description": "Scrambled patient identifier.",
+          "type": "string"
+        },
+        {
+          "name": "patient_sex",
+          "description": "Patient's gender.",
+          "type": "string"
+        },
+        {
+          "name": "scan_id",
+          "description": "The identification number for a stack of images generated during a single scan.",
+          "type": "string"
+        },
+        {
+          "name": "series_description",
+          "description": "Specifics of a given study.",
+          "type": "string"
+        },
+        {
+          "name": "series_instance_uid",
+          "description": "Unique identifier of a series.",
+          "type": "string"
+        },
+        {
+          "name": "series_number",
+          "description": "Number of serial studies.",
+          "type": "number"
+        },
+        {
+          "name": "sop_class_uid",
+          "description": "Classification of image storage.",
+          "type": "string"
+        },
+        {
+          "name": "study_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "study_description",
+          "description": "Type of the study and a studied body part.",
+          "type": "string"
+        },
+        {
+          "name": "study_id",
+          "description": "Identifier of a study.",
+          "type": "number"
+        },
+        {
+          "name": "study_instance_uid",
+          "description": "Unique identifier of a study.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'pathology_slide' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'pathology_slide' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number (in lower case) used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "pathology_slide.id",
+          "description": "A unique identifier for records in this 'pathology_slide' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aliquot",
+      "description": "A portion taken from a sample used for analysis, including analytes extracted from a sample.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sysid",
+        "sample.id",
+        "aliquot.id"
+      ],
+      "properties": [
+        {
+          "name": "aliquot_container",
+          "description": "The device in which the final aliquot is held. Slides or vials.",
+          "type": "enum"
+        },
+        {
+          "name": "aliquot_quantity",
+          "description": "The quantity in micrograms (ug) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "aliquot_volume",
+          "description": "The volume in microliters (ml) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "analyte_a260_a280_ratio",
+          "description": "The ratio of absorbance at 260 and 280 nm for nucleic acid analytes.",
+          "type": "number"
+        },
+        {
+          "name": "analyte_concentration",
+          "description": "Concentration of the analyte in the aliquot.",
+          "type": "number"
+        },
+        {
+          "name": "analyte_isolation_method",
+          "description": "The name or general description of the method used to isolate the analyte.",
+          "type": "string"
+        },
+        {
+          "name": "analyte_type",
+          "description": "Any aspect of an aliquot used in an analysis or assay to characterize the sample. These aspects range from molecules, such as DNA and RNA, that can be extracted from the aliquot to general descriptions of the aliquot's components, such as cell count and morphology.",
+          "type": "enum"
+        },
+        {
+          "name": "days_to_aliquot",
+          "description": "The amount of time, in days, between the date used for index and the time the aliquot was separated from the whole sample.",
+          "type": "integer"
+        },
+        {
+          "name": "hours_to_analyte",
+          "description": "The amount of time, in hours, that it took between the sample being fractionated and the analyte being extracted.",
+          "type": "number"
+        },
+        {
+          "name": "hours_to_preservation",
+          "description": "The amount of time, in hours, that it took between the sample being fractionated and the aliquot being frozen or otherwise preserved.",
+          "type": "number"
+        },
+        {
+          "name": "preservation_method",
+          "description": "The method used to preserve the aliquot.",
+          "type": "enum"
+        },
+        {
+          "name": "source_center",
+          "description": "Name of the center that provided the item.",
+          "type": "string"
+        },
+        {
+          "name": "storage_temperature",
+          "description": "The temperature, in centigrade, at which the aliquot was preserved and/or stored.",
+          "type": "number"
+        },
+        {
+          "name": "sysid",
+          "description": "Unique subject identifier",
+          "type": "integer"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'aliquot' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "Unique subject identifier",
+          "type": "integer"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "A unique identifier for records in this 'aliquot' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "exam_diag",
+      "description": "Adult Health Study clinical diagnoses at visits",
+      "links": [
+        "exam"
+      ],
+      "required": [
+        "smp_id",
+        "exam.id",
+        "exam_diag.id"
+      ],
+      "properties": [
+        {
+          "name": "updt",
+          "description": "Last update of subject's diagnosis",
+          "type": "string"
+        },
+        {
+          "name": "smp_id",
+          "description": "Visit ID",
+          "type": "integer"
+        },
+        {
+          "name": "icd_rev",
+          "description": "ICD version",
+          "type": "enum"
+        },
+        {
+          "name": "icd",
+          "description": "ICD code for diagnosis",
+          "type": "string"
+        },
+        {
+          "name": "exam.id",
+          "description": "Unique identifiers for records in the 'exam' table that relate via this foreign key to records in this 'exam_diag' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "exam_diag.id",
+          "description": "A unique identifier for records in this 'exam_diag' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "exam_meas",
+      "description": "Adult Health Study diagnostic measures at visits",
+      "links": [
+        "exam"
+      ],
+      "required": [
+        "smp_id",
+        "exam.id",
+        "exam_meas.id"
+      ],
+      "properties": [
+        {
+          "name": "updt",
+          "description": "Last update of measure record",
+          "type": "string"
+        },
+        {
+          "name": "smp_id",
+          "description": "Visit ID",
+          "type": "integer"
+        },
+        {
+          "name": "item_no",
+          "description": "Identifier for measure",
+          "type": "integer"
+        },
+        {
+          "name": "amount",
+          "description": "Measure amount",
+          "type": "number"
+        },
+        {
+          "name": "unit",
+          "description": "Unit of measure",
+          "type": "string"
+        },
+        {
+          "name": "explain_s",
+          "description": "Short explanation",
+          "type": "string"
+        },
+        {
+          "name": "explain_l",
+          "description": "Long explanation",
+          "type": "string"
+        },
+        {
+          "name": "exam.id",
+          "description": "Unique identifiers for records in the 'exam' table that relate via this foreign key to records in this 'exam_meas' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "exam_meas.id",
+          "description": "A unique identifier for records in this 'exam_meas' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group",
+      "description": "Sequencing reads from one lane of an NGS experiment.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "read_group.id"
+      ],
+      "properties": [
+        {
+          "name": "RIN",
+          "description": "A numerical assessment of the integrity of RNA based on the entire electrophoretic trace of the RNA sample including the presence or absence of degradation products.",
+          "type": "number"
+        },
+        {
+          "name": "adapter_sequence",
+          "description": "Base sequence of the sequencing adapter.",
+          "type": "string"
+        },
+        {
+          "name": "barcoding_applied",
+          "description": "True/False- was barcoding applied?",
+          "type": "boolean"
+        },
+        {
+          "name": "coverage",
+          "description": "Sequencing coverage used in the assay (e.g., 75 PE).",
+          "type": "string"
+        },
+        {
+          "name": "customization",
+          "description": "A description of any special setup or customization not documented elsewhere.",
+          "type": "string"
+        },
+        {
+          "name": "cycles",
+          "description": "The number of cycles used in the assay (e.g., 50,000x per sample).",
+          "type": "string"
+        },
+        {
+          "name": "flow_cell_barcode",
+          "description": "Flow cell barcode. Wrong or missing information may affect analysis results.",
+          "type": "string"
+        },
+        {
+          "name": "instrument_model",
+          "description": "Numeric value that represents the sample dimension that is greater than the shortest dimension and less than the longest dimension, measured in millimeters.",
+          "type": "enum"
+        },
+        {
+          "name": "is_paired_end",
+          "description": "Are the reads paired end?",
+          "type": "boolean"
+        },
+        {
+          "name": "library_name",
+          "description": "Name of the library.",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_catalog_number",
+          "description": "Catalog of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_name",
+          "description": "Name of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_vendor",
+          "description": "Vendor of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_preparation_kit_version",
+          "description": "Version of Library Preparation Kit",
+          "type": "string"
+        },
+        {
+          "name": "library_selection",
+          "description": "Library Selection Method",
+          "type": "enum"
+        },
+        {
+          "name": "library_strand",
+          "description": "Library stranded-ness.",
+          "type": "enum"
+        },
+        {
+          "name": "library_strategy",
+          "description": "Library strategy.",
+          "type": "enum"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group_name",
+          "description": "The name given to this read group. Should match what is provided in the headers of associated files.",
+          "type": "string"
+        },
+        {
+          "name": "read_length_lower",
+          "description": "The lower limit for the length of reads used in the sequencing experiment.",
+          "type": "integer"
+        },
+        {
+          "name": "read_length_upper",
+          "description": "The upper limit for the length of reads used in the sequencing experiment.",
+          "type": "integer"
+        },
+        {
+          "name": "sequencing_center",
+          "description": "Name of the center that provided the sequence files.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_catalog_number",
+          "description": "Catalog of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_name",
+          "description": "Name of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_target_region",
+          "description": "Target Capture Kit BED file.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_vendor",
+          "description": "Vendor of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "target_capture_kit_version",
+          "description": "Version of Target Capture Kit.",
+          "type": "string"
+        },
+        {
+          "name": "universal_molecular_identifier",
+          "description": "Short sequences or barcodes added to each read for next generation sequencing protocols used to detect and quantify unique transcripts.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'read_group' table.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "read_group.id",
+          "description": "A unique identifier for records in this 'read_group' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "unaligned_reads_file",
+      "description": "Data file containing unaligned reads.",
+      "links": [
+        "read_group",
+        "subject"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "unaligned_reads_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "read_pair_number",
+          "description": "Denotes whether a submitted FASTQ file contains forward (R1) or reverse (R2) reads for paired-end sequencing.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'unaligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'unaligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number (in lower case) used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "unaligned_reads_file.id",
+          "description": "A unique identifier for records in this 'unaligned_reads_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads_file",
+      "description": "Data file containing aligned reads.",
+      "links": [
+        "read_group",
+        "unaligned_reads_file",
+        "subject"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "aligned_reads_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'aligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "unaligned_reads_file.id",
+          "description": "Unique identifiers for records in the 'unaligned_reads_file' table that relate via this foreign key to records in this 'aligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'aligned_reads_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number (in lower case) used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "aligned_reads_file.id",
+          "description": "A unique identifier for records in this 'aligned_reads_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "variant_call_file",
+      "description": "Data file containing variants called from sequencing reads.",
+      "links": [
+        "aligned_reads_file",
+        "unaligned_reads_file",
+        "subject"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "data_type",
+        "data_category",
+        "variant_call_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "variant_calling_workflow",
+          "description": "Indicate the variant calling workflow or pipeline used to generate the variant calls.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_file.id",
+          "description": "Unique identifiers for records in the 'aligned_reads_file' table that relate via this foreign key to records in this 'variant_call_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "unaligned_reads_file.id",
+          "description": "Unique identifiers for records in the 'unaligned_reads_file' table that relate via this foreign key to records in this 'variant_call_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'variant_call_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number (in lower case) used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "variant_call_file.id",
+          "description": "A unique identifier for records in this 'variant_call_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "alignment_workflow",
+      "description": "A description of the specific bioinformatics workflow or pipeline used for sequence alignment.",
+      "links": [
+        "unaligned_reads_file",
+        "aligned_reads_file"
+      ],
+      "required": [
+        "workflow_name",
+        "workflow_version",
+        "workflow_description",
+        "alignment_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "unaligned_reads_file.id",
+          "description": "Unique identifiers for records in the 'unaligned_reads_file' table that relate via this foreign key to records in this 'alignment_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "aligned_reads_file.id",
+          "description": "Unique identifiers for records in the 'aligned_reads_file' table that relate via this foreign key to records in this 'alignment_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_description",
+          "description": "A brief description of the workflow or pipeline used to generate the data.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_name",
+          "description": "The name of an encapsulated bioinformatics workflow or pipeline.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "alignment_workflow.id",
+          "description": "A unique identifier for records in this 'alignment_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "variant_calling_workflow",
+      "description": "A description of the specific bioinformatics workflow or pipeline used for variant calling.",
+      "links": [
+        "aligned_reads_file",
+        "variant_call_file"
+      ],
+      "required": [
+        "workflow_name",
+        "workflow_version",
+        "workflow_description",
+        "variant_calling_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "aligned_reads_file.id",
+          "description": "Unique identifiers for records in the 'aligned_reads_file' table that relate via this foreign key to records in this 'variant_calling_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "variant_call_file.id",
+          "description": "Unique identifiers for records in the 'variant_call_file' table that relate via this foreign key to records in this 'variant_calling_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_description",
+          "description": "A brief description of the workflow or pipeline used to generate the data.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_name",
+          "description": "The name of an encapsulated bioinformatics workflow or pipeline.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a GDC workflow.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "sysid",
+          "description": "A unique identifier for an individual person within a project. The 'sysid' key in RERF tables.",
+          "type": "integer"
+        },
+        {
+          "name": "variant_calling_workflow.id",
+          "description": "A unique identifier for records in this 'variant_calling_workflow' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

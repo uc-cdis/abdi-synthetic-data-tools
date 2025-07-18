@@ -1,0 +1,390 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. This can be a JCOIN study project, a project consisting of collection of files from a  specific repository or source, or a collaborative project etc.",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "protocol",
+          "description": "If a JCOIN hub study, the category of study as defined by Ducharme et al., 2021. Journal of Substance Abuse Treatment publication.",
+          "type": "enum"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "participant",
+      "description": "The collection of all data related to a specific client (participant) or other individuals with data (eg., staff) in the context of a specific project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "role_in_project",
+        "quarter_enrolled",
+        "project.id",
+        "participant.id"
+      ],
+      "properties": [
+        {
+          "name": "consent_codes",
+          "description": "",
+          "type": "array"
+        },
+        {
+          "name": "current_study_status",
+          "description": "The current status within the given study for the participant.",
+          "type": "enum"
+        },
+        {
+          "name": "quarter_enrolled",
+          "description": "The quarter and year in which the participant enrolled in the study (in the format of XXXXQX (e.g., 2020Q1 for year 2020, Quarter 1).",
+          "type": "string"
+        },
+        {
+          "name": "role_in_project",
+          "description": "The participant's role in the project: either staff (e.g., Court Coordinator, Judge, Law Enforcement, Lawyer, Peer, Treatment) or  the client (i.e., the individual receiving the study's services/treatment)",
+          "type": "enum"
+        },
+        {
+          "name": "state_of_enrollment",
+          "description": "State where client was enrolled (e.g., state abbreviation such as IL,MO,etc)",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'participant' table.",
+          "type": "string"
+        },
+        {
+          "name": "participant.id",
+          "description": "A unique identifier for records in this 'participant' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "publication",
+      "description": "Publication for a project.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "publication.id"
+      ],
+      "properties": [
+        {
+          "name": "doi",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "pmid",
+          "description": "",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'publication' table.",
+          "type": "string"
+        },
+        {
+          "name": "publication.id",
+          "description": "A unique identifier for records in this 'publication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "reference_file",
+      "description": "Data file containing any type of reference required for a data analysis.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "project.id",
+        "reference_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "date_file_updated",
+          "description": "Date the file was created from the indexd record with pattern yearmonthday (eg. 20200411 for April 11 2020)",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'reference_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "reference_file.id",
+          "description": "A unique identifier for records in this 'reference_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "serious_adverse_event",
+      "description": "The most up to date information pertaining to a single SAE.  For example, if an SAE is submitted and the a follow up form is submitted with more up to date information, this node will capture the most up to date information.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "quarter_of_sae",
+        "project.id",
+        "serious_adverse_event.id"
+      ],
+      "properties": [
+        {
+          "name": "gender",
+          "description": "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]",
+          "type": "enum"
+        },
+        {
+          "name": "hispanic",
+          "description": "Hispanic, Latino, or Spanish origin",
+          "type": "enum"
+        },
+        {
+          "name": "is_related_to_study",
+          "description": "Is this serious adverse event related to the study? Note,  \"Possible\" means: There is a reasonable possibility that  the incident, experience, or outcome may have been  caused by the procedures involved in the research.",
+          "type": "enum"
+        },
+        {
+          "name": "on_opioid_medication",
+          "description": "Was client taking a medication for opioid use disorder (MOUD)? This is derived from hubs who are are using MOUD intervention.",
+          "type": "enum"
+        },
+        {
+          "name": "quarter_of_sae",
+          "description": "The quarter and year in which serious adverse event was recorded XXXXqX (e.g., 2020q1 for year 2020, Quarter 1).",
+          "type": "string"
+        },
+        {
+          "name": "race",
+          "description": "The racial identity of the participant.",
+          "type": "enum"
+        },
+        {
+          "name": "was_expected",
+          "description": "Expected or unexpected? Note, \"Unexpected\" means unexpected in nature, severity, or frequency given (a) the research procedures that are described in the project-related documents  and informed consent document and  (b) the characteristics of the population being studied.",
+          "type": "enum"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'serious_adverse_event' table.",
+          "type": "string"
+        },
+        {
+          "name": "serious_adverse_event.id",
+          "description": "A unique identifier for records in this 'serious_adverse_event' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "demographic",
+      "description": "Demographic data for reporting purposes. Taken from the baseline core measure data.",
+      "links": [
+        "participant"
+      ],
+      "required": [
+        "gender",
+        "race",
+        "hispanic",
+        "participant.id",
+        "demographic.id"
+      ],
+      "properties": [
+        {
+          "name": "gender",
+          "description": "The gender the participant identifies with. The core measures specify either item O2 or D4b can be used. If O2 used,  records are mapped onto D4b for reporting purposes.",
+          "type": "enum"
+        },
+        {
+          "name": "hispanic",
+          "description": "Hispanic, Latino, or Spanish origin",
+          "type": "enum"
+        },
+        {
+          "name": "race",
+          "description": "The racial identity of the participant.",
+          "type": "enum"
+        },
+        {
+          "name": "participant.id",
+          "description": "Unique identifiers for records in the 'participant' table that relate via this foreign key to records in this 'demographic' table.",
+          "type": "string"
+        },
+        {
+          "name": "demographic.id",
+          "description": "A unique identifier for records in this 'demographic' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "enrollment",
+      "description": "Keeps track of the number of people enrolled in a study (i.e., **number of people with individual level data** and excluding studies providing only aggregate administrative data).> IMPORTANT: this node was created to allow the JDC homepage to specifically track the subset of participants with individual level data (ie data not synthetically created from marginal distributions)",
+      "links": [
+        "participant"
+      ],
+      "required": [
+        "participant.id",
+        "enrollment.id"
+      ],
+      "properties": [
+        {
+          "name": "participant.id",
+          "description": "Unique identifiers for records in the 'participant' table that relate via this foreign key to records in this 'enrollment' table.",
+          "type": "string"
+        },
+        {
+          "name": "enrollment.id",
+          "description": "A unique identifier for records in this 'enrollment' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "time_point",
+      "description": "Measures collected at multiple time points (baseline and follow ups)",
+      "links": [
+        "participant"
+      ],
+      "required": [
+        "participant.id",
+        "time_point.id"
+      ],
+      "properties": [
+        {
+          "name": "days_from_baseline_session",
+          "description": "Time interval from the date of assessment session to the first assessment session (ie baseline)",
+          "type": "integer"
+        },
+        {
+          "name": "shifted_visit_dt",
+          "description": "The visit date of a given time point which is shifted by a random fixed number of days (182 days before or after the actual date) within an individual.  The fixed (ie same shift amount within each individual), random shift provides date de-identification while retaining  the interval between these (de-identified) dates.",
+          "type": "string"
+        },
+        {
+          "name": "version_data",
+          "description": "Version number of data",
+          "type": "string"
+        },
+        {
+          "name": "visit_month",
+          "description": "The formatted name of the visit. This may Baseline or a month Follow-up (e.g., 1 month, 2 month...24 month). > Note, this does not correspond to the actual month of the visit.  Rather, it corresponds to the intended visit month. For example, if a study has a 3 month visit but the participant could not  come in until 4 months after baseline, this will still be called \"3 month.\" To get an exact time since baseline, see `days_from_baseline_session`.",
+          "type": "string"
+        },
+        {
+          "name": "visit_number",
+          "description": "Visit number representing the intended visit number as stated in the protocol.",
+          "type": "integer"
+        },
+        {
+          "name": "visit_type",
+          "description": "Define if the visit is a \"Follow-up\" or a \"Baseline\" visit (or Not applicable)",
+          "type": "enum"
+        },
+        {
+          "name": "participant.id",
+          "description": "Unique identifiers for records in the 'participant' table that relate via this foreign key to records in this 'time_point' table.",
+          "type": "string"
+        },
+        {
+          "name": "time_point.id",
+          "description": "A unique identifier for records in this 'time_point' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

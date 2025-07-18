@@ -1,0 +1,2613 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "awg_review",
+          "description": "Indicates that the project is an AWG project.",
+          "type": "boolean"
+        },
+        {
+          "name": "code",
+          "description": "Project code",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number for the project.",
+          "type": "string"
+        },
+        {
+          "name": "disease_type",
+          "description": "Full name for the project",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "in_review",
+          "description": "Indicates that the project is under review by the submitter. Upload and data modification is disabled.",
+          "type": "boolean"
+        },
+        {
+          "name": "is_legacy",
+          "description": "Indicates whether a project will appear in the Legacy Archive.",
+          "type": "boolean"
+        },
+        {
+          "name": "name",
+          "description": "Display name for the project",
+          "type": "string"
+        },
+        {
+          "name": "primary_site",
+          "description": "Primary site for the project",
+          "type": "string"
+        },
+        {
+          "name": "release_requested",
+          "description": "User requests that the GDC release the project. Release can only be requested if the project is releasable.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "request_submission",
+          "description": "Indicates that the user has requested submission to the GDC for harmonization.",
+          "type": "boolean"
+        },
+        {
+          "name": "submission_enabled",
+          "description": "Indicates if submission to a project is allowed.",
+          "type": "boolean"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "dataset",
+      "description": "A collection or set of metadata and associated data file objects originating from a single research study, clinical trial or patient cohort.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "dataset.id"
+      ],
+      "properties": [
+        {
+          "name": "acknowledgement",
+          "description": "Publication acknowledgement(s) for the published dataset.",
+          "type": "string"
+        },
+        {
+          "name": "collection_id",
+          "description": "A unique identifier for the dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_citation",
+          "description": "The citation for the published dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_contributor",
+          "description": "The name of the organization or individual that the contributed dataset belongs to.",
+          "type": "string"
+        },
+        {
+          "name": "data_description",
+          "description": "A brief, free-text description of the data files and associated metadata provided for this dataset.",
+          "type": "string"
+        },
+        {
+          "name": "data_url_doi",
+          "description": "A URL or DOI for the source of the dataset or the contributing organization's website.",
+          "type": "string"
+        },
+        {
+          "name": "disease_type",
+          "description": "The primary type of disease studied in this dataset, if applicable.",
+          "type": "string"
+        },
+        {
+          "name": "full_name",
+          "description": "The full name or title of the dataset or publication.",
+          "type": "string"
+        },
+        {
+          "name": "license",
+          "description": "The license under which the daaset has been published.",
+          "type": "string"
+        },
+        {
+          "name": "longitudinal",
+          "description": "Indicates whether the dataset has longitudinal or time-series data.",
+          "type": "boolean"
+        },
+        {
+          "name": "primary_site",
+          "description": "The primary body site studied in this dataset.",
+          "type": "string"
+        },
+        {
+          "name": "publication_citation",
+          "description": "The major or main publication(s) associated with the data itself or with the publication that published the dataset.",
+          "type": "string"
+        },
+        {
+          "name": "research_description",
+          "description": "If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results.",
+          "type": "string"
+        },
+        {
+          "name": "research_design",
+          "description": "A summary of the goals of the research or a general description of the research's relationship to a clinical application.",
+          "type": "string"
+        },
+        {
+          "name": "research_objective",
+          "description": "The general objective of the research; what the researchers hope to discover or determine.",
+          "type": "string"
+        },
+        {
+          "name": "research_setup",
+          "description": "A high level description of the setup used to achieve the research objectives.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'dataset' table.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "A unique identifier for records in this 'dataset' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "subject",
+      "description": "The collection of all data related to a specific patient, case, or subject in the context of a specific dataset or experiment, including demographics.",
+      "links": [
+        "dataset"
+      ],
+      "required": [
+        "dataset.id",
+        "subject.id"
+      ],
+      "properties": [
+        {
+          "name": "MRN",
+          "description": "Medical Record Number",
+          "type": "string"
+        },
+        {
+          "name": "Last_Name",
+          "description": "Last Name",
+          "type": "string"
+        },
+        {
+          "name": "First_Name",
+          "description": "First Name",
+          "type": "string"
+        },
+        {
+          "name": "Date_of_Birth",
+          "description": "Date of Birth",
+          "type": "string"
+        },
+        {
+          "name": "Sex_Desc",
+          "description": "Subject's sex",
+          "type": "string"
+        },
+        {
+          "name": "Race_1_Desc",
+          "description": "Subject's race",
+          "type": "string"
+        },
+        {
+          "name": "Spanish_Hispanic_Origin_Desc",
+          "description": "Subject's sex",
+          "type": "string"
+        },
+        {
+          "name": "Primary_Payer_at_DX_Desc",
+          "description": "Insurance paying at time of diagnosis",
+          "type": "string"
+        },
+        {
+          "name": "Class_of_Case_Desc",
+          "description": "Class of case description",
+          "type": "string"
+        },
+        {
+          "name": "Date_of_Last_Contact",
+          "description": "date last contact was made with the patient",
+          "type": "string"
+        },
+        {
+          "name": "Vital_Status_Desc",
+          "description": "if patient is dead or alive aka survival status",
+          "type": "string"
+        },
+        {
+          "name": "Cancer_Status_Desc",
+          "description": "if at date of last contact patient has evidence of the tumor referred to in the rest of this row, aka if they are disease free or not",
+          "type": "string"
+        },
+        {
+          "name": "Date_First_Recurrence",
+          "description": "date of recurrences",
+          "type": "string"
+        },
+        {
+          "name": "Type_First_Recurrence_Desc",
+          "description": "type of recurrences",
+          "type": "string"
+        },
+        {
+          "name": "Cause_of_Death_Desc",
+          "description": "if death was cancer related, due to other causes, or unknown",
+          "type": "string"
+        },
+        {
+          "name": "CancerRegistry_PatientID",
+          "description": "Patient ID in the Cancer Registry. Has been censored in this dataset",
+          "type": "string"
+        },
+        {
+          "name": "pt_name",
+          "description": "patient first & last name (removed for toy dataset)",
+          "type": "string"
+        },
+        {
+          "name": "gender",
+          "description": "male or female",
+          "type": "string"
+        },
+        {
+          "name": "race",
+          "description": "patient race",
+          "type": "string"
+        },
+        {
+          "name": "Ethnicity",
+          "description": "hispanic or latino origin",
+          "type": "string"
+        },
+        {
+          "name": "date_of_death",
+          "description": "patients only have if deceased and is manually recorded by staff, some death dates are unknown",
+          "type": "string"
+        },
+        {
+          "name": "zip_code",
+          "description": "patient home zip code, censored for toy dataset",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'subject' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "A unique identifier for records in this 'subject' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "Any biological or material sample used for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions.",
+      "links": [
+        "subject",
+        "dataset"
+      ],
+      "required": [
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "protocol_number",
+          "description": "The protocol number for the sample, e.g., '8980'.",
+          "type": "string"
+        },
+        {
+          "name": "procedure_date",
+          "description": "date/time of sample collection or reception at the HTRC",
+          "type": "string"
+        },
+        {
+          "name": "sample_number",
+          "description": "Sample ID unique to specific sample. Newer samples begin with S, older samples do not.",
+          "type": "string"
+        },
+        {
+          "name": "status",
+          "description": "status of sample within HTRC. In Circulation is the best, it means that sample is actively banked at HTRC.",
+          "type": "string"
+        },
+        {
+          "name": "sample_type",
+          "description": "The type of sample (plasma, serum, DNA, whole blood, unstained slide, FFPE tissue, OCT tissue)",
+          "type": "string"
+        },
+        {
+          "name": "body_fluid_code",
+          "description": "Designates which tubes samples were collected in",
+          "type": "string"
+        },
+        {
+          "name": "sample_volume",
+          "description": "volume of sample in milliliters",
+          "type": "integer"
+        },
+        {
+          "name": "dna_concentration",
+          "description": "metrics collected during DNA isolation",
+          "type": "number"
+        },
+        {
+          "name": "dna_260_280",
+          "description": "The ratio of absorbance at 260 nm and 280 nm; used to assess the purity of nucleic acid sample.",
+          "type": "number"
+        },
+        {
+          "name": "dna_od_260",
+          "description": "The optical density of a nucleic acid sample measured at a wavelength of 260 nm; for determining the concentration of nucleic acid samples.",
+          "type": "number"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "dataset.id",
+          "description": "Unique identifiers for records in the 'dataset' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "cytology_report",
+      "description": "Cytology reports & results from cytologists reviewing specimens collected during fine needle aspirations; used for diagnosis.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "cytology_report.id"
+      ],
+      "properties": [
+        {
+          "name": "enc_date",
+          "description": "encounter date",
+          "type": "string"
+        },
+        {
+          "name": "adm_date",
+          "description": "admission date",
+          "type": "string"
+        },
+        {
+          "name": "disc_date",
+          "description": "discharge date",
+          "type": "string"
+        },
+        {
+          "name": "order_dttm",
+          "description": "day/time order was put in",
+          "type": "string"
+        },
+        {
+          "name": "result_dttm",
+          "description": "day/time results/note were completed",
+          "type": "string"
+        },
+        {
+          "name": "Order_proc_id",
+          "description": "unique order ID",
+          "type": "string"
+        },
+        {
+          "name": "proc_code",
+          "description": "code and description of surgical pathology procedure",
+          "type": "string"
+        },
+        {
+          "name": "proc_desc",
+          "description": "code and description of surgical pathology procedure",
+          "type": "string"
+        },
+        {
+          "name": "lab_code",
+          "description": "code and description of surgical pathology lab",
+          "type": "string"
+        },
+        {
+          "name": "lab_desc",
+          "description": "code and description of surgical pathology lab",
+          "type": "string"
+        },
+        {
+          "name": "path_value",
+          "description": "unused",
+          "type": "string"
+        },
+        {
+          "name": "path_note",
+          "description": "raw text note of pathology report",
+          "type": "string"
+        },
+        {
+          "name": "result_in_range_yn",
+          "description": "flag to denote if the result is in range",
+          "type": "string"
+        },
+        {
+          "name": "result_flag",
+          "description": "flag to denote if the result is abnormal",
+          "type": "string"
+        },
+        {
+          "name": "reference_unit",
+          "description": "reference unit of the result",
+          "type": "string"
+        },
+        {
+          "name": "HPV",
+          "description": "flag to denote if HPV or P16 are mentioned in raw text. Used to identify patients who HPV/p16 result or status",
+          "type": "string"
+        },
+        {
+          "name": "P16",
+          "description": "flag to denote if HPV or P16 are mentioned in raw text. Used to identify patients who HPV/p16 result or status",
+          "type": "string"
+        },
+        {
+          "name": "accession_num",
+          "description": "accession number used to identify the cytology report/cytologist review",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'cytology_report' table.",
+          "type": "string"
+        },
+        {
+          "name": "cytology_report.id",
+          "description": "A unique identifier for records in this 'cytology_report' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "vitals_flowsheet",
+      "description": "Vitals flowsheets track vital signs over a period of time, allowing healthcare providers to observe trends and patterns in vital signs.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "vitals_flowsheet.id"
+      ],
+      "properties": [
+        {
+          "name": "pat_enc_csn_id",
+          "description": "unique ID for patient encounter, unsure what CSN is",
+          "type": "string"
+        },
+        {
+          "name": "flo_meas_id",
+          "description": "ID and name of measurement",
+          "type": "string"
+        },
+        {
+          "name": "flo_meas_name",
+          "description": "ID and name of measurement",
+          "type": "string"
+        },
+        {
+          "name": "device_id",
+          "description": "ID corresponding to device which recorded measurement",
+          "type": "string"
+        },
+        {
+          "name": "recorded_time",
+          "description": "time of recording, appears to be not used",
+          "type": "string"
+        },
+        {
+          "name": "meas_value",
+          "description": "value corresponding to measurement",
+          "type": "string"
+        },
+        {
+          "name": "meas_location",
+          "description": "location of measurement",
+          "type": "string"
+        },
+        {
+          "name": "flo_group_name",
+          "description": "group name for flowsheet measurement. Looks like this variable corresponds to multiple values from the flo_meas_name column",
+          "type": "string"
+        },
+        {
+          "name": "units",
+          "description": "units of measurement",
+          "type": "string"
+        },
+        {
+          "name": "inpatient_data_id",
+          "description": "unique data ID for data for backend",
+          "type": "string"
+        },
+        {
+          "name": "dept_id",
+          "description": "ID of department where measurement was taken",
+          "type": "string"
+        },
+        {
+          "name": "CRDW_FLO_GROUP",
+          "description": "flo group used by the CRI/CRDW to group measurement values",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'vitals_flowsheet' table.",
+          "type": "string"
+        },
+        {
+          "name": "vitals_flowsheet.id",
+          "description": "A unique identifier for records in this 'vitals_flowsheet' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "medication",
+      "description": "Information related to medication prescribed, dispensed or administered to the case.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "medication.id"
+      ],
+      "properties": [
+        {
+          "name": "TREATMENT_PLAN_ID",
+          "description": "unique ID of treatment plan",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_RECORD_TYPE_C",
+          "description": "code for plan record type",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_STATUS_C",
+          "description": "code of plan status",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_STATUS_NAME",
+          "description": "name of plan status",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_VERSION",
+          "description": "plan version",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_CREATED_DATETIME",
+          "description": "day/time plan was originally created in Epic as a treatment plan",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_CREATOR_USER_ID",
+          "description": "ID of user who created plan in Epic",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_START_DATE",
+          "description": "day/time plan was started",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_DISCON_DATETIME",
+          "description": "day/time plan was discontinued",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_DISCON_USER_ID",
+          "description": "ID of user who discontinued plan for patient",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_DISCON_REASON_C",
+          "description": "code of reason why plan was discontinued",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_DISCON_REASON_NAME",
+          "description": "name of reason why plan was discontinued",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_NAME",
+          "description": "name of plan",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_DISPLAY_NAME",
+          "description": "display name of plan",
+          "type": "string"
+        },
+        {
+          "name": "PROTOCOL_ID",
+          "description": "ID, name, and display name of protocol. Usually very similar to Plan Name",
+          "type": "string"
+        },
+        {
+          "name": "PROTOCOL_NAME",
+          "description": "ID, name, and display name of protocol. Usually very similar to Plan Name",
+          "type": "string"
+        },
+        {
+          "name": "PROTOCOL_DISPLAY_NAM",
+          "description": "ID, name, and display name of protocol. Usually very similar to Plan Name",
+          "type": "string"
+        },
+        {
+          "name": "PROTOCOL_CONTACT_DATE_REAL",
+          "description": "protocol contact date",
+          "type": "string"
+        },
+        {
+          "name": "PROTOCOL_CONTACT_NUM",
+          "description": "protocol contact number",
+          "type": "string"
+        },
+        {
+          "name": "PROTOCOL_IS_RESEARCH_YN",
+          "description": "whether or not the protocol is a clinical trial",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_PROV_ID",
+          "description": "ID of provider who ordered plan",
+          "type": "string"
+        },
+        {
+          "name": "REFERRAL_ID",
+          "description": "ID of provider who referred patient",
+          "type": "string"
+        },
+        {
+          "name": "TREATMENT_GOAL_C",
+          "description": "code of treatment goal (curative vs. palliative vs. adjuvant, etc.)",
+          "type": "string"
+        },
+        {
+          "name": "TREATMENT_GOAL_NAME",
+          "description": "name of treatment goal (curative vs. palliative vs. adjuvant, etc.)",
+          "type": "string"
+        },
+        {
+          "name": "EPISODE_ID",
+          "description": "unique ID of episode (all Chemotherapy for the most part)",
+          "type": "string"
+        },
+        {
+          "name": "EPISODE_TYPE_ID",
+          "description": "ID of the type of episode (all Chemotherapy for the most part)",
+          "type": "string"
+        },
+        {
+          "name": "EPISODE_TYPE_NAME",
+          "description": "name of the type of episode (all Chemotherapy for the most part)",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_STARTING_CYCLE_NUM",
+          "description": "cycle number the plan starts on (some plans are continuations of previous plans and start at a later cycle)",
+          "type": "string"
+        },
+        {
+          "name": "CYCLE_ID",
+          "description": "ID, name, and number corresponding to the treatment cycle. Cycles usually correspond to a few weeks. Some medications are only given every 3 weeks and others are given each week, so each cycle the patient receives the same medications in the same order, and this multi-week cycle is repeated X number of times in a single plan.",
+          "type": "string"
+        },
+        {
+          "name": "CYCLE_NAME",
+          "description": "ID, name, and number corresponding to the treatment cycle. Cycles usually correspond to a few weeks. Some medications are only given every 3 weeks and others are given each week, so each cycle the patient receives the same medications in the same order, and this multi-week cycle is repeated X number of times in a single plan.",
+          "type": "string"
+        },
+        {
+          "name": "CYCLE_NUM",
+          "description": "ID, name, and number corresponding to the treatment cycle. Cycles usually correspond to a few weeks. Some medications are only given every 3 weeks and others are given each week, so each cycle the patient receives the same medications in the same order, and this multi-week cycle is repeated X number of times in a single plan.",
+          "type": "string"
+        },
+        {
+          "name": "CYCLE_START_DATE",
+          "description": "start date of the cycle",
+          "type": "string"
+        },
+        {
+          "name": "CYCLE_STATUS_C",
+          "description": "code of the cycle's status (e.g. completed vs. started. Started usually means it was completed but sometimes this is not updated).",
+          "type": "string"
+        },
+        {
+          "name": "CYCLE_STATUS_NAME",
+          "description": "name of the cycle's status (e.g. completed vs. started. Started usually means it was completed but sometimes this is not updated).",
+          "type": "string"
+        },
+        {
+          "name": "TREATMENT_DAY_ID",
+          "description": "ID corresponding to the specific treatment day",
+          "type": "string"
+        },
+        {
+          "name": "TREAT_DAY_CONTACT_DATE_REAL",
+          "description": "treatment day contact date",
+          "type": "string"
+        },
+        {
+          "name": "TREATMENT_DAY_NAME",
+          "description": "name of treatment day relative to the start of the cycle",
+          "type": "string"
+        },
+        {
+          "name": "DAY_NUM",
+          "description": "Day number relative to the start of the cycle (usually 1, 8, 15 which is the start of each week, if a cycle is 3 weeks for example).",
+          "type": "integer"
+        },
+        {
+          "name": "DAY_TYPE_C",
+          "description": "Day type code",
+          "type": "string"
+        },
+        {
+          "name": "TREATMENT_DAY_TREATMENT_DATE",
+          "description": "actual day of treatment",
+          "type": "string"
+        },
+        {
+          "name": "TREATMENT_DAY_PLANNED_DATE",
+          "description": "day that treatment was planned",
+          "type": "string"
+        },
+        {
+          "name": "DAY_LENGTH",
+          "description": "length of treatment day",
+          "type": "string"
+        },
+        {
+          "name": "DAY_STARTED_DATETIME",
+          "description": "day/time treatment was started",
+          "type": "string"
+        },
+        {
+          "name": "DAY_STATUS_C",
+          "description": "code of status of day",
+          "type": "string"
+        },
+        {
+          "name": "DAY_STATUS_NAME",
+          "description": "name of status of day",
+          "type": "string"
+        },
+        {
+          "name": "CANCEL_DAY_REASON_C",
+          "description": "code of reason why treatment was cancelled",
+          "type": "string"
+        },
+        {
+          "name": "CANCEL_DAY_REASON_NAME",
+          "description": "name of reason why treatment was cancelled",
+          "type": "string"
+        },
+        {
+          "name": "DEFER_DAY_REASON_C",
+          "description": "code of reason why treatment was deferred",
+          "type": "string"
+        },
+        {
+          "name": "DEFER_DAY_REASON_NAME",
+          "description": "name of reason why treatment was deferred",
+          "type": "string"
+        },
+        {
+          "name": "DAY_GIVEN_EXTERNAL_REASON_C",
+          "description": "code of reason why treatment was given externally",
+          "type": "string"
+        },
+        {
+          "name": "DAY_GIVEN_EXTERNAL_REASON_NAME",
+          "description": "name of reason why treatment was given externally",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_CATEGORY_C",
+          "description": "code of order category. Whether order corresponds to a pre/post-medication given, the chemotherapy regimen, a lab blood test, or other orders. Treatment Plan consists of everything, all orders, a patient may get as part of a plan.",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_CATEGORY_NAME",
+          "description": "name of order category. Whether order corresponds to a pre/post-medication given, the chemotherapy regimen, a lab blood test, or other orders. Treatment Plan consists of everything, all orders, a patient may get as part of a plan.",
+          "type": "string"
+        },
+        {
+          "name": "PROC_ID",
+          "description": "the ID for procedures done as part of a plan, such as ordering a blood test",
+          "type": "string"
+        },
+        {
+          "name": "MEDICATION_ID",
+          "description": "ID of medication. Each ID in MEDICATION ID should be unique to the specific medicine, route, dose, and frequency, you may be able to make a medication lookup table and relate it to the administration tables via the ID",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_DISCRETE_DOSE_MIN",
+          "description": "minimum dosages to be given as part of the order",
+          "type": "integer"
+        },
+        {
+          "name": "ORDER_DISCRETE_DOSE_MAX",
+          "description": "maximum dosages to be given as part of the order",
+          "type": "integer"
+        },
+        {
+          "name": "ORDER_DOSE_UNIT_C",
+          "description": "code of medication dose units",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_DOSE_UNIT_NAME",
+          "description": "name of medication dose units",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_TYPE_C",
+          "description": "code of order type (meds vs. labs vs. other). Similar to order category, but less specific",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_TYPE_NAME",
+          "description": "name of order type (meds vs. labs vs. other). Similar to order category, but less specific",
+          "type": "string"
+        },
+        {
+          "name": "ORDERING_MODE_C",
+          "description": "code of ordering mode (inpatient vs. outpatient)",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_ID",
+          "description": "unique ID of order in EMR/Epic",
+          "type": "string"
+        },
+        {
+          "name": "ENC_TYPE_C",
+          "description": "encounter type code",
+          "type": "string"
+        },
+        {
+          "name": "ENC_TYPE",
+          "description": "encounter type",
+          "type": "string"
+        },
+        {
+          "name": "ENC_date",
+          "description": "date of encounter",
+          "type": "string"
+        },
+        {
+          "name": "Hosp_Adm_Dttm",
+          "description": "day/time of hospital admissionfor this stay",
+          "type": "string"
+        },
+        {
+          "name": "Hosp_Dc_Dttm",
+          "description": "day/time of hospital discharge for this stay",
+          "type": "string"
+        },
+        {
+          "name": "ADMIT_DEPT_ID",
+          "description": "ID of department/physical location where patient was admitted",
+          "type": "string"
+        },
+        {
+          "name": "ADMIT_DEPT",
+          "description": "name of department/physical location where patient was admitted",
+          "type": "string"
+        },
+        {
+          "name": "ADMIT_SERV_C",
+          "description": "ID of service admitting patient for this visit",
+          "type": "string"
+        },
+        {
+          "name": "ADMIT_SERVICE_AREA",
+          "description": "name of service admitting patient for this visit",
+          "type": "string"
+        },
+        {
+          "name": "ADMISSION_PROV_ID",
+          "description": "ID of admitting provider for this hospital visit",
+          "type": "string"
+        },
+        {
+          "name": "ADMISSION_MD",
+          "description": "name of admitting provider for this hospital visit",
+          "type": "string"
+        },
+        {
+          "name": "ADM_PROV_SPEC",
+          "description": "specialty of admitting provider for this hospital visit",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_PROV_ID",
+          "description": "ID of provider who ordered specific medication",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_PROV",
+          "description": "name of provider who ordered specific medication",
+          "type": "string"
+        },
+        {
+          "name": "MED_REC_EVENT_C",
+          "description": "medication reconciliation event code",
+          "type": "string"
+        },
+        {
+          "name": "MED_REC_EVENT",
+          "description": "medication reconciliation event",
+          "type": "string"
+        },
+        {
+          "name": "MED_ORDERING_MODE",
+          "description": "medications were ordered",
+          "type": "string"
+        },
+        {
+          "name": "MED_ORDER_DTTM",
+          "description": "day/time when medication was ordered",
+          "type": "string"
+        },
+        {
+          "name": "MED_DC_DTTM",
+          "description": "day/time when medication was discontinued",
+          "type": "string"
+        },
+        {
+          "name": "MED_REC_DTTM",
+          "description": "day/time when medication was reconciled or received (unsure)",
+          "type": "string"
+        },
+        {
+          "name": "MED_REC_TYPE_C",
+          "description": "code of medication reconciliation type",
+          "type": "string"
+        },
+        {
+          "name": "MED_REC_TYPE",
+          "description": "medication reconciliation type",
+          "type": "string"
+        },
+        {
+          "name": "MED_REC_ACTION_C",
+          "description": "code of medication reconciliation action",
+          "type": "string"
+        },
+        {
+          "name": "MED_REC_ACTION",
+          "description": "medication reconciliation action",
+          "type": "string"
+        },
+        {
+          "name": "RSN_FOR_DISCON_C",
+          "description": "code for why med was discontinued",
+          "type": "string"
+        },
+        {
+          "name": "RSN_FOR_DISCON_MED",
+          "description": "description for why med was discontinued",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_MED_ID",
+          "description": "unique medication order ID",
+          "type": "string"
+        },
+        {
+          "name": "MEDICATION",
+          "description": "name of medication. Each ID in MEDICATION ID should be unique to the specific medicine, route, dose, and frequency, you may be able to make a medication lookup table and relate it to the administration tables via the ID",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_MED_DOSE",
+          "description": "specific dose of medication that was ordered",
+          "type": "string"
+        },
+        {
+          "name": "MED_ROUTE",
+          "description": "route by which medication was given (i.e. oral is mouth, subcutaneous is under the skin, G-Tube is by gastronomy tube, etc.)",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_MED_FREQ",
+          "description": "frequency by which medication dose should be given/taken",
+          "type": "string"
+        },
+        {
+          "name": "MED_THERA_CLASS_C",
+          "description": "code of medication's therapeutic class (i.e. antineoplastics are cancer drugs)",
+          "type": "string"
+        },
+        {
+          "name": "MED_THERA_CLASS",
+          "description": "code of medication's therapeutic class (i.e. antineoplastics are cancer drugs)",
+          "type": "string"
+        },
+        {
+          "name": "MED_PHARM_CLASS_C",
+          "description": "code of medication's pharmacological class",
+          "type": "string"
+        },
+        {
+          "name": "MED_PHARM_CLASS",
+          "description": "name of medication's pharmacological class",
+          "type": "string"
+        },
+        {
+          "name": "PHARM_SUBCLASS_C",
+          "description": "code of medication's pharmacological subclass",
+          "type": "string"
+        },
+        {
+          "name": "PHARM_SUB_CLASS",
+          "description": "name of medication's pharmacological subclass",
+          "type": "string"
+        },
+        {
+          "name": "EVENT_MED_REC_LINE",
+          "description": "event medication reconciliation line",
+          "type": "string"
+        },
+        {
+          "name": "enc_date",
+          "description": "date of encounter",
+          "type": "string"
+        },
+        {
+          "name": "med_dept",
+          "description": "department where medication was ordered/given within",
+          "type": "string"
+        },
+        {
+          "name": "order_med_id",
+          "description": "unique ID corresponding to medication's order in hospital system",
+          "type": "string"
+        },
+        {
+          "name": "ordering_date",
+          "description": "date medication was ordered",
+          "type": "string"
+        },
+        {
+          "name": "thera_class_c",
+          "description": "code of medications therapeutic class (i.e. antineoplastics are cancer drugs)",
+          "type": "string"
+        },
+        {
+          "name": "thera_class",
+          "description": "name of medications therapeutic class (i.e. antineoplastics are cancer drugs)",
+          "type": "string"
+        },
+        {
+          "name": "pharm_class_c",
+          "description": "code of medication's pharmacological class",
+          "type": "string"
+        },
+        {
+          "name": "pharm_class",
+          "description": "name of medication's pharmacological class",
+          "type": "string"
+        },
+        {
+          "name": "pharm_subclass_c",
+          "description": "code of medication's pharmacological subclass",
+          "type": "string"
+        },
+        {
+          "name": "pharm_subclass",
+          "description": "name of medication's pharmacological subclass",
+          "type": "string"
+        },
+        {
+          "name": "medication_id",
+          "description": "ID of medication",
+          "type": "string"
+        },
+        {
+          "name": "med_name",
+          "description": "name of medication",
+          "type": "string"
+        },
+        {
+          "name": "gpi",
+          "description": "generic name & ID of medication",
+          "type": "string"
+        },
+        {
+          "name": "generic_name",
+          "description": "generic name & ID of medication",
+          "type": "string"
+        },
+        {
+          "name": "order_med_dose",
+          "description": "specific dose of medication that was ordered",
+          "type": "string"
+        },
+        {
+          "name": "med_route",
+          "description": "route by which medication was given",
+          "type": "string"
+        },
+        {
+          "name": "order_med_freq",
+          "description": "frequency by which medication dose should be given/taken",
+          "type": "string"
+        },
+        {
+          "name": "order_start_dttm",
+          "description": "day/time of order start & end (expiration of order)",
+          "type": "string"
+        },
+        {
+          "name": "order_end_dttm",
+          "description": "day/time of order end (expiration of order)",
+          "type": "string"
+        },
+        {
+          "name": "mar_dose",
+          "description": "medication dose actually given",
+          "type": "string"
+        },
+        {
+          "name": "mar_gave_dttm",
+          "description": "day/time of when medication was actually given",
+          "type": "string"
+        },
+        {
+          "name": "mar_sched_dttm",
+          "description": "day/time of when medication was scheduled",
+          "type": "string"
+        },
+        {
+          "name": "ordering_mode",
+          "description": "ordered inpatient vs. outpatient",
+          "type": "string"
+        },
+        {
+          "name": "order_status",
+          "description": "if order has been sent or suspended (I think manually), but overall I am unsure",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'medication' table.",
+          "type": "string"
+        },
+        {
+          "name": "medication.id",
+          "description": "A unique identifier for records in this 'medication' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "lab_result",
+      "description": "Measurements obtained from blood or other laboratory tests required by a medical professional. These will include lipids and lipid metabolism parameters, lipid oxidation markers, cytokines, adhesion molecules, nitric oxide, and hemostasis/fibrinolysis markers.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "lab_result.id"
+      ],
+      "properties": [
+        {
+          "name": "enc_date",
+          "description": "date of encounter/lab test",
+          "type": "string"
+        },
+        {
+          "name": "adm_date",
+          "description": "for hospital admissions, date of admission",
+          "type": "string"
+        },
+        {
+          "name": "disc_date",
+          "description": "for hospital admissions, date of discharge",
+          "type": "string"
+        },
+        {
+          "name": "order_dttm",
+          "description": "datetime of lab order",
+          "type": "string"
+        },
+        {
+          "name": "result_dttm",
+          "description": "datetime of result",
+          "type": "string"
+        },
+        {
+          "name": "order_proc_id",
+          "description": "unique ID of procedure corresponding to specific patient/encounter",
+          "type": "string"
+        },
+        {
+          "name": "proc_code",
+          "description": "code of procedure ordered (one procedure corresponds to one lab test/blood draw, i.e. Complete Metabolic Panel)",
+          "type": "string"
+        },
+        {
+          "name": "proc_desc",
+          "description": "description of procedure ordered (one procedure corresponds to one lab test/blood draw, i.e. Complete Metabolic Panel)",
+          "type": "string"
+        },
+        {
+          "name": "lab_code",
+          "description": "code of specific lab value (i.e. Calcium, Potassium, etc.)",
+          "type": "string"
+        },
+        {
+          "name": "lab_desc",
+          "description": "description of specific lab value (i.e. Calcium, Potassium, etc.)",
+          "type": "string"
+        },
+        {
+          "name": "ord_value",
+          "description": "lab result value",
+          "type": "string"
+        },
+        {
+          "name": "line",
+          "description": "which row/line the value appears in the report",
+          "type": "string"
+        },
+        {
+          "name": "result_in_range_yn",
+          "description": "if result is in range (Y or N)",
+          "type": "string"
+        },
+        {
+          "name": "result_flag",
+          "description": "a flag to designate high vs. low with regards to range",
+          "type": "string"
+        },
+        {
+          "name": "reference_unit",
+          "description": "units of measurement for lab tests (i.e. mg/dL)",
+          "type": "string"
+        },
+        {
+          "name": "HPV",
+          "description": "flag for HPV value (custom to 8980 database as we wanted to ID all HPV related patients)",
+          "type": "string"
+        },
+        {
+          "name": "P16",
+          "description": "flag for P16 value",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'lab_result' table.",
+          "type": "string"
+        },
+        {
+          "name": "lab_result.id",
+          "description": "A unique identifier for records in this 'lab_result' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "pathology_report",
+      "description": "Pathology reports and results from pathologists reviewed specimens collected during surgery, used for diagnosis.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "pathology_report.id"
+      ],
+      "properties": [
+        {
+          "name": "enc_date",
+          "description": "date of the encounter",
+          "type": "string"
+        },
+        {
+          "name": "adm_date",
+          "description": "adm_date",
+          "type": "string"
+        },
+        {
+          "name": "disc_date",
+          "description": "disc_date",
+          "type": "string"
+        },
+        {
+          "name": "order_dttm",
+          "description": "day/time order was put in",
+          "type": "string"
+        },
+        {
+          "name": "result_dttm",
+          "description": "day/time results/note were completed",
+          "type": "string"
+        },
+        {
+          "name": "Order_proc_id",
+          "description": "unique order ID",
+          "type": "string"
+        },
+        {
+          "name": "proc_code",
+          "description": "code and description of surgical pathology procedure",
+          "type": "string"
+        },
+        {
+          "name": "proc_desc",
+          "description": "code and description of surgical pathology procedure",
+          "type": "string"
+        },
+        {
+          "name": "lab_code",
+          "description": "code and description of surgical pathology lab",
+          "type": "string"
+        },
+        {
+          "name": "lab_desc",
+          "description": "code and description of surgical pathology lab",
+          "type": "string"
+        },
+        {
+          "name": "path_value",
+          "description": "unused",
+          "type": "string"
+        },
+        {
+          "name": "path_note",
+          "description": "raw text note of pathology report",
+          "type": "string"
+        },
+        {
+          "name": "result_in_range_yn",
+          "description": "result in range, yes or no",
+          "type": "string"
+        },
+        {
+          "name": "result_flag",
+          "description": "result flag",
+          "type": "string"
+        },
+        {
+          "name": "reference_unit",
+          "description": "reference unit",
+          "type": "string"
+        },
+        {
+          "name": "HPV",
+          "description": "flag to denote if HPV or P16 are mentioned in raw text. Used to identify patients who HPV/p16 result or status",
+          "type": "string"
+        },
+        {
+          "name": "P16",
+          "description": "flag to denote if HPV or P16 are mentioned in raw text. Used to identify patients who HPV/p16 result or status",
+          "type": "string"
+        },
+        {
+          "name": "accession_num",
+          "description": "accession used to identify the pathology report/pathologist review, corresponds to the specimens created from a specific surgical procedure. Pathology uses this identifier to track blocks in the pathology archive",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'pathology_report' table.",
+          "type": "string"
+        },
+        {
+          "name": "pathology_report.id",
+          "description": "A unique identifier for records in this 'pathology_report' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "exposure",
+      "description": "Standard questionnaire used to collect substance use and other exposure records from the subject",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "exposure.id"
+      ],
+      "properties": [
+        {
+          "name": "HX_DRINK_TYPES_C_1",
+          "description": "code (is float but should be integer, coding mistake on my part), type of alcohol consumed (i.e. cans of beer, mixed drinks, wine, hard liquor, standard drinks), number of drinks per week",
+          "type": "string"
+        },
+        {
+          "name": "HX_DRINK_TYPES_1",
+          "description": "code (is float but should be integer, coding mistake on my part), type of alcohol consumed (i.e. cans of beer, mixed drinks, wine, hard liquor, standard drinks), number of drinks per week",
+          "type": "string"
+        },
+        {
+          "name": "HX_DRINKS_WK_1",
+          "description": "code (is float but should be integer, coding mistake on my part), type of alcohol consumed (i.e. cans of beer, mixed drinks, wine, hard liquor, standard drinks), number of drinks per week",
+          "type": "string"
+        },
+        {
+          "name": "HX_DRINK_TYPES_C_2",
+          "description": "Second set of drink type recorded",
+          "type": "string"
+        },
+        {
+          "name": "HX_DRINK_TYPES_2",
+          "description": "Second set of drink type recorded",
+          "type": "string"
+        },
+        {
+          "name": "HX_DRINKS_WK_2",
+          "description": "Second set of drink type recorded",
+          "type": "string"
+        },
+        {
+          "name": "HX_DRINK_TYPES_C_3",
+          "description": "Third set of drink type recorded",
+          "type": "string"
+        },
+        {
+          "name": "HX_DRINK_TYPES_3",
+          "description": "Third set of drink type recorded",
+          "type": "string"
+        },
+        {
+          "name": "HX_DRINKS_WK_3",
+          "description": "Third set of drink type recorded",
+          "type": "string"
+        },
+        {
+          "name": "TOB_SRC_C",
+          "description": "Source of tobacco data collection (code)",
+          "type": "string"
+        },
+        {
+          "name": "TOB_SOURCE",
+          "description": "Source of tobacco data collection",
+          "type": "string"
+        },
+        {
+          "name": "TOBACCO_USER_C",
+          "description": "is patient tobacco user? (code)",
+          "type": "string"
+        },
+        {
+          "name": "TOBACCO_USER",
+          "description": "is patient tobacco user?",
+          "type": "string"
+        },
+        {
+          "name": "SMOKING_TOB_USE_C",
+          "description": "is patient a smoker? (code)",
+          "type": "string"
+        },
+        {
+          "name": "SMOKING_TOB_USE",
+          "description": "is patient a smoker?",
+          "type": "string"
+        },
+        {
+          "name": "TOBACCO_PAK_PER_DY",
+          "description": "packs smoked per day (20 cigarettes = 1 pack)",
+          "type": "string"
+        },
+        {
+          "name": "TOBACCO_USED_YEARS",
+          "description": "number of years smoked",
+          "type": "string"
+        },
+        {
+          "name": "TOBACCO_COMMENT",
+          "description": "comment on smoking history",
+          "type": "string"
+        },
+        {
+          "name": "SMOKELESS_TOB_USE_C",
+          "description": "status of any smokeless tobacco usage (i.e. chewing)",
+          "type": "string"
+        },
+        {
+          "name": "SMOKELESS_TOB_USE",
+          "description": "tatus of any smokeless tobacco usage (i.e. chewing)",
+          "type": "string"
+        },
+        {
+          "name": "CIGARETTES_YN",
+          "description": "Y or N for types of tobacco used",
+          "type": "string"
+        },
+        {
+          "name": "PIPES_YN",
+          "description": "Y or N for types of tobacco used",
+          "type": "string"
+        },
+        {
+          "name": "CIGARS_YN",
+          "description": "Y or N for types of tobacco used",
+          "type": "string"
+        },
+        {
+          "name": "SNUFF_YN",
+          "description": "Y or N for types of tobacco used",
+          "type": "string"
+        },
+        {
+          "name": "CHEW_YN",
+          "description": "Y or N for types of tobacco used",
+          "type": "string"
+        },
+        {
+          "name": "SMOKING_START_DATE",
+          "description": "start dates of smoking",
+          "type": "string"
+        },
+        {
+          "name": "SMOKING_QUIT_DATE",
+          "description": "quit dates of smoking",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'exposure' table.",
+          "type": "string"
+        },
+        {
+          "name": "exposure.id",
+          "description": "A unique identifier for records in this 'exposure' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "visit",
+      "description": "This table contains events where subjects engage with the healthcare system for a duration of time. They are often also called \u201cencounters\u201d. Visits are defined by a configuration of circumstances under which they occur, such as (i) whether the patient comes to a healthcare institution, the other way around, or the interaction is remote, (ii) whether and what kind of trained medical staff is delivering the service during the Visit, and (iii) whether the Visit is transient or for a longer period involving a stay in bed.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "visit.id"
+      ],
+      "properties": [
+        {
+          "name": "enc_date",
+          "description": "date of the encounter",
+          "type": "string"
+        },
+        {
+          "name": "enc_type_c",
+          "description": "code of type of encounter (e.g. Appointment, Treatment, Surgery, Office Visit)",
+          "type": "string"
+        },
+        {
+          "name": "encounter_type",
+          "description": "name of type of encounter (e.g. Appointment, Treatment, Surgery, Office Visit)",
+          "type": "string"
+        },
+        {
+          "name": "ed_arrival_dttm",
+          "description": "date/time arrived to emergency department (ED)",
+          "type": "string"
+        },
+        {
+          "name": "hosp_adm_dttm",
+          "description": "date/time of hospital admission",
+          "type": "string"
+        },
+        {
+          "name": "hosp_dc_dttm",
+          "description": "date/time of hospital discharge",
+          "type": "string"
+        },
+        {
+          "name": "department",
+          "description": "department in which encounter occurred (e.g. Radiation Oncology)",
+          "type": "string"
+        },
+        {
+          "name": "disch_disp_c",
+          "description": "code of disposition of patient at hospital discharge (where discharged to)",
+          "type": "string"
+        },
+        {
+          "name": "disch_disp",
+          "description": "disposition of patient at hospital discharge (where discharged to)",
+          "type": "string"
+        },
+        {
+          "name": "dx_name",
+          "description": "diagnosis name corresponding to ICD code",
+          "type": "string"
+        },
+        {
+          "name": "icd9_code",
+          "description": "ICD9 codes corresponding to diagnosis",
+          "type": "string"
+        },
+        {
+          "name": "icd10_code",
+          "description": "ICD10 codes corresponding to diagnosis",
+          "type": "string"
+        },
+        {
+          "name": "dx_rank",
+          "description": "each encounter can have multiple diagnoses associated with it and they are ranked, this is recorded here",
+          "type": "string"
+        },
+        {
+          "name": "poa",
+          "description": "poa",
+          "type": "string"
+        },
+        {
+          "name": "ADM_DATE",
+          "description": "admission date of encounter. For same day outpatient encounters, discharge date (DISC_DATE) should be the same.",
+          "type": "string"
+        },
+        {
+          "name": "DISC_DATE",
+          "description": "discharge date of encounter. For same day outpatient encounters, admission date (ADM_DATE) should be the same",
+          "type": "string"
+        },
+        {
+          "name": "CRDW_START_DATE",
+          "description": "CRI Data Warehouse start date",
+          "type": "string"
+        },
+        {
+          "name": "CRDW_END_DATE",
+          "description": "CRI Data Warehouse end date",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'visit' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "A unique identifier for records in this 'visit' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "progress_note",
+      "description": "Clinical progress notes are formal records that document a patient's clinical status, medical necessity, treatment progress, and plans for future care. They are used to communicate findings, opinions, and plans between healthcare professionals and to facilitate retrospective reviews of a case. These notes are essential for documenting treatment outcomes, legal purposes, and reimbursement.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "progress_note.id"
+      ],
+      "properties": [
+        {
+          "name": "NOTE_ID",
+          "description": "Unique ID for note",
+          "type": "string"
+        },
+        {
+          "name": "IP_NOTE_TYPE",
+          "description": "Type of note (Progress Note vs. Consult) & ID corresponding to note type",
+          "type": "string"
+        },
+        {
+          "name": "IP_NOTE_TYPE_C",
+          "description": "ID corresponding to note type",
+          "type": "string"
+        },
+        {
+          "name": "NOTE_STATUS_C",
+          "description": "code for status of note - Signed vs. Addendum",
+          "type": "string"
+        },
+        {
+          "name": "NOTE_STATUS",
+          "description": "status of note - Signed vs. Addendum",
+          "type": "string"
+        },
+        {
+          "name": "NOTE_CSN_ID",
+          "description": "note contact serial number",
+          "type": "string"
+        },
+        {
+          "name": "DATE_OF_SERVICE_DTTM",
+          "description": "date & time of note creation",
+          "type": "string"
+        },
+        {
+          "name": "AUTHOR_NAME",
+          "description": "Name of author of note",
+          "type": "string"
+        },
+        {
+          "name": "AUTHOR_SERVICE_C",
+          "description": "code for service/department corresponding to author",
+          "type": "string"
+        },
+        {
+          "name": "AUTHOR_SERVICE",
+          "description": "name of service/department corresponding to author",
+          "type": "string"
+        },
+        {
+          "name": "FLAG_Service",
+          "description": "FLAG_Service",
+          "type": "string"
+        },
+        {
+          "name": "NOTE_File_DTTM",
+          "description": "when note was filed",
+          "type": "string"
+        },
+        {
+          "name": "Note_Narr",
+          "description": "raw text of progress note",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'progress_note' table.",
+          "type": "string"
+        },
+        {
+          "name": "progress_note.id",
+          "description": "A unique identifier for records in this 'progress_note' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "radiology_report",
+      "description": "Radiology Results & Reports written by radiologists for patients who had CT, MRI, PET scans, etc. performed. These reports are used for diagnosis and treatment of patients.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "radiology_report.id"
+      ],
+      "properties": [
+        {
+          "name": "ORDER_PROC_ID",
+          "description": "unique ID corresponding to order",
+          "type": "string"
+        },
+        {
+          "name": "PROC_ID",
+          "description": "procedure ID corresponding to order",
+          "type": "string"
+        },
+        {
+          "name": "PROC_CODE",
+          "description": "procedure code corresponding to order",
+          "type": "string"
+        },
+        {
+          "name": "PROC_DESCRIPTION",
+          "description": "procedure description corresponding to order",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_DTTM",
+          "description": "day/time of order",
+          "type": "string"
+        },
+        {
+          "name": "TAKEN_DTTM",
+          "description": "day/time when exam taken",
+          "type": "string"
+        },
+        {
+          "name": "RESULT_DTTM",
+          "description": "day/time when result generated",
+          "type": "string"
+        },
+        {
+          "name": "ACCESSION_NUMBER",
+          "description": "accession number coresponding to the radiology exam",
+          "type": "string"
+        },
+        {
+          "name": "AUTHRZING_PROV_ID",
+          "description": "ID & name of provider authorizing order",
+          "type": "string"
+        },
+        {
+          "name": "AUTHORIZING_PROVIDER",
+          "description": "ID & name of provider authorizing order",
+          "type": "string"
+        },
+        {
+          "name": "NOTE_STATUS_CODE",
+          "description": "code and status of result report",
+          "type": "string"
+        },
+        {
+          "name": "NOTE_STATUS",
+          "description": "code and status of result report",
+          "type": "string"
+        },
+        {
+          "name": "NOTE_DATE",
+          "description": "date of note",
+          "type": "string"
+        },
+        {
+          "name": "Rad_note",
+          "description": "raw text of radiology report",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'radiology_report' table.",
+          "type": "string"
+        },
+        {
+          "name": "radiology_report.id",
+          "description": "A unique identifier for records in this 'radiology_report' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "diagnosis",
+      "description": "Data from the investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation.",
+      "links": [
+        "subject"
+      ],
+      "required": [
+        "subject.id",
+        "diagnosis.id"
+      ],
+      "properties": [
+        {
+          "name": "Date_of_First_Contact",
+          "description": "date of first contact at UChicago",
+          "type": "string"
+        },
+        {
+          "name": "Date_of_Initial_Diagnosis",
+          "description": "date where cancer first diagnosed",
+          "type": "string"
+        },
+        {
+          "name": "Place_of_Diagnosis",
+          "description": "place where cancer first diagnosed",
+          "type": "string"
+        },
+        {
+          "name": "Primary_Site",
+          "description": "ICD10 code for primary site",
+          "type": "string"
+        },
+        {
+          "name": "Primary_Site_Desc",
+          "description": "ICD10 code descr for primary site",
+          "type": "string"
+        },
+        {
+          "name": "histological_diagnosis",
+          "description": "histological diagnosis by ICD-O-3 code",
+          "type": "string"
+        },
+        {
+          "name": "Laterality",
+          "description": "left vs. right vs. NA",
+          "type": "string"
+        },
+        {
+          "name": "Sequence_Number",
+          "description": "if patient has had only one malignancy vs. many",
+          "type": "string"
+        },
+        {
+          "name": "CS_Site_Specific_Factor_1",
+          "description": "CS_Site_Specific_Factor_1",
+          "type": "string"
+        },
+        {
+          "name": "CS_Site_Specific_Factor_2",
+          "description": "CS_Site_Specific_Factor_2",
+          "type": "string"
+        },
+        {
+          "name": "CS_Site_Specific_Factor_3",
+          "description": "CS_Site_Specific_Factor_3",
+          "type": "string"
+        },
+        {
+          "name": "CS_Site_Specific_Factor_4",
+          "description": "CS_Site_Specific_Factor_4",
+          "type": "string"
+        },
+        {
+          "name": "CS_Site_Specific_Factor_5",
+          "description": "CS_Site_Specific_Factor_5",
+          "type": "string"
+        },
+        {
+          "name": "CS_Site_Specific_Factor_6",
+          "description": "CS_Site_Specific_Factor_6",
+          "type": "string"
+        },
+        {
+          "name": "CS_Site_Specific_Factor_7",
+          "description": "CS_Site_Specific_Factor_7",
+          "type": "string"
+        },
+        {
+          "name": "CS_Site_Specific_Factor_8",
+          "description": "CS_Site_Specific_Factor_8",
+          "type": "string"
+        },
+        {
+          "name": "CS_Site_Specific_Factor_9",
+          "description": "CS_Site_Specific_Factor_9",
+          "type": "string"
+        },
+        {
+          "name": "CS_Site_Specific_Factor_10",
+          "description": "CS_Site_Specific_Factor_10",
+          "type": "string"
+        },
+        {
+          "name": "CS_Tumor_Size",
+          "description": "CS tumor size",
+          "type": "string"
+        },
+        {
+          "name": "Size_of_Tumor",
+          "description": "size of tumor",
+          "type": "string"
+        },
+        {
+          "name": "Tumor_Size_Clinical",
+          "description": "clinical tumor size",
+          "type": "string"
+        },
+        {
+          "name": "Tumor_Size_Pathological",
+          "description": "pathological tumor size",
+          "type": "string"
+        },
+        {
+          "name": "Tumor_Size_Summary",
+          "description": "tumor size summary",
+          "type": "string"
+        },
+        {
+          "name": "Regional_Nodes_Exam",
+          "description": "number of lymph nodes examined during staging",
+          "type": "integer"
+        },
+        {
+          "name": "Regional_Nodes_Positive",
+          "description": "number of lymph nodes positive for cancer",
+          "type": "integer"
+        },
+        {
+          "name": "Clinical_T",
+          "description": "staging variables for T (primary tumor) as determined by clinical/radiographic examination",
+          "type": "string"
+        },
+        {
+          "name": "Clinical_N",
+          "description": "staging variables for N (nodes) as determined by clinical/radiographic examination",
+          "type": "string"
+        },
+        {
+          "name": "Clinical_M",
+          "description": "staging variables for M (metastases) as determined by clinical/radiographic examination",
+          "type": "string"
+        },
+        {
+          "name": "Clinical_Stage_Group",
+          "description": "staging variables for overall stage (1, 2, 3, 4) as determined by clinical/radiographic examination",
+          "type": "string"
+        },
+        {
+          "name": "Pathologic_T",
+          "description": "staging variables for TNM/Stage determined by pathological examination (post surgery/excision of disease.",
+          "type": "string"
+        },
+        {
+          "name": "Pathologic_N",
+          "description": "staging variables for TNM/Stage determined by pathological examination (post surgery/excision of disease).",
+          "type": "string"
+        },
+        {
+          "name": "Pathologic_M",
+          "description": "staging variables for TNM/Stage determined by pathological examination (post surgery/excision of disease).",
+          "type": "string"
+        },
+        {
+          "name": "Pathologic_Stage_Descriptor",
+          "description": "staging variables for TNM/Stage determined by pathological examination (post surgery/excision of disease).",
+          "type": "string"
+        },
+        {
+          "name": "Pathologic_Stage_Group",
+          "description": "staging variables for TNM/Stage determined by pathological examination (post surgery/excision of disease).",
+          "type": "string"
+        },
+        {
+          "name": "Site_of_Distant_Metastasis_1_Desc",
+          "description": "variables capturing sites of distant mets",
+          "type": "string"
+        },
+        {
+          "name": "Site_of_Distant_Metastasis_2_Desc",
+          "description": "variables capturing sites of distant mets",
+          "type": "string"
+        },
+        {
+          "name": "Site_of_Distant_Metastasis_3_Desc",
+          "description": "variables capturing sites of distant mets",
+          "type": "string"
+        },
+        {
+          "name": "CS_Mets_at_Dx_Bone_Desc",
+          "description": "variables capturing if there were metastases at specific locations at diagnosis (bone)",
+          "type": "string"
+        },
+        {
+          "name": "CS_Mets_at_Dx_Brain_Desc",
+          "description": "variables capturing if there were metastases at specific locations at diagnosis (brain)",
+          "type": "string"
+        },
+        {
+          "name": "CS_Mets_at_Dx_Liver_Desc",
+          "description": "variables capturing if there were metastases at specific locations at diagnosis (liver)",
+          "type": "string"
+        },
+        {
+          "name": "CS_Mets_at_Dx_Lung_Desc",
+          "description": "variables capturing if there were metastases at specific locations at diagnosis (bone, brain, liver, lung, distant lymph nodes, or other)",
+          "type": "string"
+        },
+        {
+          "name": "Mets_at_Dx_Distant_LN",
+          "description": "variables capturing if there were metastases at specific locations at diagnosis (distant lymph nodes)",
+          "type": "string"
+        },
+        {
+          "name": "Mets_at_Dx_Other",
+          "description": "variables capturing if there were metastases at specific locations at diagnosis (other)",
+          "type": "string"
+        },
+        {
+          "name": "TNM_Edition_Number_Desc",
+          "description": "edition of the AJCC TNM Staging guide used to determine staging",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'diagnosis' table.",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "A unique identifier for records in this 'diagnosis' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "radiation_flowsheet",
+      "description": "A document used to track the care provided to a patient during radiation therapy. Gives overview of a patient's condition, the treatment they're receiving, any medications or instructions given, observed side effects, and relevant social information.",
+      "links": [
+        "diagnosis",
+        "subject",
+        "visit"
+      ],
+      "required": [
+        "radiation_flowsheet.id"
+      ],
+      "properties": [
+        {
+          "name": "pat_enc_csn_id",
+          "description": "unique ID corresponding to patient encounter",
+          "type": "string"
+        },
+        {
+          "name": "flo_meas_id",
+          "description": "id & name of radiation treatment variable relevant to visit, flo_group_name is display naming for flo_meas_name",
+          "type": "string"
+        },
+        {
+          "name": "flo_meas_name",
+          "description": "id & name of radiation treatment variable relevant to visit, flo_group_name is display naming for flo_meas_name",
+          "type": "string"
+        },
+        {
+          "name": "flo_group_name",
+          "description": "id & name of radiation treatment variable relevant to visit, flo_group_name is display naming for flo_meas_name",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_TR_COURSE_ID",
+          "description": "ID corresponding to number course of RT treatment",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_TR_PLAN_ID",
+          "description": "ID corresponding to specific radiation plan/protocol (i.e. 1-1 HN50Gy)",
+          "type": "string"
+        },
+        {
+          "name": "Plan_ID",
+          "description": "ID corresponding to specific radiation plan/protocol (i.e. 1-1 HN50Gy)",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_TR_TREATMENT_SITE",
+          "description": "body site planned to receive RT",
+          "type": "string"
+        },
+        {
+          "name": "Treatment_Site",
+          "description": "body site planned to receive RT",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_TR_TOTAL_FRACTIONS_FOR_CURRENT_PLAN",
+          "description": "integer corresponding to how many total fractions (individual radiation doses/treatments) are planned (i.e. 25)",
+          "type": "integer"
+        },
+        {
+          "name": "RADONC_RS_TR_FRACTION_FOR_CURRENT_PLAN",
+          "description": "integer corresponding to which fraction is being given (i.e. 7 of 20)",
+          "type": "integer"
+        },
+        {
+          "name": "RADONC_RS_TR_FRACTION_DOSE_FOR_CURRENT_PLAN",
+          "description": "Fraction dose expected to be given for this fraction aka specific treatment (usually 200 Gy)",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_TR_TOTAL_DOSE_FOR_CURRENT_PLAN",
+          "description": "Total Dose Planned for Current Plan (i.e. 5000 Gy))",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_TR_CUMULATIVE_DOSE",
+          "description": "Cumulative Dose Delivered (in Gy, i.e. 5200 Gy)",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_TR_TOTAL_PRESCRIBED_DOSE",
+          "description": "Total Prescribed Dose that will be given once all treatments are complete (i.e. 7000 Gy aka 70 cGy. Total dose can be administered over multiple plans)",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_TR_SIB_PLAN",
+          "description": "Type of radiation, a \u201cboost\u201d. SIB stands for simultaneous integrated boost, a radiation therapy technique that delivers a higher dose of radiation to a target volume (GTV) while keeping the dose to the surrounding area (CTV) at a normal level.",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_TR_SIB_DOSE_CHARTED",
+          "description": "Dose to be given for boost",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_LATERALITY",
+          "description": "designating left or right",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_CONFIRM_PATIENT_ID",
+          "description": "flag to confirm correct patient ID",
+          "type": "string"
+        },
+        {
+          "name": "Patients_ID",
+          "description": "flag to confirm correct patient ID",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_CONFIRM_TREATMENT_SITE",
+          "description": "flag to confirm correct treatment site",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_CONFIRMED_GANTRY_CLEARANCE",
+          "description": "Gantry clearance refers to the available space or distance between the patient table and the rotating arm (gantry) of a radiation therapy machine",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_CONFIRM_TREATMENT_DEVICE",
+          "description": "flag to confirm treatment device",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_CONFIRM_IMMOBILIZATION",
+          "description": "flag to confirm patient immobilized",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_CONFIRM_IMAGES_REVIEWED",
+          "description": "flag to confirm review prior images were reviewed",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_TR_OK",
+          "description": "Confirm OK to proceed",
+          "type": "string"
+        },
+        {
+          "name": "RADONC_RS_TR_IMAGE_NEW",
+          "description": "flag to confirm new images taken",
+          "type": "string"
+        },
+        {
+          "name": "device_id",
+          "description": "ID of device used for treatment",
+          "type": "string"
+        },
+        {
+          "name": "recorded_time",
+          "description": "date/time of recording",
+          "type": "string"
+        },
+        {
+          "name": "meas_value",
+          "description": "measurement value for row, corresponds to specific value recorded flo_meas_name variable",
+          "type": "string"
+        },
+        {
+          "name": "meas_location",
+          "description": "location of measurement",
+          "type": "string"
+        },
+        {
+          "name": "units",
+          "description": "measurement units",
+          "type": "string"
+        },
+        {
+          "name": "inpatient_data_id",
+          "description": "specific ID of data for row to use for backend tracking",
+          "type": "string"
+        },
+        {
+          "name": "dept_id",
+          "description": "department ID",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "Unique identifiers for records in the 'diagnosis' table that relate via this foreign key to records in this 'radiation_flowsheet' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'radiation_flowsheet' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'radiation_flowsheet' table.",
+          "type": "string"
+        },
+        {
+          "name": "radiation_flowsheet.id",
+          "description": "A unique identifier for records in this 'radiation_flowsheet' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "treatment",
+      "description": "Any medication, treatment or procedure taken by, prescribed to, or administered to a patient, including cancer-directed treatments, palliative or supportive care, non-cancer-directed prescription medications, and over-the-counter agents.",
+      "links": [
+        "diagnosis",
+        "subject",
+        "visit"
+      ],
+      "required": [
+        "treatment.id"
+      ],
+      "properties": [
+        {
+          "name": "Rx_Course_Desc",
+          "description": "each row of table corresponds to a treatment/diagnostic procedure. Course description marks if the row was part of a first or second course of treatment",
+          "type": "string"
+        },
+        {
+          "name": "Rx_Start_Date",
+          "description": "Start date of treatment",
+          "type": "string"
+        },
+        {
+          "name": "Rx_Type",
+          "description": "code (D, R, C, S, I, P) standing for treatment (Rx) types - diagnostic procedure, radiation, surgery, chemotherapy, immunotherapy, palliative therapy",
+          "type": "string"
+        },
+        {
+          "name": "Rx_Type_Desc",
+          "description": "code (D, R, C, S, I, P) standing for treatment (Rx) type - diagnostic procedure, radiation, surgery, chemotherapy, immunotherapy, palliative therapy",
+          "type": "string"
+        },
+        {
+          "name": "Rx_Code_Desc",
+          "description": "a specific description of the treatment/diagnostic procedure",
+          "type": "string"
+        },
+        {
+          "name": "Treatment_This_Facility_Desc",
+          "description": "was the treatment done at UChicago",
+          "type": "string"
+        },
+        {
+          "name": "First_Course_Dx",
+          "description": "Date of first diagnosis/staging and what procedure was used to make that diagnosis/staging",
+          "type": "string"
+        },
+        {
+          "name": "Staging_Date",
+          "description": "Date of first diagnosis/staging and what procedure was used to make that diagnosis/staging",
+          "type": "string"
+        },
+        {
+          "name": "First_Course_Dx_Staging_Proc_Hosp_Desc",
+          "description": "Date of first diagnosis/staging and what procedure was used to make that diagnosis/staging",
+          "type": "string"
+        },
+        {
+          "name": "First_Course_Chemotherapy_Date",
+          "description": "start date of first chemo regimen (single agent vs. combination vs. none) (I would ignore that the \u201cNone\u201d values mention an autopsy)",
+          "type": "string"
+        },
+        {
+          "name": "First_Course_Chemotherapy_Hosp_Desc",
+          "description": "start description of first chemo regimen (single agent vs. combination vs. none) (I would ignore that the \u201cNone\u201d values mention an autopsy)",
+          "type": "string"
+        },
+        {
+          "name": "First_Course_Immunotherapy_Date",
+          "description": "start date confirming immunotherapy was ever given (None means that patient never got immunotherapy)",
+          "type": "string"
+        },
+        {
+          "name": "First_Course_Immunotherapy_Hosp_Desc",
+          "description": "start description confirming immunotherapy was ever given (None means that patient never got immunotherapy)",
+          "type": "string"
+        },
+        {
+          "name": "Date_of_First_Surgery",
+          "description": "date of first surgery received",
+          "type": "string"
+        },
+        {
+          "name": "First_Course_Surg_Prim_Site_Hosp_Desc",
+          "description": "hospital location where first surgery received was performed",
+          "type": "string"
+        },
+        {
+          "name": "First_Course_Scope_Reg_LN_Surg_Hosp_Desc",
+          "description": "how many lymph nodes were removed during first surgery",
+          "type": "integer"
+        },
+        {
+          "name": "Scope_Reg_LN_Surgery_Desc",
+          "description": "how many lymph nodes were removed during first surgery",
+          "type": "integer"
+        },
+        {
+          "name": "Date_RT_Started",
+          "description": "start date of RT",
+          "type": "string"
+        },
+        {
+          "name": "Location_of_Radiation_Treatment_Desc",
+          "description": "bodily site of radiation treatment",
+          "type": "string"
+        },
+        {
+          "name": "Radiation_Treatment_Volume_Desc",
+          "description": "volume of radiation treatment",
+          "type": "string"
+        },
+        {
+          "name": "Regional_Treatment_Modality_Desc",
+          "description": "type of radiation treatment given",
+          "type": "string"
+        },
+        {
+          "name": "Regional_Dose_cGy",
+          "description": "total dose delivered during radiation course (not counting boost)",
+          "type": "string"
+        },
+        {
+          "name": "Boost_RT_Modality_Desc",
+          "description": "type of boost dose given",
+          "type": "string"
+        },
+        {
+          "name": "Boost_Dose_cGy",
+          "description": "amount of boost dose given",
+          "type": "string"
+        },
+        {
+          "name": "Subseq_Course_Rx_Summary",
+          "description": "uses Rx_Type codes to designate that patient received subsequent procedures/treatments after their first course. \u201cR, C\u201d means patient received subsequent radiation & chemo",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "Unique identifiers for records in the 'diagnosis' table that relate via this foreign key to records in this 'treatment' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'treatment' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'treatment' table.",
+          "type": "string"
+        },
+        {
+          "name": "treatment.id",
+          "description": "A unique identifier for records in this 'treatment' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "surgery",
+      "description": "Surgery",
+      "links": [
+        "diagnosis",
+        "subject",
+        "visit"
+      ],
+      "required": [
+        "surgery.id"
+      ],
+      "properties": [
+        {
+          "name": "admit_time",
+          "description": "day/time patient admitted to hospital",
+          "type": "string"
+        },
+        {
+          "name": "disch_time",
+          "description": "day/time patient discharged from hospital",
+          "type": "string"
+        },
+        {
+          "name": "SCHED_START_TIME",
+          "description": "scheduled start time",
+          "type": "string"
+        },
+        {
+          "name": "proc_start_time",
+          "description": "day/time of procedure start",
+          "type": "string"
+        },
+        {
+          "name": "proc_end_time",
+          "description": "day/time of procedure end",
+          "type": "string"
+        },
+        {
+          "name": "cpt_code",
+          "description": "Current Procedural Terminology (CPT) codes are a set of numeric codes that identify medical procedures and services. There is some missingness to this data but in theory could be used to accurately code surgical procedures to reference an external database.",
+          "type": "string"
+        },
+        {
+          "name": "PROC_NAME",
+          "description": "procedure name",
+          "type": "string"
+        },
+        {
+          "name": "PROV_NAME",
+          "description": "name of provider/surgeon performing surgery",
+          "type": "string"
+        },
+        {
+          "name": "Sched_status",
+          "description": "status of surgery (scheduled, unscheduled, cancelled, completed)",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "Unique identifiers for records in the 'diagnosis' table that relate via this foreign key to records in this 'surgery' table.",
+          "type": "string"
+        },
+        {
+          "name": "subject.id",
+          "description": "Unique identifiers for records in the 'subject' table that relate via this foreign key to records in this 'surgery' table.",
+          "type": "string"
+        },
+        {
+          "name": "visit.id",
+          "description": "Unique identifiers for records in the 'visit' table that relate via this foreign key to records in this 'surgery' table.",
+          "type": "string"
+        },
+        {
+          "name": "surgery.id",
+          "description": "A unique identifier for records in this 'surgery' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

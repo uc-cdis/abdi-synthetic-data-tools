@@ -1,0 +1,1316 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell to include all submitted entities in the next index.",
+          "type": "boolean"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made avilable.",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "family",
+      "description": "Collection of all data related to the family members and their relationships.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "project.id",
+        "family.id"
+      ],
+      "properties": [
+        {
+          "name": "cohort_id",
+          "description": "The study subgroup that the participant belongs to. This indicates whether the participant was a postmortem donor, an organ donor, or a surgical donor.",
+          "type": "enum"
+        },
+        {
+          "name": "melanomas_in_family",
+          "description": "Number of relates diagnosed with melanomas.",
+          "type": "integer"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'family' table.",
+          "type": "string"
+        },
+        {
+          "name": "family.id",
+          "description": "A unique identifier for records in this 'family' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "family_pedigree",
+      "description": "Data file containing the pedigree description for the family.",
+      "links": [
+        "family"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "family.id",
+        "family_pedigree.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "family.id",
+          "description": "Unique identifiers for records in the 'family' table that relate via this foreign key to records in this 'family_pedigree' table.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "family_pedigree.id",
+          "description": "A unique identifier for records in this 'family_pedigree' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "case",
+      "description": "The collection of all data related to a specific subject in the context of a specific project.",
+      "links": [
+        "family"
+      ],
+      "required": [
+        "family.id",
+        "case.id"
+      ],
+      "properties": [
+        {
+          "name": "relationship_to_proband",
+          "description": "The subgroup that describes the state of connectedness between members of the unit of society organized around kinship ties.",
+          "type": "string"
+        },
+        {
+          "name": "melanoma_status",
+          "description": "Boolean value to determine if the case has melanoma.",
+          "type": "boolean"
+        },
+        {
+          "name": "is_proband",
+          "description": "Boolean value to determine if the case is the proband.",
+          "type": "boolean"
+        },
+        {
+          "name": "family.id",
+          "description": "Unique identifiers for records in the 'family' table that relate via this foreign key to records in this 'case' table.",
+          "type": "string"
+        },
+        {
+          "name": "case.id",
+          "description": "A unique identifier for records in this 'case' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "demographic",
+      "description": "Data for the characterization of the patient by means of segementing the population (e.g., characterization by age, sex, or race).",
+      "links": [
+        "case"
+      ],
+      "required": [
+        "case.id",
+        "demographic.id"
+      ],
+      "properties": [
+        {
+          "name": "gender",
+          "description": "Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1: Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.]",
+          "type": "enum"
+        },
+        {
+          "name": "year_of_birth",
+          "description": "Numeric value to represent the calendar year in which an individual was born.",
+          "type": "number"
+        },
+        {
+          "name": "race",
+          "description": "An arbitrary classification of a taxonomic group that is a division of a species. It usually arises as a consequence of geographical isolation within a species and is characterized by shared heredity, physical attributes and behavior, and in the case of humans, by common history, nationality, or geographic distribution. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "enum"
+        },
+        {
+          "name": "ethnicity",
+          "description": "An individual's self-described social and cultural grouping, specifically whether an individual describes themselves as Hispanic or Latino. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.",
+          "type": "enum"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'demographic' table.",
+          "type": "string"
+        },
+        {
+          "name": "demographic.id",
+          "description": "A unique identifier for records in this 'demographic' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospecimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.",
+      "links": [
+        "case"
+      ],
+      "required": [
+        "case.id",
+        "sample.id"
+      ],
+      "properties": [
+        {
+          "name": "sample_type_id",
+          "description": "The accompanying sample type id for the sample type.",
+          "type": "enum"
+        },
+        {
+          "name": "biospecimen_anatomic_site",
+          "description": "Text term that represents the name of the primary disease site of the submitted tumor sample.",
+          "type": "enum"
+        },
+        {
+          "name": "oct_embedded",
+          "description": "Indicator of whether or not the sample was embedded in Optimal Cutting Temperature (OCT) compound.",
+          "type": "string"
+        },
+        {
+          "name": "tumor_code_id",
+          "description": "BCR-defined id code for the tumor sample.",
+          "type": "enum"
+        },
+        {
+          "name": "intermediate_dimension",
+          "description": "Intermediate dimension of the sample, in millimeters.",
+          "type": "string"
+        },
+        {
+          "name": "sample_volume",
+          "description": "The volume of the sample in mL.",
+          "type": "number"
+        },
+        {
+          "name": "is_ffpe",
+          "description": "Indicator to signify whether or not the tissue sample was fixed in formalin and embedded in paraffin (FFPE).",
+          "type": "boolean"
+        },
+        {
+          "name": "tumor_descriptor",
+          "description": "A description of the tumor from which the sample was derived.",
+          "type": "enum"
+        },
+        {
+          "name": "sample_type",
+          "description": "Characterization of the sample as either clinical or contrived.",
+          "type": "enum"
+        },
+        {
+          "name": "time_between_excision_and_freezing",
+          "description": "Numeric representation of the elapsed time between the excision and freezing of the sample, measured in minutes.",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis_pathologically_confirmed",
+          "description": "The histologic description of tissue or cells confirmed by a pathology review of frozen or formalin fixed slide(s) completed after the diagnostic pathology review of the tumor sample used to extract analyte(s).",
+          "type": "enum"
+        },
+        {
+          "name": "current_weight",
+          "description": "Numeric value that represents the current weight of the sample, measured  in milligrams.",
+          "type": "number"
+        },
+        {
+          "name": "composition",
+          "description": "Text term that represents the cellular composition of the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "time_between_clamping_and_freezing",
+          "description": "Numeric representation of the elapsed time between the surgical clamping of blood supply and freezing of the sample, measured in minutes.",
+          "type": "string"
+        },
+        {
+          "name": "shortest_dimension",
+          "description": "Numeric value that represents the shortest dimension of the sample, measured in millimeters.",
+          "type": "string"
+        },
+        {
+          "name": "method_of_sample_procurement",
+          "description": "The method used to procure the sample used to extract analyte(s).",
+          "type": "enum"
+        },
+        {
+          "name": "tumor_code",
+          "description": "Diagnostic tumor code of the tissue sample source.",
+          "type": "enum"
+        },
+        {
+          "name": "tissue_type",
+          "description": "Text term that represents a description of the kind of tissue collected with respect to disease status or proximity to tumor tissue.",
+          "type": "enum"
+        },
+        {
+          "name": "days_to_sample_procurement",
+          "description": "The number of days from the date the patient was diagnosed to the date of the procedure that produced the sample.",
+          "type": "integer"
+        },
+        {
+          "name": "freezing_method",
+          "description": "Text term that represents the method used for freezing the sample.",
+          "type": "string"
+        },
+        {
+          "name": "preservation_method",
+          "description": "Text term that represents the method used to preserve the sample.",
+          "type": "enum"
+        },
+        {
+          "name": "days_to_collection",
+          "description": "Time interval from the date of biospecimen collection to the date of initial pathologic diagnosis, represented as a calculated number of days.",
+          "type": "integer"
+        },
+        {
+          "name": "initial_weight",
+          "description": "Numeric value that represents the initial weight of the sample, measured in milligrams.",
+          "type": "number"
+        },
+        {
+          "name": "longest_dimension",
+          "description": "Numeric value that represents the longest dimension of the sample, measured in millimeters.",
+          "type": "string"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'sample' table.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "A unique identifier for records in this 'sample' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "diagnosis",
+      "description": "Data from the investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation.",
+      "links": [
+        "case"
+      ],
+      "required": [
+        "case.id",
+        "diagnosis.id"
+      ],
+      "properties": [
+        {
+          "name": "year_of_diagnosis",
+          "description": "Numeric value to represent the year of an individual's initial pathologic diagnosis of melanoma.",
+          "type": "number"
+        },
+        {
+          "name": "other_diagnosed_cancers",
+          "description": "List of other cancers that have been diagnosed to the same patient in a comma-separated string format.",
+          "type": "string"
+        },
+        {
+          "name": "age_at_diagnosis",
+          "description": "Age at the time of diagnosis expressed in number of years since birth.",
+          "type": "number"
+        },
+        {
+          "name": "number_of_primary_melanomas",
+          "description": "Times that the primary disease has been observed (i.e. number primary melanomas)",
+          "type": "integer"
+        },
+        {
+          "name": "case.id",
+          "description": "Unique identifiers for records in the 'case' table that relate via this foreign key to records in this 'diagnosis' table.",
+          "type": "string"
+        },
+        {
+          "name": "diagnosis.id",
+          "description": "A unique identifier for records in this 'diagnosis' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aliquot",
+      "description": "Pertaining to a portion of the whole; any one of two or more samples of something, of the same volume or weight.",
+      "links": [
+        "sample"
+      ],
+      "required": [
+        "sample.id",
+        "aliquot.id"
+      ],
+      "properties": [
+        {
+          "name": "aliquot_quantity",
+          "description": "The quantity in micrograms (ug) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "aliquot_volume",
+          "description": "The volume in microliters (ml) of the aliquot(s) derived from the analyte(s) shipped for sequencing and characterization.",
+          "type": "number"
+        },
+        {
+          "name": "analyte_type_id",
+          "description": "A single letter code used to identify a type of molecular analyte.",
+          "type": "enum"
+        },
+        {
+          "name": "analyte_type",
+          "description": "Text term that represents the kind of molecular specimen analyte.",
+          "type": "string"
+        },
+        {
+          "name": "amount",
+          "description": "Weight in grams or volume in mL.",
+          "type": "number"
+        },
+        {
+          "name": "concentration",
+          "description": "Numeric value that represents the concentration of an analyte or aliquot extracted from the sample or sample portion, measured in milligrams per milliliter.",
+          "type": "number"
+        },
+        {
+          "name": "source_center",
+          "description": "Name of the center that provided the item.",
+          "type": "string"
+        },
+        {
+          "name": "sample.id",
+          "description": "Unique identifiers for records in the 'sample' table that relate via this foreign key to records in this 'aliquot' table.",
+          "type": "string"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "A unique identifier for records in this 'aliquot' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group",
+      "description": "Sequencing reads from one lane of an NGS experiment.",
+      "links": [
+        "aliquot"
+      ],
+      "required": [
+        "aliquot.id",
+        "read_group.id"
+      ],
+      "properties": [
+        {
+          "name": "is_paired_end",
+          "description": "Are the reads paired end?",
+          "type": "boolean"
+        },
+        {
+          "name": "base_caller_version",
+          "description": "Version of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "read_group_name",
+          "description": "Read Group Name",
+          "type": "string"
+        },
+        {
+          "name": "sequencing_date",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "instrument_model",
+          "description": "Numeric value that represents the sample dimension that is greater than the shortest dimension and less than the longest dimension, measured in millimeters.",
+          "type": "enum"
+        },
+        {
+          "name": "base_caller_name",
+          "description": "Name of the base caller.",
+          "type": "string"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "sequencing_center",
+          "description": "Name of the center that provided the sequence files.",
+          "type": "string"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "aliquot.id",
+          "description": "Unique identifiers for records in the 'aliquot' table that relate via this foreign key to records in this 'read_group' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "A unique identifier for records in this 'read_group' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_aligned_reads",
+      "description": "Data file containing aligned reads that are used as input to GenoMEL workflows.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_aligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_aligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "submitted_unaligned_reads",
+      "description": "Data file containing unaligned reads from sequencing.",
+      "links": [
+        "read_group"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "read_group.id",
+        "submitted_unaligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "A unique identifier for records in this 'submitted_unaligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "read_group_qc",
+      "description": "Collection of QC metrics after sequencing.",
+      "links": [
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads",
+        "read_group"
+      ],
+      "required": [
+        "read_group.id",
+        "read_group_qc.id"
+      ],
+      "properties": [
+        {
+          "name": "percent_aligned",
+          "description": "The percent of reads with at least one reported alignment.",
+          "type": "integer"
+        },
+        {
+          "name": "adapter_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "encoding",
+          "description": "Version of ASCII encoding of quality values found in the file.",
+          "type": "string"
+        },
+        {
+          "name": "per_base_sequence_quality",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "sequence_duplication_levels",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "fastq_name",
+          "description": "Names of FASTQs.",
+          "type": "string"
+        },
+        {
+          "name": "basic_statistics",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_base_sequence_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "kmer_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "percent_gc_content",
+          "description": "The overall %GC of all bases in all sequences.",
+          "type": "integer"
+        },
+        {
+          "name": "total_sequences",
+          "description": "A count of the total number of sequences processed.",
+          "type": "integer"
+        },
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "total_aligned_reads",
+          "description": "The total number of reads with at least one reported alignment.",
+          "type": "integer"
+        },
+        {
+          "name": "sequence_length_distribution",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_sequence_quality_score",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_tile_sequence_quality",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_sequence_gc_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "per_base_n_content",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "overrepresented_sequences",
+          "description": "State classification given by FASTQC for the metric. Metric specific details about the states are available on their website.",
+          "type": "enum"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "read_group.id",
+          "description": "Unique identifiers for records in the 'read_group' table that relate via this foreign key to records in this 'read_group_qc' table.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a workflow.",
+          "type": "string"
+        },
+        {
+          "name": "read_group_qc.id",
+          "description": "A unique identifier for records in this 'read_group_qc' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "alignment_recalibration_workflow",
+      "description": "Metadata for the alignment and recalibration pipeline used to align reads in the GenoMEL workflow pipelines.",
+      "links": [
+        "submitted_aligned_reads",
+        "submitted_unaligned_reads"
+      ],
+      "required": [
+        "workflow_link",
+        "workflow_type",
+        "alignment_recalibration_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'alignment_recalibration_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_unaligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_unaligned_reads' table that relate via this foreign key to records in this 'alignment_recalibration_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a workflow.",
+          "type": "string"
+        },
+        {
+          "name": "alignment_recalibration_workflow.id",
+          "description": "A unique identifier for records in this 'alignment_recalibration_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads",
+      "description": "Data file containing aligned reads that are internally generated by GenoMEL workflows.",
+      "links": [
+        "alignment_recalibration_workflow"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "alignment_recalibration_workflow.id",
+        "aligned_reads.id"
+      ],
+      "properties": [
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "platform",
+          "description": "Name of the platform used to obtain data.",
+          "type": "enum"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "alignment_recalibration_workflow.id",
+          "description": "Unique identifiers for records in the 'alignment_recalibration_workflow' table that relate via this foreign key to records in this 'aligned_reads' table.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "A unique identifier for records in this 'aligned_reads' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "germline_mutation_calling_workflow",
+      "description": "Metadata for the germline mutation calling pipeline used to call variants in the GenoMEL DNA-Seq pipelines.",
+      "links": [
+        "aligned_reads",
+        "submitted_aligned_reads"
+      ],
+      "required": [
+        "workflow_link",
+        "workflow_type",
+        "germline_mutation_calling_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "Unique identifiers for records in the 'aligned_reads' table that relate via this foreign key to records in this 'germline_mutation_calling_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'germline_mutation_calling_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a workflow.",
+          "type": "string"
+        },
+        {
+          "name": "germline_mutation_calling_workflow.id",
+          "description": "A unique identifier for records in this 'germline_mutation_calling_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "joint_germline_calling_workflow",
+      "description": "Metadata for the joint germline calling pipeline used to call variants in the GenoMEL DNA-Seq pipelines.",
+      "links": [
+        "aligned_reads",
+        "submitted_aligned_reads"
+      ],
+      "required": [
+        "workflow_link",
+        "workflow_type",
+        "joint_germline_calling_workflow.id"
+      ],
+      "properties": [
+        {
+          "name": "workflow_type",
+          "description": "Generic name for the workflow used to analyze a data set.",
+          "type": "enum"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "Unique identifiers for records in the 'aligned_reads' table that relate via this foreign key to records in this 'joint_germline_calling_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'joint_germline_calling_workflow' table.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_start_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_end_datetime",
+          "description": "A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
+          "type": "string"
+        },
+        {
+          "name": "workflow_link",
+          "description": "Link to Github hash for the CWL workflow used.",
+          "type": "string"
+        },
+        {
+          "name": "workflow_version",
+          "description": "Major version for a workflow.",
+          "type": "string"
+        },
+        {
+          "name": "joint_germline_calling_workflow.id",
+          "description": "A unique identifier for records in this 'joint_germline_calling_workflow' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "aligned_reads_index",
+      "description": "Data file containing the index for a set of aligned reads.",
+      "links": [
+        "aligned_reads",
+        "submitted_aligned_reads"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "aligned_reads_index.id"
+      ],
+      "properties": [
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "aligned_reads.id",
+          "description": "Unique identifiers for records in the 'aligned_reads' table that relate via this foreign key to records in this 'aligned_reads_index' table.",
+          "type": "string"
+        },
+        {
+          "name": "submitted_aligned_reads.id",
+          "description": "Unique identifiers for records in the 'submitted_aligned_reads' table that relate via this foreign key to records in this 'aligned_reads_index' table.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "aligned_reads_index.id",
+          "description": "A unique identifier for records in this 'aligned_reads_index' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "joint_genotype_file",
+      "description": "Data file containing joint genotypes called from aligned reads.",
+      "links": [
+        "joint_germline_calling_workflow"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "joint_germline_calling_workflow.id",
+        "joint_genotype_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "joint_germline_calling_workflow.id",
+          "description": "Unique identifiers for records in the 'joint_germline_calling_workflow' table that relate via this foreign key to records in this 'joint_genotype_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "joint_genotype_file.id",
+          "description": "A unique identifier for records in this 'joint_genotype_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "simple_germline_variation",
+      "description": "Data file containing simple germline variations called from aligned reads.",
+      "links": [
+        "germline_mutation_calling_workflow"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "data_format",
+        "experimental_strategy",
+        "germline_mutation_calling_workflow.id",
+        "simple_germline_variation.id"
+      ],
+      "properties": [
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "enum"
+        },
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "experimental_strategy",
+          "description": "The sequencing strategy used to generate the data file.",
+          "type": "enum"
+        },
+        {
+          "name": "germline_mutation_calling_workflow.id",
+          "description": "Unique identifiers for records in the 'germline_mutation_calling_workflow' table that relate via this foreign key to records in this 'simple_germline_variation' table.",
+          "type": "string"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "simple_germline_variation.id",
+          "description": "A unique identifier for records in this 'simple_germline_variation' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

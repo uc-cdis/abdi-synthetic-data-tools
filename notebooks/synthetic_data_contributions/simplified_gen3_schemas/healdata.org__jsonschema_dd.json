@@ -1,0 +1,264 @@
+{
+  "nodes": [
+    {
+      "name": "project",
+      "description": "Any specifically defined piece of work that is undertaken or attempted to meet a single requirement. (NCIt C47885)",
+      "links": [],
+      "required": [
+        "code",
+        "name",
+        "dbgap_accession_number",
+        "project.id"
+      ],
+      "properties": [
+        {
+          "name": "administering_ic",
+          "description": "The NIH Institute or Center (IC) to which the Center for Scientific Review (CSR) routes NIH grant applications for a funding decision. An IC may request to change this assignment if the application is more suited to another IC. Also referred to as primary assignment.",
+          "type": "string"
+        },
+        {
+          "name": "availability_mechanism",
+          "description": "Mechanism by which the project will be made available.",
+          "type": "string"
+        },
+        {
+          "name": "availability_type",
+          "description": "Is the project open or restricted?",
+          "type": "enum"
+        },
+        {
+          "name": "code",
+          "description": "Unique identifier for the project.",
+          "type": "string"
+        },
+        {
+          "name": "data_description",
+          "description": "The description of the type of data found in the data set.",
+          "type": "string"
+        },
+        {
+          "name": "date_collected",
+          "description": "The date or date range in which the project data was collected.",
+          "type": "string"
+        },
+        {
+          "name": "dbgap_accession_number",
+          "description": "The dbgap accession number provided for the project.",
+          "type": "string"
+        },
+        {
+          "name": "institution",
+          "description": "Public or Private entity, including Government Agencies.",
+          "type": "array"
+        },
+        {
+          "name": "intended_release_date",
+          "description": "Tracks a Project's intended release date.",
+          "type": "string"
+        },
+        {
+          "name": "investigator",
+          "description": "A researcher(s) in a study who oversees multiple aspects of the study, such as concept development, protocol writing, protocol submission for IRB approval, participant recruitment, informed consent, data collection, analysis, interpretation and presentation.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_affiliation",
+          "description": "The investigator's affiliation with respect to a research institution.",
+          "type": "string"
+        },
+        {
+          "name": "investigator_name",
+          "description": "Name of the principal investigator for the project.",
+          "type": "string"
+        },
+        {
+          "name": "location",
+          "description": "Location of the partaking institution (Public or Private entity, including Government Agencies).",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Display name/brief description for the project.",
+          "type": "string"
+        },
+        {
+          "name": "project_title",
+          "description": "Title of the NIH-funded project.",
+          "type": "string"
+        },
+        {
+          "name": "releasable",
+          "description": "A project can only be released by the user when `releasable` is true.",
+          "type": "boolean"
+        },
+        {
+          "name": "released",
+          "description": "To release a project is to tell the GDC to include all submitted entities in the next GDC index.",
+          "type": "boolean"
+        },
+        {
+          "name": "research_focus_area",
+          "description": "Description of the Research Focus Area.",
+          "type": "string"
+        },
+        {
+          "name": "research_program",
+          "description": "Name of the NIH-registered Research Program.",
+          "type": "string"
+        },
+        {
+          "name": "support_id",
+          "description": "The ID of the source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "support_source",
+          "description": "The name of source providing support/grant resources.",
+          "type": "string"
+        },
+        {
+          "name": "year_awarded",
+          "description": "Year in which NIH awarded the funding project.",
+          "type": "integer"
+        },
+        {
+          "name": "project.id",
+          "description": "A unique identifier for records in this 'project' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "clinical_trial_file",
+      "description": "The restricted access file containing patient level data associated with a clinical trial.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "data_format",
+        "md5sum",
+        "data_category",
+        "data_type",
+        "project.id",
+        "clinical_trial_file.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'clinical_trial_file' table.",
+          "type": "string"
+        },
+        {
+          "name": "clinical_trial_file.id",
+          "description": "A unique identifier for records in this 'clinical_trial_file' table.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "open_access_doc",
+      "description": "Open access documents related to a specific clinical trial.",
+      "links": [
+        "project"
+      ],
+      "required": [
+        "file_name",
+        "file_size",
+        "md5sum",
+        "data_format",
+        "doc_url",
+        "project.id",
+        "open_access_doc.id"
+      ],
+      "properties": [
+        {
+          "name": "data_category",
+          "description": "Broad categorization of the contents of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "data_format",
+          "description": "Format of the data files.",
+          "type": "string"
+        },
+        {
+          "name": "data_type",
+          "description": "Specific content type of the data file.",
+          "type": "string"
+        },
+        {
+          "name": "doc_url",
+          "description": "The originating URL of the document.",
+          "type": "string"
+        },
+        {
+          "name": "file_name",
+          "description": "The name (or part of a name) of a file (of any type).",
+          "type": "string"
+        },
+        {
+          "name": "file_size",
+          "description": "The size of the data file (object) in bytes.",
+          "type": "integer"
+        },
+        {
+          "name": "md5sum",
+          "description": "The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital fingerprint.",
+          "type": "string"
+        },
+        {
+          "name": "object_id",
+          "description": "The GUID of the object in the index service.",
+          "type": "string"
+        },
+        {
+          "name": "project.id",
+          "description": "Unique identifiers for records in the 'project' table that relate via this foreign key to records in this 'open_access_doc' table.",
+          "type": "string"
+        },
+        {
+          "name": "open_access_doc.id",
+          "description": "A unique identifier for records in this 'open_access_doc' table.",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
