@@ -72,7 +72,7 @@ domains:
 credit:
   - name: Gen3
     role: Developer
-    org: Gen3
+    org: University of Chicago Center for Translational Data Science
     url: https://gen3.org/
 
 target_users:
