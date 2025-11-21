@@ -1,0 +1,99 @@
+version: 0.0.0
+
+tool:
+  name: Synthetic Data Generator - ABDI-SDG
+  repo_url: https://github.com/uc-cdis/abdi-synthetic-data-tools
+  tool_homepage: https://github.com/uc-cdis/abdi-synthetic-data-tools
+  documentation_url: https://github.com/uc-cdis/abdi-synthetic-data-tools/blob/master/README.md
+  tool_type: Script
+
+llm:
+  usesLlm: false
+  bringOwnKey: false
+
+input:
+  - name: Graph-like data schemas structured 1
+    dataCategory: "Graph-like data schemas"
+    dataClass: structured
+    dataType: "Schema"
+    format:
+      - json
+    dataStandard:
+      - "A simplifed version of Gen3 Data Dictionaries: https://docs.gen3.org/gen3-resources/operator-guide/create-data-dictionary/"
+    proprietary: false
+    source: https://github.com/uc-cdis/abdi-synthetic-data-tools/tree/master/notebooks/synthetic_data_contributions/simplified_gen3_schemas
+  - name: Synthetic Data Contributions structured 1
+    dataCategory: "Synthetic Data Contributions"
+    dataClass: structured
+    dataType: "Data Models"
+    format:
+      - json
+    dataStandard:
+      - "Simplified, Gen3-agnostic JSON"
+    proprietary: false
+    source: https://github.com/uc-cdis/abdi-synthetic-data-tools/tree/master/notebooks/synthetic_data_contributions/simplified_gen3_schemas
+
+output:
+  - name: Synthetic Data Models structured 1
+    dataCategory: "Synthetic Data Models"
+    dataClass: structured
+    dataType: "Data Models"
+    format:
+      - json
+    dataStandard:
+      - "Simplified, Gen3-agnostic JSON"
+    proprietary: false
+    source: https://github.com/uc-cdis/abdi-synthetic-data-tools/tree/master/notebooks/synthetic_data_contributions/simplified_gen3_schemas
+  - name: Synthetic Data Models tabular/structured 1
+    dataCategory: "Synthetic Data Models"
+    # And structured
+    dataClass: tabular
+    dataType: "TSVs with only headers, expected data model in JSON"
+    format:
+      - json
+      - tsv
+    dataStandard:
+      - "TSVs: N/A, JSON: Simplified, Gen3-agnostic JSON"
+    proprietary: false
+    source: https://github.com/uc-cdis/abdi-synthetic-data-tools/tree/master/notebooks/synthetic_data_contributions/simplified_gen3_schemas
+
+license:
+  license_type: Apache-2.0
+  link: https://github.com/uc-cdis/abdi-synthetic-data-tools/blob/master/LICENSE
+
+funding:
+  source: None
+  agreement: Not specified
+  link: ""
+
+domains:
+  - biomedical
+
+credit:
+  - name: Gen3
+    role: Developer
+    org: Gen3
+    url: https://gen3.org/
+
+target_users:
+  primary_user:
+    user_type: researcher
+    technical_literacy_level:
+      - advanced
+    biomedical_literacy_level:
+      - intermediate
+  # Secondary user serves as the primary user type with specific user type
+  secondary_user:
+    user_type: "Data scientists interested in generating synthetic data models or data contributions"
+    technical_literacy_level:
+      - advanced
+    biomedical_literacy_level:
+      - intermediate
+
+maturity:
+  beginning_maturity: 1
+  current_maturity: 4
+
+media: [{ "link": "https://github.com/uc-cdis/abdi-synthetic-data-tools" }]
+
+collaborations: []
